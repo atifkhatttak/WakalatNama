@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using ProjWakalatnama.DataLayer.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
@@ -38,7 +39,14 @@ namespace Data.Context
                 );
         }
 
-        
+        public virtual DbSet<CaseCategory> CaseCategories { get; set; } = null!;
+        public virtual DbSet<CaseJurisdiction> CaseJurisdictions { get; set; } = null!;
+        public virtual DbSet<CasesDetail> CasesDetails { get; set; } = null!;
+        public virtual DbSet<ConsultationOption> ConsultationOptions { get; set; } = null!;
+        public virtual DbSet<CourtCases> CourtCases { get; set; } = null!;
+        public virtual DbSet<ExperienceCost> ExperienceCosts { get; set; } = null!;
+        public virtual DbSet<PartyStatus> PartyStatuses { get; set; } = null!;
+        public virtual DbSet<UserProfile> UserProfiles { get; set; } = null!;
     }
 }
 

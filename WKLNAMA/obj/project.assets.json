@@ -4468,19 +4468,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Atif\\.nuget\\packages\\": {}
+    "C:\\Users\\Hp\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Projects\\WKLNAMA\\WKLNAMA\\WKLNAMA.csproj",
+      "projectUniqueName": "D:\\Freelancing\\wakalatnama\\repo\\XpertKhan\\WakalatNama\\WKLNAMA\\WKLNAMA.csproj",
       "projectName": "WKLNAMA",
-      "projectPath": "E:\\Projects\\WKLNAMA\\WKLNAMA\\WKLNAMA.csproj",
-      "packagesPath": "C:\\Users\\Atif\\.nuget\\packages\\",
-      "outputPath": "E:\\Projects\\WKLNAMA\\WKLNAMA\\obj\\",
+      "projectPath": "D:\\Freelancing\\wakalatnama\\repo\\XpertKhan\\WakalatNama\\WKLNAMA\\WKLNAMA.csproj",
+      "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
+      "outputPath": "D:\\Freelancing\\wakalatnama\\repo\\XpertKhan\\WakalatNama\\WKLNAMA\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Atif\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4494,8 +4499,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "E:\\Projects\\WKLNAMA\\Business\\Business.csproj": {
-              "projectPath": "E:\\Projects\\WKLNAMA\\Business\\Business.csproj"
+            "D:\\Freelancing\\wakalatnama\\repo\\XpertKhan\\WakalatNama\\Business\\Business.csproj": {
+              "projectPath": "D:\\Freelancing\\wakalatnama\\repo\\XpertKhan\\WakalatNama\\Business\\Business.csproj"
             }
           }
         }
