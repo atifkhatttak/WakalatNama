@@ -68,9 +68,9 @@ namespace Business.BusinessLogic
         }
 
 
-        public IEnumerable<T> GetAll()
+        public async Task<IEnumerable<T>> GetAll()
         {
-            return table.ToList();
+            return  await table.ToListAsync();
         }
     }
 }
