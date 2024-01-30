@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Identity.Client;
 using Microsoft.IdentityModel.Tokens;
+using ProjWakalatnama.DataLayer.Models;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -33,6 +34,7 @@ namespace Business.BusinessLogic
 
         public async  Task<RegisterViewModel> Register(RegisterViewModel registerViewModel)
         {
+            int RoleId=0;
             try
             {
                 AppUser _user = new AppUser
@@ -40,7 +42,8 @@ namespace Business.BusinessLogic
                     FirstName = registerViewModel.FirstName,
                     LastName = registerViewModel.LastName,
                     Email = registerViewModel.Email,
-                    UserName = registerViewModel.UserName
+                    UserName = registerViewModel.UserName,
+                    PhoneNumber = registerViewModel.PhoneNumber
 
                 };
 
@@ -60,10 +63,31 @@ namespace Business.BusinessLogic
 
                             if (_role != null)
                             {
+                                RoleId=_role.Id;
                                 var roleresult = await userManager.AddToRoleAsync(_user, _role.Name ?? "Citizen");
                             };
                         }
                     }
+
+                    //Insert User Profile 
+                    var insertedUser = ctx.Users.Where(x=>x.Email == _user.Email).FirstOrDefault();
+                    if (insertedUser != null)
+                    {
+                        UserProfile userProfile = new UserProfile()
+                        {
+                            UserId = insertedUser.Id,
+                            RoleId = RoleId,
+                            FullName = insertedUser.FirstName + " " + insertedUser.LastName,
+                            Email=insertedUser.Email??"",
+                            ContactNumber=insertedUser.PhoneNumber??"",
+                            IsOverseas=registerViewModel.IsOverseas
+                        };
+
+                        await ctx.AddAsync(userProfile);
+                       await ctx.SaveChangesAsync();
+                    }
+
+                    registerViewModel.UserId= insertedUser?.Id??0;
                 }
                
             }
