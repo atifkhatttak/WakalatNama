@@ -8,7 +8,7 @@ namespace Business.Services
 {
     public interface IBaseRepository<T> where T : class
     {
-        IEnumerable<T> GetAll();
+        Task<IEnumerable<T>> GetAll();
         Task<T> GetById(object id);
         void Insert(T obj);
         void Update(T obj);

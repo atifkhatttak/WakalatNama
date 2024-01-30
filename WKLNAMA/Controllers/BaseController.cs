@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace WKLNAMA.Controllers
 {
@@ -23,24 +24,24 @@ namespace WKLNAMA.Controllers
         }
 
         [HttpGet]
-        public virtual ActionResult GetAll()
+        public virtual async Task<ActionResult> GetAll()
         {
-            var data = _baseRepository.GetAll(); 
-            return Ok(data);
+            var data = await _baseRepository.GetAll(); 
+            return Ok(Task.FromResult(data));
         }
         [HttpPost]
         public async virtual Task<ActionResult> Post(TEntity _viewModel)
         {
             _baseRepository.Insert(_viewModel);
             await _baseRepository.SaveAsync();
-            return Ok(_viewModel);
+            return Ok(Task.FromResult(_viewModel));
         }
 
         [HttpGet("Find")]
         public async virtual Task<ActionResult> GetById(object id)
         {
             var data = await _baseRepository.GetById(id);
-            return Ok(data);
+            return Ok(Task.FromResult(data));
         }
 
         [HttpDelete]
@@ -49,7 +50,7 @@ namespace WKLNAMA.Controllers
             await _baseRepository.Delete(id);
            await _baseRepository.SaveAsync();
 
-            return Ok("Recored Deleted");
+            return Ok(Task.FromResult("Recored Deleted"));
         }
 
         [HttpPut]
@@ -58,7 +59,7 @@ namespace WKLNAMA.Controllers
               _baseRepository.Update(_object);
           await  _baseRepository.SaveAsync();
 
-            return Ok(_object);
+            return Ok(Task.FromResult(_object));
         }
 
 

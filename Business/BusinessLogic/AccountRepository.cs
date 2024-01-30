@@ -139,7 +139,7 @@ namespace Business.BusinessLogic
            return string.Empty;
         }
  
-        private string GenerateToken(List<Claim> claims=null)
+        private string GenerateToken(List<Claim>? claims)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);

@@ -36,6 +36,7 @@ namespace WKLNAMA.Extensions
             services.AddScoped(typeof(IBaseRepository<>),typeof(BaseRepository<>));
             services.AddScoped<IRoleRepository, RoleRepository>();
             services.AddScoped<IAccountRepository, AccountRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
 
         }
 
@@ -89,9 +90,10 @@ namespace WKLNAMA.Extensions
                         Scheme = "Bearer"
                     }
                 );
-               // option.OperationFilter<AuthenticationRequirementsOperationFilter>();
+                    option.OperationFilter<AuthResponsesOperationFilter>();
+                // option.OperationFilter<AuthenticationRequirementsOperationFilter>();
 
-               // option.OperationFilter<SecurityRequirementsOperationFilter>();
+                // option.OperationFilter<SecurityRequirementsOperationFilter>();
 
                 option.AddSecurityRequirement(
                     new OpenApiSecurityRequirement
