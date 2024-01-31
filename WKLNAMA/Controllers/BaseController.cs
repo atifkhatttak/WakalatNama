@@ -120,11 +120,16 @@ namespace WKLNAMA.Controllers
             {
 
                 _baseRepository.Update(_object);
-                await _baseRepository.SaveAsync();
-                apiResponse.Success = true;
-                apiResponse.Message = "Recored Updated";
-                apiResponse.HttpStatusCode = HttpStatusCode.OK;
-                apiResponse.Data = _object;
+               var t= _baseRepository.SaveAsync();
+                t.Wait();
+
+                if (t.IsCompletedSuccessfully)
+                {
+                    apiResponse.Success = true;
+                    apiResponse.Message = "Recored Updated";
+                    apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                    apiResponse.Data = _object;
+                }
             }
             catch (Exception ex)
             {
