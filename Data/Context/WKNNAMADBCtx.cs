@@ -47,6 +47,8 @@ namespace Data.Context
         public virtual DbSet<ExperienceCost> ExperienceCosts { get; set; } = null!;
         public virtual DbSet<PartyStatus> PartyStatuses { get; set; } = null!;
         public virtual DbSet<UserProfile> UserProfiles { get; set; } = null!;
+        public virtual DbSet<UserDocument> UserDocuments { get; set; } = null!;
+        public virtual DbSet<CasesDocument> CasesDocuments { get; set; } = null!;
     }
 }
 
