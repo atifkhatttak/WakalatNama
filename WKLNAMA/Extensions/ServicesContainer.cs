@@ -37,6 +37,9 @@ namespace WKLNAMA.Extensions
             services.AddScoped<IRoleRepository, RoleRepository>();
             services.AddScoped<IAccountRepository, AccountRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<ICaseJurisdictionRepository, CaseJurisdictionRepository>();
+            services.AddScoped<IPartyStatusRepository, PartyStatusRepository>();
+            services.AddScoped<IUserRepository,UserRepository>();
 
         }
 
