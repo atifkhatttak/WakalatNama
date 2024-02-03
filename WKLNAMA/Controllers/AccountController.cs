@@ -17,15 +17,17 @@ namespace WKLNAMA.Controllers
      public class AccountController : BaseController<AppUser>
     {
         private readonly IAccountRepository accountRepository;
+        private readonly IDocumentService documentService;
+
         private ApiResponse apiResponse = new ApiResponse();
-        public AccountController(IAccountRepository accountRepository, IHttpContextAccessor httpContextAccessor) :base(accountRepository,httpContextAccessor)
+        public AccountController(IAccountRepository accountRepository, IHttpContextAccessor httpContextAccessor, IDocumentService documentService) :base(accountRepository,httpContextAccessor)
         {
             this.accountRepository = accountRepository;
-            
+            this.documentService = documentService;
         }
         [AllowAnonymous]
         [HttpPost("Register")]
-        public async   Task<ActionResult> Post(RegisterViewModel _viewModel)
+        public async   Task<ActionResult> Post([FromForm]RegisterViewModel _viewModel)
         {
             try
             {
@@ -46,6 +48,10 @@ namespace WKLNAMA.Controllers
             //return Ok(Task.FromResult(_viewModel));
             return Ok(apiResponse);
         }
+
+ 
+        //
+
 
         [AllowAnonymous]
         [HttpPost("SignIn")]
