@@ -35,6 +35,7 @@ namespace ProjWakalatnama.DataLayer.Models
 
         [Required]
         public int CourtId { get; set; }
+        public int? CasePlacingId { get; set; }
 
         [Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]

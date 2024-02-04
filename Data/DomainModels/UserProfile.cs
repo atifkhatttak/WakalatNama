@@ -102,7 +102,7 @@ namespace ProjWakalatnama.DataLayer.Models
 
         //[StringLength(255)]
         //public string BarCouncilCardScanBack { get; set; }
-
+        public float? TotalExperience { get; set;}
         [StringLength(255)]
         public string? AreasOfExpertise { get; set; }
 
@@ -134,5 +134,8 @@ namespace ProjWakalatnama.DataLayer.Models
 
         [DefaultValue(false)]
         public bool? IsDeleted { get; set; }
+        public float? Rating { get; set; }
+        public bool? IsFavourite { get; set; }
+        public string? ProfileDescription { get; set; }
     }
 }

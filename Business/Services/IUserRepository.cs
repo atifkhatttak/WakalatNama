@@ -1,4 +1,5 @@
-﻿using Data.DomainModels;
+﻿using Business.ViewModels;
+using Data.DomainModels;
 using ProjWakalatnama.DataLayer.Models;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ namespace Business.Services
 {
     public interface IUserRepository : IBaseRepository<UserProfile>
     {
-
+        Task<List<LawyerVM>> GetLawyerList(int? CityId);
+        Task<LawyerVM> GetLawyerProfile(long? LawyerId);
     }
 }

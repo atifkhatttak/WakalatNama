@@ -647,6 +647,9 @@ namespace Data.Migrations
                     b.Property<bool?>("IsEmail")
                         .HasColumnType("bit");
 
+                    b.Property<bool?>("IsFavourite")
+                        .HasColumnType("bit");
+
                     b.Property<bool?>("IsOverseas")
                         .HasColumnType("bit");
 
@@ -697,15 +700,24 @@ namespace Data.Migrations
                     b.Property<string>("PermAddress")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ProfileDescription")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Qualification")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
+
+                    b.Property<float?>("Rating")
+                        .HasColumnType("real");
 
                     b.Property<int?>("ResideCountryId")
                         .HasColumnType("int");
 
                     b.Property<int>("RoleId")
                         .HasColumnType("int");
+
+                    b.Property<float?>("TotalExperience")
+                        .HasColumnType("real");
 
                     b.Property<long>("UserId")
                         .HasColumnType("bigint");

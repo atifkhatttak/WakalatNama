@@ -41,7 +41,7 @@ namespace Data.Context
 
         public virtual DbSet<CaseCategory> CaseCategories { get; set; } = null!;
         public virtual DbSet<CaseJurisdiction> CaseJurisdictions { get; set; } = null!;
-        public virtual DbSet<CasesDetail> CasesDetails { get; set; } = null!;
+        public virtual DbSet<CourtCases> CasesDetails { get; set; } = null!;
         public virtual DbSet<ConsultationOption> ConsultationOptions { get; set; } = null!;
         public virtual DbSet<CourtCases> CourtCases { get; set; } = null!;
         public virtual DbSet<ExperienceCost> ExperienceCosts { get; set; } = null!;

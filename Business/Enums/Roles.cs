@@ -13,19 +13,34 @@ namespace Business.Enums
     {
         [Message("Please add admin")]
         [Description("Admin")]
-        Admin,
+        Admin=1,
         [Message("Please add zonal manager")]
         [Description("Zonal Manager")]
-        Zonal_Manager,
+        Zonal_Manager=2,
         [Message("Please add citizen")]
         [Description("Citizen")]
-        Citizen,
+        Citizen=3,
         [Message("Please add lawyer")]
         [Description("Laywer")]
-        Laywer,
+        Laywer=4,
         [Message("Please add employee")]
         [Description("Employee")]
-        Employee
+        Employee=5
 
+    }
+    public enum DocumentType
+    {
+        None = 0,
+        NicFront = 1,
+        NicBack = 2,
+        ProfilePice = 3,
+        NICOPFront = 4,
+        NICOPFback = 5,
+        EducationPic = 6,
+        CertificationPic = 7,
+        PassportPicFront = 8,
+        PassportPicBack = 9,
+        BarCouncilCardScanFront = 10,
+        BarCouncilCardScanBack = 11
     }
 }

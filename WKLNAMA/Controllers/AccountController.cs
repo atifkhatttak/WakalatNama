@@ -49,9 +49,6 @@ namespace WKLNAMA.Controllers
             return Ok(apiResponse);
         }
 
- 
-        //
-
 
         [AllowAnonymous]
         [HttpPost("SignIn")]
