@@ -1,11 +1,14 @@
+using Business.Services;
 using Data.Context;
 using Data.DomainModels;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Text;
+using WKLNAMA.AppHub;
 using WKLNAMA.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,6 +23,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerConfig(builder);
 builder.Services.AddJwtConfig(builder);
+builder.Services.AddSignalR();
 var app = builder.Build();
 
 
@@ -36,7 +40,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.MapHub<ChatHub>("chat-hub");
  
 //app.UseAuthentication();
 app.UseAuthorization();

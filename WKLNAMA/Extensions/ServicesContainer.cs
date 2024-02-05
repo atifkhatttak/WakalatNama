@@ -11,6 +11,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
 using System.Text;
+using WKLNAMA.AppHub;
 using WKLNAMA.Filters;
 
 namespace WKLNAMA.Extensions
@@ -41,6 +42,8 @@ namespace WKLNAMA.Extensions
             services.AddScoped<IPartyStatusRepository, PartyStatusRepository>();
             services.AddScoped<IUserRepository,UserRepository>();
             services.AddScoped<IDocumentService, GoogleDriveDocument>();
+            services.AddSingleton<ChatHub>();
+            services.AddScoped<IMessageRepository, MessageRepository>();
 
         }
 
