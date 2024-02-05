@@ -1,11 +1,13 @@
 ﻿using Business.BusinessLogic;
 using Business.Services;
+using Business.ViewModels;
 using Data.DomainModels;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
+using System.Security.Claims;
 using WKLNAMA.Models;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -19,6 +21,17 @@ namespace WKLNAMA.Controllers
         protected IBaseRepository<TEntity> _baseRepository;
         private readonly IHttpContextAccessor httpContextAccessor;
         private ApiResponse apiResponse = new ApiResponse();
+
+        public UserIdentityModelVm UserModel => new UserIdentityModelVm()
+                {
+                    UserId = Convert.ToInt64(string.IsNullOrEmpty(User.FindFirst("UserId").Value) ? 0 : User.FindFirst("UserId").Value),
+                    FirstName = User.FindFirstValue("FirstName")!,
+                    LastName = User.FindFirstValue("LastName")!,
+                    Role = User.FindFirstValue("Role")!,
+                    Email = User.FindFirstValue("Email")!,
+                    UserName = User.FindFirstValue("UserName")!
+                };
+        
         public BaseController(IBaseRepository<TEntity> baseRepository, IHttpContextAccessor httpContextAccessor)
         {
             _baseRepository = baseRepository;

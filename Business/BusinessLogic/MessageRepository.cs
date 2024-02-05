@@ -2,6 +2,7 @@
 using Business.ViewModels;
 using Data.Context;
 using Data.DomainModels;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,8 +15,10 @@ namespace Business.BusinessLogic
     {
         public MessageRepository(WKNNAMADBCtx ctx):base(ctx)
         {
-                
+            Ctx = ctx;
         }
+
+        public WKNNAMADBCtx Ctx { get; }
 
         public async Task<MessageVm> Create(MessageVm message) 
         {
@@ -37,5 +40,13 @@ namespace Business.BusinessLogic
             return message;
         }
 
+        public async Task<List<MessageVm>> GetPrivateChat(MessageVm userDetails)
+        {
+          var messages=  await Ctx.Messages.Where(x => ( x.FromUserId == userDetails.FromUserId ||  x.ToUserId==userDetails.FromUserId) && (x.FromUserId==userDetails.ToUserId || x.ToUserId==userDetails.ToUserId))
+                .Select(x=> new MessageVm { Id = x.Id, Content = x.Content, FromUserId = x.FromUserId, ToUserId = x.ToUserId, IsRead = x.IsRead, ParentId=x.ParentId })                           
+                .ToListAsync();
+
+            return messages;
+        }
     }
 }

@@ -151,7 +151,8 @@ namespace Business.BusinessLogic
                     List<Claim> claims = [new Claim("UserName", loginModel.UserName),
                                           new Claim(ClaimTypes.Email, loginModel.UserName),
                                           new Claim("FirstName", _user.FirstName),
-                                          new Claim("LastName", _user.LastName)
+                                          new Claim("LastName", _user.LastName),
+                                           new Claim("UserId", _user.Id.ToString())
                                           ];
                     foreach (var role  in roles)
                     {

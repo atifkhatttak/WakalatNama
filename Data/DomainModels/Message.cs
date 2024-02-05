@@ -12,7 +12,8 @@ namespace Data.DomainModels
         public string Content { get; set; }
         public long FromUserId { get; set; }
         public long ToUserId { get; set; }
-        public bool IsRead { get; set; } 
+        public bool IsRead { get; set; }
+        public long? ParentId { get; set; }  
 
     }
 }

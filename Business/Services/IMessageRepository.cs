@@ -11,5 +11,6 @@ namespace Business.Services
     public interface IMessageRepository : IBaseRepository<Message>
     {
         public Task<MessageVm> Create(MessageVm message);
+        public Task<List<MessageVm>> GetPrivateChat(MessageVm userDetails);
     }
 }

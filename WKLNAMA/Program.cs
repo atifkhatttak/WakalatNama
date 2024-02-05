@@ -40,10 +40,11 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.MapHub<ChatHub>("chat-hub");
  
 //app.UseAuthentication();
 app.UseAuthorization();
+app.MapHub<ChatHub>("chat-hub");
+
 
 app.MapControllers();
 //app.MapIdentityApi<AppUser>();

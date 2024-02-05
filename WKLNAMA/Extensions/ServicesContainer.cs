@@ -4,6 +4,7 @@ using Data.Context;
 using Data.DomainModels;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
@@ -12,6 +13,7 @@ using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
 using System.Text;
 using WKLNAMA.AppHub;
+using WKLNAMA.Extensions.Override;
 using WKLNAMA.Filters;
 
 namespace WKLNAMA.Extensions
@@ -42,6 +44,8 @@ namespace WKLNAMA.Extensions
             services.AddScoped<IPartyStatusRepository, PartyStatusRepository>();
             services.AddScoped<IUserRepository,UserRepository>();
             services.AddScoped<IDocumentService, GoogleDriveDocument>();
+            services.AddSingleton<IUserIdProvider, IdBasedUserIdProvider>();
+
             services.AddSingleton<ChatHub>();
             services.AddScoped<IMessageRepository, MessageRepository>();
 
@@ -118,6 +122,8 @@ namespace WKLNAMA.Extensions
                 }
                     }
                 );
+              //  option.AddSignalRSwaggerGen();
+
             });
 
 
