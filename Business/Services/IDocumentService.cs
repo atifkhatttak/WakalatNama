@@ -13,7 +13,7 @@ namespace Business.Services
     {
         public  void Init();
         public Google.Apis.Drive.v3.Data.File CreateFolder(string folderName);
-        public Google.Apis.Drive.v3.Data.File UploadFile(Stream file, string fileName, string fileMime, string folder, string fileDescription);
+        public Task<Google.Apis.Drive.v3.Data.File> UploadFile(Stream file, string fileName, string fileMime, string folder, string fileDescription);
         public void DeleteFile(string fileId);
         public IEnumerable<Google.Apis.Drive.v3.Data.File> GetFiles(string folder);
 
