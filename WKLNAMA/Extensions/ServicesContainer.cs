@@ -43,6 +43,7 @@ namespace WKLNAMA.Extensions
             services.AddScoped<ICaseJurisdictionRepository, CaseJurisdictionRepository>();
             services.AddScoped<IPartyStatusRepository, PartyStatusRepository>();
             services.AddScoped<IUserRepository,UserRepository>();
+            services.AddScoped<ICasesRepository,CasesRepository>();
             services.AddScoped<IDocumentService, GoogleDriveDocument>();
             services.AddSingleton<IUserIdProvider, IdBasedUserIdProvider>();
 

@@ -17,13 +17,14 @@ namespace ProjWakalatnama.DataLayer.Models
 
         [Required]
         public int CaseStatusId { get; set; }
+        public string? CaseDateTitle { get; set; }
 
         [MaxLength]
         public string DateDescription { get; set; }
 
         [Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        public DateTime CreatedDate { get; set; }
+        public DateTime? CreatedDate { get; set; }
 
         public long? CreatedUser { get; set; }
 

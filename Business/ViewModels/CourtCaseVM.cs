@@ -12,7 +12,7 @@ namespace Business.ViewModels
 {
     public class CourtCaseVM
     {
-        public long CaseId { get; set; }
+        public long? CaseId { get; set; }
         public long CitizenId { get; set; }
         public long LawyerId { get; set; }
         public long RedundantLawyerId { get; set; }
@@ -27,7 +27,7 @@ namespace Business.ViewModels
         public int CourtId { get; set; }
         public int? CasePlacingId { get; set; }
         public IFormFileCollection Documents { get; set; } = null;
-        public DateTime CreatedDate { get; set; }
+        public DateTime? CreatedDate { get; set; }
 
         public long? CreatedUser { get; set; }
 
@@ -35,5 +35,6 @@ namespace Business.ViewModels
 
         public long? ModifiedUser { get; set; }
         public bool? IsDeleted { get; set; }
+        public string? CaseTitle { get; internal set; }
     }
 }

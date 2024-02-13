@@ -13,7 +13,7 @@ namespace WKLNAMA.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CasesController : BaseController<CourtCases>
+    public class CasesController : BaseController<CasesDetail>
     {
         private readonly ICasesRepository casesRepository;
 
@@ -23,7 +23,7 @@ namespace WKLNAMA.Controllers
             this.casesRepository = casesRepository;
         }
         [HttpPost("CreateCase")]
-        public async Task<ActionResult> Post([FromForm]CourtCaseVM courtCase)
+        public async Task<ActionResult> CreateCase([FromForm]CourtCaseVM courtCase)
         {
             try
             {
@@ -32,6 +32,28 @@ namespace WKLNAMA.Controllers
                 apiResponse.HttpStatusCode = HttpStatusCode.Created;
                 apiResponse.Success = true;
                 //apiResponse.Data = result;
+            }
+            catch (Exception ex)
+            {
+                apiResponse.Message = ex.Message;
+                apiResponse.HttpStatusCode = HttpStatusCode.InternalServerError;
+                apiResponse.Success = false;
+                apiResponse.Data = null;
+            }
+
+            //return Ok(Task.FromResult(_viewModel));
+            return Ok(apiResponse);
+        }
+        [HttpGet("GetCitizenCase")]
+        public async Task<ActionResult> GetCitizenCase(long? userId)
+        {
+            try
+            {
+              var result=  await casesRepository.GetCitizenCases(userId);
+                apiResponse.Message = HttpStatusCode.OK.ToString();
+                apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                apiResponse.Success = true;
+                apiResponse.Data = result;
             }
             catch (Exception ex)
             {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
 
 namespace ProjWakalatnama.DataLayer.Models
 {
@@ -20,6 +21,7 @@ namespace ProjWakalatnama.DataLayer.Models
 
         [Required]
         public long RedundantLawyerId { get; set; }
+        public string? CaseTitle { get; set; }
 
         [MaxLength(20)]
         public string CaseNumber { get; set; }
@@ -36,10 +38,8 @@ namespace ProjWakalatnama.DataLayer.Models
         [Required]
         public int CourtId { get; set; }
         public int? CasePlacingId { get; set; }
-
-        [Required]
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        public DateTime CreatedDate { get; set; }
+        [AllowNull]
+        public DateTime? CreatedDate { get; set; }
 
         public long? CreatedUser { get; set; }
 

@@ -9,8 +9,9 @@ using System.Threading.Tasks;
 
 namespace Business.Services
 {
-    public interface ICasesRepository : IBaseRepository<CourtCases>
+    public interface ICasesRepository : IBaseRepository<CasesDetail>
     {
         Task CreateCase(CourtCaseVM courtCase);
+        Task<List<CourtCaseVM>> GetCitizenCases(long? userId);
     }
 }
