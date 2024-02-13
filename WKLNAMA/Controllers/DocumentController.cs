@@ -24,7 +24,7 @@ namespace WKLNAMA.Controllers
         public async Task<ActionResult> UploadFile(IFormFile _file, string folderName)
         {
 
-            var file = documentService.UploadFile(_file.OpenReadStream(), _file.FileName, _file.ContentType, folderName, "This is testing file");
+            var file = await documentService.UploadFile(_file.OpenReadStream(), _file.FileName, _file.ContentType, folderName, "This is testing file");
             return Ok(Task.FromResult(file));
         }
 
@@ -33,7 +33,7 @@ namespace WKLNAMA.Controllers
         public async Task<ActionResult> GetFiles(string _folderId)
         {
 
-            var files = documentService.GetFiles(_folderId);
+            var files =  documentService.GetFiles(_folderId);
             return Ok(Task.FromResult(files));
         }
 

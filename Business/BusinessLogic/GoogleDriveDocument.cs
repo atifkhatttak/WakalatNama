@@ -15,6 +15,7 @@ using Google.Apis.Download;
 using Data.DomainModels;
 using Data.Context;
 using Microsoft.Extensions.Configuration;
+using Google.Apis.Drive.v3.Data;
 
 namespace Business.BusinessLogic
 {
@@ -83,7 +84,7 @@ namespace Business.BusinessLogic
             return file;
         }
 
-        public Google.Apis.Drive.v3.Data.File UploadFile(Stream file, string fileName, string fileMime, string folder, string fileDescription)
+        public async Task<Google.Apis.Drive.v3.Data.File> UploadFile(Stream file, string fileName, string fileMime, string folder, string fileDescription)
         {
 
 
@@ -95,14 +96,18 @@ namespace Business.BusinessLogic
 
 
     var request = driveService.Files.Create(driveFile, file, fileMime);
-            request.Fields = "id";
+            request.Fields = "id,webContentLink";
 
             var response = request.Upload();
 
             if (response.Status != Google.Apis.Upload.UploadStatus.Completed)
                 throw response.Exception;
 
+            var permission = new Permission { AllowFileDiscovery = true, Type = "anyone", Role = "reader" };
+            var fileId = request.ResponseBody.Id;
 
+            var createRequest = await driveService.Permissions.Create(permission, fileId).ExecuteAsync();
+            
 
             return request.ResponseBody;
         }
