@@ -21,7 +21,7 @@ namespace ProjWakalatnama.DataLayer.Models
 
         [MaxLength]
         public string DateDescription { get; set; }
-
+        public DateTime? HearingDate { get; set; }
         [Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime? CreatedDate { get; set; }

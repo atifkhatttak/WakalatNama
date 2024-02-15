@@ -137,5 +137,6 @@ namespace ProjWakalatnama.DataLayer.Models
         public float? Rating { get; set; }
         public bool? IsFavourite { get; set; }
         public string? ProfileDescription { get; set; }
+        public string? FatherName { get; set; }
     }
 }

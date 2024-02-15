@@ -4,6 +4,7 @@ using Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(WKNNAMADBCtx))]
-    partial class WKNNAMADBCtxModelSnapshot : ModelSnapshot
+    [Migration("20240215202106_AlterCourtDetail_16022024_0120")]
+    partial class AlterCourtDetail_16022024_0120
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -657,9 +660,6 @@ namespace Data.Migrations
 
                     b.Property<DateTime?>("EnrollmentDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("FatherName")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FullName")
                         .HasMaxLength(100)

@@ -85,7 +85,7 @@ namespace Business.BusinessLogic
                         lawyer.CompletedCase = CasesCount;
                         lawyer.TotalClient = TotalClient;
                     }
-                }
+                }              
             }
             catch (Exception ex)
             {
@@ -93,6 +93,38 @@ namespace Business.BusinessLogic
             }
 
             return lawyer;
+        }
+        public async Task<CitizenVM> GetCitizenProfile(long? CitizenId)
+        {
+            CitizenVM citizenVM= new CitizenVM();
+            try
+            {
+
+                if (CitizenId > 0)
+                {
+                    var d = await ctx.UserProfiles.Where(x => x.UserId == CitizenId && x.RoleId == (int)Roles.Citizen).FirstOrDefaultAsync();
+                  
+                    if (d != null)
+                    {
+                      citizenVM.UserId=  d.UserId;
+                       citizenVM.ProfileId= d.ProfileId;
+                        citizenVM.ProfilePic = "";
+                        citizenVM.FullName = d.FullName;
+                       citizenVM.FatherName= d.FatherName;
+                        citizenVM.Email=d.Email;
+                       citizenVM.CNICNo= d.CNICNo;
+                       citizenVM.ContactNumber= d.ContactNumber;
+                        citizenVM.CurrAddress = d.CurrAddress;
+                       citizenVM.PermAddress= d.PermAddress;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return citizenVM;
         }
     }
 }

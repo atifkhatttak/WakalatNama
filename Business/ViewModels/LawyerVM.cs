@@ -20,4 +20,20 @@ namespace Business.ViewModels
         public int? CompletedCase { get; set; }
         public int? TotalClient { get; set; }
     }
+    public class CitizenVM
+    {
+        public CitizenVM() { }
+        public long? Id { get; set; }
+        public string? UserName { get; set; }
+        public string? ProfilePic { get; set; }
+        public string? FullName { get; internal set; }
+        public string? FatherName { get; internal set; }
+        public string Email { get; internal set; }
+        public string? CNICNo { get; internal set; }
+        public string ContactNumber { get; internal set; }
+        public string? CurrAddress { get; internal set; }
+        public string? PermAddress { get; internal set; }
+        public long UserId { get; internal set; }
+        public long ProfileId { get; internal set; }
+    }
 }

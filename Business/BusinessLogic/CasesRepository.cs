@@ -60,7 +60,7 @@ namespace Business.BusinessLogic
             //return courtCases;
         }
 
-        public async Task<List<CourtCaseVM>> GetCitizenCases(long? userId)
+        public async Task<List<CourtCaseVM>> GetUserCases(long? userId)
         {
             List<CourtCaseVM> userCases = null;
             try
@@ -91,6 +91,60 @@ namespace Business.BusinessLogic
                 throw ex;
             }
             return userCases ?? new List<CourtCaseVM>();
+        }
+        public async Task<List<CaseDetailVM>> GetUserDateList(long? userId)
+        {
+            List<CaseDetailVM> caseDetails = null;
+            try
+            {
+                if (userId != null && userId > 0)
+                {
+                    var caseList =
+                        (from cc in ctx.CourtCases
+                         join cd in ctx.CasesDetails on cc.CaseId equals cd.CaseId
+                         join cdd in ctx.CasesDocuments on cc.CaseId equals cdd.CaseId
+                         where cc.CitizenId == userId && cc.IsDeleted==false
+                         select new
+                         {
+                             cc.CaseId,
+                             cc.CitizenId,
+                             cc.LawyerId,
+                             cc.CaseNumber,
+                             cc.CaseTitle,
+                             cd.CaseDateTitle,
+                             cd.HearingDate,
+                             cd.DateDescription,
+                             cd.CaseStatusId,
+                             cdd.DocName
+                         }).ToList();
+
+                    if (caseList.Any())
+                    {
+                        caseDetails = new List<CaseDetailVM>();
+                        foreach (var item in caseList)
+                        {
+                            caseDetails.Add(new CaseDetailVM
+                            {
+                                CaseId = item.CaseId,
+                                CitizenId = item.CitizenId,
+                                LawyerId = item.LawyerId,
+                                CaseNumber = item.CaseNumber,
+                                CaseTitle = item.CaseTitle,
+                                DateTitle = item.CaseDateTitle,
+                                HearingDate = item.HearingDate,
+                                DateDescription = item.DateDescription,
+                                CaseStatusId = item.CaseStatusId,
+                                DocName= item.DocName
+                            });
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return caseDetails ?? new List<CaseDetailVM>();
         }
     }
 }

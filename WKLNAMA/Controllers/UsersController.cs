@@ -22,7 +22,7 @@ namespace WKLNAMA.Controllers
             this.userRepository = userRepository;
 
         }       
-        [HttpPost("GetLawyerList")]
+        [HttpGet("GetLawyerList")]
         public async Task<ActionResult> GetLawyerList(int? cityId)
         {
             try
@@ -44,12 +44,34 @@ namespace WKLNAMA.Controllers
             //return Ok(Task.FromResult(_viewModel));
             return Ok(apiResponse);
         }
-        [HttpPost("GetLawyerDetails")]
+        [HttpGet("GetLawyerDetails")]
         public async Task<ActionResult> GetLawyerDetails(int? lawyerId)
         {
             try
             {
                 var result = await userRepository.GetLawyerProfile(lawyerId);
+                apiResponse.Message = HttpStatusCode.OK.ToString();
+                apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                apiResponse.Success = true;
+                apiResponse.Data = result;
+            }
+            catch (Exception ex)
+            {
+                apiResponse.Message = ex.Message;
+                apiResponse.HttpStatusCode = HttpStatusCode.InternalServerError;
+                apiResponse.Success = false;
+                apiResponse.Data = null;
+            }
+
+            //return Ok(Task.FromResult(_viewModel));
+            return Ok(apiResponse);
+        }
+        [HttpGet("GetCitizenDetails")]
+        public async Task<ActionResult> GetCitizenDetails(int? CitizenId)
+        {
+            try
+            {
+                var result = await userRepository.GetCitizenProfile(CitizenId);
                 apiResponse.Message = HttpStatusCode.OK.ToString();
                 apiResponse.HttpStatusCode = HttpStatusCode.OK;
                 apiResponse.Success = true;

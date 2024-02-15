@@ -13,5 +13,6 @@ namespace Business.Services
     {
         Task<List<LawyerVM>> GetLawyerList(int? CityId);
         Task<LawyerVM> GetLawyerProfile(long? LawyerId);
+        Task<CitizenVM> GetCitizenProfile(long? CitizenId);
     }
 }

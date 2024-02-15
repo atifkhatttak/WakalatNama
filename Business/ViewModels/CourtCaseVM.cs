@@ -37,4 +37,24 @@ namespace Business.ViewModels
         public bool? IsDeleted { get; set; }
         public string? CaseTitle { get; internal set; }
     }
+    public class CaseDetailVM
+    {
+        public long? HearingDateId { get; set; }
+        public long? CaseId { get; set; }
+        public long CitizenId { get; set; }
+        public long LawyerId { get; set; }
+        public long RedundantLawyerId { get; set; }
+        public string CaseNumber { get; set; }
+
+        public int? PartyId { get; set; }
+
+        public int? CategoryId { get; set; }
+        public string DateDescription { get; set; }
+        public string DateTitle { get; set; }
+        public DateTime? HearingDate { get; set; }
+        public IFormFileCollection HearingDocuments { get; set; } = null;
+        public long CaseStatusId { get; internal set; }
+        public string CaseTitle { get; internal set; }
+        public string DocName { get; internal set; }
+    }
 }
