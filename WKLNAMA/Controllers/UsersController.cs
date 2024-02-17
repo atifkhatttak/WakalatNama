@@ -22,12 +22,12 @@ namespace WKLNAMA.Controllers
             this.userRepository = userRepository;
 
         }       
-        [HttpGet("GetLawyerList")]
-        public async Task<ActionResult> GetLawyerList(int? cityId)
+        [HttpPost("GetLawyerList")]
+        public async Task<ActionResult> GetLawyerList(FilterVM filterVM)
         {
             try
             {
-                var result = await userRepository.GetLawyerList(cityId);
+                var result = await userRepository.GetLawyerList(filterVM);
                 apiResponse.Message = HttpStatusCode.OK.ToString();
                 apiResponse.HttpStatusCode = HttpStatusCode.OK;
                 apiResponse.Success = true;
@@ -50,6 +50,28 @@ namespace WKLNAMA.Controllers
             try
             {
                 var result = await userRepository.GetLawyerProfile(lawyerId);
+                apiResponse.Message = HttpStatusCode.OK.ToString();
+                apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                apiResponse.Success = true;
+                apiResponse.Data = result;
+            }
+            catch (Exception ex)
+            {
+                apiResponse.Message = ex.Message;
+                apiResponse.HttpStatusCode = HttpStatusCode.InternalServerError;
+                apiResponse.Success = false;
+                apiResponse.Data = null;
+            }
+
+            //return Ok(Task.FromResult(_viewModel));
+            return Ok(apiResponse);
+        }
+        [HttpGet("GetLayerHome")]
+        public async Task<ActionResult> GetLayerHome(int? LawyerId)
+        {
+            try
+            {
+                var result = await userRepository.GetLawyerHome(LawyerId);
                 apiResponse.Message = HttpStatusCode.OK.ToString();
                 apiResponse.HttpStatusCode = HttpStatusCode.OK;
                 apiResponse.Success = true;

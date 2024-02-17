@@ -11,8 +11,9 @@ namespace Business.Services
 {
     public interface IUserRepository : IBaseRepository<UserProfile>
     {
-        Task<List<LawyerVM>> GetLawyerList(int? CityId);
+        Task<List<LawyerVM>> GetLawyerList(FilterVM filterVM);
         Task<LawyerVM> GetLawyerProfile(long? LawyerId);
         Task<CitizenVM> GetCitizenProfile(long? CitizenId);
+        Task<LawyerHomeVM> GetLawyerHome(int? lawyerId);
     }
 }

@@ -43,4 +43,9 @@ namespace Business.Enums
         BarCouncilCardScanFront = 10,
         BarCouncilCardScanBack = 11
     }
+    public enum CaseStatus
+    {
+        Initiated=1
+
+    }
 }

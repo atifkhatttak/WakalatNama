@@ -3,6 +3,7 @@ using Business.ViewModels;
 using Data.Context;
 using Data.DomainModels;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using ProjWakalatnama.DataLayer.Models;
 using System;
@@ -67,7 +68,7 @@ namespace Business.BusinessLogic
             {
                 if (userId != null && userId > 0)
                 {
-                    var caseList = ctx.Set<CourtCases>().Where(x => x.CitizenId == userId && x.IsDeleted==false).ToList();
+                    var caseList =await ctx.Set<CourtCases>().Where(x => x.CitizenId == userId && x.IsDeleted==false).ToListAsync();
                     if (caseList.Any())
                     {
                         userCases = new List<CourtCaseVM>();
@@ -100,7 +101,7 @@ namespace Business.BusinessLogic
                 if (userId != null && userId > 0)
                 {
                     var caseList =
-                        (from cc in ctx.CourtCases
+                       await (from cc in ctx.CourtCases
                          join cd in ctx.CasesDetails on cc.CaseId equals cd.CaseId
                          join cdd in ctx.CasesDocuments on cc.CaseId equals cdd.CaseId
                          where cc.CitizenId == userId && cc.IsDeleted==false
@@ -116,7 +117,7 @@ namespace Business.BusinessLogic
                              cd.DateDescription,
                              cd.CaseStatusId,
                              cdd.DocName
-                         }).ToList();
+                         }).ToListAsync();
 
                     if (caseList.Any())
                     {

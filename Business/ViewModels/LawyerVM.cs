@@ -36,4 +36,10 @@ namespace Business.ViewModels
         public long UserId { get; internal set; }
         public long ProfileId { get; internal set; }
     }
+    public class LawyerHomeVM
+    {
+        public int TotalCases { get; set; }=0;
+        public int CompltedCase { get; set; } = 0;
+
+    }
 }

@@ -26,29 +26,31 @@ namespace Business.BusinessLogic
             this.config = config;
         }
 
-        public async Task<List<LawyerVM>> GetLawyerList(int? CityId)
+        public async Task<List<LawyerVM>> GetLawyerList(FilterVM filterVM)
         {
-            List<LawyerVM> lawyerList =new List<LawyerVM>();
+            List<LawyerVM> lawyerList = new List<LawyerVM>();
             try
             {
 
-                if (CityId > 0)
+                if (filterVM != null)
                 {
-                    var d=await ctx.UserProfiles.Where(x=>x.CityId==CityId).ToListAsync();
+                    var d = await ctx
+                        .UserProfiles
+                        .Where(x => x.CityId == filterVM.CityId || (x.TotalExperience >= filterVM.ExperienceMin && x.TotalExperience <= filterVM.ExperienceMax)
+                         && (x.RoleId == (int)Roles.Laywer && x.IsActive == true && x.IsVerified == true && x.IsDeleted == false))
+                        .ToListAsync();
 
-                    if (d!=null)
+                    if (d != null)
                     {
                         foreach (var item in d)
                         {
-                            if (item.RoleId != (int)Roles.Laywer) continue;
-
                             lawyerList.Add(new LawyerVM
                             {
-                                Id=item.UserId,
-                                UserName=item.FullName,
-                                TotalExperience=item.TotalExperience,
-                                Rating=item.Rating,
-                                IsFavourite=item.IsFavourite
+                                Id = item.UserId,
+                                UserName = item.FullName,
+                                TotalExperience = item.TotalExperience,
+                                Rating = item.Rating,
+                                IsFavourite = item.IsFavourite
                             });
                         }
 
@@ -94,6 +96,26 @@ namespace Business.BusinessLogic
 
             return lawyer;
         }
+        public async Task<LawyerHomeVM> GetLawyerHome(int? lawyerId)
+        {
+            LawyerHomeVM lawyer = new LawyerHomeVM();
+            try
+            {
+
+                if (lawyerId > 0)
+                {
+                    lawyer.TotalCases = await ctx.CourtCases.CountAsync(x => x.LawyerId== lawyerId && x.IsDeleted==false);
+                    lawyer.CompltedCase = await ctx.CourtCases.CountAsync(x => x.LawyerId== lawyerId && x.CaseStatusId==(int)CaseStatus.Initiated && x.IsDeleted==false);
+                   
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return lawyer;
+        }
         public async Task<CitizenVM> GetCitizenProfile(long? CitizenId)
         {
             CitizenVM citizenVM= new CitizenVM();
@@ -102,20 +124,24 @@ namespace Business.BusinessLogic
 
                 if (CitizenId > 0)
                 {
-                    var d = await ctx.UserProfiles.Where(x => x.UserId == CitizenId && x.RoleId == (int)Roles.Citizen).FirstOrDefaultAsync();
-                  
+                    var d = await ctx
+                        .UserProfiles
+                        .Where(x => x.UserId == CitizenId
+                    && (x.RoleId == (int)Roles.Laywer && x.IsActive == true && x.IsVerified == true && x.IsDeleted == false))
+                        .FirstOrDefaultAsync();
+
                     if (d != null)
                     {
-                      citizenVM.UserId=  d.UserId;
-                       citizenVM.ProfileId= d.ProfileId;
+                        citizenVM.UserId = d.UserId;
+                        citizenVM.ProfileId = d.ProfileId;
                         citizenVM.ProfilePic = "";
                         citizenVM.FullName = d.FullName;
-                       citizenVM.FatherName= d.FatherName;
-                        citizenVM.Email=d.Email;
-                       citizenVM.CNICNo= d.CNICNo;
-                       citizenVM.ContactNumber= d.ContactNumber;
+                        citizenVM.FatherName = d.FatherName;
+                        citizenVM.Email = d.Email;
+                        citizenVM.CNICNo = d.CNICNo;
+                        citizenVM.ContactNumber = d.ContactNumber;
                         citizenVM.CurrAddress = d.CurrAddress;
-                       citizenVM.PermAddress= d.PermAddress;
+                        citizenVM.PermAddress = d.PermAddress;
                     }
                 }
             }
