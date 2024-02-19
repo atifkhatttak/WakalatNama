@@ -1,4 +1,5 @@
 ﻿using Business.BusinessLogic;
+using Business.Helpers;
 using Business.Services;
 using Data.Context;
 using Data.DomainModels;
@@ -50,6 +51,7 @@ namespace WKLNAMA.Extensions
 
             services.AddSingleton<ChatHub>();
             services.AddScoped<IMessageRepository, MessageRepository>();
+            services.AddSingleton<IDBInitializer, DBInitializer>();
 
         }
 
@@ -130,6 +132,6 @@ namespace WKLNAMA.Extensions
 
 
         }
-
+   
     }
 }

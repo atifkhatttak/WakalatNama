@@ -1,3 +1,4 @@
+using Business.Helpers;
 using Business.Services;
 using Data.Context;
 using Data.DomainModels;
@@ -24,20 +25,21 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerConfig(builder);
 builder.Services.AddJwtConfig(builder);
 builder.Services.AddSignalR();
+
 var app = builder.Build();
 
-
-
+ app.Services.GetService<IDBInitializer>().Init();
+ 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+//if (app.Environment.IsDevelopment())
+//{
     app.UseSwagger();
     app.UseSwaggerUI(x=> {
 
         x.DefaultModelsExpandDepth(-1);
         x.SwaggerEndpoint("/swagger/v1/swagger.json", "WakalatNama API V1");
     });
-}
+//}
 
 app.UseHttpsRedirection();
  
