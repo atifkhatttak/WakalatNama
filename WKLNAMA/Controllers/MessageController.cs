@@ -38,6 +38,43 @@ namespace WKLNAMA.Controllers
             return BadRequest();
         }
 
+        [HttpPost("MarkRead")]
+        public async Task<ActionResult> MarkMessagesRead(List<MessageVm> messages) 
+        {
+            if (messages?.FirstOrDefault()?.ToUserId == UserModel.UserId)
+            {
+                 await _message.MarkRead(messages);
+                return Ok("Messages has been marked as read");
+            }
+            return BadRequest();
+        }
+
+
+        [HttpPost("GetAllUnReadMessageCount")] 
+        public async Task<ActionResult> GetAllUnReadMessageCount(long userId)
+        {
+            if (userId == UserModel.UserId)
+            {
+                await _message.GetAllUnReadMessagesCount(userId);
+                return Ok("Messages has been marked as read");
+            }
+            return BadRequest();
+        }
+        [HttpPost("GetUnReadMessageCountByUser")]
+        public async Task<ActionResult> GetUnReadMessageCountByUser(MessageVm messages)
+        {
+            if (messages?.ToUserId == UserModel.UserId)
+            {
+                await _message.GetUnReadMessagesCountByUser(messages);
+                return Ok("Messages has been marked as read");
+            }
+            return BadRequest();
+        }
+
+
+
+
+
 
         [HttpPost("Send")]
         public async  Task<ActionResult> Send(MessageVm message)

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(WKNNAMADBCtx))]
-    [Migration("20240204130921_UpdateUserProfile04022024-609")]
-    partial class UpdateUserProfile04022024609
+    [Migration("20240217065217_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -216,6 +216,35 @@ namespace Data.Migrations
                     b.ToTable("CasesDocuments");
                 });
 
+            modelBuilder.Entity("Data.DomainModels.Message", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("FromUserId")
+                        .HasColumnType("bigint");
+
+                    b.Property<bool>("IsRead")
+                        .HasColumnType("bit");
+
+                    b.Property<long?>("ParentId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("ToUserId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Messages");
+                });
+
             modelBuilder.Entity("Data.DomainModels.UserDocument", b =>
                 {
                     b.Property<long>("DocumentId")
@@ -414,13 +443,17 @@ namespace Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
 
+                    b.Property<string>("CaseDateTitle")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<long>("CaseId")
                         .HasColumnType("bigint");
 
                     b.Property<int>("CaseStatusId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("CreatedDate")
+                    b.Property<DateTime?>("CreatedDate")
+                        .IsRequired()
                         .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("datetime2");
 
@@ -430,6 +463,9 @@ namespace Data.Migrations
                     b.Property<string>("DateDescription")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("HearingDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<bool?>("IsDeleted")
                         .HasColumnType("bit");
@@ -483,6 +519,12 @@ namespace Data.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
+                    b.Property<int?>("CasePlacingId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CaseTitle")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int?>("CategoryId")
                         .HasColumnType("int");
 
@@ -492,8 +534,7 @@ namespace Data.Migrations
                     b.Property<int>("CourtId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("CreatedDate")
-                        .ValueGeneratedOnAddOrUpdate()
+                    b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<long?>("CreatedUser")
@@ -619,6 +660,9 @@ namespace Data.Migrations
 
                     b.Property<DateTime?>("EnrollmentDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("FatherName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FullName")
                         .HasMaxLength(100)
