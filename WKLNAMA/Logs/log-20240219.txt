@@ -1,0 +1,101 @@
+2024-02-19T23:32:53.9707752+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-02-19T23:32:54.0088660+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-02-19T23:32:57.2177901+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-02-19T23:32:57.2245482+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-02-19T23:32:57.2305974+05:00  [INF] Content root path: "E:\Projects\WKLNAMA\WKLNAMA" (cc26f24e)
+2024-02-19T23:32:59.6510129+05:00  [INF] Executed DbCommand ("450"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-02-19T23:33:00.7910459+05:00  [INF] Executed DbCommand ("1,080"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-02-19T23:33:01.3773721+05:00  [INF] Executed DbCommand ("474"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-02-19T23:33:01.7705656+05:00  [INF] Executed DbCommand ("387"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-02-19T23:33:02.3899937+05:00  [INF] Executed DbCommand ("509"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-02-19T23:33:02.4444705+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-02-19T23:36:58.4368679+05:00 80000020-0003-f800-b63f-84710c7967bb [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.ArgumentOutOfRangeException: length ('-1') must be a non-negative value. (Parameter 'length')
+Actual value was -1.
+   at System.ArgumentOutOfRangeException.ThrowNegative[T](T value, String paramName)
+   at System.ArgumentOutOfRangeException.ThrowIfNegative[T](T value, String paramName)
+   at System.String.ThrowSubstringArgumentOutOfRange(Int32 startIndex, Int32 length)
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at Business.BusinessLogic.GoogleDriveDocument.Init() in E:\Projects\WKLNAMA\Business\BusinessLogic\GoogleDriveDocument.cs:line 53
+   at Business.BusinessLogic.GoogleDriveDocument..ctor(WKNNAMADBCtx ctx, IConfiguration config, ILogger`1 logger) in E:\Projects\WKLNAMA\Business\BusinessLogic\GoogleDriveDocument.cs:line 37
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at lambda_method59(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-02-19T23:42:20.8263417+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-02-19T23:42:20.8872868+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-02-19T23:42:24.9610612+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-02-19T23:42:24.9662128+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-02-19T23:42:24.9721939+05:00  [INF] Content root path: "E:\Projects\WKLNAMA\WKLNAMA" (cc26f24e)
+2024-02-19T23:42:25.9977045+05:00  [INF] Executed DbCommand ("409"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-02-19T23:42:26.5408311+05:00  [INF] Executed DbCommand ("389"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-02-19T23:42:26.9569982+05:00  [INF] Executed DbCommand ("389"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-02-19T23:42:27.5711468+05:00  [INF] Executed DbCommand ("601"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-02-19T23:42:27.9619236+05:00  [INF] Executed DbCommand ("332"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-02-19T23:42:28.0139025+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-02-19T23:43:02.8516303+05:00 80000030-0000-f300-b63f-84710c7967bb [INF] Get  Files Method Started
+ (2f82c14d)
+2024-02-19T23:45:07.9196208+05:00 80000028-0002-fa00-b63f-84710c7967bb [INF] Get  Files Method Started
+ (2f82c14d)
+2024-02-19T23:48:38.3090934+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-02-19T23:48:38.3227328+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-02-19T23:48:39.6206978+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-02-19T23:48:39.6242020+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-02-19T23:48:39.6302664+05:00  [INF] Content root path: "E:\Projects\WKLNAMA\WKLNAMA" (cc26f24e)
+2024-02-19T23:48:42.2507557+05:00  [INF] Executed DbCommand ("465"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-02-19T23:48:42.6665803+05:00  [INF] Executed DbCommand ("379"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-02-19T23:48:43.0400158+05:00  [INF] Executed DbCommand ("366"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-02-19T23:48:43.7368895+05:00  [INF] Executed DbCommand ("682"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-02-19T23:48:44.1580993+05:00  [INF] Executed DbCommand ("379"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-02-19T23:48:44.1933752+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-02-19T23:49:42.9290394+05:00 80000013-0003-f900-b63f-84710c7967bb [INF] Inside Create Folder Service Method
+ (434ae944)
+2024-02-19T23:49:42.9349195+05:00 80000013-0003-f900-b63f-84710c7967bb [INF] Going to invoke drive create method (1ef54f88)
+2024-02-19T23:49:42.9451585+05:00 80000013-0003-f900-b63f-84710c7967bb [INF] Going to invoke Execute method (38337dac)
+2024-02-19T23:49:46.2630150+05:00 80000013-0003-f900-b63f-84710c7967bb [INF] Create Folder Execute method done (68a326cc)
+2024-02-19T23:50:05.2962565+05:00 80000032-0000-f300-b63f-84710c7967bb [INF] Get  Files Method Started
+ (2f82c14d)
+2024-02-19T23:50:06.8465631+05:00 80000032-0000-f300-b63f-84710c7967bb [INF] Get File > API Service Call done  
+ (f0c0ef03)

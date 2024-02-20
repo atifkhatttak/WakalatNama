@@ -28,7 +28,10 @@ builder.Services.AddSignalR();
 
 var app = builder.Build();
 
- app.Services.GetService<IDBInitializer>().Init();
+var loggerFactory = app.Services.GetService<ILoggerFactory>();
+loggerFactory.AddFile(builder.Configuration["Logging:LogFilePath"].ToString());
+
+app.Services.GetService<IDBInitializer>().Init();
  
 // Configure the HTTP request pipeline.
 //if (app.Environment.IsDevelopment())
@@ -41,7 +44,7 @@ var app = builder.Build();
     });
 //}
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
  
 //app.UseAuthentication();
 app.UseAuthorization();

@@ -16,19 +16,24 @@ using Data.DomainModels;
 using Data.Context;
 using Microsoft.Extensions.Configuration;
 using Google.Apis.Drive.v3.Data;
+using Google.Apis.Logging;
+using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Http;
 
 namespace Business.BusinessLogic
 {
     public class GoogleDriveDocument : BaseRepository<UserDocument>,IDocumentService
     {
         private readonly IConfiguration config;
+        private readonly ILogger<GoogleDriveDocument> _logger;
 
         private DriveService driveService { get; set; }
 
-        public GoogleDriveDocument(WKNNAMADBCtx ctx,IConfiguration config): base(ctx)
+        public GoogleDriveDocument(WKNNAMADBCtx ctx, IConfiguration config, ILogger<GoogleDriveDocument> logger) : base(ctx)
         {
            
             this.config = config;
+            _logger = logger;
             Init();
         }
         public void Init()
@@ -45,6 +50,8 @@ namespace Business.BusinessLogic
             var applicationName = driveConfig.GetSection("App").Value;// "WakalatNameApp"; // Use the name of the project in Google Cloud
             var username = driveConfig.GetSection("User").Value; // "atifkhattak804@gmail.com"; // Use your email
 
+            var appRoot = Directory.GetCurrentDirectory();
+            appRoot = $@"{appRoot}\Store";
 
             var apiCodeFlow = new GoogleAuthorizationCodeFlow(new GoogleAuthorizationCodeFlow.Initializer
             {
@@ -53,8 +60,8 @@ namespace Business.BusinessLogic
                     ClientId = driveConfig.GetSection("ClientId").Value,// "431477244184-7rhgorhk7hucu4jbhqel55b458jr4tgs.apps.googleusercontent.com",
                     ClientSecret = driveConfig.GetSection("ClientSecret").Value// "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"
                 },
-                Scopes = new[] { Scope.Drive },
-                DataStore = new FileDataStore(applicationName)
+                Scopes = new[] { Scope.Drive }, 
+                DataStore = new FileDataStore(appRoot, true)
             });
 
 
@@ -71,22 +78,31 @@ namespace Business.BusinessLogic
 
         }
 
-        public Google.Apis.Drive.v3.Data.File CreateFolder(string folderName)
+        public async  Task<Google.Apis.Drive.v3.Data.File> CreateFolder(string folderName)
         {
+            _logger.LogInformation($"Inside Create Folder Service Method{Environment.NewLine}");
+
             var fileMetadata = new Google.Apis.Drive.v3.Data.File()
             {
                 Name = folderName,
                 MimeType = "application/vnd.google-apps.folder"
             };
 
+            _logger.LogInformation($"Going to invoke drive create method");
+
             var command = driveService.Files.Create(fileMetadata);
-            var file = command.Execute();
+
+            _logger.LogInformation($"Going to invoke Execute method");
+
+            var file = await command.ExecuteAsync();
+
+            _logger.LogInformation($"Create Folder Execute method done");
+
             return file;
         }
 
         public async Task<Google.Apis.Drive.v3.Data.File> UploadFile(Stream file, string fileName, string fileMime, string folder, string fileDescription)
         {
-
 
     var driveFile = new Google.Apis.Drive.v3.Data.File();
             driveFile.Name = fileName;
@@ -98,7 +114,7 @@ namespace Business.BusinessLogic
     var request = driveService.Files.Create(driveFile, file, fileMime);
             request.Fields = "id,webContentLink";
 
-            var response = request.Upload();
+            var response = await request.UploadAsync();
 
             if (response.Status != Google.Apis.Upload.UploadStatus.Completed)
                 throw response.Exception;
@@ -110,15 +126,15 @@ namespace Business.BusinessLogic
             
 
             return request.ResponseBody;
+            
         }
         public void DeleteFile(string fileId)
         {
             var command = driveService.Files.Delete(fileId);
             var result = command.Execute();
         }
-        public IEnumerable<Google.Apis.Drive.v3.Data.File> GetFiles(string folder)
+        public async Task<IEnumerable<Google.Apis.Drive.v3.Data.File>> GetFiles(string folder)
         {
-
             var fileList = driveService.Files.List();
             fileList.Q = $"mimeType!='application/vnd.google-apps.folder' and '{folder}' in parents";
             fileList.Fields = "nextPageToken, files(id, name, size, mimeType)";
@@ -128,14 +144,14 @@ namespace Business.BusinessLogic
             do
             {
                 fileList.PageToken = pageToken;
-                var filesResult = fileList.Execute();
+                var filesResult = await fileList.ExecuteAsync();
                 var files = filesResult.Files;
                 pageToken = filesResult.NextPageToken;
                 result.AddRange(files);
             } while (pageToken != null);
 
 
-    return result;
+               return result;
         }
 
 
