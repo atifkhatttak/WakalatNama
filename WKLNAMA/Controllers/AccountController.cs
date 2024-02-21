@@ -58,8 +58,8 @@ namespace WKLNAMA.Controllers
             {
                 var token = await accountRepository.SignInUser(_viewModel);
 
-                apiResponse.Message = HttpStatusCode.Created.ToString();
-                apiResponse.HttpStatusCode = HttpStatusCode.Created;
+                apiResponse.Message = HttpStatusCode.OK.ToString();
+                apiResponse.HttpStatusCode = HttpStatusCode.OK;
                 apiResponse.Success = true;
                 apiResponse.Data = token;
             }
