@@ -16,9 +16,26 @@ using System.Text;
 using WKLNAMA.AppHub;
 using WKLNAMA.Extensions.Override;
 using WKLNAMA.Filters;
+using WKLNAMA.TokenService;
 
 namespace WKLNAMA.Extensions
 {
+    public class ServiceActivator
+    {
+        internal static IServiceProvider _serviceProvider = null;
+
+        public static void Configure(IServiceProvider serviceProvider)
+        {
+            _serviceProvider = serviceProvider;
+        }
+
+        public static IServiceScope GetScope(IServiceProvider serviceProvider = null)
+        {
+            var provider = serviceProvider ?? _serviceProvider;
+            return provider?
+                .CreateScope();
+        }
+    }
     public static class ExtensionServicesContainer
     { 
         /// <summary>
@@ -51,6 +68,8 @@ namespace WKLNAMA.Extensions
 
             services.AddSingleton<ChatHub>();
             services.AddScoped<IMessageRepository, MessageRepository>();
+            services.AddScoped<ITokenService, TokenService.TokenService>();
+
             services.AddSingleton<IDBInitializer, DBInitializer>();
 
         }
@@ -64,6 +83,7 @@ namespace WKLNAMA.Extensions
         {
             //Jwt configuration starts here
             var jwtIssuer = builder.Configuration.GetSection("Jwt:Issuer").Get<string>();
+            var jwtAudience = builder.Configuration.GetSection("Jwt:Audience").Get<string>(); 
             var jwtKey = builder.Configuration.GetSection("Jwt:Key").Get<string>();
 
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -76,7 +96,9 @@ namespace WKLNAMA.Extensions
                      ValidateLifetime = true,
                      ValidateIssuerSigningKey = true,
                      ValidIssuer = jwtIssuer,
-                     ValidAudience = jwtIssuer,
+                     ValidAudience = jwtAudience,
+                     ClockSkew = TimeSpan.Zero,
+                     LifetimeValidator = TokenLifetimeValidator.Validate,
                      IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey))
                  };
              });

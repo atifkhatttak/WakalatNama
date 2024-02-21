@@ -170,7 +170,7 @@ namespace Business.BusinessLogic
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
             var Sectoken = new JwtSecurityToken(config["Jwt:Issuer"],
-              config["Jwt:Issuer"],
+              config["Jwt:Audience"],
               claims,
               expires: DateTime.Now.AddMinutes(120),
               signingCredentials: credentials);

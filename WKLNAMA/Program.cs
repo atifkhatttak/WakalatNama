@@ -5,6 +5,7 @@ using Data.DomainModels;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System;
@@ -25,9 +26,12 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerConfig(builder);
 builder.Services.AddJwtConfig(builder);
 builder.Services.AddSignalR();
-
 var app = builder.Build();
 
+Utils._config = new ConfigurationBuilder().SetBasePath(app.Environment.ContentRootPath).AddJsonFile("appSettings.json").Build();
+
+
+ServiceActivator.Configure(app.Services);
 var loggerFactory = app.Services.GetService<ILoggerFactory>();
 loggerFactory.AddFile(builder.Configuration["Logging:LogFilePath"].ToString());
 
