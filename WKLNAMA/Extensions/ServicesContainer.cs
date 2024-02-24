@@ -71,6 +71,8 @@ namespace WKLNAMA.Extensions
             services.AddScoped<ITokenService, TokenService.TokenService>();
 
             services.AddSingleton<IDBInitializer, DBInitializer>();
+            builder.Services.AddSingleton< IHttpContextAccessor,HttpContextAccessor>();
+
 
         }
 

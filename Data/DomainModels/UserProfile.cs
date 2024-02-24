@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using Data.DomainModels;
 
 namespace ProjWakalatnama.DataLayer.Models
 {
-    public class UserProfile
+    public class UserProfile : BaseModel
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -120,20 +121,11 @@ namespace ProjWakalatnama.DataLayer.Models
         public bool? IsCreateMeeting { get; set; }
 
         public bool? IsAgreed { get; set; }
-        public DateTime? CreatedDate { get; set; }
-
-        public long? CreatedUser { get; set; }
-
-        public DateTime? ModifiedDate { get; set; }
-
-        public long? ModifiedUser { get; set; }
 
         public bool? IsActive { get; set; }
 
         public bool? IsVerified { get; set; }
 
-        [DefaultValue(false)]
-        public bool? IsDeleted { get; set; }
         public float? Rating { get; set; }
         public bool? IsFavourite { get; set; }
         public string? ProfileDescription { get; set; }
