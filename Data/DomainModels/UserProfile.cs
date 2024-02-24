@@ -38,6 +38,7 @@ namespace ProjWakalatnama.DataLayer.Models
 
         [StringLength(20)]
         public string ContactNumber { get; set; }
+        //public string? CountryCode { get; set; }
 
         [MaxLength]
         public string? CurrAddress { get; set; }

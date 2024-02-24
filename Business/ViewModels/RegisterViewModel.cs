@@ -16,10 +16,10 @@ namespace Business.ViewModels
         public string Password { get; set; }
         public string  UserName { get; set; }
         public string RoleName { get; set; }
-        public IFormFile CNICFront { get; set; } = null;
-        public IFormFile CNICBack { get; set; } = null;
-        public IFormFile ProfilePhoto { get; set; } = null;
-        public IFormFileCollection Documents { get; set; } = null;
+        //public IFormFile CNICFront { get; set; } = null;
+        //public IFormFile CNICBack { get; set; } = null;
+        //public IFormFile ProfilePhoto { get; set; } = null;
+        //public IFormFileCollection Documents { get; set; } = null;
         public bool? IsOverseas { get; set; }
 
         //public string Phone { get; set; }

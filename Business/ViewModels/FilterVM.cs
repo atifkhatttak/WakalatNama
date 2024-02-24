@@ -13,4 +13,10 @@ namespace Business.ViewModels
         public int? ExperienceMin { get; set;}
         public int? ExperienceMax { get; set; }
     }
+    public class AcceptRejectCaseVM
+    {
+        public int Status { get; set; }
+        public string Reason { get; set; }
+        public long CaseId { get; set; }
+    }
 }

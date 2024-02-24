@@ -45,7 +45,8 @@ namespace Business.Enums
     }
     public enum CaseStatus
     {
-        Initiated=1
-
+        Initiated=1,
+            Draft=2,
+            Completed
     }
 }

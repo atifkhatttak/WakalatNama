@@ -84,5 +84,45 @@ namespace WKLNAMA.Controllers
             }
             return Ok(apiResponse);
         }
+        [HttpGet("GetCaseById")]
+        public async Task<ActionResult> GetCaseById(long? caseId)
+        {
+            try
+            {
+                var result = await casesRepository.GetCaseById(caseId);
+                apiResponse.Message = HttpStatusCode.OK.ToString();
+                apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                apiResponse.Success = true;
+                apiResponse.Data = result;
+            }
+            catch (Exception ex)
+            {
+                apiResponse.Message = ex.Message;
+                apiResponse.HttpStatusCode = HttpStatusCode.InternalServerError;
+                apiResponse.Success = false;
+                apiResponse.Data = null;
+            }
+            return Ok(apiResponse);
+        }
+        [HttpGet("AcceptRejectCaseByLawyer")]
+        public async Task<ActionResult> AcceptRejectCaseByLawyer(AcceptRejectCaseVM acceptReject)
+        {
+            try
+            {
+                await casesRepository.AcceptRejectCaseByLawyer(acceptReject);
+                apiResponse.Message = HttpStatusCode.OK.ToString();
+                apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                apiResponse.Success = true;
+                apiResponse.Data = null;
+            }
+            catch (Exception ex)
+            {
+                apiResponse.Message = ex.Message;
+                apiResponse.HttpStatusCode = HttpStatusCode.InternalServerError;
+                apiResponse.Success = false;
+                apiResponse.Data = null;
+            }
+            return Ok(apiResponse);
+        }
     }
 }

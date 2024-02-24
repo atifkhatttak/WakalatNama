@@ -21,7 +21,27 @@ namespace WKLNAMA.Controllers
         {
             this.userRepository = userRepository;
 
-        }       
+        }
+        [HttpPost("CreateUserProfile")]
+        public async Task<ActionResult> CreateUserProfile([FromForm]CitizenVM citizenVM)
+        {
+            try
+            {
+                var result = await userRepository.CreateCitizenProfile(citizenVM);
+                apiResponse.Message = HttpStatusCode.OK.ToString();
+                apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                apiResponse.Success = true;
+                apiResponse.Data = result;
+            }
+            catch (Exception ex)
+            {
+                apiResponse.Message = ex.Message;
+                apiResponse.HttpStatusCode = HttpStatusCode.InternalServerError;
+                apiResponse.Success = false;
+                apiResponse.Data = null;
+            }
+            return Ok(apiResponse);
+        }
         [HttpPost("GetLawyerList")]
         public async Task<ActionResult> GetLawyerList(FilterVM filterVM)
         {
@@ -110,5 +130,6 @@ namespace WKLNAMA.Controllers
             //return Ok(Task.FromResult(_viewModel));
             return Ok(apiResponse);
         }
+       
     }
 }

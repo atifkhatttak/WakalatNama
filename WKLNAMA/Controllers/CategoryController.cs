@@ -10,6 +10,7 @@ namespace WKLNAMA.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles ="Admin")]
     public class CategoryController : BaseController<CaseCategory>
     {
         private readonly ICategoryRepository categoryRepository;

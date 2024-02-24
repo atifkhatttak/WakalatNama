@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using Data.DomainModels;
 
 namespace Business.ViewModels
 {
@@ -36,6 +37,10 @@ namespace Business.ViewModels
         public long? ModifiedUser { get; set; }
         public bool? IsDeleted { get; set; }
         public string? CaseTitle { get; internal set; }
+        public long? UserId { get; internal set; }
+        public string? UserFullName { get; internal set; }
+        public string CategoryName { get; internal set; }
+        public int CaseStatusId { get; internal set; }
     }
     public class CaseDetailVM
     {

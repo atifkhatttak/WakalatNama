@@ -14,5 +14,7 @@ namespace Business.Services
         Task CreateCase(CourtCaseVM courtCase);
         Task<List<CourtCaseVM>> GetUserCases(long? userId);
         Task<List<CaseDetailVM>> GetUserDateList(long? userId);
+        Task<CourtCaseVM> GetCaseById(long? caseId);
+        Task AcceptRejectCaseByLawyer(AcceptRejectCaseVM acceptReject);
     }
 }

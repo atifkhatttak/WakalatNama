@@ -15,5 +15,6 @@ namespace Business.Services
         Task<LawyerVM> GetLawyerProfile(long? LawyerId);
         Task<CitizenVM> GetCitizenProfile(long? CitizenId);
         Task<LawyerHomeVM> GetLawyerHome(int? lawyerId);
+        Task<CitizenVM> CreateCitizenProfile(CitizenVM citizenVM);
     }
 }
