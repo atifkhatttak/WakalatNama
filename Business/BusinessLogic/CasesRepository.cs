@@ -47,7 +47,7 @@ namespace Business.BusinessLogic
                         CaseJurisdictionId=caseVM.CaseJurisdictionId,
                         CourtId=caseVM.CourtId,
                         CreatedDate=DateTime.Now,
-                        CreatedUser=caseVM.CitizenId,
+                        CreatedBy=caseVM.CitizenId,
                         IsDeleted=false                    
                     };
 

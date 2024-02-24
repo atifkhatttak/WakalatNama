@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using Data.DomainModels;
 
 namespace ProjWakalatnama.DataLayer.Models
 {
-    public class CaseJurisdiction
+    public class CaseJurisdiction : BaseModel
     {
         [Key]
         public int CaseJurisdictionId { get; set; }

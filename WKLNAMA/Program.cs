@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.SwaggerUI;
 using System;
 using System.Text;
 using WKLNAMA.AppHub;
@@ -42,7 +43,7 @@ app.Services.GetService<IDBInitializer>().Init();
 //{
     app.UseSwagger();
     app.UseSwaggerUI(x=> {
-
+        x.DocExpansion(DocExpansion.None);
         x.DefaultModelsExpandDepth(-1);
         x.SwaggerEndpoint("/swagger/v1/swagger.json", "WakalatNama API V1");
     });

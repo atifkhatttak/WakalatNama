@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Data.DomainModels
 {
-    public class CasesDocument
+    public class CasesDocument : BaseModel
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -24,15 +24,5 @@ namespace Data.DomainModels
         public string? DocExtension { get; set; }
         public int? DocTypeId { get; set; }
         public bool? IsUploaded { get; set; }
-        public DateTime? CreatedDate { get; set; }
-
-        public long? CreatedBy { get; set; }
-
-        public DateTime? ModifiedDate { get; set; }
-
-        public long? ModifiedUser { get; set; }
-
-        [DefaultValue(false)]
-        public bool? IsDeleted { get; set; }
     }
 }

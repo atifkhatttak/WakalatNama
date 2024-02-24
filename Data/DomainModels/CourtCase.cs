@@ -4,10 +4,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
+using Data.DomainModels;
 
 namespace ProjWakalatnama.DataLayer.Models
 {
-    public class CourtCases
+    public class CourtCases : BaseModel
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -40,16 +41,5 @@ namespace ProjWakalatnama.DataLayer.Models
         [Required]
         public int CourtId { get; set; }
         public int? CasePlacingId { get; set; }
-        [AllowNull]
-        public DateTime? CreatedDate { get; set; }
-
-        public long? CreatedUser { get; set; }
-
-        public DateTime? ModifiedDate { get; set; }
-
-        public long? ModifiedUser { get; set; }
-
-        [DefaultValue(false)]
-        public bool? IsDeleted { get; set; }
     }
 }

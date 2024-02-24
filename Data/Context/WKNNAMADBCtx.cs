@@ -1,4 +1,6 @@
 ﻿using Data.DomainModels;
+using Data.Intercepters;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -14,9 +16,11 @@ namespace Data.Context
 {
     public class WKNNAMADBCtx : IdentityDbContext<AppUser,AppRole,int>
     {
-        
-        public WKNNAMADBCtx(DbContextOptions<WKNNAMADBCtx> options) : base(options)
+        private readonly IHttpContextAccessor httpContextAccessor;
+
+        public WKNNAMADBCtx(DbContextOptions<WKNNAMADBCtx> options, IHttpContextAccessor httpContextAccessor) : base(options)
         {
+            this.httpContextAccessor = httpContextAccessor;
         }
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -24,7 +28,10 @@ namespace Data.Context
 
             this.SeedRoles(builder);
         }
-        
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+       => optionsBuilder
+           .AddInterceptors(new DataDefaultColumnInterceptor(httpContextAccessor));
 
         private void SeedRoles(ModelBuilder builder)
         {
