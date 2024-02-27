@@ -20,9 +20,9 @@ namespace Business.Enums
         [Message("Please add citizen")]
         [Description("Citizen")]
         Citizen=3,
-        [Message("Please add lawyer")]
-        [Description("Laywer")]
-        Laywer=4,
+        [Message("Please add Lawyer")]
+        [Description("Lawyer")]
+        Lawyer=4,
         [Message("Please add employee")]
         [Description("Employee")]
         Employee=5

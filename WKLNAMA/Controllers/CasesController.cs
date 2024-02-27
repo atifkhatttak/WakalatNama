@@ -45,12 +45,12 @@ namespace WKLNAMA.Controllers
             //return Ok(Task.FromResult(_viewModel));
             return Ok(apiResponse);
         }
-        [HttpGet("GetUserCase")]
-        public async Task<ActionResult> GetUserCase(long? userId)
+        [HttpGet("GetCitizenCases")]
+        public async Task<ActionResult> GetCitizenCases(long? userId)
         {
             try
             {
-              var result=  await casesRepository.GetUserCases(userId);
+              var result=  await casesRepository.GetCitizenCases(userId);
                 apiResponse.Message = HttpStatusCode.OK.ToString();
                 apiResponse.HttpStatusCode = HttpStatusCode.OK;
                 apiResponse.Success = true;
@@ -65,12 +65,53 @@ namespace WKLNAMA.Controllers
             }
             return Ok(apiResponse);
         }
-        [HttpGet("GetUserDateList")]
-        public async Task<ActionResult> GetUserDateList(long? userId)
+        [HttpGet("GetLawyerCases")]
+        public async Task<ActionResult> GetLawyerCases(long? userId)
         {
             try
             {
-                var result = await casesRepository.GetUserDateList(userId);
+                var result = await casesRepository.GetLawyerCases(userId);
+                apiResponse.Message = HttpStatusCode.OK.ToString();
+                apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                apiResponse.Success = true;
+                apiResponse.Data = result;
+            }
+            catch (Exception ex)
+            {
+                apiResponse.Message = ex.Message;
+                apiResponse.HttpStatusCode = HttpStatusCode.InternalServerError;
+                apiResponse.Success = false;
+                apiResponse.Data = null;
+            }
+            return Ok(apiResponse);
+        }
+       
+        [HttpGet("GetCitizenDateList")]
+        public async Task<ActionResult> GetCitizenDateList(long? userId)
+        {
+            try
+            {
+                var result = await casesRepository.GetCitizenDateList(userId);
+                apiResponse.Message = HttpStatusCode.OK.ToString();
+                apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                apiResponse.Success = true;
+                apiResponse.Data = result;
+            }
+            catch (Exception ex)
+            {
+                apiResponse.Message = ex.Message;
+                apiResponse.HttpStatusCode = HttpStatusCode.InternalServerError;
+                apiResponse.Success = false;
+                apiResponse.Data = null;
+            }
+            return Ok(apiResponse);
+        }
+        [HttpGet("GetLawyerDateList")]
+        public async Task<ActionResult> GetLawyerDateList(long? userId)
+        {
+            try
+            {
+                var result = await casesRepository.GetLawyerDateList(userId);
                 apiResponse.Message = HttpStatusCode.OK.ToString();
                 apiResponse.HttpStatusCode = HttpStatusCode.OK;
                 apiResponse.Success = true;

@@ -172,7 +172,7 @@ namespace Business.BusinessLogic
             var Sectoken = new JwtSecurityToken(config["Jwt:Issuer"],
               config["Jwt:Audience"],
               claims,
-              expires: DateTime.Now.AddMinutes(1),
+              expires: DateTime.Now.AddMinutes(120),
               signingCredentials: credentials);
 
             var token = new JwtSecurityTokenHandler().WriteToken(Sectoken);

@@ -39,6 +39,7 @@ namespace Business.ViewModels
         public IFormFile CNICBack { get; set; } = null;
         public IFormFile ProfilePhoto { get; set; } = null;
         public string? CountryCode { get; internal set; }
+        public int? CityId { get; internal set; }
     }
     public class LawyerHomeVM
     {

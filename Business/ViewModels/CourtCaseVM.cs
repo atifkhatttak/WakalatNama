@@ -39,8 +39,8 @@ namespace Business.ViewModels
         public string? CaseTitle { get; internal set; }
         public long? UserId { get; internal set; }
         public string? UserFullName { get; internal set; }
-        public string CategoryName { get; internal set; }
-        public int CaseStatusId { get; internal set; }
+        public string? CategoryName { get; internal set; }
+        public int? CaseStatusId { get; internal set; }
     }
     public class CaseDetailVM
     {

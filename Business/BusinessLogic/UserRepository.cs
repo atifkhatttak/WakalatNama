@@ -42,6 +42,7 @@ namespace Business.BusinessLogic
                         CitizenGet.FullName = citizenVM.FullName;
                         CitizenGet.FatherName=citizenVM.FatherName;
                         CitizenGet.CNICNo = citizenVM.CNICNo;
+                        CitizenGet.CityId = citizenVM.CityId;
                         //CitizenGet.CountryCode = citizenVM.CountryCode;
                         CitizenGet.ContactNumber=citizenVM.ContactNumber;
                         CitizenGet.CurrAddress=citizenVM.CurrAddress;
@@ -73,8 +74,8 @@ namespace Business.BusinessLogic
                 {
                     var d = await ctx
                         .UserProfiles
-                        .Where(x => x.CityId == filterVM.CityId || (x.TotalExperience >= filterVM.ExperienceMin && x.TotalExperience <= filterVM.ExperienceMax)
-                         && (x.RoleId == (int)Roles.Laywer && x.IsActive == true && x.IsVerified == true && x.IsDeleted == false))
+                        .Where(x=>(x.CityId == filterVM.CityId || (x.TotalExperience >= filterVM.ExperienceMin && x.TotalExperience <= filterVM.ExperienceMax))
+                         && (x.RoleId == (int)Roles.Lawyer && x.IsActive == true && x.IsVerified == true && x.IsDeleted == false))
                         .ToListAsync();
 
                     if (d != null)
@@ -109,7 +110,7 @@ namespace Business.BusinessLogic
 
                 if (LawyerId > 0)
                 {
-                    var d = await ctx.UserProfiles.Where(x => x.UserId== LawyerId && x.RoleId==(int)Roles.Laywer).FirstOrDefaultAsync();
+                    var d = await ctx.UserProfiles.Where(x => x.UserId== LawyerId && x.RoleId==(int)Roles.Lawyer).FirstOrDefaultAsync();
                     int CasesCount=0;
                     int TotalClient = 0;
                     if (d != null)
@@ -203,7 +204,7 @@ namespace Business.BusinessLogic
                     var d = await ctx
                         .UserProfiles
                         .Where(x => x.UserId == CitizenId
-                    && (x.RoleId == (int)Roles.Laywer && x.IsActive == true && x.IsVerified == true && x.IsDeleted == false))
+                    && (x.RoleId == (int)Roles.Lawyer && x.IsActive == true && x.IsVerified == true && x.IsDeleted == false))
                         .FirstOrDefaultAsync();
 
                     if (d != null)

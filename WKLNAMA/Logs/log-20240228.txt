@@ -1,0 +1,576 @@
+2024-02-28T00:02:47.0290989+05:00 4000001c-0006-f600-b63f-84710c7967bb [INF] Executed DbCommand ("8"ms) [Parameters=["@p0='?' (DbType = Int64), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Boolean), @p3='?' (Size = 50), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [PartyStatuses] ([CreatedBy], [CreatedDate], [IsDeleted], [StatusName], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[ID]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);" (0723d8ff)
+2024-02-28T00:03:02.6868720+05:00 4000001e-0006-f600-b63f-84710c7967bb [INF] Executed DbCommand ("8"ms) [Parameters=["@p0='?' (DbType = Int64), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Boolean), @p3='?' (Size = 50), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [PartyStatuses] ([CreatedBy], [CreatedDate], [IsDeleted], [StatusName], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[ID]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);" (0723d8ff)
+2024-02-28T00:03:09.7112051+05:00 40000007-0002-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("8"ms) [Parameters=["@p0='?' (DbType = Int64), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Boolean), @p3='?' (Size = 50), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [PartyStatuses] ([CreatedBy], [CreatedDate], [IsDeleted], [StatusName], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[ID]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);" (0723d8ff)
+2024-02-28T00:03:20.6231832+05:00 40000015-0005-f900-b63f-84710c7967bb [INF] Executed DbCommand ("11"ms) [Parameters=["@p0='?' (DbType = Int64), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Boolean), @p3='?' (Size = 50), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [PartyStatuses] ([CreatedBy], [CreatedDate], [IsDeleted], [StatusName], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[ID]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);" (0723d8ff)
+2024-02-28T00:03:30.3439038+05:00 40000020-0006-f600-b63f-84710c7967bb [INF] Executed DbCommand ("8"ms) [Parameters=["@p0='?' (DbType = Int64), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Boolean), @p3='?' (Size = 50), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [PartyStatuses] ([CreatedBy], [CreatedDate], [IsDeleted], [StatusName], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[ID]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);" (0723d8ff)
+2024-02-28T00:03:39.0093858+05:00 4000002e-0003-f100-b63f-84710c7967bb [INF] Executed DbCommand ("8"ms) [Parameters=["@p0='?' (DbType = Int64), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Boolean), @p3='?' (Size = 50), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [PartyStatuses] ([CreatedBy], [CreatedDate], [IsDeleted], [StatusName], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[ID]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);" (0723d8ff)
+2024-02-28T00:03:51.0135485+05:00 40000030-0003-f100-b63f-84710c7967bb [INF] Executed DbCommand ("4"ms) [Parameters=["@p0='?' (DbType = Int64), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Boolean), @p3='?' (Size = 50), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [PartyStatuses] ([CreatedBy], [CreatedDate], [IsDeleted], [StatusName], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[ID]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);" (0723d8ff)
+2024-02-28T00:04:05.5734983+05:00 40000009-0002-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[ID], [p].[CreatedBy], [p].[CreatedDate], [p].[IsDeleted], [p].[StatusName], [p].[UpdateDate], [p].[UpdatedBy]
+FROM [PartyStatuses] AS [p]" (0723d8ff)
+2024-02-28T00:04:28.2667174+05:00 40000030-0000-f700-b63f-84710c7967bb [INF] Executed DbCommand ("13"ms) [Parameters=["@p6='?' (DbType = Int32), @p0='?' (DbType = Int64), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Boolean), @p3='?' (Size = 50), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [PartyStatuses] SET [CreatedBy] = @p0, [CreatedDate] = @p1, [IsDeleted] = @p2, [StatusName] = @p3, [UpdateDate] = @p4, [UpdatedBy] = @p5
+OUTPUT 1
+WHERE [ID] = @p6;" (0723d8ff)
+2024-02-28T00:04:39.4249187+05:00 40000023-0001-f500-b63f-84710c7967bb [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[ID], [p].[CreatedBy], [p].[CreatedDate], [p].[IsDeleted], [p].[StatusName], [p].[UpdateDate], [p].[UpdatedBy]
+FROM [PartyStatuses] AS [p]" (0723d8ff)
+2024-02-28T00:05:33.8391095+05:00 40000022-0006-f600-b63f-84710c7967bb [INF] Executed DbCommand ("3"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [p].[ID], [p].[CreatedBy], [p].[CreatedDate], [p].[IsDeleted], [p].[StatusName], [p].[UpdateDate], [p].[UpdatedBy]
+FROM [PartyStatuses] AS [p]
+WHERE [p].[ID] = @__p_0" (0723d8ff)
+2024-02-28T00:05:33.8656634+05:00 40000022-0006-f600-b63f-84710c7967bb [INF] Executed DbCommand ("9"ms) [Parameters=["@p0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [PartyStatuses]
+OUTPUT 1
+WHERE [ID] = @p0;" (0723d8ff)
+2024-02-28T00:05:50.5452170+05:00 40000024-0006-f600-b63f-84710c7967bb [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[ID], [p].[CreatedBy], [p].[CreatedDate], [p].[IsDeleted], [p].[StatusName], [p].[UpdateDate], [p].[UpdatedBy]
+FROM [PartyStatuses] AS [p]" (0723d8ff)
+2024-02-28T00:21:11.2191220+05:00 40000026-0004-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("12"ms) [Parameters=["@p0='?' (Size = 100), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Boolean), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [CaseCategories] ([CategoryName], [CreatedBy], [CreatedDate], [IsDeleted], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[ID]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);" (0723d8ff)
+2024-02-28T00:21:37.1132186+05:00 40000018-0005-f600-b63f-84710c7967bb [INF] Executed DbCommand ("5"ms) [Parameters=["@p0='?' (Size = 100), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Boolean), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [CaseCategories] ([CategoryName], [CreatedBy], [CreatedDate], [IsDeleted], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[ID]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);" (0723d8ff)
+2024-02-28T00:21:56.8769476+05:00 40000028-0004-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("8"ms) [Parameters=["@p0='?' (Size = 100), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Boolean), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [CaseCategories] ([CategoryName], [CreatedBy], [CreatedDate], [IsDeleted], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[ID]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);" (0723d8ff)
+2024-02-28T00:22:26.6892019+05:00 40000029-0007-e800-b63f-84710c7967bb [INF] Executed DbCommand ("11"ms) [Parameters=["@p0='?' (Size = 100), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Boolean), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [CaseCategories] ([CategoryName], [CreatedBy], [CreatedDate], [IsDeleted], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[ID]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);" (0723d8ff)
+2024-02-28T00:22:40.1876435+05:00 40000016-0006-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("9"ms) [Parameters=["@p0='?' (Size = 100), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Boolean), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [CaseCategories] ([CategoryName], [CreatedBy], [CreatedDate], [IsDeleted], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[ID]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);" (0723d8ff)
+2024-02-28T00:23:10.4258480+05:00 40000006-0002-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("25"ms) [Parameters=["@p0='?' (Size = 100), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Boolean), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [CaseCategories] ([CategoryName], [CreatedBy], [CreatedDate], [IsDeleted], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[ID]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);" (0723d8ff)
+2024-02-28T00:23:24.0636498+05:00 40000018-0006-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("11"ms) [Parameters=["@p0='?' (Size = 100), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Boolean), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [CaseCategories] ([CategoryName], [CreatedBy], [CreatedDate], [IsDeleted], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[ID]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);" (0723d8ff)
+2024-02-28T00:23:40.4898766+05:00 4000002b-0007-e800-b63f-84710c7967bb [INF] Executed DbCommand ("12"ms) [Parameters=["@p0='?' (Size = 100), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Boolean), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [CaseCategories] ([CategoryName], [CreatedBy], [CreatedDate], [IsDeleted], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[ID]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);" (0723d8ff)
+2024-02-28T00:23:50.0353988+05:00 40000008-0002-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[ID], [c].[CategoryName], [c].[CreatedBy], [c].[CreatedDate], [c].[IsDeleted], [c].[UpdateDate], [c].[UpdatedBy]
+FROM [CaseCategories] AS [c]" (0723d8ff)
+2024-02-28T00:24:37.1226010+05:00 4000002a-0004-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("11"ms) [Parameters=["@p0='?' (DbType = Int64), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Boolean), @p3='?' (Size = 100), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [CaseJurisdictions] ([CreatedBy], [CreatedDate], [IsDeleted], [JurisdictionName], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[CaseJurisdictionId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);" (0723d8ff)
+2024-02-28T00:31:46.4295222+05:00 4000002e-0004-fb00-b63f-84710c7967bb [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate Operation for action - WKLNAMA.Controllers.CasesController.CreateCase (WKLNAMA). See inner exception
+ ---> System.Reflection.AmbiguousMatchException: Ambiguous match found for 'Business.ViewModels.CourtCaseVM Int32 CaseStatusId'.
+   at System.RuntimeType.GetPropertyImpl(String name, BindingFlags bindingAttr, Binder binder, Type returnType, Type[] types, ParameterModifier[] modifiers)
+   at System.Type.GetProperty(String name)
+   at Swashbuckle.AspNetCore.SwaggerGen.ApiParameterDescriptionExtensions.PropertyInfo(ApiParameterDescription apiParameter)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateSchemaFromFormParameters(IEnumerable`1 formParameters, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateRequestBodyFromFormParameters(ApiDescription apiDescription, SchemaRepository schemaRepository, IEnumerable`1 formParameters)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateRequestBody(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperation(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   --- End of inner exception stack trace ---
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperation(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-02-28T00:32:08.3378240+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-02-28T00:32:08.3629199+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-02-28T00:32:09.8119539+05:00  [INF] Executed DbCommand ("88"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-02-28T00:32:09.9050962+05:00  [INF] Executed DbCommand ("54"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-02-28T00:32:09.9411387+05:00  [INF] Executed DbCommand ("24"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-02-28T00:32:09.9546471+05:00  [INF] Executed DbCommand ("8"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-02-28T00:32:10.0338822+05:00  [INF] Executed DbCommand ("7"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-02-28T00:32:10.1160423+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-02-28T00:32:10.2837215+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-02-28T00:32:10.2883115+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-02-28T00:32:10.2934501+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-02-28T00:59:15.7668368+05:00 4000002f-0007-e800-b63f-84710c7967bb [INF] Executed DbCommand ("26"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (Size = 20), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (DbType = Int32), @p7='?' (DbType = Int64), @p8='?' (DbType = Int32), @p9='?' (DbType = Int64), @p10='?' (DbType = DateTime2), @p11='?' (DbType = Boolean), @p12='?' (DbType = Int64), @p13='?' (DbType = Int32), @p14='?' (DbType = Int64), @p15='?' (DbType = DateTime2), @p16='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [CourtCases] ([CaseDescription], [CaseJurisdictionId], [CaseNumber], [CasePlacingId], [CaseStatusId], [CaseTitle], [CategoryId], [CitizenId], [CourtId], [CreatedBy], [CreatedDate], [IsDeleted], [LawyerId], [PartyId], [RedundantLawyerId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[CaseId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16);" (0723d8ff)
+2024-02-28T01:02:07.3320437+05:00 40000044-0000-f700-b63f-84710c7967bb [INF] Executed DbCommand ("17"ms) [Parameters=["@__8__locals1_userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ProfileId], [u].[AreasOfExpertise], [u].[AreasOfExpertiseOrther], [u].[BarCouncil], [u].[CNICNo], [u].[CityId], [u].[ContactNumber], [u].[CountryId], [u].[CreatedBy], [u].[CreatedDate], [u].[CurrAddress], [u].[Email], [u].[EnrollmentDate], [u].[FatherName], [u].[FullName], [u].[Gender], [u].[Institute], [u].[IsActive], [u].[IsAgreed], [u].[IsAlert], [u].[IsCreateMeeting], [u].[IsDeleted], [u].[IsEmail], [u].[IsFavourite], [u].[IsOverseas], [u].[IsPushAlert], [u].[IsSMS], [u].[IsVerified], [u].[LCourtLocation], [u].[LCourtName], [u].[LHighCourtLocation], [u].[LHighCourtName], [u].[NICOP], [u].[OfficeAddress], [u].[OverseasContactNo], [u].[PassportID], [u].[PermAddress], [u].[ProfileDescription], [u].[Qualification], [u].[Rating], [u].[ResideCountryId], [u].[RoleId], [u].[TotalExperience], [u].[UpdateDate], [u].[UpdatedBy], [u].[UserId]
+FROM [UserProfiles] AS [u]
+WHERE [u].[UserId] = @__8__locals1_userId_0" (0723d8ff)
+2024-02-28T01:02:07.6616589+05:00 40000044-0000-f700-b63f-84710c7967bb [INF] Executed DbCommand ("31"ms) [Parameters=["@__8__locals1_userId_0='?' (DbType = Int64), @__currUser_RoleId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT @__8__locals1_userId_0 AS [UserId], [u].[FullName] AS [UserFullName], [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c].[CategoryId], [c0].[CategoryName]
+FROM [UserProfiles] AS [u]
+INNER JOIN [CourtCases] AS [c] ON [u].[UserId] = [c].[CitizenId]
+INNER JOIN [CaseCategories] AS [c0] ON [c].[CategoryId] = [c0].[ID]
+WHERE [u].[UserId] = @__8__locals1_userId_0 AND [u].[RoleId] = @__currUser_RoleId_1 AND [u].[IsDeleted] = CAST(0 AS bit) AND [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-02-28T01:05:18.7264209+05:00 4000004b-0004-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("14"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = Int32), @p3='?' (DbType = Int64), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000), @p6='?' (DbType = DateTime2), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [CasesDetails] ([CaseDateTitle], [CaseId], [CaseStatusId], [CreatedBy], [CreatedDate], [DateDescription], [HearingDate], [IsDeleted], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[ID]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-02-28T01:06:21.5901294+05:00 4000004d-0004-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("16"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = Int32), @p3='?' (DbType = Int64), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000), @p6='?' (DbType = DateTime2), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [CasesDetails] ([CaseDateTitle], [CaseId], [CaseStatusId], [CreatedBy], [CreatedDate], [DateDescription], [HearingDate], [IsDeleted], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[ID]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-02-28T01:07:44.6075433+05:00 40000047-0001-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("17"ms) [Parameters=["@__p_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [CourtCases] AS [c]
+WHERE [c].[LawyerId] = @__p_0 AND [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-02-28T01:07:44.6436744+05:00 40000047-0001-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("14"ms) [Parameters=["@__p_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [CourtCases] AS [c]
+WHERE [c].[LawyerId] = @__p_0 AND [c].[CaseStatusId] = 1 AND [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-02-28T01:07:44.7118429+05:00 40000047-0001-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("31"ms) [Parameters=["@__p_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[FullName] AS [UserFullName], [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c].[CategoryId], [c0].[CategoryName], [c].[CaseStatusId]
+FROM [CourtCases] AS [c]
+INNER JOIN [UserProfiles] AS [u] ON [c].[CitizenId] = [u].[UserId]
+INNER JOIN [CaseCategories] AS [c0] ON [c].[CategoryId] = [c0].[ID]
+WHERE [c].[LawyerId] = @__p_0 AND [u].[RoleId] = 3 AND [u].[IsDeleted] = CAST(0 AS bit) AND [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-02-28T01:08:59.2868507+05:00 40000020-0005-f600-b63f-84710c7967bb [INF] Executed DbCommand ("23"ms) [Parameters=["@__filterVM_CityId_0='?' (DbType = Int32), @__p_1='?' (DbType = Single), @__p_2='?' (DbType = Single)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[ProfileId], [u].[AreasOfExpertise], [u].[AreasOfExpertiseOrther], [u].[BarCouncil], [u].[CNICNo], [u].[CityId], [u].[ContactNumber], [u].[CountryId], [u].[CreatedBy], [u].[CreatedDate], [u].[CurrAddress], [u].[Email], [u].[EnrollmentDate], [u].[FatherName], [u].[FullName], [u].[Gender], [u].[Institute], [u].[IsActive], [u].[IsAgreed], [u].[IsAlert], [u].[IsCreateMeeting], [u].[IsDeleted], [u].[IsEmail], [u].[IsFavourite], [u].[IsOverseas], [u].[IsPushAlert], [u].[IsSMS], [u].[IsVerified], [u].[LCourtLocation], [u].[LCourtName], [u].[LHighCourtLocation], [u].[LHighCourtName], [u].[NICOP], [u].[OfficeAddress], [u].[OverseasContactNo], [u].[PassportID], [u].[PermAddress], [u].[ProfileDescription], [u].[Qualification], [u].[Rating], [u].[ResideCountryId], [u].[RoleId], [u].[TotalExperience], [u].[UpdateDate], [u].[UpdatedBy], [u].[UserId]
+FROM [UserProfiles] AS [u]
+WHERE [u].[CityId] = @__filterVM_CityId_0 OR ([u].[TotalExperience] >= @__p_1 AND [u].[TotalExperience] <= @__p_2 AND [u].[RoleId] = 4 AND [u].[IsActive] = CAST(1 AS bit) AND [u].[IsVerified] = CAST(1 AS bit) AND [u].[IsDeleted] = CAST(0 AS bit))" (0723d8ff)
+2024-02-28T01:09:08.4358047+05:00 4000001e-0003-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("5"ms) [Parameters=["@__filterVM_CityId_0='?' (DbType = Int32), @__p_1='?' (DbType = Single), @__p_2='?' (DbType = Single)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[ProfileId], [u].[AreasOfExpertise], [u].[AreasOfExpertiseOrther], [u].[BarCouncil], [u].[CNICNo], [u].[CityId], [u].[ContactNumber], [u].[CountryId], [u].[CreatedBy], [u].[CreatedDate], [u].[CurrAddress], [u].[Email], [u].[EnrollmentDate], [u].[FatherName], [u].[FullName], [u].[Gender], [u].[Institute], [u].[IsActive], [u].[IsAgreed], [u].[IsAlert], [u].[IsCreateMeeting], [u].[IsDeleted], [u].[IsEmail], [u].[IsFavourite], [u].[IsOverseas], [u].[IsPushAlert], [u].[IsSMS], [u].[IsVerified], [u].[LCourtLocation], [u].[LCourtName], [u].[LHighCourtLocation], [u].[LHighCourtName], [u].[NICOP], [u].[OfficeAddress], [u].[OverseasContactNo], [u].[PassportID], [u].[PermAddress], [u].[ProfileDescription], [u].[Qualification], [u].[Rating], [u].[ResideCountryId], [u].[RoleId], [u].[TotalExperience], [u].[UpdateDate], [u].[UpdatedBy], [u].[UserId]
+FROM [UserProfiles] AS [u]
+WHERE [u].[CityId] = @__filterVM_CityId_0 OR ([u].[TotalExperience] >= @__p_1 AND [u].[TotalExperience] <= @__p_2 AND [u].[RoleId] = 4 AND [u].[IsActive] = CAST(1 AS bit) AND [u].[IsVerified] = CAST(1 AS bit) AND [u].[IsDeleted] = CAST(0 AS bit))" (0723d8ff)
+2024-02-28T01:09:17.5689276+05:00 40000021-0006-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("2"ms) [Parameters=["@__filterVM_CityId_0='?' (DbType = Int32), @__p_1='?' (DbType = Single), @__p_2='?' (DbType = Single)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[ProfileId], [u].[AreasOfExpertise], [u].[AreasOfExpertiseOrther], [u].[BarCouncil], [u].[CNICNo], [u].[CityId], [u].[ContactNumber], [u].[CountryId], [u].[CreatedBy], [u].[CreatedDate], [u].[CurrAddress], [u].[Email], [u].[EnrollmentDate], [u].[FatherName], [u].[FullName], [u].[Gender], [u].[Institute], [u].[IsActive], [u].[IsAgreed], [u].[IsAlert], [u].[IsCreateMeeting], [u].[IsDeleted], [u].[IsEmail], [u].[IsFavourite], [u].[IsOverseas], [u].[IsPushAlert], [u].[IsSMS], [u].[IsVerified], [u].[LCourtLocation], [u].[LCourtName], [u].[LHighCourtLocation], [u].[LHighCourtName], [u].[NICOP], [u].[OfficeAddress], [u].[OverseasContactNo], [u].[PassportID], [u].[PermAddress], [u].[ProfileDescription], [u].[Qualification], [u].[Rating], [u].[ResideCountryId], [u].[RoleId], [u].[TotalExperience], [u].[UpdateDate], [u].[UpdatedBy], [u].[UserId]
+FROM [UserProfiles] AS [u]
+WHERE [u].[CityId] = @__filterVM_CityId_0 OR ([u].[TotalExperience] >= @__p_1 AND [u].[TotalExperience] <= @__p_2 AND [u].[RoleId] = 4 AND [u].[IsActive] = CAST(1 AS bit) AND [u].[IsVerified] = CAST(1 AS bit) AND [u].[IsDeleted] = CAST(0 AS bit))" (0723d8ff)
+2024-02-28T01:17:38.0390122+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-02-28T01:17:38.0596017+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-02-28T01:17:39.4363937+05:00  [INF] Executed DbCommand ("101"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-02-28T01:17:39.5447136+05:00  [INF] Executed DbCommand ("62"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-02-28T01:17:39.5751949+05:00  [INF] Executed DbCommand ("19"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-02-28T01:17:39.6013406+05:00  [INF] Executed DbCommand ("10"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-02-28T01:17:39.6780627+05:00  [INF] Executed DbCommand ("24"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-02-28T01:17:39.7692390+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-02-28T01:17:39.9168539+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-02-28T01:17:39.9215369+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-02-28T01:17:39.9252644+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-02-28T01:19:03.4787544+05:00 40000024-0000-fb00-b63f-84710c7967bb [ERR] Failed executing DbCommand ("63"ms) [Parameters=["@p0='?' (DbType = Int64), @p1='?' (Size = 255), @p2='?' (Size = 4000), @p3='?' (Size = 100), @p4='?' (Size = 15), @p5='?' (DbType = Int32), @p6='?' (Size = 20), @p7='?' (DbType = Int32), @p8='?' (DbType = Int64), @p9='?' (DbType = DateTime2), @p10='?' (Size = 4000), @p11='?' (Size = 255), @p12='?' (DbType = DateTime2), @p13='?' (Size = 4000), @p14='?' (Size = 100), @p15='?' (Size = 10), @p16='?' (Size = 255), @p17='?' (DbType = Boolean), @p18='?' (DbType = Boolean), @p19='?' (DbType = Boolean), @p20='?' (DbType = Boolean), @p21='?' (DbType = Boolean), @p22='?' (DbType = Boolean), @p23='?' (DbType = Boolean), @p24='?' (DbType = Boolean), @p25='?' (DbType = Boolean), @p26='?' (DbType = Boolean), @p27='?' (DbType = Boolean), @p28='?' (Size = 4000), @p29='?' (Size = 255), @p30='?' (Size = 4000), @p31='?' (Size = 255), @p32='?' (Size = 50), @p33='?' (Size = 4000), @p34='?' (Size = 20), @p35='?' (Size = 15), @p36='?' (Size = 4000), @p37='?' (Size = 4000), @p38='?' (Size = 100), @p39='?' (DbType = Single), @p40='?' (DbType = Int32), @p41='?' (DbType = Int32), @p42='?' (DbType = Single), @p43='?' (DbType = DateTime2), @p44='?' (DbType = Int64), @p45='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [UserProfiles] ([ProfileId], [AreasOfExpertise], [AreasOfExpertiseOrther], [BarCouncil], [CNICNo], [CityId], [ContactNumber], [CountryId], [CreatedBy], [CreatedDate], [CurrAddress], [Email], [EnrollmentDate], [FatherName], [FullName], [Gender], [Institute], [IsActive], [IsAgreed], [IsAlert], [IsCreateMeeting], [IsDeleted], [IsEmail], [IsFavourite], [IsOverseas], [IsPushAlert], [IsSMS], [IsVerified], [LCourtLocation], [LCourtName], [LHighCourtLocation], [LHighCourtName], [NICOP], [OfficeAddress], [OverseasContactNo], [PassportID], [PermAddress], [ProfileDescription], [Qualification], [Rating], [ResideCountryId], [RoleId], [TotalExperience], [UpdateDate], [UpdatedBy], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31, @p32, @p33, @p34, @p35, @p36, @p37, @p38, @p39, @p40, @p41, @p42, @p43, @p44, @p45);" (627a98df)
+2024-02-28T01:19:03.6006136+05:00 40000024-0000-fb00-b63f-84710c7967bb [ERR] An exception occurred in the database while saving changes for context type '"Data.Context.WKNNAMADBCtx"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert explicit value for identity column in table 'UserProfiles' when IDENTITY_INSERT is set to OFF.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:3b708abf-3ee4-427e-bddb-951e08cdd569
+Error Number:544,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)" (170f029e)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert explicit value for identity column in table 'UserProfiles' when IDENTITY_INSERT is set to OFF.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:3b708abf-3ee4-427e-bddb-951e08cdd569
+Error Number:544,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Business.BusinessLogic.BaseRepository`1.SaveAsync() in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\Business\BusinessLogic\BaseRepository.cs:line 39
+2024-02-28T01:20:11.9989944+05:00 40000053-0004-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("4"ms) [Parameters=["@__filterVM_CityId_0='?' (DbType = Int32), @__p_1='?' (DbType = Single), @__p_2='?' (DbType = Single)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[ProfileId], [u].[AreasOfExpertise], [u].[AreasOfExpertiseOrther], [u].[BarCouncil], [u].[CNICNo], [u].[CityId], [u].[ContactNumber], [u].[CountryId], [u].[CreatedBy], [u].[CreatedDate], [u].[CurrAddress], [u].[Email], [u].[EnrollmentDate], [u].[FatherName], [u].[FullName], [u].[Gender], [u].[Institute], [u].[IsActive], [u].[IsAgreed], [u].[IsAlert], [u].[IsCreateMeeting], [u].[IsDeleted], [u].[IsEmail], [u].[IsFavourite], [u].[IsOverseas], [u].[IsPushAlert], [u].[IsSMS], [u].[IsVerified], [u].[LCourtLocation], [u].[LCourtName], [u].[LHighCourtLocation], [u].[LHighCourtName], [u].[NICOP], [u].[OfficeAddress], [u].[OverseasContactNo], [u].[PassportID], [u].[PermAddress], [u].[ProfileDescription], [u].[Qualification], [u].[Rating], [u].[ResideCountryId], [u].[RoleId], [u].[TotalExperience], [u].[UpdateDate], [u].[UpdatedBy], [u].[UserId]
+FROM [UserProfiles] AS [u]
+WHERE [u].[CityId] = @__filterVM_CityId_0 OR ([u].[TotalExperience] >= @__p_1 AND [u].[TotalExperience] <= @__p_2 AND [u].[RoleId] = 4 AND [u].[IsActive] = CAST(1 AS bit) AND [u].[IsVerified] = CAST(1 AS bit) AND [u].[IsDeleted] = CAST(0 AS bit))" (0723d8ff)
+2024-02-28T01:21:48.0363262+05:00 40000053-0004-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("5"ms) [Parameters=["@__filterVM_CityId_0='?' (DbType = Int32), @__p_1='?' (DbType = Single), @__p_2='?' (DbType = Single)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[ProfileId], [u].[AreasOfExpertise], [u].[AreasOfExpertiseOrther], [u].[BarCouncil], [u].[CNICNo], [u].[CityId], [u].[ContactNumber], [u].[CountryId], [u].[CreatedBy], [u].[CreatedDate], [u].[CurrAddress], [u].[Email], [u].[EnrollmentDate], [u].[FatherName], [u].[FullName], [u].[Gender], [u].[Institute], [u].[IsActive], [u].[IsAgreed], [u].[IsAlert], [u].[IsCreateMeeting], [u].[IsDeleted], [u].[IsEmail], [u].[IsFavourite], [u].[IsOverseas], [u].[IsPushAlert], [u].[IsSMS], [u].[IsVerified], [u].[LCourtLocation], [u].[LCourtName], [u].[LHighCourtLocation], [u].[LHighCourtName], [u].[NICOP], [u].[OfficeAddress], [u].[OverseasContactNo], [u].[PassportID], [u].[PermAddress], [u].[ProfileDescription], [u].[Qualification], [u].[Rating], [u].[ResideCountryId], [u].[RoleId], [u].[TotalExperience], [u].[UpdateDate], [u].[UpdatedBy], [u].[UserId]
+FROM [UserProfiles] AS [u]
+WHERE [u].[CityId] = @__filterVM_CityId_0 OR ([u].[TotalExperience] >= @__p_1 AND [u].[TotalExperience] <= @__p_2 AND [u].[RoleId] = 4 AND [u].[IsActive] = CAST(1 AS bit) AND [u].[IsVerified] = CAST(1 AS bit) AND [u].[IsDeleted] = CAST(0 AS bit))" (0723d8ff)
+2024-02-28T01:24:08.4071164+05:00 40000053-0004-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("7"ms) [Parameters=["@__filterVM_CityId_0='?' (DbType = Int32), @__p_1='?' (DbType = Single), @__p_2='?' (DbType = Single)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[ProfileId], [u].[AreasOfExpertise], [u].[AreasOfExpertiseOrther], [u].[BarCouncil], [u].[CNICNo], [u].[CityId], [u].[ContactNumber], [u].[CountryId], [u].[CreatedBy], [u].[CreatedDate], [u].[CurrAddress], [u].[Email], [u].[EnrollmentDate], [u].[FatherName], [u].[FullName], [u].[Gender], [u].[Institute], [u].[IsActive], [u].[IsAgreed], [u].[IsAlert], [u].[IsCreateMeeting], [u].[IsDeleted], [u].[IsEmail], [u].[IsFavourite], [u].[IsOverseas], [u].[IsPushAlert], [u].[IsSMS], [u].[IsVerified], [u].[LCourtLocation], [u].[LCourtName], [u].[LHighCourtLocation], [u].[LHighCourtName], [u].[NICOP], [u].[OfficeAddress], [u].[OverseasContactNo], [u].[PassportID], [u].[PermAddress], [u].[ProfileDescription], [u].[Qualification], [u].[Rating], [u].[ResideCountryId], [u].[RoleId], [u].[TotalExperience], [u].[UpdateDate], [u].[UpdatedBy], [u].[UserId]
+FROM [UserProfiles] AS [u]
+WHERE [u].[CityId] = @__filterVM_CityId_0 OR ([u].[TotalExperience] >= @__p_1 AND [u].[TotalExperience] <= @__p_2 AND [u].[RoleId] = 4 AND [u].[IsActive] = CAST(1 AS bit) AND [u].[IsVerified] = CAST(1 AS bit) AND [u].[IsDeleted] = CAST(0 AS bit))" (0723d8ff)
+2024-02-28T01:25:26.3357942+05:00 40000053-0004-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("70"ms) [Parameters=["@__filterVM_CityId_0='?' (DbType = Int32), @__p_1='?' (DbType = Single), @__p_2='?' (DbType = Single)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[ProfileId], [u].[AreasOfExpertise], [u].[AreasOfExpertiseOrther], [u].[BarCouncil], [u].[CNICNo], [u].[CityId], [u].[ContactNumber], [u].[CountryId], [u].[CreatedBy], [u].[CreatedDate], [u].[CurrAddress], [u].[Email], [u].[EnrollmentDate], [u].[FatherName], [u].[FullName], [u].[Gender], [u].[Institute], [u].[IsActive], [u].[IsAgreed], [u].[IsAlert], [u].[IsCreateMeeting], [u].[IsDeleted], [u].[IsEmail], [u].[IsFavourite], [u].[IsOverseas], [u].[IsPushAlert], [u].[IsSMS], [u].[IsVerified], [u].[LCourtLocation], [u].[LCourtName], [u].[LHighCourtLocation], [u].[LHighCourtName], [u].[NICOP], [u].[OfficeAddress], [u].[OverseasContactNo], [u].[PassportID], [u].[PermAddress], [u].[ProfileDescription], [u].[Qualification], [u].[Rating], [u].[ResideCountryId], [u].[RoleId], [u].[TotalExperience], [u].[UpdateDate], [u].[UpdatedBy], [u].[UserId]
+FROM [UserProfiles] AS [u]
+WHERE [u].[CityId] = @__filterVM_CityId_0 OR ([u].[TotalExperience] >= @__p_1 AND [u].[TotalExperience] <= @__p_2 AND [u].[RoleId] = 4 AND [u].[IsActive] = CAST(1 AS bit) AND [u].[IsVerified] = CAST(1 AS bit) AND [u].[IsDeleted] = CAST(0 AS bit))" (0723d8ff)
+2024-02-28T01:29:04.5701518+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-02-28T01:29:04.5887444+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-02-28T01:29:07.3279882+05:00  [INF] Executed DbCommand ("160"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-02-28T01:29:07.5740252+05:00  [INF] Executed DbCommand ("41"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-02-28T01:29:07.5945246+05:00  [INF] Executed DbCommand ("14"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-02-28T01:29:07.5989810+05:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-02-28T01:29:07.6452148+05:00  [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-02-28T01:29:07.6837420+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-02-28T01:29:08.1009932+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-02-28T01:29:08.1136792+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-02-28T01:29:08.1224535+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-02-28T01:30:38.5254355+05:00 4000001d-0005-f900-b63f-84710c7967bb [INF] Executed DbCommand ("55"ms) [Parameters=["@__filterVM_CityId_0='?' (DbType = Int32), @__p_1='?' (DbType = Single), @__p_2='?' (DbType = Single)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[ProfileId], [u].[AreasOfExpertise], [u].[AreasOfExpertiseOrther], [u].[BarCouncil], [u].[CNICNo], [u].[CityId], [u].[ContactNumber], [u].[CountryId], [u].[CreatedBy], [u].[CreatedDate], [u].[CurrAddress], [u].[Email], [u].[EnrollmentDate], [u].[FatherName], [u].[FullName], [u].[Gender], [u].[Institute], [u].[IsActive], [u].[IsAgreed], [u].[IsAlert], [u].[IsCreateMeeting], [u].[IsDeleted], [u].[IsEmail], [u].[IsFavourite], [u].[IsOverseas], [u].[IsPushAlert], [u].[IsSMS], [u].[IsVerified], [u].[LCourtLocation], [u].[LCourtName], [u].[LHighCourtLocation], [u].[LHighCourtName], [u].[NICOP], [u].[OfficeAddress], [u].[OverseasContactNo], [u].[PassportID], [u].[PermAddress], [u].[ProfileDescription], [u].[Qualification], [u].[Rating], [u].[ResideCountryId], [u].[RoleId], [u].[TotalExperience], [u].[UpdateDate], [u].[UpdatedBy], [u].[UserId]
+FROM [UserProfiles] AS [u]
+WHERE [u].[CityId] = @__filterVM_CityId_0 OR ([u].[TotalExperience] >= @__p_1 AND [u].[TotalExperience] <= @__p_2 AND [u].[RoleId] = 4 AND [u].[IsActive] = CAST(1 AS bit) AND [u].[IsVerified] = CAST(1 AS bit) AND [u].[IsDeleted] = CAST(0 AS bit))" (0723d8ff)
+2024-02-28T01:32:40.8543441+05:00 4000001d-0005-f900-b63f-84710c7967bb [INF] Executed DbCommand ("4"ms) [Parameters=["@__filterVM_CityId_0='?' (DbType = Int32), @__p_1='?' (DbType = Single), @__p_2='?' (DbType = Single)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[ProfileId], [u].[AreasOfExpertise], [u].[AreasOfExpertiseOrther], [u].[BarCouncil], [u].[CNICNo], [u].[CityId], [u].[ContactNumber], [u].[CountryId], [u].[CreatedBy], [u].[CreatedDate], [u].[CurrAddress], [u].[Email], [u].[EnrollmentDate], [u].[FatherName], [u].[FullName], [u].[Gender], [u].[Institute], [u].[IsActive], [u].[IsAgreed], [u].[IsAlert], [u].[IsCreateMeeting], [u].[IsDeleted], [u].[IsEmail], [u].[IsFavourite], [u].[IsOverseas], [u].[IsPushAlert], [u].[IsSMS], [u].[IsVerified], [u].[LCourtLocation], [u].[LCourtName], [u].[LHighCourtLocation], [u].[LHighCourtName], [u].[NICOP], [u].[OfficeAddress], [u].[OverseasContactNo], [u].[PassportID], [u].[PermAddress], [u].[ProfileDescription], [u].[Qualification], [u].[Rating], [u].[ResideCountryId], [u].[RoleId], [u].[TotalExperience], [u].[UpdateDate], [u].[UpdatedBy], [u].[UserId]
+FROM [UserProfiles] AS [u]
+WHERE [u].[CityId] = @__filterVM_CityId_0 OR ([u].[TotalExperience] >= @__p_1 AND [u].[TotalExperience] <= @__p_2 AND [u].[RoleId] = 4 AND [u].[IsActive] = CAST(1 AS bit) AND [u].[IsVerified] = CAST(1 AS bit) AND [u].[IsDeleted] = CAST(0 AS bit))" (0723d8ff)
+2024-02-28T01:36:10.1355913+05:00 4000001d-0005-f900-b63f-84710c7967bb [INF] Executed DbCommand ("5"ms) [Parameters=["@__filterVM_CityId_0='?' (DbType = Int32), @__p_1='?' (DbType = Single), @__p_2='?' (DbType = Single)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[ProfileId], [u].[AreasOfExpertise], [u].[AreasOfExpertiseOrther], [u].[BarCouncil], [u].[CNICNo], [u].[CityId], [u].[ContactNumber], [u].[CountryId], [u].[CreatedBy], [u].[CreatedDate], [u].[CurrAddress], [u].[Email], [u].[EnrollmentDate], [u].[FatherName], [u].[FullName], [u].[Gender], [u].[Institute], [u].[IsActive], [u].[IsAgreed], [u].[IsAlert], [u].[IsCreateMeeting], [u].[IsDeleted], [u].[IsEmail], [u].[IsFavourite], [u].[IsOverseas], [u].[IsPushAlert], [u].[IsSMS], [u].[IsVerified], [u].[LCourtLocation], [u].[LCourtName], [u].[LHighCourtLocation], [u].[LHighCourtName], [u].[NICOP], [u].[OfficeAddress], [u].[OverseasContactNo], [u].[PassportID], [u].[PermAddress], [u].[ProfileDescription], [u].[Qualification], [u].[Rating], [u].[ResideCountryId], [u].[RoleId], [u].[TotalExperience], [u].[UpdateDate], [u].[UpdatedBy], [u].[UserId]
+FROM [UserProfiles] AS [u]
+WHERE ([u].[CityId] = @__filterVM_CityId_0 OR ([u].[TotalExperience] >= @__p_1 AND [u].[TotalExperience] <= @__p_2)) AND [u].[RoleId] = 4 AND [u].[IsActive] = CAST(1 AS bit) AND [u].[IsVerified] = CAST(1 AS bit) AND [u].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-02-28T01:36:41.8855414+05:00 4000001d-0005-f900-b63f-84710c7967bb [INF] Executed DbCommand ("1"ms) [Parameters=["@__filterVM_CityId_0='?' (DbType = Int32), @__p_1='?' (DbType = Single), @__p_2='?' (DbType = Single)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[ProfileId], [u].[AreasOfExpertise], [u].[AreasOfExpertiseOrther], [u].[BarCouncil], [u].[CNICNo], [u].[CityId], [u].[ContactNumber], [u].[CountryId], [u].[CreatedBy], [u].[CreatedDate], [u].[CurrAddress], [u].[Email], [u].[EnrollmentDate], [u].[FatherName], [u].[FullName], [u].[Gender], [u].[Institute], [u].[IsActive], [u].[IsAgreed], [u].[IsAlert], [u].[IsCreateMeeting], [u].[IsDeleted], [u].[IsEmail], [u].[IsFavourite], [u].[IsOverseas], [u].[IsPushAlert], [u].[IsSMS], [u].[IsVerified], [u].[LCourtLocation], [u].[LCourtName], [u].[LHighCourtLocation], [u].[LHighCourtName], [u].[NICOP], [u].[OfficeAddress], [u].[OverseasContactNo], [u].[PassportID], [u].[PermAddress], [u].[ProfileDescription], [u].[Qualification], [u].[Rating], [u].[ResideCountryId], [u].[RoleId], [u].[TotalExperience], [u].[UpdateDate], [u].[UpdatedBy], [u].[UserId]
+FROM [UserProfiles] AS [u]
+WHERE ([u].[CityId] = @__filterVM_CityId_0 OR ([u].[TotalExperience] >= @__p_1 AND [u].[TotalExperience] <= @__p_2)) AND [u].[RoleId] = 4 AND [u].[IsActive] = CAST(1 AS bit) AND [u].[IsVerified] = CAST(1 AS bit) AND [u].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-02-28T01:42:41.0163035+05:00 4000003a-0004-f300-b63f-84710c7967bb [INF] Executed DbCommand ("3"ms) [Parameters=["@__filterVM_CityId_0='?' (DbType = Int32), @__p_1='?' (DbType = Single), @__p_2='?' (DbType = Single)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[ProfileId], [u].[AreasOfExpertise], [u].[AreasOfExpertiseOrther], [u].[BarCouncil], [u].[CNICNo], [u].[CityId], [u].[ContactNumber], [u].[CountryId], [u].[CreatedBy], [u].[CreatedDate], [u].[CurrAddress], [u].[Email], [u].[EnrollmentDate], [u].[FatherName], [u].[FullName], [u].[Gender], [u].[Institute], [u].[IsActive], [u].[IsAgreed], [u].[IsAlert], [u].[IsCreateMeeting], [u].[IsDeleted], [u].[IsEmail], [u].[IsFavourite], [u].[IsOverseas], [u].[IsPushAlert], [u].[IsSMS], [u].[IsVerified], [u].[LCourtLocation], [u].[LCourtName], [u].[LHighCourtLocation], [u].[LHighCourtName], [u].[NICOP], [u].[OfficeAddress], [u].[OverseasContactNo], [u].[PassportID], [u].[PermAddress], [u].[ProfileDescription], [u].[Qualification], [u].[Rating], [u].[ResideCountryId], [u].[RoleId], [u].[TotalExperience], [u].[UpdateDate], [u].[UpdatedBy], [u].[UserId]
+FROM [UserProfiles] AS [u]
+WHERE ([u].[CityId] = @__filterVM_CityId_0 OR ([u].[TotalExperience] >= @__p_1 AND [u].[TotalExperience] <= @__p_2)) AND [u].[RoleId] = 4 AND [u].[IsActive] = CAST(1 AS bit) AND [u].[IsVerified] = CAST(1 AS bit) AND [u].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-02-28T01:43:48.4453802+05:00 4000003c-0004-f300-b63f-84710c7967bb [INF] Executed DbCommand ("4"ms) [Parameters=["@__filterVM_CityId_0='?' (DbType = Int32), @__p_1='?' (DbType = Single), @__p_2='?' (DbType = Single)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[ProfileId], [u].[AreasOfExpertise], [u].[AreasOfExpertiseOrther], [u].[BarCouncil], [u].[CNICNo], [u].[CityId], [u].[ContactNumber], [u].[CountryId], [u].[CreatedBy], [u].[CreatedDate], [u].[CurrAddress], [u].[Email], [u].[EnrollmentDate], [u].[FatherName], [u].[FullName], [u].[Gender], [u].[Institute], [u].[IsActive], [u].[IsAgreed], [u].[IsAlert], [u].[IsCreateMeeting], [u].[IsDeleted], [u].[IsEmail], [u].[IsFavourite], [u].[IsOverseas], [u].[IsPushAlert], [u].[IsSMS], [u].[IsVerified], [u].[LCourtLocation], [u].[LCourtName], [u].[LHighCourtLocation], [u].[LHighCourtName], [u].[NICOP], [u].[OfficeAddress], [u].[OverseasContactNo], [u].[PassportID], [u].[PermAddress], [u].[ProfileDescription], [u].[Qualification], [u].[Rating], [u].[ResideCountryId], [u].[RoleId], [u].[TotalExperience], [u].[UpdateDate], [u].[UpdatedBy], [u].[UserId]
+FROM [UserProfiles] AS [u]
+WHERE ([u].[CityId] = @__filterVM_CityId_0 OR ([u].[TotalExperience] >= @__p_1 AND [u].[TotalExperience] <= @__p_2)) AND [u].[RoleId] = 4 AND [u].[IsActive] = CAST(1 AS bit) AND [u].[IsVerified] = CAST(1 AS bit) AND [u].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-02-28T01:44:58.9198579+05:00 4000003a-0007-e800-b63f-84710c7967bb [INF] Executed DbCommand ("5"ms) [Parameters=["@__filterVM_CityId_0='?' (DbType = Int32), @__p_1='?' (DbType = Single), @__p_2='?' (DbType = Single)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[ProfileId], [u].[AreasOfExpertise], [u].[AreasOfExpertiseOrther], [u].[BarCouncil], [u].[CNICNo], [u].[CityId], [u].[ContactNumber], [u].[CountryId], [u].[CreatedBy], [u].[CreatedDate], [u].[CurrAddress], [u].[Email], [u].[EnrollmentDate], [u].[FatherName], [u].[FullName], [u].[Gender], [u].[Institute], [u].[IsActive], [u].[IsAgreed], [u].[IsAlert], [u].[IsCreateMeeting], [u].[IsDeleted], [u].[IsEmail], [u].[IsFavourite], [u].[IsOverseas], [u].[IsPushAlert], [u].[IsSMS], [u].[IsVerified], [u].[LCourtLocation], [u].[LCourtName], [u].[LHighCourtLocation], [u].[LHighCourtName], [u].[NICOP], [u].[OfficeAddress], [u].[OverseasContactNo], [u].[PassportID], [u].[PermAddress], [u].[ProfileDescription], [u].[Qualification], [u].[Rating], [u].[ResideCountryId], [u].[RoleId], [u].[TotalExperience], [u].[UpdateDate], [u].[UpdatedBy], [u].[UserId]
+FROM [UserProfiles] AS [u]
+WHERE ([u].[CityId] = @__filterVM_CityId_0 OR ([u].[TotalExperience] >= @__p_1 AND [u].[TotalExperience] <= @__p_2)) AND [u].[RoleId] = 4 AND [u].[IsActive] = CAST(1 AS bit) AND [u].[IsVerified] = CAST(1 AS bit) AND [u].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-02-28T01:47:16.8383121+05:00 4000003c-0007-e800-b63f-84710c7967bb [INF] Executed DbCommand ("8"ms) [Parameters=["@__filterVM_CityId_0='?' (DbType = Int32), @__p_1='?' (DbType = Single), @__p_2='?' (DbType = Single)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[ProfileId], [u].[AreasOfExpertise], [u].[AreasOfExpertiseOrther], [u].[BarCouncil], [u].[CNICNo], [u].[CityId], [u].[ContactNumber], [u].[CountryId], [u].[CreatedBy], [u].[CreatedDate], [u].[CurrAddress], [u].[Email], [u].[EnrollmentDate], [u].[FatherName], [u].[FullName], [u].[Gender], [u].[Institute], [u].[IsActive], [u].[IsAgreed], [u].[IsAlert], [u].[IsCreateMeeting], [u].[IsDeleted], [u].[IsEmail], [u].[IsFavourite], [u].[IsOverseas], [u].[IsPushAlert], [u].[IsSMS], [u].[IsVerified], [u].[LCourtLocation], [u].[LCourtName], [u].[LHighCourtLocation], [u].[LHighCourtName], [u].[NICOP], [u].[OfficeAddress], [u].[OverseasContactNo], [u].[PassportID], [u].[PermAddress], [u].[ProfileDescription], [u].[Qualification], [u].[Rating], [u].[ResideCountryId], [u].[RoleId], [u].[TotalExperience], [u].[UpdateDate], [u].[UpdatedBy], [u].[UserId]
+FROM [UserProfiles] AS [u]
+WHERE ([u].[CityId] = @__filterVM_CityId_0 OR ([u].[TotalExperience] >= @__p_1 AND [u].[TotalExperience] <= @__p_2)) AND [u].[RoleId] = 4 AND [u].[IsActive] = CAST(1 AS bit) AND [u].[IsVerified] = CAST(1 AS bit) AND [u].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-02-28T01:47:48.5992762+05:00 40000026-0006-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("5"ms) [Parameters=["@__LawyerId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ProfileId], [u].[AreasOfExpertise], [u].[AreasOfExpertiseOrther], [u].[BarCouncil], [u].[CNICNo], [u].[CityId], [u].[ContactNumber], [u].[CountryId], [u].[CreatedBy], [u].[CreatedDate], [u].[CurrAddress], [u].[Email], [u].[EnrollmentDate], [u].[FatherName], [u].[FullName], [u].[Gender], [u].[Institute], [u].[IsActive], [u].[IsAgreed], [u].[IsAlert], [u].[IsCreateMeeting], [u].[IsDeleted], [u].[IsEmail], [u].[IsFavourite], [u].[IsOverseas], [u].[IsPushAlert], [u].[IsSMS], [u].[IsVerified], [u].[LCourtLocation], [u].[LCourtName], [u].[LHighCourtLocation], [u].[LHighCourtName], [u].[NICOP], [u].[OfficeAddress], [u].[OverseasContactNo], [u].[PassportID], [u].[PermAddress], [u].[ProfileDescription], [u].[Qualification], [u].[Rating], [u].[ResideCountryId], [u].[RoleId], [u].[TotalExperience], [u].[UpdateDate], [u].[UpdatedBy], [u].[UserId]
+FROM [UserProfiles] AS [u]
+WHERE [u].[UserId] = @__LawyerId_0 AND [u].[RoleId] = 4" (0723d8ff)
+2024-02-28T01:49:25.2607068+05:00 4000001f-0002-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("11"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int64), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Boolean), @p5='?' (DbType = Single), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Reviews] ([CommitById], [CommitOnId], [CreatedBy], [CreatedDate], [IsDeleted], [Rating], [ReviewContent], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[ReviewId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);" (0723d8ff)
+2024-02-28T01:49:48.6390754+05:00 40000021-0002-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("11"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [r].[ReviewId], [r].[CommitById], [r].[CommitOnId], [r].[CreatedBy], [r].[CreatedDate], [r].[IsDeleted], [r].[Rating], [r].[ReviewContent], [r].[UpdateDate], [r].[UpdatedBy]
+FROM [Reviews] AS [r]
+WHERE [r].[CommitOnId] = @__userId_0 AND [r].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-02-28T01:51:18.1047144+05:00 4000001f-0005-f900-b63f-84710c7967bb [INF] Executed DbCommand ("3"ms) [Parameters=["@__8__locals1_userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ProfileId], [u].[AreasOfExpertise], [u].[AreasOfExpertiseOrther], [u].[BarCouncil], [u].[CNICNo], [u].[CityId], [u].[ContactNumber], [u].[CountryId], [u].[CreatedBy], [u].[CreatedDate], [u].[CurrAddress], [u].[Email], [u].[EnrollmentDate], [u].[FatherName], [u].[FullName], [u].[Gender], [u].[Institute], [u].[IsActive], [u].[IsAgreed], [u].[IsAlert], [u].[IsCreateMeeting], [u].[IsDeleted], [u].[IsEmail], [u].[IsFavourite], [u].[IsOverseas], [u].[IsPushAlert], [u].[IsSMS], [u].[IsVerified], [u].[LCourtLocation], [u].[LCourtName], [u].[LHighCourtLocation], [u].[LHighCourtName], [u].[NICOP], [u].[OfficeAddress], [u].[OverseasContactNo], [u].[PassportID], [u].[PermAddress], [u].[ProfileDescription], [u].[Qualification], [u].[Rating], [u].[ResideCountryId], [u].[RoleId], [u].[TotalExperience], [u].[UpdateDate], [u].[UpdatedBy], [u].[UserId]
+FROM [UserProfiles] AS [u]
+WHERE [u].[UserId] = @__8__locals1_userId_0" (0723d8ff)
+2024-02-28T01:51:18.1600385+05:00 4000001f-0005-f900-b63f-84710c7967bb [INF] Executed DbCommand ("3"ms) [Parameters=["@__8__locals1_userId_0='?' (DbType = Int64), @__currUser_RoleId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT @__8__locals1_userId_0 AS [UserId], [u].[FullName] AS [UserFullName], [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c].[CategoryId], [c0].[CategoryName]
+FROM [UserProfiles] AS [u]
+INNER JOIN [CourtCases] AS [c] ON [u].[UserId] = [c].[CitizenId]
+INNER JOIN [CaseCategories] AS [c0] ON [c].[CategoryId] = [c0].[ID]
+WHERE [u].[UserId] = @__8__locals1_userId_0 AND [u].[RoleId] = @__currUser_RoleId_1 AND [u].[IsDeleted] = CAST(0 AS bit) AND [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-02-28T01:51:31.5224636+05:00 4000002e-0000-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("3"ms) [Parameters=["@__8__locals1_userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ProfileId], [u].[AreasOfExpertise], [u].[AreasOfExpertiseOrther], [u].[BarCouncil], [u].[CNICNo], [u].[CityId], [u].[ContactNumber], [u].[CountryId], [u].[CreatedBy], [u].[CreatedDate], [u].[CurrAddress], [u].[Email], [u].[EnrollmentDate], [u].[FatherName], [u].[FullName], [u].[Gender], [u].[Institute], [u].[IsActive], [u].[IsAgreed], [u].[IsAlert], [u].[IsCreateMeeting], [u].[IsDeleted], [u].[IsEmail], [u].[IsFavourite], [u].[IsOverseas], [u].[IsPushAlert], [u].[IsSMS], [u].[IsVerified], [u].[LCourtLocation], [u].[LCourtName], [u].[LHighCourtLocation], [u].[LHighCourtName], [u].[NICOP], [u].[OfficeAddress], [u].[OverseasContactNo], [u].[PassportID], [u].[PermAddress], [u].[ProfileDescription], [u].[Qualification], [u].[Rating], [u].[ResideCountryId], [u].[RoleId], [u].[TotalExperience], [u].[UpdateDate], [u].[UpdatedBy], [u].[UserId]
+FROM [UserProfiles] AS [u]
+WHERE [u].[UserId] = @__8__locals1_userId_0" (0723d8ff)
+2024-02-28T01:51:31.5311864+05:00 4000002e-0000-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("1"ms) [Parameters=["@__8__locals1_userId_0='?' (DbType = Int64), @__currUser_RoleId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT @__8__locals1_userId_0 AS [UserId], [u].[FullName] AS [UserFullName], [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c].[CategoryId], [c0].[CategoryName]
+FROM [UserProfiles] AS [u]
+INNER JOIN [CourtCases] AS [c] ON [u].[UserId] = [c].[CitizenId]
+INNER JOIN [CaseCategories] AS [c0] ON [c].[CategoryId] = [c0].[ID]
+WHERE [u].[UserId] = @__8__locals1_userId_0 AND [u].[RoleId] = @__currUser_RoleId_1 AND [u].[IsDeleted] = CAST(0 AS bit) AND [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-02-28T01:51:48.0347966+05:00 40000028-0006-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("2"ms) [Parameters=["@__8__locals1_userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ProfileId], [u].[AreasOfExpertise], [u].[AreasOfExpertiseOrther], [u].[BarCouncil], [u].[CNICNo], [u].[CityId], [u].[ContactNumber], [u].[CountryId], [u].[CreatedBy], [u].[CreatedDate], [u].[CurrAddress], [u].[Email], [u].[EnrollmentDate], [u].[FatherName], [u].[FullName], [u].[Gender], [u].[Institute], [u].[IsActive], [u].[IsAgreed], [u].[IsAlert], [u].[IsCreateMeeting], [u].[IsDeleted], [u].[IsEmail], [u].[IsFavourite], [u].[IsOverseas], [u].[IsPushAlert], [u].[IsSMS], [u].[IsVerified], [u].[LCourtLocation], [u].[LCourtName], [u].[LHighCourtLocation], [u].[LHighCourtName], [u].[NICOP], [u].[OfficeAddress], [u].[OverseasContactNo], [u].[PassportID], [u].[PermAddress], [u].[ProfileDescription], [u].[Qualification], [u].[Rating], [u].[ResideCountryId], [u].[RoleId], [u].[TotalExperience], [u].[UpdateDate], [u].[UpdatedBy], [u].[UserId]
+FROM [UserProfiles] AS [u]
+WHERE [u].[UserId] = @__8__locals1_userId_0" (0723d8ff)
+2024-02-28T01:51:48.0394544+05:00 40000028-0006-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("1"ms) [Parameters=["@__8__locals1_userId_0='?' (DbType = Int64), @__currUser_RoleId_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT @__8__locals1_userId_0 AS [UserId], [u].[FullName] AS [UserFullName], [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c].[CategoryId], [c0].[CategoryName]
+FROM [UserProfiles] AS [u]
+INNER JOIN [CourtCases] AS [c] ON [u].[UserId] = [c].[CitizenId]
+INNER JOIN [CaseCategories] AS [c0] ON [c].[CategoryId] = [c0].[ID]
+WHERE [u].[UserId] = @__8__locals1_userId_0 AND [u].[RoleId] = @__currUser_RoleId_1 AND [u].[IsDeleted] = CAST(0 AS bit) AND [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-02-28T02:02:38.5122165+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-02-28T02:02:38.5362417+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-02-28T02:02:39.9957887+05:00  [INF] Executed DbCommand ("36"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-02-28T02:02:40.0726350+05:00  [INF] Executed DbCommand ("30"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-02-28T02:02:40.0991305+05:00  [INF] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-02-28T02:02:40.1059130+05:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-02-28T02:02:40.1264622+05:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-02-28T02:02:40.1655693+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-02-28T02:02:40.7760093+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-02-28T02:02:40.7788140+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-02-28T02:02:40.7808494+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-02-28T02:03:07.9274589+05:00 40000011-0007-e600-b63f-84710c7967bb [INF] Executed DbCommand ("54"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT @__userId_0 AS [UserId], [u].[FullName] AS [UserFullName], [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c].[CategoryId], [c0].[CategoryName]
+FROM [UserProfiles] AS [u]
+INNER JOIN [CourtCases] AS [c] ON [u].[UserId] = [c].[CitizenId]
+INNER JOIN [CaseCategories] AS [c0] ON [c].[CategoryId] = [c0].[ID]
+WHERE [u].[UserId] = @__userId_0 AND [u].[RoleId] = 3 AND [u].[IsDeleted] = CAST(0 AS bit) AND [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-02-28T02:03:34.9625944+05:00 40000014-0002-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("1"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT @__userId_0 AS [UserId], [u].[FullName] AS [UserFullName], [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c].[CategoryId], [c0].[CategoryName]
+FROM [UserProfiles] AS [u]
+INNER JOIN [CourtCases] AS [c] ON [u].[UserId] = [c].[CitizenId]
+INNER JOIN [CaseCategories] AS [c0] ON [c].[CategoryId] = [c0].[ID]
+WHERE [u].[UserId] = @__userId_0 AND [u].[RoleId] = 3 AND [u].[IsDeleted] = CAST(0 AS bit) AND [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-02-28T02:03:45.5435467+05:00 4000001a-0006-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("1"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT @__userId_0 AS [UserId], [u].[FullName] AS [UserFullName], [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c].[CategoryId], [c0].[CategoryName]
+FROM [UserProfiles] AS [u]
+INNER JOIN [CourtCases] AS [c] ON [u].[UserId] = [c].[CitizenId]
+INNER JOIN [CaseCategories] AS [c0] ON [c].[CategoryId] = [c0].[ID]
+WHERE [u].[UserId] = @__userId_0 AND [u].[RoleId] = 3 AND [u].[IsDeleted] = CAST(0 AS bit) AND [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-02-28T02:03:57.5226296+05:00 4000003a-0001-f500-b63f-84710c7967bb [INF] Executed DbCommand ("4"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT @__userId_0 AS [UserId], [u].[FullName] AS [UserFullName], [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c].[CategoryId], [c0].[CategoryName]
+FROM [UserProfiles] AS [u]
+INNER JOIN [CourtCases] AS [c] ON [u].[UserId] = [c].[CitizenId]
+INNER JOIN [CaseCategories] AS [c0] ON [c].[CategoryId] = [c0].[ID]
+WHERE [u].[UserId] = @__userId_0 AND [u].[RoleId] = 4 AND [u].[IsDeleted] = CAST(0 AS bit) AND [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-02-28T02:06:26.1542590+05:00 40000023-0005-f900-b63f-84710c7967bb [INF] Executed DbCommand ("53"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT @__userId_0 AS [UserId], [u].[FullName] AS [UserFullName], [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c].[CategoryId], [c0].[CategoryName]
+FROM [UserProfiles] AS [u]
+INNER JOIN [CourtCases] AS [c] ON [u].[UserId] = [c].[CitizenId]
+INNER JOIN [CaseCategories] AS [c0] ON [c].[CategoryId] = [c0].[ID]
+WHERE [c].[LawyerId] = @__userId_0 AND [u].[RoleId] = 4 AND [u].[IsDeleted] = CAST(0 AS bit) AND [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-02-28T02:10:51.1629511+05:00 40000023-0005-f900-b63f-84710c7967bb [INF] Executed DbCommand ("4"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT @__userId_0 AS [UserId], [u].[FullName] AS [UserFullName], [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c].[CategoryId], [c0].[CategoryName]
+FROM [UserProfiles] AS [u]
+INNER JOIN [CourtCases] AS [c] ON [u].[UserId] = [c].[LawyerId]
+INNER JOIN [CaseCategories] AS [c0] ON [c].[CategoryId] = [c0].[ID]
+WHERE [u].[UserId] = @__userId_0 AND [u].[RoleId] = 4 AND [u].[IsDeleted] = CAST(0 AS bit) AND [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-02-28T02:11:07.0764062+05:00 40000040-0001-f500-b63f-84710c7967bb [INF] Executed DbCommand ("3"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT @__userId_0 AS [UserId], [u].[FullName] AS [UserFullName], [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c].[CategoryId], [c0].[CategoryName]
+FROM [UserProfiles] AS [u]
+INNER JOIN [CourtCases] AS [c] ON [u].[UserId] = [c].[CitizenId]
+INNER JOIN [CaseCategories] AS [c0] ON [c].[CategoryId] = [c0].[ID]
+WHERE [c].[CitizenId] = @__userId_0 AND [u].[RoleId] = 3 AND [u].[IsDeleted] = CAST(0 AS bit) AND [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-02-28T02:11:13.2548107+05:00 40000046-0000-f700-b63f-84710c7967bb [INF] Executed DbCommand ("2"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT @__userId_0 AS [UserId], [u].[FullName] AS [UserFullName], [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c].[CategoryId], [c0].[CategoryName]
+FROM [UserProfiles] AS [u]
+INNER JOIN [CourtCases] AS [c] ON [u].[UserId] = [c].[CitizenId]
+INNER JOIN [CaseCategories] AS [c0] ON [c].[CategoryId] = [c0].[ID]
+WHERE [c].[CitizenId] = @__userId_0 AND [u].[RoleId] = 3 AND [u].[IsDeleted] = CAST(0 AS bit) AND [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-02-28T02:11:31.6488046+05:00 40000015-0007-e600-b63f-84710c7967bb [INF] Executed DbCommand ("1"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT @__userId_0 AS [UserId], [u].[FullName] AS [UserFullName], [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c].[CategoryId], [c0].[CategoryName]
+FROM [UserProfiles] AS [u]
+INNER JOIN [CourtCases] AS [c] ON [u].[UserId] = [c].[CitizenId]
+INNER JOIN [CaseCategories] AS [c0] ON [c].[CategoryId] = [c0].[ID]
+WHERE [c].[CitizenId] = @__userId_0 AND [u].[RoleId] = 3 AND [u].[IsDeleted] = CAST(0 AS bit) AND [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-02-28T02:11:51.2581267+05:00 40000016-0004-f500-b63f-84710c7967bb [INF] Executed DbCommand ("5"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT @__userId_0 AS [UserId], [u].[FullName] AS [UserFullName], [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c].[CategoryId], [c0].[CategoryName]
+FROM [UserProfiles] AS [u]
+INNER JOIN [CourtCases] AS [c] ON [u].[UserId] = [c].[LawyerId]
+INNER JOIN [CaseCategories] AS [c0] ON [c].[CategoryId] = [c0].[ID]
+WHERE [u].[UserId] = @__userId_0 AND [u].[RoleId] = 4 AND [u].[IsDeleted] = CAST(0 AS bit) AND [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-02-28T02:12:01.6256375+05:00 40000048-0000-f700-b63f-84710c7967bb [INF] Executed DbCommand ("2"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT @__userId_0 AS [UserId], [u].[FullName] AS [UserFullName], [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c].[CategoryId], [c0].[CategoryName]
+FROM [UserProfiles] AS [u]
+INNER JOIN [CourtCases] AS [c] ON [u].[UserId] = [c].[LawyerId]
+INNER JOIN [CaseCategories] AS [c0] ON [c].[CategoryId] = [c0].[ID]
+WHERE [u].[UserId] = @__userId_0 AND [u].[RoleId] = 4 AND [u].[IsDeleted] = CAST(0 AS bit) AND [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-02-28T02:26:15.5618339+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-02-28T02:26:15.5690058+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-02-28T02:26:16.2125366+05:00  [INF] Executed DbCommand ("26"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-02-28T02:26:16.2627354+05:00  [INF] Executed DbCommand ("31"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-02-28T02:26:16.2938304+05:00  [INF] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-02-28T02:26:16.2974241+05:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-02-28T02:26:16.3213132+05:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-02-28T02:26:16.3614924+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-02-28T02:26:16.4435348+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-02-28T02:26:16.4452596+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-02-28T02:26:16.4469564+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-02-28T02:27:31.8582128+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-02-28T02:27:31.8658196+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-02-28T02:27:32.5692063+05:00  [INF] Executed DbCommand ("31"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-02-28T02:27:32.6082575+05:00  [INF] Executed DbCommand ("21"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-02-28T02:27:32.6238719+05:00  [INF] Executed DbCommand ("10"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-02-28T02:27:32.6278893+05:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-02-28T02:27:32.6603604+05:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-02-28T02:27:32.6954511+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-02-28T02:27:32.7764091+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-02-28T02:27:32.7788580+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-02-28T02:27:32.7808029+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-02-28T02:27:51.6215812+05:00 40000032-0001-f700-b63f-84710c7967bb [INF] Executed DbCommand ("27"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c0].[CaseDateTitle], [c0].[HearingDate], [c0].[DateDescription], [c0].[CaseStatusId], [c1].[DocName]
+FROM [CourtCases] AS [c]
+INNER JOIN [CasesDetails] AS [c0] ON [c].[CaseId] = [c0].[CaseId]
+INNER JOIN [CasesDocuments] AS [c1] ON [c].[CaseId] = [c1].[CaseId]
+WHERE [c].[CitizenId] = @__userId_0 AND [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-02-28T02:27:58.1076685+05:00 40000041-0006-f600-b63f-84710c7967bb [INF] Executed DbCommand ("2"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c0].[CaseDateTitle], [c0].[HearingDate], [c0].[DateDescription], [c0].[CaseStatusId], [c1].[DocName]
+FROM [CourtCases] AS [c]
+INNER JOIN [CasesDetails] AS [c0] ON [c].[CaseId] = [c0].[CaseId]
+INNER JOIN [CasesDocuments] AS [c1] ON [c].[CaseId] = [c1].[CaseId]
+WHERE [c].[CitizenId] = @__userId_0 AND [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-02-28T02:28:07.6623691+05:00 40000042-0003-f300-b63f-84710c7967bb [INF] Executed DbCommand ("2"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c0].[CaseDateTitle], [c0].[HearingDate], [c0].[DateDescription], [c0].[CaseStatusId], [c1].[DocName]
+FROM [CourtCases] AS [c]
+INNER JOIN [CasesDetails] AS [c0] ON [c].[CaseId] = [c0].[CaseId]
+INNER JOIN [CasesDocuments] AS [c1] ON [c].[CaseId] = [c1].[CaseId]
+WHERE [c].[CitizenId] = @__userId_0 AND [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-02-28T02:28:18.9772135+05:00 4000002b-0002-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("4"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c0].[CaseDateTitle], [c0].[HearingDate], [c0].[DateDescription], [c0].[CaseStatusId], [c1].[DocName]
+FROM [CourtCases] AS [c]
+INNER JOIN [CasesDetails] AS [c0] ON [c].[CaseId] = [c0].[CaseId]
+INNER JOIN [CasesDocuments] AS [c1] ON [c].[CaseId] = [c1].[CaseId]
+WHERE [c].[LawyerId] = @__userId_0 AND [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-02-28T02:30:11.4663731+05:00 40000045-0006-f600-b63f-84710c7967bb [INF] Executed DbCommand ("3"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c0].[CaseDateTitle], [c0].[HearingDate], [c0].[DateDescription], [c0].[CaseStatusId], [c1].[DocName]
+FROM [CourtCases] AS [c]
+INNER JOIN [CasesDetails] AS [c0] ON [c].[CaseId] = [c0].[CaseId]
+INNER JOIN [CasesDocuments] AS [c1] ON [c].[CaseId] = [c1].[CaseId]
+WHERE [c].[LawyerId] = @__userId_0 AND [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-02-28T02:37:54.0057013+05:00 40000045-0006-f600-b63f-84710c7967bb [INF] Executed DbCommand ("11"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c0].[CaseDateTitle], [c0].[HearingDate], [c0].[DateDescription], [c0].[CaseStatusId], [c1].[DocName]
+FROM [CourtCases] AS [c]
+INNER JOIN [CasesDetails] AS [c0] ON [c].[CaseId] = [c0].[CaseId]
+INNER JOIN [CasesDocuments] AS [c1] ON [c].[CaseId] = [c1].[CaseId]
+WHERE [c].[LawyerId] = @__userId_0 AND [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-02-28T02:38:18.2676018+05:00 4000002f-0002-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("6"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c0].[CaseDateTitle], [c0].[HearingDate], [c0].[DateDescription], [c0].[CaseStatusId], [c1].[DocName]
+FROM [CourtCases] AS [c]
+INNER JOIN [CasesDetails] AS [c0] ON [c].[CaseId] = [c0].[CaseId]
+INNER JOIN [CasesDocuments] AS [c1] ON [c].[CaseId] = [c1].[CaseId]
+WHERE [c].[CitizenId] = @__userId_0 AND [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-02-28T02:38:24.6087700+05:00 40000031-0002-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("4"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c0].[CaseDateTitle], [c0].[HearingDate], [c0].[DateDescription], [c0].[CaseStatusId], [c1].[DocName]
+FROM [CourtCases] AS [c]
+INNER JOIN [CasesDetails] AS [c0] ON [c].[CaseId] = [c0].[CaseId]
+INNER JOIN [CasesDocuments] AS [c1] ON [c].[CaseId] = [c1].[CaseId]
+WHERE [c].[CitizenId] = @__userId_0 AND [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-02-28T02:38:34.0858390+05:00 40000008-0000-f900-b63f-84710c7967bb [INF] Executed DbCommand ("4"ms) [Parameters=["@__caseId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[FullName] AS [UserFullName], [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c].[CaseDescription], [c].[CategoryId], [c0].[CategoryName], [c].[CaseStatusId]
+FROM [CourtCases] AS [c]
+INNER JOIN [UserProfiles] AS [u] ON [c].[CitizenId] = [u].[UserId]
+INNER JOIN [CaseCategories] AS [c0] ON [c].[CategoryId] = [c0].[ID]
+WHERE [c].[CaseId] = @__caseId_0 AND [u].[IsDeleted] = CAST(0 AS bit) AND [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-02-28T02:39:08.8999333+05:00 4000000a-0000-f900-b63f-84710c7967bb [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[ID], [c].[CaseDateTitle], [c].[CaseId], [c].[CaseStatusId], [c].[CreatedBy], [c].[CreatedDate], [c].[DateDescription], [c].[HearingDate], [c].[IsDeleted], [c].[UpdateDate], [c].[UpdatedBy]
+FROM [CasesDetails] AS [c]" (0723d8ff)

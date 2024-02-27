@@ -10,15 +10,16 @@ namespace WKLNAMA.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles ="Admin")]
+    //[Authorize(Roles ="Citizen")]
     public class CategoryController : BaseController<CaseCategory>
     {
         private readonly ICategoryRepository categoryRepository;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
         public CategoryController(ICategoryRepository categoryRepository, IHttpContextAccessor httpContextAccessor) : base(categoryRepository, httpContextAccessor)
         {
             this.categoryRepository = categoryRepository;
-
+            this._httpContextAccessor = httpContextAccessor;
         }
 
         //[AllowAnonymous]

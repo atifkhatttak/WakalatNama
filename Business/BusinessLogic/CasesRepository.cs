@@ -4,6 +4,7 @@ using Business.ViewModels;
 using Data.Context;
 using Data.DomainModels;
 using Google.Apis.Drive.v3.Data;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -11,6 +12,7 @@ using ProjWakalatnama.DataLayer.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +23,8 @@ namespace Business.BusinessLogic
     {
         private readonly WKNNAMADBCtx ctx;
         private readonly IConfiguration config;
+        private readonly IHttpContextAccessor _httpContextAccessor;
+
 
         public CasesRepository(WKNNAMADBCtx ctx, IConfiguration config) : base(ctx)
         {
@@ -41,6 +45,7 @@ namespace Business.BusinessLogic
                         LawyerId= caseVM.LawyerId,
                         RedundantLawyerId=caseVM.RedundantLawyerId,
                         CaseNumber=caseVM.CaseNumber,
+                        CaseTitle=caseVM.CaseTitle,
                         PartyId=caseVM.PartyId,
                         CategoryId=caseVM.CategoryId,
                         CaseDescription=caseVM.CaseDescription!,
@@ -99,45 +104,40 @@ namespace Business.BusinessLogic
 
             return courtCase;
         }
-
-        public async Task<List<CourtCaseVM>> GetUserCases(long? userId)
+        public async Task<List<CourtCaseVM>> GetCitizenCases(long? userId)
         {
             List<CourtCaseVM> userCases = null;
             try
             {
                 if (userId != null && userId > 0)
                 {
-                    var currUser=await ctx.UserProfiles.Where(x=>x.UserId==userId).FirstOrDefaultAsync();
+                        var caseList = await (from u in ctx.UserProfiles
+                                              join c in ctx.CourtCases on u.UserId equals c.CitizenId
+                                              join cat in ctx.CaseCategories on c.CategoryId equals cat.ID
+                                              where c.CitizenId == userId && u.RoleId == (int)Roles.Citizen && (u.IsDeleted == false && c.IsDeleted == false)
+                                              select new CourtCaseVM
+                                              {
+                                                  UserId = userId,
+                                                  UserFullName = u.FullName,
+                                                  CaseId = c.CaseId,
+                                                  CitizenId = c.CitizenId,
+                                                  LawyerId = c.LawyerId,
+                                                  CaseNumber = c.CaseNumber,
+                                                  CaseTitle = c.CaseTitle,
+                                                  CategoryId = c.CategoryId,
+                                                  CategoryName = cat.CategoryName
+                                              })
+                          .ToListAsync();
 
-                    if (currUser != null) {
-                       
-                       var caseList =await (from u in ctx.UserProfiles
-                         join c in ctx.CourtCases on u.UserId equals c.CitizenId
-                         join cat in ctx.CaseCategories on c.CategoryId equals cat.ID
-                         where u.UserId==userId && u.RoleId==currUser.RoleId && (u.IsDeleted==false && c.IsDeleted == false)
-                         select new CourtCaseVM
-                         {
-                             UserId = userId,
-                             UserFullName = u.FullName,
-                             CaseId = c.CaseId,
-                             CitizenId = c.CitizenId,
-                             LawyerId = c.LawyerId,
-                             CaseNumber = c.CaseNumber,
-                             CaseTitle = c.CaseTitle,
-                             CategoryId = c.CategoryId,
-                             CategoryName = cat.CategoryName
-                         })
-                         .ToListAsync();
-
-                    if (caseList.Any())
+                        if (caseList.Any())
                         {
                             userCases = new List<CourtCaseVM>();
                             foreach (var item in caseList)
                             {
                                 userCases.Add(new CourtCaseVM
                                 {
-                                    UserId=userId,
-                                    UserFullName = currUser.FullName,
+                                    UserId = userId,
+                                    UserFullName = item.UserFullName,
 
                                     CaseId = item.CaseId,
                                     CitizenId = item.CitizenId,
@@ -149,6 +149,59 @@ namespace Business.BusinessLogic
                                 });
                             }
                         }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return userCases ?? new List<CourtCaseVM>();
+        }
+
+        public async Task<List<CourtCaseVM>> GetLawyerCases(long? userId)
+        {
+            List<CourtCaseVM> userCases = null;
+            try
+            {
+                if (userId != null && userId > 0)
+                {
+                    var caseList = await (from u in ctx.UserProfiles
+                                          join c in ctx.CourtCases on u.UserId equals c.LawyerId
+                                          join cat in ctx.CaseCategories on c.CategoryId equals cat.ID
+                                          where u.UserId == userId && u.RoleId == (int)Roles.Lawyer && (u.IsDeleted == false && c.IsDeleted == false)
+                                          select new CourtCaseVM
+                                          {
+                                              UserId = userId,
+                                              UserFullName = u.FullName,
+                                              CaseId = c.CaseId,
+                                              CitizenId = c.CitizenId,
+                                              LawyerId = c.LawyerId,
+                                              CaseNumber = c.CaseNumber,
+                                              CaseTitle = c.CaseTitle,
+                                              CategoryId = c.CategoryId,
+                                              CategoryName = cat.CategoryName
+                                          })
+                      .ToListAsync();
+
+                    if (caseList.Any())
+                    {
+                        userCases = new List<CourtCaseVM>();
+                        foreach (var item in caseList)
+                        {
+                            userCases.Add(new CourtCaseVM
+                            {
+                                UserId = userId,
+                                UserFullName = item.UserFullName,
+
+                                CaseId = item.CaseId,
+                                CitizenId = item.CitizenId,
+                                LawyerId = item.LawyerId,
+                                CaseNumber = item.CaseNumber,
+                                CaseTitle = item.CaseTitle,
+                                CategoryId = item.CategoryId,
+                                CategoryName = item.CategoryName
+                            });
+                        }
                     }
                 }
             }
@@ -158,13 +211,18 @@ namespace Business.BusinessLogic
             }
             return userCases ?? new List<CourtCaseVM>();
         }
-        public async Task<List<CaseDetailVM>> GetUserDateList(long? userId)
+
+        public async Task<List<CaseDetailVM>> GetCitizenDateList(long? userId)
         {
+            
             List<CaseDetailVM> caseDetails = null;
             try
             {
                 if (userId != null && userId > 0)
                 {
+                  //  bool isAuthenticated = _httpContextAccessor.HttpContext.User.Identity.IsAuthenticated;
+               //     long currentUserId = isAuthenticated ? Convert.ToInt64(_httpContextAccessor.HttpContext.User.FindFirstValue("UserId")) : -1; //-1 means the entries is done by unauthenticated user
+
                     var caseList =
                        await (from cc in ctx.CourtCases
                          join cd in ctx.CasesDetails on cc.CaseId equals cd.CaseId
@@ -212,6 +270,65 @@ namespace Business.BusinessLogic
             }
             return caseDetails ?? new List<CaseDetailVM>();
         }
+        public async Task<List<CaseDetailVM>> GetLawyerDateList(long? userId)
+        {
+
+            List<CaseDetailVM> caseDetails = null;
+            try
+            {
+                if (userId != null && userId > 0)
+                {
+                   // bool isAuthenticated = _httpContextAccessor.HttpContext.User.Identity.IsAuthenticated;
+                   // long currentUserId = isAuthenticated ? Convert.ToInt64(_httpContextAccessor.HttpContext.User.FindFirstValue("UserId")) : -1; //-1 means the entries is done by unauthenticated user
+
+                    var caseList =
+                       await (from cc in ctx.CourtCases
+                              join cd in ctx.CasesDetails on cc.CaseId equals cd.CaseId
+                              join cdd in ctx.CasesDocuments on cc.CaseId equals cdd.CaseId
+                              where cc.LawyerId == userId && cc.IsDeleted == false
+                              select new
+                              {
+                                  cc.CaseId,
+                                  cc.CitizenId,
+                                  cc.LawyerId,
+                                  cc.CaseNumber,
+                                  cc.CaseTitle,
+                                  cd.CaseDateTitle,
+                                  cd.HearingDate,
+                                  cd.DateDescription,
+                                  cd.CaseStatusId,
+                                  cdd.DocName
+                              }).ToListAsync();
+
+                    if (caseList.Any())
+                    {
+                        caseDetails = new List<CaseDetailVM>();
+                        foreach (var item in caseList)
+                        {
+                            caseDetails.Add(new CaseDetailVM
+                            {
+                                CaseId = item.CaseId,
+                                CitizenId = item.CitizenId,
+                                LawyerId = item.LawyerId,
+                                CaseNumber = item.CaseNumber,
+                                CaseTitle = item.CaseTitle,
+                                DateTitle = item.CaseDateTitle,
+                                HearingDate = item.HearingDate,
+                                DateDescription = item.DateDescription,
+                                CaseStatusId = item.CaseStatusId,
+                                DocName = item.DocName
+                            });
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return caseDetails ?? new List<CaseDetailVM>();
+        }
+
         public async Task AcceptRejectCaseByLawyer(AcceptRejectCaseVM acceptReject)
         {
             try
@@ -221,7 +338,6 @@ namespace Business.BusinessLogic
                     var casse = await ctx.CourtCases.FindAsync(acceptReject.CaseId);
                     if (casse!=null)
                     {
-                        casse.ModifiedDate = DateTime.Now;
                         casse.CaseStatusId =(acceptReject.Status==0)? (int)CaseStatus.Initiated: (int)CaseStatus.Draft;                       
                         await ctx.SaveChangesAsync();
                     }
