@@ -1,4 +1,5 @@
 ﻿using Business.BusinessLogic;
+using Business.Enums;
 using Business.Services;
 using Business.ViewModels;
 using Data.DomainModels;
@@ -13,6 +14,7 @@ namespace WKLNAMA.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //[Authorize]
     public class CasesController : BaseController<CasesDetail>
     {
         private readonly ICasesRepository casesRepository;
@@ -46,6 +48,7 @@ namespace WKLNAMA.Controllers
             return Ok(apiResponse);
         }
         [HttpGet("GetCitizenCases")]
+       //[Authorize(Roles = "Citizen")]
         public async Task<ActionResult> GetCitizenCases(long? userId)
         {
             try
@@ -65,7 +68,8 @@ namespace WKLNAMA.Controllers
             }
             return Ok(apiResponse);
         }
-        [HttpGet("GetLawyerCases")]
+        [HttpGet("GetLawyerCases")]        
+        //[Authorize(Roles = "Lawyer")]
         public async Task<ActionResult> GetLawyerCases(long? userId)
         {
             try
