@@ -22,7 +22,7 @@ namespace WKLNAMA.Controllers
         private readonly IHttpContextAccessor httpContextAccessor;
         private readonly ChatHub _chatHub;
 
-        public MessageController(IMessageRepository message, IHttpContextAccessor httpContextAccessor, ChatHub chatHub): base(message, httpContextAccessor)
+        public MessageController(IMessageRepository message, IHttpContextAccessor httpContextAccessor, ChatHub chatHub, ILogger<MessageController> logger): base(message, httpContextAccessor, logger)
         {
             _message = message;
             this.httpContextAccessor = httpContextAccessor;
@@ -131,11 +131,11 @@ namespace WKLNAMA.Controllers
                 apiResponse.HttpStatusCode = HttpStatusCode.BadRequest;
                 apiResponse.Message = HttpStatusCode.BadRequest.ToString();
 
-                if (message?.ToUserId == UserModel.UserId)
+                if (message?.FromUserId == UserModel.UserId)
                 {
                     var messages = await _message.Create(message);
 
-                    await _chatHub.Clients.User(message.ToUserId.ToString()).DirectMessage(message);
+                   await  _chatHub.DirectMessage(message);
 
                     apiResponse.Message = HttpStatusCode.OK.ToString();
                     apiResponse.HttpStatusCode = HttpStatusCode.OK;
