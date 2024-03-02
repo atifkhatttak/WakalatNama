@@ -15,30 +15,36 @@ namespace WKLNAMA.AppHub
         private   IMessageRepository _messageService;
         private  readonly IServiceProvider _serviceProvider;
 
-        public ChatHub(IServiceProvider serviceProvider)//
-            //INotificationRepository notificationService, IMessageRepository messageService)
+        public ChatHub(IServiceProvider serviceProvider)
         {
             _serviceProvider = serviceProvider;
         }
         public override async Task  OnConnectedAsync()
         {
+
+            await PushDataOnConnectionEstablished();
+           
+            await base.OnConnectedAsync();
+        }
+
+        private async Task PushDataOnConnectionEstablished()
+        {
             var _userId = Context.UserIdentifier != null ? Convert.ToInt64(Context.UserIdentifier!) : -1;
 
-            using ( var scope = _serviceProvider.CreateScope())
+            using (var scope = _serviceProvider.CreateScope())
             {
-               _messageService =  scope.ServiceProvider.GetRequiredService<IMessageRepository>();
-               _notificationService = scope.ServiceProvider.GetRequiredService<INotificationRepository>();
+                _messageService = scope.ServiceProvider.GetRequiredService<IMessageRepository>();
+                _notificationService = scope.ServiceProvider.GetRequiredService<INotificationRepository>();
 
                 var unReadNotification = _notificationService.GetAllUnReadNotification(_userId);
                 var unReadMessages = _messageService.GetUnReadMessages(_userId);
 
                 Task.WaitAll(unReadMessages, unReadNotification);
 
-                await UnReadMessage(unReadMessages.Result,unReadMessages.Result.Count(), _userId.ToString());
+                await UnReadMessage(unReadMessages.Result, unReadMessages.Result.Count(), _userId.ToString());
                 await UnReadNotification(unReadNotification.Result, unReadNotification.Result.Count(), _userId.ToString());
 
             }
-            await base.OnConnectedAsync();
         }
 
         public override Task OnDisconnectedAsync(Exception? exception)
