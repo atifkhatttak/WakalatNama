@@ -1,4 +1,5 @@
-﻿using Data.DomainModels;
+﻿using Business.ViewModels;
+using Data.DomainModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,7 @@ namespace Business.Services
 {
     public interface INotificationRepository: IBaseRepository<Notification>
     {
+        public Task<List<NotificationVm>> GetAllUnReadNotification(long UserId);
+        public Task<List<Notification>> MarkIsRead(List<long> notificationIds);
     }
 }

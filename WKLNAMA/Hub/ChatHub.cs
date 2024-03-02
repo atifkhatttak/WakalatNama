@@ -20,6 +20,7 @@ namespace WKLNAMA.AppHub
             return base.OnDisconnectedAsync(exception);
         }
 
+ 
         /// <summary>
         /// Delete Message
         /// </summary>
@@ -32,8 +33,6 @@ namespace WKLNAMA.AppHub
         }
         public async Task DirectMessage(MessageVm message)
         {
-            var d = Context.UserIdentifier;
-
             await Clients.User(message.ToUserId.ToString()).DirectMessage(message);
         }
     }
