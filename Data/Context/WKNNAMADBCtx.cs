@@ -58,6 +58,8 @@ namespace Data.Context
         public virtual DbSet<CasesDocument> CasesDocuments { get; set; } = null!;
         public virtual DbSet<Message> Messages { get; set; } = null!;
         public virtual DbSet<Review> Reviews { get; set; } = null!;
+        public virtual DbSet<Notification> Notifications { get; set; } = null!;
+             
     }
 }
 
