@@ -70,6 +70,7 @@ namespace WKLNAMA.Extensions
             services.AddSingleton<ChatHub>();
             services.AddScoped<IMessageRepository, MessageRepository>();
             services.AddScoped<ITokenService, TokenService.TokenService>();
+            services.AddScoped<IEmailService, EmailService>();
 
             services.AddSingleton<IDBInitializer, DBInitializer>();
             builder.Services.AddSingleton< IHttpContextAccessor,HttpContextAccessor>();
