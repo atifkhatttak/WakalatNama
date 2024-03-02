@@ -55,7 +55,10 @@ app.Services.GetService<IDBInitializer>().Init();
 app.UseAuthorization();
 app.MapHub<ChatHub>("chat-hub");
 
-
+app.UseCors(options =>
+{
+    options.WithOrigins().AllowAnyMethod().AllowCredentials().AllowAnyHeader().SetIsOriginAllowed((host) => true);
+});
 app.MapControllers();
 //app.MapIdentityApi<AppUser>();
 
