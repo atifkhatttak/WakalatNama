@@ -15,8 +15,6 @@ namespace WKLNAMA.AppHub
         private   IMessageRepository _messageService;
         private  readonly IServiceProvider _serviceProvider;
 
-        private long UserId { set; get; }
-
         public ChatHub(IServiceProvider serviceProvider)//
             //INotificationRepository notificationService, IMessageRepository messageService)
         {
@@ -25,7 +23,6 @@ namespace WKLNAMA.AppHub
         public override async Task  OnConnectedAsync()
         {
             var _userId = Context.UserIdentifier != null ? Convert.ToInt64(Context.UserIdentifier!) : -1;
-            UserId = _userId;
 
             using ( var scope = _serviceProvider.CreateScope())
             {
@@ -37,8 +34,8 @@ namespace WKLNAMA.AppHub
 
                 Task.WaitAll(unReadMessages, unReadNotification);
 
-                await UnReadMessageCount(unReadMessages.Result.Count(), _userId.ToString());
-                await UnReadNotificationCount(unReadNotification.Result.Count(), _userId.ToString());
+                await UnReadMessage(unReadMessages.Result,unReadMessages.Result.Count(), _userId.ToString());
+                await UnReadNotification(unReadNotification.Result, unReadNotification.Result.Count(), _userId.ToString());
 
             }
             await base.OnConnectedAsync();
@@ -64,16 +61,15 @@ namespace WKLNAMA.AppHub
         {
             await Clients.User(message.ToUserId.ToString()).DirectMessage(message);
         }
-        public async Task UnReadMessageCount(int count, string toWhom)
+        public async Task UnReadMessage(List<MessageVm> messages, int count, string toWhom)
         {
-            await Clients.User(toWhom).UnReadMessageCount(count);
+            await Clients.User(toWhom).UnReadMessage(messages, count);
         }
-
-        public async Task UnReadNotificationCount(int count,string toWhom )
+         
+        public async Task UnReadNotification(List<NotificationVm> notifications, int count,string toWhom )
         {
-            await Clients.User(toWhom).UnReadNotificationCount(count); 
+            await Clients.User(toWhom).UnReadNotification(notifications,count); 
         }
-
 
     }
 }

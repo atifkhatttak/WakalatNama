@@ -12,9 +12,8 @@ namespace Business.Services
        // public Task DirectMessage(string message);
         public Task DirectMessage(MessageVm model);
         public Task DeleteMessage(string message, string toWhom);
-
-        public Task UnReadMessageCount(int count);
-        public Task UnReadNotificationCount(int count); 
+        public Task UnReadMessage(List<MessageVm> messages, int count); 
+        public Task UnReadNotification(List<NotificationVm> notifications, int count);
 
     }
 }
