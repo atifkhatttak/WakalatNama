@@ -16,5 +16,6 @@ namespace Data.DomainModels
         public long CreatedBy { get; set; }
         public long UpdatedBy { get; set; }
         public bool IsDeleted { get; set; } = false;
+        public int? OTPCode { get; set; } 
     }
 }

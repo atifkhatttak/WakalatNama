@@ -12,5 +12,13 @@ namespace Business.Services
     {
         public Task<RegisterViewModel> Register(RegisterViewModel registerViewModel);
         public Task<string> SignInUser(LoginViewModel registerViewModel);
+
+        public Task<AppUserVm> ForgotPassword(string email);
+
+        public Task<AppUserVm> VerifyOTP(string email,int otpCode);
+
+        public Task<bool> ResetPassword(AppUserVm userVm);
+        
+        
     } 
 } 
