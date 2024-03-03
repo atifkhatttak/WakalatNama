@@ -2,7 +2,9 @@
 using Business.ViewModels;
 using Data.Context;
 using Data.DomainModels;
+using Google.Apis.Drive.v3.Data;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Identity.Client;
 using Microsoft.IdentityModel.Tokens;
@@ -177,6 +179,68 @@ namespace Business.BusinessLogic
 
             var token = new JwtSecurityTokenHandler().WriteToken(Sectoken);
             return token;
+        }
+
+        public async Task<AppUserVm> ForgotPassword(string email)
+        {
+           return await ctx.Users.Where(x => x.Email == email)
+                .Select(x => new AppUserVm { 
+                Id = x.Id,
+                FullName = x.FirstName +" " + x.LastName,
+                Email = x.Email!,
+                UserName = x.UserName!
+                })
+                .FirstOrDefaultAsync();
+        }
+
+        public async Task PersistOTP(AppUserVm userVm,int otpCode)
+        {
+            var _user = await ctx.Users.Where(x => x.Email == userVm.Email && x.UserName == userVm.UserName).FirstOrDefaultAsync();
+
+            if(_user != null )
+            {
+                _user.OTPCode = otpCode;
+                await ctx.SaveChangesAsync();
+            }
+        }
+
+        public async Task RemoveOTP(AppUserVm userVm) 
+        {
+            var _user = await ctx.Users.Where(x => x.Email == userVm.Email && x.UserName == userVm.UserName).FirstOrDefaultAsync();
+
+            if (_user != null)
+            {
+                _user.OTPCode = null;
+                await ctx.SaveChangesAsync();
+            }
+        }
+
+        public async Task<AppUserVm> VerifyOTP(string email, int otpCode)
+        {
+           var _user = await ctx.Users.Where(x => x.Email == email && x.OTPCode == otpCode).Select(x=> new AppUserVm {
+                          Id= x.Id,
+                          FullName =x.FirstName + " " + x.LastName,
+                          Email=x.Email!,
+                          UserName=x.UserName!,
+           }).FirstOrDefaultAsync();
+           
+            return _user;
+        }
+
+        public async Task<bool> ResetPassword(AppUserVm userVm)
+        {
+              var _user = await    userManager.FindByEmailAsync(userVm.Email);
+
+            if(_user != null)
+            {
+               await userManager.AddPasswordAsync(_user,userVm.Password);
+
+              await  ctx.SaveChangesAsync();
+
+                return true;
+            }
+
+            return false;
         }
     }
 }
