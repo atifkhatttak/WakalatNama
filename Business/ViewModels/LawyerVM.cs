@@ -20,6 +20,8 @@ namespace Business.ViewModels
         public string ProfileDescription { get; set;}
         public int? CompletedCase { get; set; }
         public int? TotalClient { get; set; }
+        public long? LawyerId { get; internal set; }
+        public long CitizenId { get; internal set; }
     }
     public class CitizenVM
     {

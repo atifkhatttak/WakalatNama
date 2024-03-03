@@ -5,11 +5,13 @@ using Data.Context;
 using Data.DomainModels;
 using Google.Apis.Drive.v3.Data;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using ProjWakalatnama.DataLayer.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,11 +23,13 @@ namespace Business.BusinessLogic
         private readonly WKNNAMADBCtx ctx;
         private readonly IConfiguration config;
         private readonly ICasesRepository casesRepository;
+        private readonly BaseSPRepository baseSP; 
 
         public UserRepository(WKNNAMADBCtx ctx, IConfiguration config) : base(ctx)
         {
             this.ctx = ctx;
             this.config = config;
+            baseSP = new BaseSPRepository(ctx);
         }
 
         public async Task<CitizenVM> CreateCitizenProfile(CitizenVM citizenVM)
@@ -67,16 +71,15 @@ namespace Business.BusinessLogic
         public async Task<List<LawyerVM>> GetLawyerList(FilterVM filterVM)
         {
             List<LawyerVM> lawyerList = new List<LawyerVM>();
+            //List<SqlParameter> sqlParameters= new List<SqlParameter>();
             try
             {
 
                 if (filterVM != null)
                 {
-                    var d = await ctx
-                        .UserProfiles
-                        .Where(x=>(x.CityId == filterVM.CityId || (x.TotalExperience >= filterVM.ExperienceMin && x.TotalExperience <= filterVM.ExperienceMax))
-                         && (x.RoleId == (int)Roles.Lawyer && x.IsActive == true && x.IsVerified == true && x.IsDeleted == false))
-                        .ToListAsync();
+                    SqlParameter[] param=baseSP.CreateSqlParametersFromModel(filterVM);
+
+                    var d = await baseSP.ExecuteStoredProcedureAsync<sp_GetCitizenLawyers_Result>("sp_GetCitizenLawyers", param);
 
                     if (d != null)
                     {
@@ -84,11 +87,11 @@ namespace Business.BusinessLogic
                         {
                             lawyerList.Add(new LawyerVM
                             {
-                                Id = item.UserId,
+                                LawyerId = item.UserId,
                                 UserName = item.FullName,
                                 TotalExperience = item.TotalExperience,
                                 Rating = item.Rating,
-                                IsFavourite = item.IsFavourite
+                                IsFavourite = item.IsFavourite??false
                             });
                         }
 

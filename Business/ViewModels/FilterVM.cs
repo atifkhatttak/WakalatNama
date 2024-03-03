@@ -8,10 +8,12 @@ namespace Business.ViewModels
 {
     public class FilterVM
     {
+        public long? UserId { get; set; }
         public int? CaseCategoryId { get; set; }
         public int? CityId { get; set; }
         public int? ExperienceMin { get; set;}
         public int? ExperienceMax { get; set; }
+       
     }
     public class AcceptRejectCaseVM
     {

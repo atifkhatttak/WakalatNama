@@ -40,7 +40,7 @@ namespace Data.Context
                 new AppRole() { Id = 1, Name = "Admin", ConcurrencyStamp = "1", NormalizedName = "Admin" },
                 new AppRole() { Id = 2, Name = "Zonal Manager", ConcurrencyStamp = "2", NormalizedName = "Zonal Manager" },
                 new AppRole() { Id = 3, Name = "Citizen", ConcurrencyStamp = "3", NormalizedName = "Citizen" },
-                new AppRole() { Id = 4, Name = "Laywer", ConcurrencyStamp = "4", NormalizedName = "Laywer" },
+                new AppRole() { Id = 4, Name = "Lawyer", ConcurrencyStamp = "4", NormalizedName = "Laywer" },
                 new AppRole() { Id = 5, Name = "Employee ", ConcurrencyStamp = "5", NormalizedName = "Employee " }
 
                 );
@@ -59,7 +59,8 @@ namespace Data.Context
         public virtual DbSet<Message> Messages { get; set; } = null!;
         public virtual DbSet<Review> Reviews { get; set; } = null!;
         public virtual DbSet<Notification> Notifications { get; set; } = null!;
-             
+        public virtual DbSet<Favourite> Favourites{ get; set; } = null!;
+
     }
 }
 

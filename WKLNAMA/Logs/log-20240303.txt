@@ -1,0 +1,183 @@
+2024-03-03T02:15:06.1690041+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-03T02:15:06.2051442+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-03T02:15:08.4379892+05:00  [INF] Executed DbCommand ("99"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-03T02:15:08.6082832+05:00  [INF] Executed DbCommand ("78"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-03T02:15:08.6381259+05:00  [INF] Executed DbCommand ("21"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-03T02:15:08.6444679+05:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-03T02:15:08.7308287+05:00  [INF] Executed DbCommand ("29"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-03-03T02:15:08.8024445+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-03-03T02:15:09.9099129+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-03-03T02:15:09.9155995+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-03-03T02:15:09.9209065+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-03-03T02:16:27.4010443+05:00 4000007b-0001-ed00-b63f-84710c7967bb [INF] Executed DbCommand ("132"ms) [Parameters=["@__filterVM_CityId_0='?' (DbType = Int32), @__p_1='?' (DbType = Single), @__p_2='?' (DbType = Single)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[UserId], [u].[FullName], [u].[TotalExperience], [u].[Rating], [f].[IsFavourite]
+FROM [UserProfiles] AS [u]
+LEFT JOIN [Favourites] AS [f] ON [u].[UserId] = [f].[UserId]
+WHERE [u].[CityId] = @__filterVM_CityId_0 OR ([u].[TotalExperience] >= @__p_1 AND [u].[TotalExperience] <= @__p_2 AND [u].[RoleId] = 4 AND [u].[IsActive] = CAST(1 AS bit) AND [u].[IsVerified] = CAST(1 AS bit) AND [u].[IsDeleted] = CAST(0 AS bit))" (0723d8ff)
+2024-03-03T02:16:27.5639229+05:00 4000007b-0001-ed00-b63f-84710c7967bb [ERR] An exception occurred while iterating over the results of a query for context type '"Data.Context.WKNNAMADBCtx"'."
+""System.InvalidOperationException: Nullable object must have a value.
+   at lambda_method77(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()" (f5c7ac34)
+System.InvalidOperationException: Nullable object must have a value.
+   at lambda_method77(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2024-03-03T02:18:55.6408281+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-03T02:18:55.6500171+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-03T02:18:56.3316256+05:00  [INF] Executed DbCommand ("31"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-03T02:18:56.3843457+05:00  [INF] Executed DbCommand ("33"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-03T02:18:56.4009902+05:00  [INF] Executed DbCommand ("9"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-03T02:18:56.4044935+05:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-03T02:18:56.4453464+05:00  [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-03-03T02:18:56.4802658+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-03-03T02:18:56.5845401+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-03-03T02:18:56.5872066+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-03-03T02:18:56.5892470+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-03-03T02:19:27.3137805+05:00 4000007f-0001-ed00-b63f-84710c7967bb [INF] Executed DbCommand ("32"ms) [Parameters=["@p0='?' (DbType = Int64), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Boolean), @p3='?' (DbType = Boolean), @p4='?' (DbType = Int64), @p5='?' (DbType = DateTime2), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Favourites] ([CreatedBy], [CreatedDate], [IsDeleted], [IsFavourite], [LawyerId], [UpdateDate], [UpdatedBy], [UserId])
+OUTPUT INSERTED.[FavouriteId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);" (0723d8ff)
+2024-03-03T02:36:22.6341372+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-03T02:36:22.6562555+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-03T02:36:24.0970917+05:00  [INF] Executed DbCommand ("76"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-03T02:36:24.2080938+05:00  [INF] Executed DbCommand ("68"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-03T02:36:24.2560554+05:00  [INF] Executed DbCommand ("26"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-03T02:36:24.2627400+05:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-03T02:36:24.3436424+05:00  [INF] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-03-03T02:36:24.4242529+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-03-03T02:36:24.6055208+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-03-03T02:36:24.6102636+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-03-03T02:36:24.6149626+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-03-03T02:37:13.7614923+05:00 4000003d-0005-f600-b63f-84710c7967bb [INF] Executed DbCommand ("24"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[UserId], [u].[FullName], [u].[TotalExperience], [u].[Rating], [f].[IsFavourite]
+FROM [UserProfiles] AS [u]
+INNER JOIN [Favourites] AS [f] ON [u].[UserId] = [f].[UserId]
+WHERE [f].[UserId] = @__userId_0 AND [f].[IsDeleted] = CAST(0 AS bit) AND [u].[RoleId] = 4 AND [u].[IsActive] = CAST(1 AS bit) AND [u].[IsVerified] = CAST(1 AS bit) AND [u].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-03-03T02:38:56.0264752+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-03T02:38:56.0467416+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-03T02:38:57.3536075+05:00  [INF] Executed DbCommand ("78"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-03T02:38:57.4549890+05:00  [INF] Executed DbCommand ("58"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-03T02:38:57.4801759+05:00  [INF] Executed DbCommand ("16"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-03T02:38:57.4867022+05:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-03T02:38:57.5890903+05:00  [INF] Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-03-03T02:38:57.6700551+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-03-03T02:38:57.8466871+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-03-03T02:38:57.8518492+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-03-03T02:38:57.8565495+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-03-03T02:39:34.5479012+05:00 4000002f-0007-e000-b63f-84710c7967bb [INF] Executed DbCommand ("8"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[UserId], [u].[FullName], [u].[TotalExperience], [u].[Rating], [f].[IsFavourite]
+FROM [UserProfiles] AS [u]
+INNER JOIN [Favourites] AS [f] ON [u].[UserId] = [f].[UserId]
+WHERE [f].[IsDeleted] = CAST(0 AS bit) AND [u].[RoleId] = 4 AND [u].[IsActive] = CAST(1 AS bit) AND [u].[IsVerified] = CAST(1 AS bit) AND [u].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-03-03T02:52:54.9957993+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-03T02:52:55.0120310+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-03T02:52:57.4751486+05:00  [INF] Executed DbCommand ("183"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-03T02:52:57.7294438+05:00  [INF] Executed DbCommand ("58"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-03T02:52:57.7556204+05:00  [INF] Executed DbCommand ("16"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-03T02:52:57.7615538+05:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-03T02:52:57.8089163+05:00  [INF] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-03-03T02:52:57.8733172+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-03-03T02:52:58.2251706+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-03-03T02:52:58.2295278+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-03-03T02:52:58.2340878+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-03-03T02:53:22.6987199+05:00 40000081-0001-ed00-b63f-84710c7967bb [INF] Executed DbCommand ("8"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[UserId], [f].[LawyerId], [u].[FullName], [u].[TotalExperience], [u].[Rating], [f].[IsFavourite]
+FROM [UserProfiles] AS [u]
+INNER JOIN [Favourites] AS [f] ON [u].[UserId] = [f].[UserId]
+WHERE [f].[IsDeleted] = CAST(0 AS bit) AND [u].[IsActive] = CAST(1 AS bit) AND [u].[IsVerified] = CAST(1 AS bit) AND [u].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-03-03T02:54:18.5366206+05:00 40000083-0001-ed00-b63f-84710c7967bb [INF] Executed DbCommand ("128"ms) [Parameters=["@__filterVM_CityId_0='?' (DbType = Int32), @__p_1='?' (DbType = Single), @__p_2='?' (DbType = Single)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[ProfileId], [u].[AreasOfExpertise], [u].[AreasOfExpertiseOrther], [u].[BarCouncil], [u].[CNICNo], [u].[CityId], [u].[ContactNumber], [u].[CountryId], [u].[CreatedBy], [u].[CreatedDate], [u].[CurrAddress], [u].[Email], [u].[EnrollmentDate], [u].[FatherName], [u].[FullName], [u].[Gender], [u].[Institute], [u].[IsActive], [u].[IsAgreed], [u].[IsAlert], [u].[IsCreateMeeting], [u].[IsDeleted], [u].[IsEmail], [u].[IsFavourite], [u].[IsOverseas], [u].[IsPushAlert], [u].[IsSMS], [u].[IsVerified], [u].[LCourtLocation], [u].[LCourtName], [u].[LHighCourtLocation], [u].[LHighCourtName], [u].[NICOP], [u].[OfficeAddress], [u].[OverseasContactNo], [u].[PassportID], [u].[PermAddress], [u].[ProfileDescription], [u].[Qualification], [u].[Rating], [u].[ResideCountryId], [u].[RoleId], [u].[TotalExperience], [u].[UpdateDate], [u].[UpdatedBy], [u].[UserId]
+FROM [UserProfiles] AS [u]
+WHERE ([u].[CityId] = @__filterVM_CityId_0 OR ([u].[TotalExperience] >= @__p_1 AND [u].[TotalExperience] <= @__p_2)) AND [u].[RoleId] = 4 AND [u].[IsActive] = CAST(1 AS bit) AND [u].[IsVerified] = CAST(1 AS bit) AND [u].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-03-03T03:08:29.4989799+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-03T03:08:29.5060626+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-03T03:08:30.0508084+05:00  [INF] Executed DbCommand ("37"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-03T03:08:30.0865195+05:00  [INF] Executed DbCommand ("21"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-03T03:08:30.0997866+05:00  [INF] Executed DbCommand ("9"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-03T03:08:30.1029008+05:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-03T03:08:30.1476632+05:00  [INF] Executed DbCommand ("7"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-03-03T03:08:30.1693271+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-03-03T03:08:30.2713067+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-03-03T03:08:30.2734429+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-03-03T03:08:30.2754016+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-03-03T03:08:59.3365672+05:00 400000b1-0006-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("24"ms) [Parameters=["@__filterVM_CityId_0='?' (DbType = Int32), @__p_1='?' (DbType = Single), @__p_2='?' (DbType = Single)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[UserId], [u].[FullName], [u].[TotalExperience], [u].[Rating], CASE
+    WHEN [f].[FavouriteId] IS NOT NULL THEN [f].[IsFavourite]
+    ELSE CAST(0 AS bit)
+END AS [IsFavourite]
+FROM [UserProfiles] AS [u]
+LEFT JOIN [Favourites] AS [f] ON [u].[UserId] = [f].[LawyerId]
+WHERE [u].[CityId] = @__filterVM_CityId_0 OR ([u].[TotalExperience] >= @__p_1 AND [u].[TotalExperience] <= @__p_2 AND [u].[RoleId] = 4 AND [u].[IsActive] = CAST(1 AS bit) AND [u].[IsVerified] = CAST(1 AS bit) AND [u].[IsDeleted] = CAST(0 AS bit))" (0723d8ff)
+2024-03-03T03:11:49.4031294+05:00 400000d8-0007-f600-b63f-84710c7967bb [INF] Executed DbCommand ("3"ms) [Parameters=["@__filterVM_CityId_0='?' (DbType = Int32), @__p_1='?' (DbType = Single), @__p_2='?' (DbType = Single)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[UserId], [u].[FullName], [u].[TotalExperience], [u].[Rating], CASE
+    WHEN [f].[FavouriteId] IS NOT NULL THEN [f].[IsFavourite]
+    ELSE CAST(0 AS bit)
+END AS [IsFavourite]
+FROM [UserProfiles] AS [u]
+LEFT JOIN [Favourites] AS [f] ON [u].[UserId] = [f].[LawyerId]
+WHERE [u].[CityId] = @__filterVM_CityId_0 OR ([u].[TotalExperience] >= @__p_1 AND [u].[TotalExperience] <= @__p_2 AND [u].[RoleId] = 4 AND [u].[IsActive] = CAST(1 AS bit) AND [u].[IsVerified] = CAST(1 AS bit) AND [u].[IsDeleted] = CAST(0 AS bit))" (0723d8ff)
+2024-03-03T03:21:15.7710080+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-03T03:21:15.7784146+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-03T03:21:16.3483452+05:00  [INF] Executed DbCommand ("31"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-03T03:21:16.3844360+05:00  [INF] Executed DbCommand ("20"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-03T03:21:16.4263102+05:00  [INF] Executed DbCommand ("29"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-03T03:21:16.4289555+05:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-03T03:21:16.4613318+05:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-03-03T03:21:16.4848290+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-03-03T03:21:16.5844492+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-03-03T03:21:16.5871871+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-03-03T03:21:16.5888728+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-03-03T03:21:39.2405249+05:00 40000043-0000-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("19"ms) [Parameters=["@__filterVM_CityId_0='?' (DbType = Int32), @__p_1='?' (DbType = Single), @__p_2='?' (DbType = Single)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[ProfileId], [u].[AreasOfExpertise], [u].[AreasOfExpertiseOrther], [u].[BarCouncil], [u].[CNICNo], [u].[CityId], [u].[ContactNumber], [u].[CountryId], [u].[CreatedBy], [u].[CreatedDate], [u].[CurrAddress], [u].[Email], [u].[EnrollmentDate], [u].[FatherName], [u].[FullName], [u].[Gender], [u].[Institute], [u].[IsActive], [u].[IsAgreed], [u].[IsAlert], [u].[IsCreateMeeting], [u].[IsDeleted], [u].[IsEmail], [u].[IsFavourite], [u].[IsOverseas], [u].[IsPushAlert], [u].[IsSMS], [u].[IsVerified], [u].[LCourtLocation], [u].[LCourtName], [u].[LHighCourtLocation], [u].[LHighCourtName], [u].[NICOP], [u].[OfficeAddress], [u].[OverseasContactNo], [u].[PassportID], [u].[PermAddress], [u].[ProfileDescription], [u].[Qualification], [u].[Rating], [u].[ResideCountryId], [u].[RoleId], [u].[TotalExperience], [u].[UpdateDate], [u].[UpdatedBy], [u].[UserId]
+FROM [UserProfiles] AS [u]
+WHERE ([u].[CityId] = @__filterVM_CityId_0 OR ([u].[TotalExperience] >= @__p_1 AND [u].[TotalExperience] <= @__p_2)) AND [u].[RoleId] = 4 AND [u].[IsActive] = CAST(1 AS bit) AND [u].[IsVerified] = CAST(1 AS bit) AND [u].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
