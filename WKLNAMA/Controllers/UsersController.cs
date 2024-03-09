@@ -22,11 +22,19 @@ namespace WKLNAMA.Controllers
             this.userRepository = userRepository;
 
         }
-        [HttpPost("CreateUserProfile")]
-        public async Task<ActionResult> CreateUserProfile([FromForm]CitizenVM citizenVM)
+        [HttpPost("CreateUpdateCitizenProfile")]
+        public async Task<ActionResult> CreateUpdateCitizenProfile([FromForm]CitizenVM citizenVM)
         {
             try
             {
+                if (!ModelState.IsValid)
+                {
+                    apiResponse.Message = HttpStatusCode.BadRequest.ToString();
+                    apiResponse.HttpStatusCode = HttpStatusCode.BadRequest;
+                    apiResponse.Success = false;
+                    apiResponse.Data = citizenVM;
+                    return BadRequest(apiResponse);
+                }
                 var result = await userRepository.CreateCitizenProfile(citizenVM);
                 apiResponse.Message = HttpStatusCode.OK.ToString();
                 apiResponse.HttpStatusCode = HttpStatusCode.OK;
@@ -129,7 +137,6 @@ namespace WKLNAMA.Controllers
 
             //return Ok(Task.FromResult(_viewModel));
             return Ok(apiResponse);
-        }
-       
+        }       
     }
 }

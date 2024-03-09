@@ -8,23 +8,30 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Data.DomainModels;
+using System.Runtime.InteropServices;
+using System.Runtime.Serialization;
 
 namespace Business.ViewModels
 {
     public class CourtCaseVM
     {
         public long? CaseId { get; set; }
+        [Required]
         public long CitizenId { get; set; }
         public long LawyerId { get; set; }
         public long RedundantLawyerId { get; set; }
         public string CaseNumber { get; set; }
-
+        [Required]
         public int? PartyId { get; set; }
-
+        [Required]
         public int? CategoryId { get; set; }
+        [Required]
+        public int? CaseNatureId { get; set; }
+        [Required]
         public string? CaseDescription { get; set; }
-
+        [Required]
         public int? CaseJurisdictionId { get; set; }
+        [Required]
         public int CourtId { get; set; }
         public int? CasePlacingId { get; set; }
         public IFormFileCollection Documents { get; set; } = null;

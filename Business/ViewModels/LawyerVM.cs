@@ -2,7 +2,10 @@
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Runtime.InteropServices;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -28,20 +31,24 @@ namespace Business.ViewModels
         public long? Id { get; set; }
         public string? UserName { get; set; }
         public string? ProfilePic { get; set; }
-        public string? FullName { get; internal set; }
-        public string? FatherName { get; internal set; }
-        public string? Email { get; internal set; }
-        public string? CNICNo { get; internal set; }
-        public string? ContactNumber { get; internal set; }
-        public string? CurrAddress { get; internal set; }
-        public string? PermAddress { get; internal set; }
-        public long UserId { get; internal set; }
-        public long ProfileId { get; internal set; }
-        public IFormFile CNICFront { get; set; } = null;
-        public IFormFile CNICBack { get; set; } = null;
-        public IFormFile ProfilePhoto { get; set; } = null;
-        public string? CountryCode { get; internal set; }
-        public int? CityId { get; internal set; }
+        public string? FullName { get; set; }
+        public string? FatherName { get; set; }
+        public string? Email { get; set; }
+        [Required(ErrorMessage ="CNIC is required")]
+        public string? CNICNo { get; set; }
+        [Required(ErrorMessage = "Phone Number is required")]
+        public string? ContactNumber { get; set; }
+        [Required(ErrorMessage = "Current address is required")]
+        public string? CurrAddress { get; set; }
+        [Required(ErrorMessage = "Permanent address is required")]
+        public string? PermAddress { get; set; }
+        public long UserId { get; set; }
+        public long ProfileId { get; set; }
+        public IFormFile? CNICFront { get; set; } = null;
+        public IFormFile? CNICBack { get; set; } = null;
+        public IFormFile? ProfilePhoto { get; set; } = null;
+        public string? CountryCode { get; set; }
+        public int? CityId { get; set; }
     }
     public class LawyerHomeVM
     {

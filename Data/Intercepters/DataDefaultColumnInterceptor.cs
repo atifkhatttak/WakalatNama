@@ -74,10 +74,10 @@ namespace Data.Intercepters
                 {
                     ((BaseModel)entityEntry.Entity).UpdatedBy = currentUserId;
                 }
-                if (entityEntry.State == EntityState.Modified)
-                {
-                    ((BaseModel)entityEntry.Entity).IsDeleted = true;
-                }
+                //if (entityEntry.State == EntityState.Modified)
+                //{
+                //    ((BaseModel)entityEntry.Entity).IsDeleted = true;
+                //}
             }
         }
     }

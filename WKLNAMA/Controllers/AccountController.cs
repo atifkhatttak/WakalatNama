@@ -56,6 +56,10 @@ namespace WKLNAMA.Controllers
         {
             try
             {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(_viewModel);
+                }
                 var token = await accountRepository.SignInUser(_viewModel);
 
                 apiResponse.Message = HttpStatusCode.OK.ToString();
@@ -70,6 +74,28 @@ namespace WKLNAMA.Controllers
                 apiResponse.Success = false;
                 apiResponse.Data = null;
             }           
+            return Ok(apiResponse);
+        }
+        [AllowAnonymous]
+        [HttpPost("GetUserClaims")]
+        public async Task<ActionResult> GetClaims(LoginViewModel loginModel)
+        {
+            try
+            {
+                var token = await accountRepository.GetClaims(loginModel);
+
+                apiResponse.Message = HttpStatusCode.OK.ToString();
+                apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                apiResponse.Success = true;
+                apiResponse.Data = token;
+            }
+            catch (Exception ex)
+            {
+                apiResponse.Message = ex.Message;
+                apiResponse.HttpStatusCode = HttpStatusCode.InternalServerError;
+                apiResponse.Success = false;
+                apiResponse.Data = null;
+            }
             return Ok(apiResponse);
         }
     }

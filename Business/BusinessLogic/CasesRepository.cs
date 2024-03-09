@@ -39,12 +39,12 @@ namespace Business.BusinessLogic
             this.LoggedInUserId= isAuthenticated ? Convert.ToInt64(_httpContextAccessor.HttpContext.User.FindFirstValue("role")) : -1;
         }
 
-        public async Task CreateCase(CourtCaseVM caseVM)
+        public async Task<CourtCases> CreateCase(CourtCaseVM caseVM)
         {
             CourtCases courtCases = new CourtCases();
             try
             {
-                if (!isAuthenticated) return;
+                //if (!isAuthenticated) return;
 
                 if (caseVM != null)
                 {
@@ -68,6 +68,7 @@ namespace Business.BusinessLogic
             {
                 throw ex;
             }
+            return courtCases;
         }
 
         public async Task<CourtCaseVM> GetCaseById(long? caseId)

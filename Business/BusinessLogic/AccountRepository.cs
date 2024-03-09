@@ -1,4 +1,5 @@
-﻿using Business.Services;
+﻿using Business.Enums;
+using Business.Services;
 using Business.ViewModels;
 using Data.Context;
 using Data.DomainModels;
@@ -162,6 +163,14 @@ namespace Business.BusinessLogic
                     }
                   return  GenerateToken(claims);
                 }
+                else
+                {
+                    return "Password is incorrect";
+                }
+            }
+            else
+            {
+                return "User not found on this email";
             }
            return string.Empty;
         }
@@ -241,6 +250,45 @@ namespace Business.BusinessLogic
             }
 
             return false;
+        }
+
+        public async Task<UserClaimVM> GetClaims(LoginViewModel loginModel)
+        {
+            UserClaimVM userClaimVM = new UserClaimVM();
+            try
+            {
+            var _user = await userManager.FindByEmailAsync(loginModel.UserName);
+
+            if (_user != null)
+            {
+                var _passwordVerified = await userManager.CheckPasswordAsync(_user, loginModel.Password);
+
+                    if (_passwordVerified)
+                    {
+                        var roles = await userManager.GetRolesAsync(_user);
+
+                        userClaimVM.Email = _user.Email;
+                        userClaimVM.UserId = _user.Id;
+                        userClaimVM.UserName = _user.UserName;
+                        if (roles.Count > 0)
+                        {
+                            userClaimVM.Roles = new List<string>();
+                            foreach (var role in roles)
+                            {
+                                userClaimVM.Roles.Add(role);
+                            }
+                        }
+                   
+                }
+            }
+
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return userClaimVM;
         }
     }
 }

@@ -30,11 +30,19 @@ namespace WKLNAMA.Controllers
         {
             try
             {
-                await casesRepository.CreateCase(courtCase);
+                if (!ModelState.IsValid)
+                {
+                    apiResponse.Message = HttpStatusCode.BadRequest.ToString();
+                    apiResponse.HttpStatusCode = HttpStatusCode.BadRequest;
+                    apiResponse.Success = false;
+                    apiResponse.Data = courtCase;
+                }
+
+               var result =await casesRepository.CreateCase(courtCase);
                 apiResponse.Message = HttpStatusCode.Created.ToString();
                 apiResponse.HttpStatusCode = HttpStatusCode.Created;
                 apiResponse.Success = true;
-                //apiResponse.Data = result;
+                apiResponse.Data = result;
             }
             catch (Exception ex)
             {

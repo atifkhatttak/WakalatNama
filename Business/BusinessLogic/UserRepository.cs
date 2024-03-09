@@ -39,24 +39,29 @@ namespace Business.BusinessLogic
 
                 if (citizenVM != null)
                 {
-                    var CitizenGet=await ctx.UserProfiles.Where(x=>x.ProfileId==citizenVM.ProfileId && x.IsDeleted==false).FirstOrDefaultAsync();
-
-                    if (CitizenGet!=null)
+                    if (citizenVM.ProfileId > 0)
                     {
-                        CitizenGet.FullName = citizenVM.FullName;
-                        CitizenGet.FatherName=citizenVM.FatherName;
-                        CitizenGet.CNICNo = citizenVM.CNICNo;
-                        CitizenGet.CityId = citizenVM.CityId;
-                        //CitizenGet.CountryCode = citizenVM.CountryCode;
-                        CitizenGet.ContactNumber=citizenVM.ContactNumber;
-                        CitizenGet.CurrAddress=citizenVM.CurrAddress;
-                        CitizenGet.PermAddress=citizenVM.PermAddress;
+                        var CitizenGet = await ctx.UserProfiles.Where(x => x.ProfileId == citizenVM.ProfileId && x.IsDeleted == false).FirstOrDefaultAsync();
 
-                        if (citizenVM.ProfilePhoto!=null)
+                        if (CitizenGet != null)
                         {
-                            UserDocument document = new UserDocument();
-                            document.UserId = citizenVM.UserId;
-                           document.DocName=citizenVM.ProfilePhoto.Name;
+                            CitizenGet.FullName = citizenVM.FullName;
+                            CitizenGet.FatherName = citizenVM.FatherName;
+                            CitizenGet.CNICNo = citizenVM.CNICNo;
+                            CitizenGet.CityId = citizenVM.CityId;
+                            //CitizenGet.CountryCode = citizenVM.CountryCode;
+                            CitizenGet.ContactNumber = citizenVM.ContactNumber;
+                            CitizenGet.CurrAddress = citizenVM.CurrAddress;
+                            CitizenGet.PermAddress = citizenVM.PermAddress;
+                            CitizenGet.IsDeleted = false;
+                            //if (citizenVM.ProfilePhoto!=null)
+                            //{
+                            //    UserDocument document = new UserDocument();
+                            //    document.UserId = citizenVM.UserId;
+                            //   document.DocName=citizenVM.ProfilePhoto.Name;
+                            //}
+                            ctx.Entry(CitizenGet).State = EntityState.Modified;
+                            await ctx.SaveChangesAsync();
                         }
                     }
                 }
@@ -207,7 +212,7 @@ namespace Business.BusinessLogic
                     var d = await ctx
                         .UserProfiles
                         .Where(x => x.UserId == CitizenId
-                    && (x.RoleId == (int)Roles.Lawyer && x.IsActive == true && x.IsVerified == true && x.IsDeleted == false))
+                    && (x.RoleId == (int)Roles.Citizen && x.IsActive == true && x.IsVerified == true && x.IsDeleted == false))
                         .FirstOrDefaultAsync();
 
                     if (d != null)

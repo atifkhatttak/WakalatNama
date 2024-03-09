@@ -64,6 +64,7 @@ namespace WKLNAMA.Extensions
             services.AddScoped<ICasesRepository,CasesRepository>();
             services.AddScoped<IDocumentService, GoogleDriveDocument>();
             services.AddScoped<IReviewRepository, ReviewRepository>();
+            services.AddScoped<ISettingsRepository,SettingsRepository>();
             services.AddSingleton<IUserIdProvider, IdBasedUserIdProvider>();
             services.AddScoped<INotificationRepository, NotificationRepository>();
 

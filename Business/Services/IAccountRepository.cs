@@ -18,7 +18,9 @@ namespace Business.Services
         public Task<AppUserVm> VerifyOTP(string email,int otpCode);
 
         public Task<bool> ResetPassword(AppUserVm userVm);
-        
-        
+
+        public Task<UserClaimVM> GetClaims(LoginViewModel loginModel);
+
+
     } 
 } 
