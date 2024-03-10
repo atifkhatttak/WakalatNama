@@ -192,14 +192,42 @@ namespace Business.BusinessLogic
 
         public async Task<AppUserVm> ForgotPassword(string email)
         {
-           return await ctx.Users.Where(x => x.Email == email)
-                .Select(x => new AppUserVm { 
-                Id = x.Id,
-                FullName = x.FirstName +" " + x.LastName,
-                Email = x.Email!,
-                UserName = x.UserName!
-                })
-                .FirstOrDefaultAsync();
+            AppUserVm _appUser = null;
+
+            var _dbUser =await userManager.FindByEmailAsync(email);
+            
+            if (_dbUser != null) 
+            {
+                 _appUser = new AppUserVm
+                {
+                    Id = _dbUser.Id,
+                    FullName = _dbUser.FirstName + " " + _dbUser.LastName,
+                    Email = _dbUser.Email!,
+                    UserName = _dbUser.UserName!,
+                };
+
+             var _passwordToken = await  userManager.GeneratePasswordResetTokenAsync(_dbUser);
+
+                
+                _dbUser!.OTPCode = Convert.ToInt32(GenerateOTP(4));
+                _appUser.OTPCode =(int)_dbUser!.OTPCode;
+              await SaveAsync();
+                    
+            }
+            return _appUser!;
+
+        }
+        private string GenerateOTP(int noOfDigits)
+        {
+            Random rnd = new Random();
+            string otpDigit = string.Empty;
+
+            for(int i = 0; i < noOfDigits; i++)
+            {
+                int digit = rnd.Next(0, 9); // creates a number between 0 and 9
+                otpDigit += digit;
+            }
+            return otpDigit;          
         }
 
         public async Task PersistOTP(AppUserVm userVm,int otpCode)
@@ -242,7 +270,8 @@ namespace Business.BusinessLogic
 
             if(_user != null)
             {
-               await userManager.AddPasswordAsync(_user,userVm.Password);
+               await userManager.RemovePasswordAsync(_user);
+                await userManager.AddPasswordAsync(_user,userVm.Password);
 
               await  ctx.SaveChangesAsync();
 

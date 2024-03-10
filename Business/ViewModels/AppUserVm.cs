@@ -14,6 +14,7 @@ namespace Business.ViewModels
         public string FullName { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
+        public int OTPCode { get; set; }
 
     }
     public class UserClaimVM

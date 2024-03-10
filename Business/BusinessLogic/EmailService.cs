@@ -13,35 +13,41 @@ namespace Business.BusinessLogic
 {
     public class EmailService : IEmailService
     {
-        public  IConfiguration _configuration { set; get; }
+        public IConfiguration _configuration { set; get; }
         public EmailService(IConfiguration configuration)
         {
             _configuration = configuration;
         }
-        public bool SendEmailWithoutTemplate(string to, string subject, string body, bool isBodyHtml = false)
+
+        private SmtpClient GetSMTPDetails()
         {
             var smtp = new SmtpClient
             {
                 Host = _configuration["EmailConfiguration:Host"]!,
                 Port = Convert.ToInt32(_configuration["EmailConfiguration:Port"]!),
-                EnableSsl = false,
+                EnableSsl = Convert.ToBoolean(_configuration["EmailConfiguration:EnableSsl"]!),
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 UseDefaultCredentials = false,
                 Credentials = new NetworkCredential(_configuration["EmailConfiguration:Email"]!, _configuration["EmailConfiguration:Password"]!),
-                Timeout = 10000
+                Timeout = Convert.ToInt16(_configuration["EmailConfiguration:Timeout"]!)
             };
+            return smtp;
+        }
+        public async Task<bool> SendEmailWithoutTemplate(string to, string subject, string body, bool isBodyHtml = false)
+        {
+            var smtp = GetSMTPDetails();
             using (var message = new MailMessage(_configuration["EmailConfiguration:Email"]!, to)
             {
                 IsBodyHtml = isBodyHtml,
                 Subject = subject,
                 Body = body
             })
+
             {
                 try
                 {
-
                     ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-                    smtp.Send(message);
+                    await smtp.SendMailAsync(message);
                     return true;
                 }
                 catch (SmtpException e)
@@ -56,16 +62,7 @@ namespace Business.BusinessLogic
 
         public bool SendEmailWitAttachment(string to, string subject, string body, byte[] content, bool isBodyHtml = false, string DocName = "Certificate.pdf")
         {
-            var smtp = new SmtpClient
-            {
-                Host = _configuration["EmailConfiguration:Host"]!,
-                Port = Convert.ToInt32(_configuration["EmailConfiguration:Port"]!),
-                EnableSsl = false,
-                DeliveryMethod = SmtpDeliveryMethod.Network,
-                UseDefaultCredentials = false,
-                Credentials = new NetworkCredential(_configuration["EmailConfiguration:Email"]!, _configuration["EmailConfiguration:Password"]!),
-                Timeout = 10000
-            };
+            var smtp = GetSMTPDetails();
             using (var message = new MailMessage(_configuration["EmailConfiguration:Email"]!, to)
             {
                 IsBodyHtml = isBodyHtml,
@@ -211,16 +208,18 @@ namespace Business.BusinessLogic
             }
         }
 
-        public async Task<bool> SendMailTrapEmail(string subject,string body,string to)
+        public async Task<bool> SendMailTrapEmail(string subject, string body, string to)
         {
-            var client = new SmtpClient(_configuration["MailTrapEmail:Host"]!, Convert.ToInt16(_configuration["MailTrapEmail:Port"]!))
+            var client = new SmtpClient(_configuration["MailTrapEmail:SMTPServer"], Convert.ToInt32(_configuration["MailTrapEmail:Port"]))
             {
-                Credentials = new NetworkCredential(_configuration["MailTrapEmail:UserName"]!, _configuration["MailTrapEmail:API"]!),
+                Credentials = new NetworkCredential(_configuration["MailTrapEmail:UserName1"], _configuration["MailTrapEmail:Password"]),
                 EnableSsl = true
-            }; 
-            await client.SendMailAsync(_configuration["MailTrapEmail:Email"]!, to, subject, body);
+            };
+           await client.SendMailAsync(_configuration["MailTrapEmail:EmailFrom"]!, to, subject, body);
+
             return true;
         }
 
+      
     }
 }

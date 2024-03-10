@@ -20,6 +20,7 @@ namespace Business.Services
         public Task<bool> ResetPassword(AppUserVm userVm);
 
         public Task<UserClaimVM> GetClaims(LoginViewModel loginModel);
+        public Task RemoveOTP(AppUserVm userVm);
 
 
     } 

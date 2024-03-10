@@ -18,12 +18,13 @@ namespace WKLNAMA.Controllers
     {
         private readonly IAccountRepository accountRepository;
         private readonly IDocumentService documentService;
-
-        private ApiResponse apiResponse = new ApiResponse();
-        public AccountController(IAccountRepository accountRepository, IHttpContextAccessor httpContextAccessor, IDocumentService documentService) :base(accountRepository,httpContextAccessor)
+        private readonly IEmailService _emailService;
+        private ApiResponse apiResponse = new ApiResponse(); 
+        public AccountController(IAccountRepository accountRepository, IHttpContextAccessor httpContextAccessor, IDocumentService documentService,IEmailService emailService) :base(accountRepository,httpContextAccessor)
         {
             this.accountRepository = accountRepository;
             this.documentService = documentService;
+            _emailService = emailService;
         }
         [AllowAnonymous]
         [HttpPost("Register")]
@@ -88,6 +89,109 @@ namespace WKLNAMA.Controllers
                 apiResponse.HttpStatusCode = HttpStatusCode.OK;
                 apiResponse.Success = true;
                 apiResponse.Data = token;
+            }
+            catch (Exception ex)
+            {
+                apiResponse.Message = ex.Message;
+                apiResponse.HttpStatusCode = HttpStatusCode.InternalServerError;
+                apiResponse.Success = false;
+                apiResponse.Data = null;
+            }
+            return Ok(apiResponse);
+        }
+
+        [HttpPost("ForgotPassword")]
+        public async Task<ActionResult> ForgotPassword(string email)
+        {
+            try
+            {
+                var _appUser = await accountRepository.ForgotPassword(email);
+
+                if(_appUser != null )
+                {
+                  await  _emailService.SendMailTrapEmail($"{_appUser?.FullName} | Password Reset", $"You OTP Code is: {_appUser?.OTPCode}", email);
+                    apiResponse.Message = HttpStatusCode.OK.ToString();
+                    apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                    apiResponse.Success = true;
+                    apiResponse.Data = _appUser;
+                }
+                else{
+                    apiResponse.Message = HttpStatusCode.NotFound.ToString();
+                    apiResponse.HttpStatusCode = HttpStatusCode.NotFound;
+                    apiResponse.Success = false;
+                    apiResponse.Data = null;
+                }
+
+               
+            }
+            catch (Exception ex)
+            {
+                apiResponse.Message = ex.Message;
+                apiResponse.HttpStatusCode = HttpStatusCode.InternalServerError;
+                apiResponse.Success = false;
+                apiResponse.Data = null;
+            }
+            return Ok(apiResponse);
+        }
+
+        [HttpPost("VerifyOTPToken")]
+        public async Task<ActionResult> VerifyOTPToken(string email,int otpCode)
+        {
+            try
+            { 
+                var _appUser = await accountRepository.VerifyOTP(email, otpCode);
+
+                if (_appUser != null)
+                {
+                    await accountRepository.RemoveOTP(_appUser);
+                    apiResponse.Message = HttpStatusCode.OK.ToString();
+                    apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                    apiResponse.Success = true;
+                    apiResponse.Data = _appUser;
+
+                }
+                else
+                {
+                    apiResponse.Message = HttpStatusCode.NotFound.ToString();
+                    apiResponse.HttpStatusCode = HttpStatusCode.NotFound;
+                    apiResponse.Success = false;
+                    apiResponse.Data = null;
+                }
+               
+            }
+            catch (Exception ex)
+            {
+                apiResponse.Message = ex.Message;
+                apiResponse.HttpStatusCode = HttpStatusCode.InternalServerError;
+                apiResponse.Success = false;
+                apiResponse.Data = null;
+            }
+            return Ok(apiResponse);
+        }
+
+        [HttpPost("ResetPassword")]
+        public async Task<ActionResult> ResetPassword(AppUserVm resetPassword)
+        {
+            try
+            {
+                var _isPasswordReset = await accountRepository.ResetPassword(resetPassword);
+
+                if (_isPasswordReset)
+                {
+                    apiResponse.Message = HttpStatusCode.OK.ToString();
+                    apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                    apiResponse.Success = true;
+                    apiResponse.Data = _isPasswordReset;
+                }
+                else
+                {
+                    apiResponse.Message = HttpStatusCode.NotFound.ToString();
+                    apiResponse.HttpStatusCode = HttpStatusCode.NotFound;
+                    apiResponse.Success = false;
+                    apiResponse.Data = null;
+                }
+
+               
             }
             catch (Exception ex)
             {

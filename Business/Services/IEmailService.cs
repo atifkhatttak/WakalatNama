@@ -13,5 +13,7 @@ namespace Business.Services
    public interface IEmailService
     {
         public Task<bool> SendMailTrapEmail(string subject, string body, string to);
+        public Task<bool> SendEmailWithoutTemplate(string to, string subject, string body, bool isBodyHtml = false);
+
     }
 }
