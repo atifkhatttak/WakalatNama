@@ -1,0 +1,228 @@
+2024-03-12T00:30:22.3217957+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-12T00:30:22.3679191+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-12T00:30:27.7520782+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-03-12T00:30:27.7573688+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-03-12T00:30:27.7616882+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-03-12T00:30:28.4406113+05:00  [INF] Executed DbCommand ("396"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-12T00:30:28.8635668+05:00  [INF] Executed DbCommand ("326"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-12T00:30:29.1414475+05:00  [INF] Executed DbCommand ("269"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-12T00:30:29.3968323+05:00  [INF] Executed DbCommand ("250"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-12T00:30:29.6997472+05:00  [INF] Executed DbCommand ("253"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-03-12T00:30:29.7450372+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-03-12T00:36:11.6586424+05:00 40000038-0002-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("272"ms) [Parameters=["@___user_UserName_0='?' (Size = 256), @___user_Email_1='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]
+        WHERE [a].[UserName] = @___user_UserName_0 OR [a].[Email] = @___user_Email_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2024-03-12T00:36:12.0462792+05:00 40000038-0002-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("250"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-03-12T00:36:12.7071878+05:00 40000038-0002-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("252"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Int64), @p3='?' (DbType = DateTime2), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (DbType = Boolean), @p10='?' (DbType = DateTimeOffset), @p11='?' (Size = 256), @p12='?' (Size = 256), @p13='?' (DbType = Int32), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 4000), @p18='?' (DbType = Boolean), @p19='?' (DbType = DateTime2), @p20='?' (DbType = Int64), @p21='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([AccessFailedCount], [ConcurrencyStamp], [CreatedBy], [CreatedDate], [Email], [EmailConfirmed], [FirstName], [IsDeleted], [LastName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [OTPCode], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UpdateDate], [UpdatedBy], [UserName])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21);" (0723d8ff)
+2024-03-12T00:36:13.3050504+05:00 40000038-0002-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("252"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-03-12T00:36:13.6100230+05:00 40000038-0002-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("265"ms) [Parameters=["@p22='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p23='?' (Size = 4000), @p2='?' (DbType = Int64), @p3='?' (DbType = DateTime2), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (DbType = Boolean), @p10='?' (DbType = DateTimeOffset), @p11='?' (Size = 256), @p12='?' (Size = 256), @p13='?' (DbType = Int32), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 4000), @p18='?' (DbType = Boolean), @p19='?' (DbType = DateTime2), @p20='?' (DbType = Int64), @p21='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [CreatedBy] = @p2, [CreatedDate] = @p3, [Email] = @p4, [EmailConfirmed] = @p5, [FirstName] = @p6, [IsDeleted] = @p7, [LastName] = @p8, [LockoutEnabled] = @p9, [LockoutEnd] = @p10, [NormalizedEmail] = @p11, [NormalizedUserName] = @p12, [OTPCode] = @p13, [PasswordHash] = @p14, [PhoneNumber] = @p15, [PhoneNumberConfirmed] = @p16, [SecurityStamp] = @p17, [TwoFactorEnabled] = @p18, [UpdateDate] = @p19, [UpdatedBy] = @p20, [UserName] = @p21
+OUTPUT 1
+WHERE [Id] = @p22 AND [ConcurrencyStamp] = @p23;" (0723d8ff)
+2024-03-12T00:36:13.8831739+05:00 40000038-0002-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("253"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[IsDeleted], [a].[Name], [a].[NormalizedName], [a].[UpdateDate], [a].[UpdatedBy]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2024-03-12T00:36:14.1912399+05:00 40000038-0002-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("256"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[IsDeleted], [a].[Name], [a].[NormalizedName], [a].[UpdateDate], [a].[UpdatedBy]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2024-03-12T00:36:14.5456602+05:00 40000038-0002-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("261"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @__p_0 AND [a].[RoleId] = @__p_1" (0723d8ff)
+2024-03-12T00:36:14.8059975+05:00 40000038-0002-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("249"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[IsDeleted], [a].[Name], [a].[NormalizedName], [a].[UpdateDate], [a].[UpdatedBy]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2024-03-12T00:36:15.0883337+05:00 40000038-0002-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("252"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-03-12T00:36:15.6359013+05:00 40000038-0002-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("254"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p24='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p25='?' (Size = 4000), @p4='?' (DbType = Int64), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (DbType = Boolean), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (DbType = DateTimeOffset), @p13='?' (Size = 256), @p14='?' (Size = 256), @p15='?' (DbType = Int32), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Boolean), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (DbType = DateTime2), @p22='?' (DbType = Int64), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p2, [ConcurrencyStamp] = @p3, [CreatedBy] = @p4, [CreatedDate] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [FirstName] = @p8, [IsDeleted] = @p9, [LastName] = @p10, [LockoutEnabled] = @p11, [LockoutEnd] = @p12, [NormalizedEmail] = @p13, [NormalizedUserName] = @p14, [OTPCode] = @p15, [PasswordHash] = @p16, [PhoneNumber] = @p17, [PhoneNumberConfirmed] = @p18, [SecurityStamp] = @p19, [TwoFactorEnabled] = @p20, [UpdateDate] = @p21, [UpdatedBy] = @p22, [UserName] = @p23
+OUTPUT 1
+WHERE [Id] = @p24 AND [ConcurrencyStamp] = @p25;" (0723d8ff)
+2024-03-12T00:36:16.1735017+05:00 40000038-0002-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("250"ms) [Parameters=["@___user_Email_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Email] = @___user_Email_0" (0723d8ff)
+2024-03-12T00:36:16.6897231+05:00 40000038-0002-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("249"ms) [Parameters=["@p0='?' (Size = 255), @p1='?' (Size = 4000), @p2='?' (Size = 100), @p3='?' (Size = 15), @p4='?' (DbType = Int32), @p5='?' (Size = 20), @p6='?' (DbType = Int32), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (Size = 4000), @p10='?' (Size = 255), @p11='?' (DbType = DateTime2), @p12='?' (Size = 4000), @p13='?' (Size = 100), @p14='?' (Size = 10), @p15='?' (Size = 255), @p16='?' (DbType = Boolean), @p17='?' (DbType = Boolean), @p18='?' (DbType = Boolean), @p19='?' (DbType = Boolean), @p20='?' (DbType = Boolean), @p21='?' (DbType = Boolean), @p22='?' (DbType = Boolean), @p23='?' (DbType = Boolean), @p24='?' (DbType = Boolean), @p25='?' (DbType = Boolean), @p26='?' (DbType = Boolean), @p27='?' (Size = 4000), @p28='?' (Size = 255), @p29='?' (Size = 4000), @p30='?' (Size = 255), @p31='?' (Size = 50), @p32='?' (Size = 4000), @p33='?' (Size = 20), @p34='?' (Size = 15), @p35='?' (Size = 4000), @p36='?' (Size = 4000), @p37='?' (Size = 100), @p38='?' (DbType = Single), @p39='?' (DbType = Int32), @p40='?' (DbType = Int32), @p41='?' (DbType = Single), @p42='?' (DbType = DateTime2), @p43='?' (DbType = Int64), @p44='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [UserProfiles] ([AreasOfExpertise], [AreasOfExpertiseOrther], [BarCouncil], [CNICNo], [CityId], [ContactNumber], [CountryId], [CreatedBy], [CreatedDate], [CurrAddress], [Email], [EnrollmentDate], [FatherName], [FullName], [Gender], [Institute], [IsActive], [IsAgreed], [IsAlert], [IsCreateMeeting], [IsDeleted], [IsEmail], [IsFavourite], [IsOverseas], [IsPushAlert], [IsSMS], [IsVerified], [LCourtLocation], [LCourtName], [LHighCourtLocation], [LHighCourtName], [NICOP], [OfficeAddress], [OverseasContactNo], [PassportID], [PermAddress], [ProfileDescription], [Qualification], [Rating], [ResideCountryId], [RoleId], [TotalExperience], [UpdateDate], [UpdatedBy], [UserId])
+OUTPUT INSERTED.[ProfileId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31, @p32, @p33, @p34, @p35, @p36, @p37, @p38, @p39, @p40, @p41, @p42, @p43, @p44);" (0723d8ff)
+2024-03-12T00:39:36.4172125+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-12T00:39:36.4334574+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-12T00:39:38.0978527+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-03-12T00:39:38.1029404+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-03-12T00:39:38.1067526+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-03-12T00:39:39.3665994+05:00  [INF] Executed DbCommand ("321"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-12T00:39:39.7092629+05:00  [INF] Executed DbCommand ("304"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-12T00:39:39.9792507+05:00  [INF] Executed DbCommand ("259"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-12T00:39:40.2301539+05:00  [INF] Executed DbCommand ("246"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-12T00:39:40.5259029+05:00  [INF] Executed DbCommand ("250"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-03-12T00:39:40.5860056+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-03-12T00:40:32.8687168+05:00 40000004-0001-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("295"ms) [Parameters=["@___user_UserName_0='?' (Size = 256), @___user_Email_1='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]
+        WHERE [a].[UserName] = @___user_UserName_0 OR [a].[Email] = @___user_Email_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2024-03-12T00:40:33.2697710+05:00 40000004-0001-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("248"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-03-12T00:40:33.9411995+05:00 40000004-0001-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("252"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Int64), @p3='?' (DbType = DateTime2), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (DbType = Boolean), @p10='?' (DbType = DateTimeOffset), @p11='?' (Size = 256), @p12='?' (Size = 256), @p13='?' (DbType = Int32), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 4000), @p18='?' (DbType = Boolean), @p19='?' (DbType = DateTime2), @p20='?' (DbType = Int64), @p21='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([AccessFailedCount], [ConcurrencyStamp], [CreatedBy], [CreatedDate], [Email], [EmailConfirmed], [FirstName], [IsDeleted], [LastName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [OTPCode], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UpdateDate], [UpdatedBy], [UserName])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21);" (0723d8ff)
+2024-03-12T00:40:34.4696726+05:00 40000004-0001-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("245"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-03-12T00:40:34.7587951+05:00 40000004-0001-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("249"ms) [Parameters=["@p22='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p23='?' (Size = 4000), @p2='?' (DbType = Int64), @p3='?' (DbType = DateTime2), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (DbType = Boolean), @p10='?' (DbType = DateTimeOffset), @p11='?' (Size = 256), @p12='?' (Size = 256), @p13='?' (DbType = Int32), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 4000), @p18='?' (DbType = Boolean), @p19='?' (DbType = DateTime2), @p20='?' (DbType = Int64), @p21='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [CreatedBy] = @p2, [CreatedDate] = @p3, [Email] = @p4, [EmailConfirmed] = @p5, [FirstName] = @p6, [IsDeleted] = @p7, [LastName] = @p8, [LockoutEnabled] = @p9, [LockoutEnd] = @p10, [NormalizedEmail] = @p11, [NormalizedUserName] = @p12, [OTPCode] = @p13, [PasswordHash] = @p14, [PhoneNumber] = @p15, [PhoneNumberConfirmed] = @p16, [SecurityStamp] = @p17, [TwoFactorEnabled] = @p18, [UpdateDate] = @p19, [UpdatedBy] = @p20, [UserName] = @p21
+OUTPUT 1
+WHERE [Id] = @p22 AND [ConcurrencyStamp] = @p23;" (0723d8ff)
+2024-03-12T00:40:35.0272919+05:00 40000004-0001-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("247"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[IsDeleted], [a].[Name], [a].[NormalizedName], [a].[UpdateDate], [a].[UpdatedBy]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2024-03-12T00:40:35.3289635+05:00 40000004-0001-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("245"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[IsDeleted], [a].[Name], [a].[NormalizedName], [a].[UpdateDate], [a].[UpdatedBy]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2024-03-12T00:40:35.6654282+05:00 40000004-0001-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("245"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @__p_0 AND [a].[RoleId] = @__p_1" (0723d8ff)
+2024-03-12T00:40:35.9233103+05:00 40000004-0001-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("245"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[IsDeleted], [a].[Name], [a].[NormalizedName], [a].[UpdateDate], [a].[UpdatedBy]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2024-03-12T00:40:36.1972323+05:00 40000004-0001-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("245"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-03-12T00:40:36.8155551+05:00 40000004-0001-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("246"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p24='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p25='?' (Size = 4000), @p4='?' (DbType = Int64), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (DbType = Boolean), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (DbType = DateTimeOffset), @p13='?' (Size = 256), @p14='?' (Size = 256), @p15='?' (DbType = Int32), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Boolean), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (DbType = DateTime2), @p22='?' (DbType = Int64), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p2, [ConcurrencyStamp] = @p3, [CreatedBy] = @p4, [CreatedDate] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [FirstName] = @p8, [IsDeleted] = @p9, [LastName] = @p10, [LockoutEnabled] = @p11, [LockoutEnd] = @p12, [NormalizedEmail] = @p13, [NormalizedUserName] = @p14, [OTPCode] = @p15, [PasswordHash] = @p16, [PhoneNumber] = @p17, [PhoneNumberConfirmed] = @p18, [SecurityStamp] = @p19, [TwoFactorEnabled] = @p20, [UpdateDate] = @p21, [UpdatedBy] = @p22, [UserName] = @p23
+OUTPUT 1
+WHERE [Id] = @p24 AND [ConcurrencyStamp] = @p25;" (0723d8ff)
+2024-03-12T00:40:37.3701795+05:00 40000004-0001-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("249"ms) [Parameters=["@___user_Email_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Email] = @___user_Email_0" (0723d8ff)
+2024-03-12T00:40:37.8626523+05:00 40000004-0001-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("259"ms) [Parameters=["@p0='?' (Size = 255), @p1='?' (Size = 4000), @p2='?' (Size = 100), @p3='?' (Size = 15), @p4='?' (DbType = Int32), @p5='?' (Size = 20), @p6='?' (DbType = Int32), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (Size = 4000), @p10='?' (Size = 255), @p11='?' (DbType = DateTime2), @p12='?' (Size = 4000), @p13='?' (Size = 100), @p14='?' (Size = 10), @p15='?' (Size = 255), @p16='?' (DbType = Boolean), @p17='?' (DbType = Boolean), @p18='?' (DbType = Boolean), @p19='?' (DbType = Boolean), @p20='?' (DbType = Boolean), @p21='?' (DbType = Boolean), @p22='?' (DbType = Boolean), @p23='?' (DbType = Boolean), @p24='?' (DbType = Boolean), @p25='?' (DbType = Boolean), @p26='?' (DbType = Boolean), @p27='?' (Size = 4000), @p28='?' (Size = 255), @p29='?' (Size = 4000), @p30='?' (Size = 255), @p31='?' (Size = 50), @p32='?' (Size = 4000), @p33='?' (Size = 20), @p34='?' (Size = 15), @p35='?' (Size = 4000), @p36='?' (Size = 4000), @p37='?' (Size = 100), @p38='?' (DbType = Single), @p39='?' (DbType = Int32), @p40='?' (DbType = Int32), @p41='?' (DbType = Single), @p42='?' (DbType = DateTime2), @p43='?' (DbType = Int64), @p44='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [UserProfiles] ([AreasOfExpertise], [AreasOfExpertiseOrther], [BarCouncil], [CNICNo], [CityId], [ContactNumber], [CountryId], [CreatedBy], [CreatedDate], [CurrAddress], [Email], [EnrollmentDate], [FatherName], [FullName], [Gender], [Institute], [IsActive], [IsAgreed], [IsAlert], [IsCreateMeeting], [IsDeleted], [IsEmail], [IsFavourite], [IsOverseas], [IsPushAlert], [IsSMS], [IsVerified], [LCourtLocation], [LCourtName], [LHighCourtLocation], [LHighCourtName], [NICOP], [OfficeAddress], [OverseasContactNo], [PassportID], [PermAddress], [ProfileDescription], [Qualification], [Rating], [ResideCountryId], [RoleId], [TotalExperience], [UpdateDate], [UpdatedBy], [UserId])
+OUTPUT INSERTED.[ProfileId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31, @p32, @p33, @p34, @p35, @p36, @p37, @p38, @p39, @p40, @p41, @p42, @p43, @p44);" (0723d8ff)
+2024-03-12T00:40:52.4520897+05:00 4000003a-0002-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("249"ms) [Parameters=["@___user_UserName_0='?' (Size = 256), @___user_Email_1='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]
+        WHERE [a].[UserName] = @___user_UserName_0 OR [a].[Email] = @___user_Email_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2024-03-12T00:51:48.1253466+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-12T00:51:48.1399540+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-12T00:51:49.2492399+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-03-12T00:51:49.2543239+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-03-12T00:51:49.2585034+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-03-12T00:51:51.0844469+05:00  [INF] Executed DbCommand ("317"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-12T00:51:51.4999572+05:00  [INF] Executed DbCommand ("303"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-12T00:51:51.7549551+05:00  [INF] Executed DbCommand ("247"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-12T00:51:52.0098735+05:00  [INF] Executed DbCommand ("249"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-12T00:51:52.3108497+05:00  [INF] Executed DbCommand ("253"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-03-12T00:51:52.3898458+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-03-12T00:55:39.1488514+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-12T00:55:39.1598465+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-12T00:55:40.7058537+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-03-12T00:55:40.7106898+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-03-12T00:55:40.7152795+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-03-12T00:55:42.0498270+05:00  [INF] Executed DbCommand ("332"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-12T00:55:42.3796745+05:00  [INF] Executed DbCommand ("290"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-12T00:55:42.6388751+05:00  [INF] Executed DbCommand ("250"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-12T00:55:42.9149191+05:00  [INF] Executed DbCommand ("270"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-12T00:55:43.2032074+05:00  [INF] Executed DbCommand ("250"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-03-12T00:55:43.2651716+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-03-12T00:56:17.9492322+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-12T00:56:17.9645198+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-12T00:56:19.4910619+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-03-12T00:56:19.4959451+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-03-12T00:56:19.4998225+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-03-12T00:56:20.7912857+05:00  [INF] Executed DbCommand ("348"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-12T00:56:21.1575177+05:00  [INF] Executed DbCommand ("305"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-12T00:56:21.4235767+05:00  [INF] Executed DbCommand ("257"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-12T00:56:21.6826551+05:00  [INF] Executed DbCommand ("253"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-12T00:56:21.9739486+05:00  [INF] Executed DbCommand ("254"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-03-12T00:56:22.0236701+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)

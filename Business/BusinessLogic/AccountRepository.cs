@@ -46,8 +46,7 @@ namespace Business.BusinessLogic
                     LastName = registerViewModel.LastName,
                     Email = registerViewModel.Email,
                     UserName = registerViewModel.UserName,
-                    PhoneNumber = registerViewModel.PhoneNumber
-
+                    PhoneNumber = registerViewModel.PhoneNumber     
                 };
 
               var isUserExist= ctx.Users.Any(x => x.UserName == _user.UserName || x.Email == _user.Email);
@@ -83,7 +82,11 @@ namespace Business.BusinessLogic
                             FullName = insertedUser.FirstName + " " + insertedUser.LastName,
                             Email=insertedUser.Email??"",
                             ContactNumber=insertedUser.PhoneNumber??"",
-                            IsOverseas=registerViewModel.IsOverseas
+                            IsOverseas=registerViewModel.IsOverseas,
+
+                            IsActive=true,
+                            IsAgreed=true,
+                            IsVerified=true
                         };
 
                         await ctx.AddAsync(userProfile);
@@ -92,7 +95,10 @@ namespace Business.BusinessLogic
 
                     registerViewModel.UserId= insertedUser?.Id??0;
                 }
-               
+                else
+                {
+                    registerViewModel = null;
+                }
             }
             catch (Exception ex) {
                 throw ex;

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 using System.Net;
 using WKLNAMA.Models;
 
@@ -33,10 +34,20 @@ namespace WKLNAMA.Controllers
             try
             {
                 var result= await accountRepository.Register(_viewModel);
-                apiResponse.Message = HttpStatusCode.Created.ToString();
-                apiResponse.HttpStatusCode = HttpStatusCode.Created;
-                apiResponse.Success = true;
-                apiResponse.Data = result;
+                if (result == null || result.UserId<=0)
+                {
+                    apiResponse.Message = HttpStatusCode.InternalServerError.ToString();
+                    apiResponse.HttpStatusCode = HttpStatusCode.InternalServerError;
+                    apiResponse.Success = false;
+                    apiResponse.Data = null;
+                }
+                else
+                {
+                    apiResponse.Message = HttpStatusCode.Created.ToString();
+                    apiResponse.HttpStatusCode = HttpStatusCode.Created;
+                    apiResponse.Success = true;
+                    apiResponse.Data = result;
+                }
             }
             catch (Exception ex)
             {
@@ -101,7 +112,7 @@ namespace WKLNAMA.Controllers
         }
 
         [HttpPost("ForgotPassword")]
-        public async Task<ActionResult> ForgotPassword(string email)
+        public async Task<ActionResult> ForgotPassword([Required]string email)
         {
             try
             {
@@ -135,7 +146,7 @@ namespace WKLNAMA.Controllers
         }
 
         [HttpPost("VerifyOTPToken")]
-        public async Task<ActionResult> VerifyOTPToken(string email,int otpCode)
+        public async Task<ActionResult> VerifyOTPToken([Required]string email, [Required] int otpCode)
         {
             try
             { 
