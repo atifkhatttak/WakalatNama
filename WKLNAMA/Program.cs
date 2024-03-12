@@ -38,12 +38,13 @@ ServiceActivator.Configure(app.Services);
 var loggerFactory = app.Services.GetService<ILoggerFactory>();
 loggerFactory.AddFile(builder.Configuration["Logging:LogFilePath"].ToString());
 
-app.Services.GetService<IDBInitializer>().Init();
- 
+
+
+
 // Configure the HTTP request pipeline.
 //if (app.Environment.IsDevelopment())
 //{
-    app.UseSwagger();
+app.UseSwagger();
     app.UseSwaggerUI(x=> {
         x.DocExpansion(DocExpansion.None);
         x.DefaultModelsExpandDepth(-1);
@@ -63,5 +64,8 @@ app.UseCors(options =>
 });
 app.MapControllers();
 //app.MapIdentityApi<AppUser>();
+
+await app.Services.GetService<IDBInitializer>().Init();
+await app.Services.GetService<IDBInitializer>().InitializeCustomerService();
 
 app.Run();

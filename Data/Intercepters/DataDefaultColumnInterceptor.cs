@@ -50,8 +50,8 @@ namespace Data.Intercepters
 
         private void BeforeSaveTriggers(DbContext context)
         {
-            bool isAuthenticated = _httpContextAccessor.HttpContext.User.Identity.IsAuthenticated;
-            long currentUserId = isAuthenticated ? Convert.ToInt64(  _httpContextAccessor.HttpContext.User.FindFirstValue("UserId")):-1; //-1 means the entries is done by unauthenticated user
+            bool isAuthenticated = _httpContextAccessor?.HttpContext?.User?.Identity?.IsAuthenticated ?? false;
+            long currentUserId = isAuthenticated ? Convert.ToInt64(  _httpContextAccessor?.HttpContext?.User?.FindFirstValue("UserId")):-1; //-1 means the entries is done by unauthenticated user
 
             var _currentUtcTime = DateTime.UtcNow;
             var entries =   context?.ChangeTracker
