@@ -15,5 +15,8 @@ namespace Business.Services
         Task<List<Country>> GetAllCountries();
         Task<List<City>> GetAllCities(int countryId=0);
         Task<CasesDropDownVM> GetCaseDropDown();
+        Task<List<LawyerFeeStructureVM>> GetLawyerFeeStructure();
+        Task<List<LawyerFeeStructureVM>> GetLawyerFeeByCatAndJurisdiction(GetLawyerFeeVM feeVM);
+        Task<LawyerFeeStructureVM> GetSingleFee(GetLawyerFeeVM feeVM);
     }
 }

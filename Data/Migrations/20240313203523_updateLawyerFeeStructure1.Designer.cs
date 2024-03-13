@@ -4,6 +4,7 @@ using Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(WKNNAMADBCtx))]
-    partial class WKNNAMADBCtxModelSnapshot : ModelSnapshot
+    [Migration("20240313203523_updateLawyerFeeStructure1")]
+    partial class updateLawyerFeeStructure1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -370,7 +373,7 @@ namespace Data.Migrations
                     b.Property<int>("JurisdictionId")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("LawyerFee")
+                    b.Property<decimal>("LawyerFees")
                         .HasPrecision(16, 3)
                         .HasColumnType("decimal(16,3)");
 
@@ -379,6 +382,9 @@ namespace Data.Migrations
 
                     b.Property<long>("UpdatedBy")
                         .HasColumnType("bigint");
+
+                    b.Property<bool>("test")
+                        .HasColumnType("bit");
 
                     b.HasKey("FeeId");
 

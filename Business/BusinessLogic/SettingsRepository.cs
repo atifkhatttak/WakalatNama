@@ -40,12 +40,12 @@ namespace Business.BusinessLogic
 
         public async Task<List<Country>> GetAllCountries()
         {
-            return await ctx.Countries.Where(x => x.IsDeleted == false).ToListAsync();
+            return await ctx.Countries.Where(x => !x.IsDeleted).ToListAsync();
         }
 
-        public async Task<List<City>> GetAllCities(int countryId=0)
-        {            
-            return await ((countryId==0)?ctx.Cities.Where(x=>x.IsDeleted==false):ctx.Cities.Where(x=>x.CountryId==countryId && x.IsDeleted == false)).ToListAsync();
+        public async Task<List<City>> GetAllCities(int countryId = 0)
+        {
+            return await ((countryId == 0) ? ctx.Cities.Where(x => !x.IsDeleted) : ctx.Cities.Where(x => x.CountryId == countryId && !x.IsDeleted)).ToListAsync();
         }
 
         public async Task<CasesDropDownVM> GetCaseDropDown()
@@ -56,31 +56,81 @@ namespace Business.BusinessLogic
 
                 dropDownVM.Cities = await ctx.Cities
                     .AsNoTracking()
-                    .Where(x=>x.IsDeleted==false)
-                    .Select(city => new CityVM{ ID=city.Id,CityName=city.CityName }).ToListAsync();
+                    .Where(x => !x.IsDeleted)
+                    .Select(city => new CityVM { ID = city.Id, CityName = city.CityName }).ToListAsync();
 
-                dropDownVM.CaseJurisdictions =await ctx.CaseJurisdictions
+                dropDownVM.CaseJurisdictions = await ctx.CaseJurisdictions
                     .AsNoTracking()
                     .Where(x => x.IsDeleted == false)
-                    .Select(c => new CaseJurisdictionVM{ ID=c.CaseJurisdictionId,CaseJurisdiction=c.JurisdictionName }).ToListAsync();
+                    .Select(c => new CaseJurisdictionVM { ID = c.CaseJurisdictionId, CaseJurisdiction = c.JurisdictionName }).ToListAsync();
 
-                dropDownVM.CaseNature =await ctx.CaseCategories
+                dropDownVM.CaseNature = await ctx.CaseCategories
                     .AsNoTracking()
-                    .Where(x => x.IsDeleted == false)
-                    .Select(c => new CategoryVM{ ID=c.ID,CategoryName=c.CategoryName }).ToListAsync();
+                    .Where(x => !x.IsDeleted)
+                    .Select(c => new CategoryVM { ID = c.ID, CategoryName = c.CategoryName }).ToListAsync();
 
-                dropDownVM.PartyStatuses =await ctx.PartyStatuses
+                dropDownVM.PartyStatuses = await ctx.PartyStatuses
                     .AsNoTracking()
-                    .Where(x => x.IsDeleted == false)
-                    .Select(c => new PartyStatusVM{ ID=c.ID,StatusName=c.StatusName }).ToListAsync();
+                    .Where(x => !x.IsDeleted)
+                    .Select(c => new PartyStatusVM { ID = c.ID, StatusName = c.StatusName }).ToListAsync();
 
-                dropDownVM.CasePursueds=new List<CasePursuedVM>() { new CasePursuedVM() {ID=1,CasePursued="District Court" } };
+                dropDownVM.CasePursueds = new List<CasePursuedVM>() { new CasePursuedVM() { ID = 1, CasePursued = "District Court" } };
             }
             catch (Exception ex)
             {
                 throw ex;
             }
             return dropDownVM;
+        }
+
+        public async Task<List<LawyerFeeStructureVM>> GetLawyerFeeStructure()
+        {
+            return await ctx.LawyerFeeStructures.Where(x => !x.IsDeleted).Select(x => new LawyerFeeStructureVM()
+            {
+                FeeId = x.FeeId,
+                LawyerFee = x.LawyerFee,
+                ExpMin = x.ExpMin,
+                ExpMax = x.ExpMax,
+                CaseNatureId = x.CaseNatureId,
+                JurisdictionId = x.JurisdictionId,
+                IsForeignQualified = x.IsForeignQualified
+
+            }).ToListAsync();
+        }
+
+        public async Task<LawyerFeeStructureVM> GetSingleFee(GetLawyerFeeVM vM)
+        {
+            return (await ctx.LawyerFeeStructures
+                 .Where(x => x.CaseNatureId == vM.CaseNatureId && x.JurisdictionId == vM.JurisdictionId && !x.IsDeleted
+                && x.ExpMin == vM.ExpMin && x.ExpMax == vM.ExpMax)
+                 .Select(x => new LawyerFeeStructureVM()
+                 {
+                     FeeId = x.FeeId,
+                     LawyerFee = x.LawyerFee,
+                     ExpMin = x.ExpMin,
+                     ExpMax = x.ExpMax,
+                     CaseNatureId = x.CaseNatureId,
+                     JurisdictionId = x.JurisdictionId,
+                     IsForeignQualified = x.IsForeignQualified
+                 })
+                 .FirstOrDefaultAsync())!;
+        }
+
+        public async Task<List<LawyerFeeStructureVM>> GetLawyerFeeByCatAndJurisdiction(GetLawyerFeeVM feeVM)
+        {
+            return await ctx.LawyerFeeStructures
+                .Where(x => x.CaseNatureId == feeVM.CaseNatureId && x.JurisdictionId == feeVM.JurisdictionId && !x.IsDeleted)
+                .Select(x => new LawyerFeeStructureVM()
+                {
+                    FeeId = x.FeeId,
+                    LawyerFee = x.LawyerFee,
+                    ExpMin = x.ExpMin,
+                    ExpMax = x.ExpMax,
+                    CaseNatureId = x.CaseNatureId,
+                    JurisdictionId = x.JurisdictionId,
+                    IsForeignQualified = x.IsForeignQualified
+                })
+                .ToListAsync();
         }
     }
 }

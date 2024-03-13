@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -27,6 +28,8 @@ namespace Data.Context
             base.OnModelCreating(builder);
 
             this.SeedRoles(builder);
+
+           builder.Entity<LawyerFeeStructure>().Property(x=>x.LawyerFee).HasPrecision(16,3);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -59,6 +62,7 @@ namespace Data.Context
         public virtual DbSet<Favourite> Favourites{ get; set; } = null!;
         public virtual DbSet<Country> Countries{ get; set; } = null!;
         public virtual DbSet<City> Cities{ get; set; } = null!;
+        public virtual DbSet<LawyerFeeStructure> LawyerFeeStructures { get; set; } = null!;
 
     }
 }
