@@ -325,5 +325,88 @@ namespace Business.BusinessLogic
             }
             return userClaimVM;
         }
+
+        public async Task<List<AppUserVm>> GetCitizenLaywer(long citizenId)
+        {
+            var _user = await ( from u in ctx.Users
+                        join c in ctx.CourtCases
+                        on u.Id equals c.CitizenId
+                        where u.IsDeleted != false && c.IsDeleted != false 
+                                select new AppUserVm
+                        {
+                            UserName=u.UserName,
+                            FullName=u.FirstName +" "+u.LastName,
+                            Id=u.Id,
+                            Email=u.Email,
+                        }).ToListAsync();
+
+            return _user;
+        }
+
+        public async Task<List<AppUserVm>> GetLaywerCitizen(long lawyerId)
+        {
+            var _user = await (from u in ctx.Users
+                               join c in ctx.CourtCases
+                               on u.Id equals c.LawyerId
+                               where u.IsDeleted != false && c.IsDeleted != false
+                               select new AppUserVm
+                               {
+                                   UserName = u.UserName,
+                                   FullName = u.FirstName + " " + u.LastName,
+                                   Id = u.Id,
+                                   Email = u.Email,
+                               }).ToListAsync();
+
+            return _user;
+        }
+        public async Task<List<AppUserVm>> GetAdminUsers(long adminId)
+        {
+            var _user = await (from u in ctx.Users
+                               where u.IsDeleted != false && u.Id!=adminId
+                               select new AppUserVm
+                               {
+                                   UserName = u.UserName,
+                                   FullName = u.FirstName + " " + u.LastName,
+                                   Id = u.Id,
+                                   Email = u.Email,
+                               }).ToListAsync();
+
+            return _user;
+        }
+
+        public async Task<List<AppUserVm>> GetCustomerSerice()
+        {
+
+            var _user = await (from u in ctx.Users
+                               where u.IsDeleted != false && u.UserName== "cservice"
+                               select new AppUserVm
+                               {
+                                   UserName = u.UserName,
+                                   FullName = u.FirstName + " " + u.LastName,
+                                   Id = u.Id,
+                                   Email = u.Email,
+                               }).ToListAsync();
+            return _user;
+        }
+
+
+        public async Task<List<AppUserVm>> GetChatUser(long userId, string roleName)
+        {
+            List<AppUserVm> _users = new List<AppUserVm>();
+
+            if (roleName == Roles.Citizen.ToString())
+                _users.AddRange(await GetCitizenLaywer(userId));
+            else if (roleName == Roles.Lawyer.ToString())
+                _users.AddRange(await GetLaywerCitizen(userId));
+            else
+                _users.AddRange(await GetAdminUsers(userId));
+
+
+            if (roleName != Roles.Admin.ToString())
+                _users.AddRange(await GetCustomerSerice());
+
+
+            return _users;
+        }
     }
 }

@@ -213,5 +213,27 @@ namespace WKLNAMA.Controllers
             }
             return Ok(apiResponse);
         }
+
+        [HttpPost("ChatUsers")]
+        public async Task<ActionResult> GetChatUser([Required] long Id, [Required] string roleName)
+        {
+            try
+            {
+                var _chatUsers = await accountRepository.GetChatUser(Id,roleName);
+
+                    apiResponse.Message = HttpStatusCode.OK.ToString();
+                    apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                    apiResponse.Success = true;
+                    apiResponse.Data = _chatUsers;
+            }
+            catch (Exception ex)
+            {
+                apiResponse.Message = ex.Message;
+                apiResponse.HttpStatusCode = HttpStatusCode.InternalServerError;
+                apiResponse.Success = false;
+                apiResponse.Data = null;
+            }
+            return Ok(apiResponse);
+        }
     }
 }

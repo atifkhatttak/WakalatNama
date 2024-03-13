@@ -21,7 +21,9 @@ namespace Business.Services
 
         public Task<UserClaimVM> GetClaims(LoginViewModel loginModel);
         public Task RemoveOTP(AppUserVm userVm);
+        public  Task<List<AppUserVm>> GetChatUser(long userId, string roleName);
 
 
-    } 
+
+    }
 } 
