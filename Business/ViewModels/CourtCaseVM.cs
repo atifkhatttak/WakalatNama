@@ -43,16 +43,16 @@ namespace Business.ViewModels
 
         public long? ModifiedUser { get; set; }
         public bool? IsDeleted { get; set; }
-        public string? CaseTitle { get; internal set; }
-        public long? UserId { get; internal set; }
-        public string? UserFullName { get; internal set; }
-        public string? CategoryName { get; internal set; }
-        public int? CaseStatusId { get; internal set; }
+        public string? CaseTitle { get; set; }
+        public long? UserId { get; set; }
+        public string? UserFullName { get; set; }
+        public string? CategoryName { get; set; }
+        public int? CaseStatusId { get; set; }
     }
     public class CaseDetailVM
     {
         public long? HearingDateId { get; set; }
-        public long? CaseId { get; set; }
+        public long CaseId { get; set; }
         public long CitizenId { get; set; }
         public long LawyerId { get; set; }
         public long RedundantLawyerId { get; set; }
@@ -61,12 +61,31 @@ namespace Business.ViewModels
         public int? PartyId { get; set; }
 
         public int? CategoryId { get; set; }
+        [Required(ErrorMessage = "Description is required")]
         public string DateDescription { get; set; }
         public string DateTitle { get; set; }
+        [Required(ErrorMessage ="HearingDate is required")]
         public DateTime? HearingDate { get; set; }
         public IFormFileCollection HearingDocuments { get; set; } = null;
-        public long CaseStatusId { get; internal set; }
-        public string CaseTitle { get; internal set; }
-        public string DocName { get; internal set; }
+        [Required(ErrorMessage = "Status is required")]
+        public int CaseStatusId { get; set; }
+        public string CaseTitle { get; set; }
+        public string DocName { get; set; }
+    }
+    public class CaseDateVM
+    {
+        public long CaseDateId { get; set; }
+        public long CaseId { get; set; }
+        public long CitizenId { get; set; }
+        public long LawyerId { get; set; }
+        public long RedundantLawyerId { get; set; }
+        [Required(ErrorMessage = "Description is required")]
+        public string DateDescription { get; set; }
+        public string DateTitle { get; set; }
+        [Required(ErrorMessage = "HearingDate is required")]
+        public DateTime? HearingDate { get; set; }
+        //public IFormFileCollection HearingDocuments { get; set; } = null;
+        [Required(ErrorMessage = "Status is required")]
+        public int CaseStatusId { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Business.BusinessLogic;
 using Business.Enums;
+using Business.Helpers;
 using Business.Services;
 using Business.ViewModels;
 using Data.DomainModels;
@@ -7,6 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProjWakalatnama.DataLayer.Models;
+using Swashbuckle.AspNetCore.Annotations;
 using System.Net;
 using WKLNAMA.Models;
 
@@ -25,6 +27,7 @@ namespace WKLNAMA.Controllers
             this.casesRepository = casesRepository;
         }
 
+        [SwaggerOperation(Summary ="Create new case from here")]
         [HttpPost("CreateCase")]
         public async Task<ActionResult> CreateCase([FromForm]CourtCaseVM courtCase)
         {
@@ -55,6 +58,7 @@ namespace WKLNAMA.Controllers
             //return Ok(Task.FromResult(_viewModel));
             return Ok(apiResponse);
         }
+        [SwaggerOperation(Summary = "Get list of citizen cases by citizenId")]
         [HttpGet("GetCitizenCases")]
        //[Authorize(Roles = "Citizen")]
         public async Task<ActionResult> GetCitizenCases(long? userId)
@@ -76,6 +80,7 @@ namespace WKLNAMA.Controllers
             }
             return Ok(apiResponse);
         }
+        [SwaggerOperation(Summary = "Get list of Lawyer cases by lawyerid")]
         [HttpGet("GetLawyerCases")]        
         //[Authorize(Roles = "Lawyer")]
         public async Task<ActionResult> GetLawyerCases(long? userId)
@@ -97,7 +102,7 @@ namespace WKLNAMA.Controllers
             }
             return Ok(apiResponse);
         }
-       
+        [SwaggerOperation(Summary = "Get list of citizen cases dates, by citizenId")]
         [HttpGet("GetCitizenDateList")]
         public async Task<ActionResult> GetCitizenDateList(long? userId)
         {
@@ -118,6 +123,7 @@ namespace WKLNAMA.Controllers
             }
             return Ok(apiResponse);
         }
+        [SwaggerOperation(Summary = "Get list of lawyer cases dates, by lawyerId")]
         [HttpGet("GetLawyerDateList")]
         public async Task<ActionResult> GetLawyerDateList(long? userId)
         {
@@ -138,7 +144,8 @@ namespace WKLNAMA.Controllers
             }
             return Ok(apiResponse);
         }
-        [HttpGet("GetCaseById")]
+        [SwaggerOperation(Summary ="Get single case for edit by caseid")]
+        [HttpGet("GetCaseById")]        
         public async Task<ActionResult> GetCaseById(long? caseId)
         {
             try
@@ -158,6 +165,7 @@ namespace WKLNAMA.Controllers
             }
             return Ok(apiResponse);
         }
+        [SwaggerOperation(Summary = "Accept/Reject new case on lawyer end")]
         [HttpGet("AcceptRejectCaseByLawyer")]
         public async Task<ActionResult> AcceptRejectCaseByLawyer(AcceptRejectCaseVM acceptReject)
         {
@@ -177,6 +185,20 @@ namespace WKLNAMA.Controllers
                 apiResponse.Data = null;
             }
             return Ok(apiResponse);
+        }
+        [SwaggerOperation(Summary = "Create/Update Case Date on lawyer end")]
+        [HttpPost("CreateUpdateCaseDate")]
+        public async Task<ActionResult> CreateUpdateCaseDate([FromForm] CaseDateVM vM)
+        {
+                return await APIResponse(async () => {
+                   
+                    apiResponse.Message = HttpStatusCode.OK.ToString();
+                    apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                    apiResponse.Success = true;
+                    apiResponse.Data = await casesRepository.CreateUpdateCaseDate(vM);
+
+                    return Ok(apiResponse);
+                });
         }
     }
 }

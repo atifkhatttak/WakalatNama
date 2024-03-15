@@ -118,6 +118,7 @@ namespace WKLNAMA.Extensions
         {
             builder.Services.AddSwaggerGen(option =>
             {
+                option.EnableAnnotations();
                 option.SwaggerDoc("v1", new OpenApiInfo { Title = "WakalatNama API", Version = "V1" });
 
                 option.AddSecurityDefinition(

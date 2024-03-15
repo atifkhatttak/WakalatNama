@@ -109,18 +109,18 @@ namespace WKLNAMA.Controllers
         [HttpPost("GetSingleFee")]
         public async Task<ActionResult> SingleFees(GetLawyerFeeVM vM)
         {
-            if (!ModelState.IsValid)
-            {
-                return await APIResponse(async () => {
+            //if (!ModelState.IsValid)
+            //{
+            //    return await APIResponse(async () => {
 
-                    apiResponse.Message = ModelState.ValidationState.GetMessage();
-                    apiResponse.HttpStatusCode = HttpStatusCode.BadRequest;
-                    apiResponse.Success = false;
-                    apiResponse.Data = null;
+            //        apiResponse.Message = ModelState.ValidationState.GetMessage();
+            //        apiResponse.HttpStatusCode = HttpStatusCode.BadRequest;
+            //        apiResponse.Success = false;
+            //        apiResponse.Data = null;
 
-                    return BadRequest(apiResponse);
-                });
-            }
+            //        return BadRequest(apiResponse);
+            //    });
+            //}
 
             return await APIResponse(async () => {
 

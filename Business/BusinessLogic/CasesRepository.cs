@@ -76,7 +76,7 @@ namespace Business.BusinessLogic
             CourtCaseVM? courtCase = new CourtCaseVM();
             try
             {
-                if (!isAuthenticated) return courtCase;
+                //if (!isAuthenticated) return courtCase;
 
                 if (caseId!=null)
                 {
@@ -308,7 +308,7 @@ namespace Business.BusinessLogic
                     var caseList =
                        await (from cc in ctx.CourtCases
                               join cd in ctx.CasesDetails on cc.CaseId equals cd.CaseId
-                              join cdd in ctx.CasesDocuments on cc.CaseId equals cdd.CaseId
+                              //join cdd in ctx.CasesDocuments on cc.CaseId equals cdd.CaseId
                               where cc.LawyerId == userId && cc.IsDeleted == false
                               select new
                               {
@@ -321,7 +321,7 @@ namespace Business.BusinessLogic
                                   cd.HearingDate,
                                   cd.DateDescription,
                                   cd.CaseStatusId,
-                                  cdd.DocName
+                                  //cdd.DocName
                               }).ToListAsync();
 
                     if (caseList.Any())
@@ -339,7 +339,7 @@ namespace Business.BusinessLogic
                                 HearingDate = item.HearingDate,
                                 DateDescription = item.DateDescription,
                                 CaseStatusId = item.CaseStatusId,
-                                DocName = item.DocName
+                                //DocName = item.DocName
                             });
                         }
                     }
@@ -372,6 +372,43 @@ namespace Business.BusinessLogic
             {
                 throw ex;
             }
+        }
+
+        public async Task<CaseDateVM> CreateUpdateCaseDate(CaseDateVM detailVM)
+        {
+            CaseDateVM caseDetailVM = new CaseDateVM();
+            try
+            {
+
+                if (detailVM != null)
+                {
+                    var checkCaseExist=await ctx.CourtCases.FindAsync(detailVM.CaseId);
+                    if (checkCaseExist !=null)
+                    {
+                        CasesDetail casesDetail = new CasesDetail()
+                        {
+                            CaseId= detailVM.CaseId,
+                            CaseStatusId= detailVM.CaseStatusId,
+                            CaseDateTitle=detailVM.DateTitle,
+                            DateDescription=detailVM.DateDescription,
+                            HearingDate=detailVM.HearingDate
+                        };
+                        if (checkCaseExist.CaseStatusId!=detailVM.CaseStatusId)
+                        {
+                            checkCaseExist.CaseStatusId = detailVM.CaseStatusId;
+                        }
+                      await  ctx.AddAsync(casesDetail);
+                    await ctx.SaveChangesAsync();
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return caseDetailVM;
         }
     }
 }
