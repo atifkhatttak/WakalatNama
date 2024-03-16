@@ -21,5 +21,6 @@ namespace Business.ViewModels
         public int Status { get; set; }
         public string Reason { get; set; }
         public long CaseId { get; set; }
+        public long DecisionUserId { get; set; }   
     }
 }

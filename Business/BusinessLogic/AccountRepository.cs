@@ -411,7 +411,6 @@ namespace Business.BusinessLogic
             return _user;
         }
 
-
         public async Task<List<AppUserVm>> GetChatUser(long userId, string roleName)
         {
             List<AppUserVm> _users = new List<AppUserVm>();

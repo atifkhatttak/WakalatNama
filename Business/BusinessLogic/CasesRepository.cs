@@ -4,10 +4,12 @@ using Business.ViewModels;
 using Data.Context;
 using Data.DomainModels;
 using Google.Apis.Drive.v3.Data;
+using Google.Apis.Logging;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using ProjWakalatnama.DataLayer.Models;
 using System;
 using System.Collections.Generic;
@@ -24,16 +26,17 @@ namespace Business.BusinessLogic
         private readonly WKNNAMADBCtx ctx;
         private readonly IConfiguration config;
         private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly ILogger<CasesRepository> _logger;
         private readonly bool isAuthenticated = false;
         private readonly long LoggedInUserId = -1;
         private readonly string LoggedInRole = "";
 
-        public CasesRepository(WKNNAMADBCtx ctx, IConfiguration config,IHttpContextAccessor httpContextAccessor) : base(ctx)
+        public CasesRepository(WKNNAMADBCtx ctx, IConfiguration config,IHttpContextAccessor httpContextAccessor, ILogger<CasesRepository> logger) : base(ctx)
         {
             this.ctx = ctx;
             this.config = config;
             this._httpContextAccessor = httpContextAccessor;
-
+            _logger = logger;
             this.isAuthenticated= _httpContextAccessor.HttpContext.User.Identity.IsAuthenticated;
             this.LoggedInUserId= isAuthenticated ? Convert.ToInt64(_httpContextAccessor.HttpContext.User.FindFirstValue("UserId")) : -1;
             this.LoggedInUserId= isAuthenticated ? Convert.ToInt64(_httpContextAccessor.HttpContext.User.FindFirstValue("role")) : -1;
@@ -216,7 +219,7 @@ namespace Business.BusinessLogic
                     var caseList = await (from u in ctx.UserProfiles
                                           join c in ctx.CourtCases on u.UserId equals c.LawyerId
                                           join cat in ctx.CaseCategories on c.CategoryId equals cat.ID
-                                          where u.UserId == userId && u.RoleId == (int)Roles.Lawyer && (u.IsDeleted == false && c.IsDeleted == false)
+                                          where u.UserId == userId && u.RoleId == (int)Roles.Lawyer && (u.IsDeleted == false && c.IsDeleted == false) && c.StatusId==(int)CaseStatuses.Approved
                                           select new CourtCaseVM
                                           {
                                               UserId = userId,
@@ -400,8 +403,32 @@ namespace Business.BusinessLogic
             }
             catch (Exception ex)
             {
-                throw ex;
+                _logger.LogError("Error Occure while executing AcceptRejectCaseByLawyer "+ex.Message);
             }
+        }
+
+        public async Task<bool> AcceptRejectCase(AcceptRejectCaseVM acceptRejectVm)
+        {
+            try
+            { 
+                if (!isAuthenticated) return false; 
+
+                if (acceptRejectVm is not null)
+                {
+                    var casse = await ctx.CourtCases.FindAsync(acceptRejectVm.CaseId);
+                    if (casse != null)
+                    {
+                        casse.StatusId = acceptRejectVm.Status;
+                        await ctx.SaveChangesAsync();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error Occure while executing AcceptRejectCaseByAdmin " + ex.Message);
+                return false;
+            }
+            return true;
         }
 
         public async Task<CaseDateVM> CreateUpdateCaseDate(CaseDateVM detailVM)
@@ -439,6 +466,53 @@ namespace Business.BusinessLogic
                 throw ex;
             }
             return caseDetailVM;
+        }
+
+        public async Task<List<CourtCaseVM>> GetCasesForAdminApproval()
+        {
+            var adminCases = await (from c in ctx.CourtCases
+                                    join u in ctx.UserProfiles on c.CitizenId equals u.UserId
+                                    join cat in ctx.CaseCategories on c.CategoryId equals cat.ID
+                                    where (c.StatusId==(int)CaseStatuses.New || (int)c.StatusId==(int)CaseStatuses.LawyerRejected) && !u.IsDeleted && !c.IsDeleted
+                                    select new CourtCaseVM
+                                    {
+                                        UserFullName = u.FullName,
+                                        CaseId = c.CaseId,
+                                        CitizenId = c.CitizenId,
+                                        LawyerId = c.LawyerId,
+                                        CaseNumber = c.CaseNumber,
+                                        CaseTitle = c.CaseTitle,
+                                        CaseDescription = c.CaseDescription,
+                                        CategoryId = c.CategoryId,
+                                        CategoryName = cat.CategoryName,
+                                        CaseStatusId = c.LegalStatusId,
+                                        CasePlacingId = c.CasePlacingId
+                                    })
+                .ToListAsync();
+            return adminCases;
+        }
+        public async Task<List<CourtCaseVM>> GetCasesForLawyerApproval(long lawywerId) 
+        {
+            var adminCases = await (from c in ctx.CourtCases
+                                    join u in ctx.UserProfiles on c.CitizenId equals u.UserId
+                                    join cat in ctx.CaseCategories on c.CategoryId equals cat.ID
+                                    where (c.StatusId == (int)CaseStatuses.AdminAccepted) && c.LawyerId== lawywerId && !u.IsDeleted && !c.IsDeleted
+                                    select new CourtCaseVM
+                                    {
+                                        UserFullName = u.FullName,
+                                        CaseId = c.CaseId,
+                                        CitizenId = c.CitizenId,
+                                        LawyerId = c.LawyerId,
+                                        CaseNumber = c.CaseNumber,
+                                        CaseTitle = c.CaseTitle,
+                                        CaseDescription = c.CaseDescription,
+                                        CategoryId = c.CategoryId,
+                                        CategoryName = cat.CategoryName,
+                                        CaseStatusId = c.LegalStatusId,
+                                        CasePlacingId = c.CasePlacingId
+                                    })
+                .ToListAsync();
+            return adminCases;
         }
     }
 }

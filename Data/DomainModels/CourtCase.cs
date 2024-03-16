@@ -31,7 +31,7 @@ namespace ProjWakalatnama.DataLayer.Models
 
         public int? PartyId { get; set; }
 
-        public int? CategoryId { get; set; }
+        public int? CategoryId { get; set; } 
 
         [MaxLength]
         public string CaseDescription { get; set; }
