@@ -43,5 +43,6 @@ namespace ProjWakalatnama.DataLayer.Models
         public int? CasePlacingId { get; set; }
         [Required]
         public int StatusId { get; set; } = 1;
+        public long? AssignEmployeeId { get; set; } 
     }
 }
