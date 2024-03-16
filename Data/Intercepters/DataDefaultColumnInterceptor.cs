@@ -1,6 +1,7 @@
 ﻿using Data.DomainModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using System;
 using System.Collections.Generic;
@@ -63,24 +64,50 @@ namespace Data.Intercepters
 
             foreach (var entityEntry in entries!)
             {
-                ((BaseModel)entityEntry.Entity).UpdateDate = _currentUtcTime;
+                if (entityEntry.Entity is BaseModel)
+                {
+                    ((BaseModel)entityEntry.Entity).UpdateDate = _currentUtcTime;
 
-                if (entityEntry.State == EntityState.Added)
-                {
-                    ((BaseModel)entityEntry.Entity).CreatedDate = _currentUtcTime;
-                    ((BaseModel)entityEntry.Entity).CreatedBy = currentUserId;
+                    if (entityEntry.State == EntityState.Added)
+                    {
+                        ((BaseModel)entityEntry.Entity).CreatedDate = _currentUtcTime;
+                        ((BaseModel)entityEntry.Entity).CreatedBy = currentUserId;
 
+                    }
+                    if (entityEntry.State == EntityState.Modified)
+                    {
+                        ((BaseModel)entityEntry.Entity).UpdatedBy = currentUserId;
+                    }
+                    if (entityEntry.State == EntityState.Deleted)
+                    {
+                        ((BaseModel)entityEntry.Entity).IsDeleted = true;
+                        entityEntry.State = EntityState.Modified;
+                    }
                 }
-                if (entityEntry.State == EntityState.Modified)
+                else if(entityEntry.Entity is AppUser)
                 {
-                    ((BaseModel)entityEntry.Entity).UpdatedBy = currentUserId;
+                    ((AppUser)entityEntry.Entity).UpdateDate = _currentUtcTime;
+
+                    if (entityEntry.State == EntityState.Added)
+                    {
+                        ((AppUser)entityEntry.Entity).CreatedDate = _currentUtcTime;
+                        ((AppUser)entityEntry.Entity).CreatedBy = currentUserId;
+
+                    }
+                    if (entityEntry.State == EntityState.Modified)
+                    {
+                        ((AppUser)entityEntry.Entity).UpdatedBy = currentUserId;
+                    }
+                    if (entityEntry.State == EntityState.Deleted)
+                    {
+                        ((AppUser)entityEntry.Entity).IsDeleted = true;
+                        entityEntry.State = EntityState.Modified;
+                    }
                 }
-                if (entityEntry.State == EntityState.Deleted)
-                {
-                    ((BaseModel)entityEntry.Entity).IsDeleted = true;
-                    entityEntry.State = EntityState.Modified;
-                }
+               
             }
         }
+
+    
     }
 }
