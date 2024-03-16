@@ -219,12 +219,15 @@ namespace WKLNAMA.Controllers
         {
             try
             {
-                var _chatUsers = await accountRepository.GetChatUser(Id,roleName);
+                List<AppUserVm> _chatUsers = new List<AppUserVm>();
+                if (Id == UserModel.UserId)
+                     _chatUsers = await accountRepository.GetChatUser(Id, roleName);
 
                     apiResponse.Message = HttpStatusCode.OK.ToString();
                     apiResponse.HttpStatusCode = HttpStatusCode.OK;
                     apiResponse.Success = true;
                     apiResponse.Data = _chatUsers;
+                
             }
             catch (Exception ex)
             {

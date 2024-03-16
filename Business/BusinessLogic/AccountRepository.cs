@@ -328,17 +328,28 @@ namespace Business.BusinessLogic
 
         public async Task<List<AppUserVm>> GetCitizenLaywer(long citizenId)
         {
-            var _user = await ( from u in ctx.Users
-                        join c in ctx.CourtCases
-                        on u.Id equals c.CitizenId
-                        where u.IsDeleted != false && c.IsDeleted != false 
-                                select new AppUserVm
-                        {
-                            UserName=u.UserName,
-                            FullName=u.FirstName +" "+u.LastName,
-                            Id=u.Id,
-                            Email=u.Email,
-                        }).ToListAsync();
+            var _user = await (from u in ctx.Users
+                                join c in ctx.CourtCases
+                                on u.Id equals c.CitizenId
+                                where u.IsDeleted != false && c.IsDeleted != true && u.Id == citizenId
+                               select new AppUserVm
+                                {
+                                    UserName = u.UserName,
+                                    FullName = u.FirstName + " " + u.LastName,
+                                    Id = u.Id,
+                                    Email = u.Email,
+                                })
+                               .Union(
+                               from u1 in ctx.Users
+                               where u1.IsDeleted != true && u1.UserName == "cservice"
+                               select new AppUserVm
+                               {
+                                   UserName = u1.UserName,
+                                   FullName = u1.FirstName + " " + u1.LastName,
+                                   Id = u1.Id,
+                                   Email = u1.Email,
+                               }
+                              ).ToListAsync();
 
             return _user;
         }
@@ -348,14 +359,25 @@ namespace Business.BusinessLogic
             var _user = await (from u in ctx.Users
                                join c in ctx.CourtCases
                                on u.Id equals c.LawyerId
-                               where u.IsDeleted != false && c.IsDeleted != false
+                               where u.IsDeleted != false && c.IsDeleted != true && u.Id== lawyerId
                                select new AppUserVm
                                {
                                    UserName = u.UserName,
                                    FullName = u.FirstName + " " + u.LastName,
                                    Id = u.Id,
                                    Email = u.Email,
-                               }).ToListAsync();
+                               })
+                               .Union(
+                               from u1 in ctx.Users
+                               where u1.IsDeleted != true && u1.UserName == "cservice"
+                               select new AppUserVm
+                               {
+                                   UserName = u1.UserName,
+                                   FullName = u1.FirstName + " " + u1.LastName,
+                                   Id = u1.Id,
+                                   Email = u1.Email,
+                               }
+                              ).ToListAsync();
 
             return _user;
         }
@@ -400,11 +422,6 @@ namespace Business.BusinessLogic
                 _users.AddRange(await GetLaywerCitizen(userId));
             else
                 _users.AddRange(await GetAdminUsers(userId));
-
-
-            if (roleName != Roles.Admin.ToString())
-                _users.AddRange(await GetCustomerSerice());
-
 
             return _users;
         }
