@@ -49,6 +49,7 @@ namespace Business.ViewModels
         public string? UserFullName { get; set; }
         public string? CategoryName { get; set; }
         public int? CaseStatusId { get; set; }
+        public long? AssignEmployeeId { set; get; }
     }
     public class CaseDetailVM
     {

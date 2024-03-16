@@ -514,5 +514,19 @@ namespace Business.BusinessLogic
                 .ToListAsync();
             return adminCases;
         }
+
+        public async  Task<bool> AssignEmployeeToCase(CourtCaseVM vm)
+        {
+           var _case = await ctx.CourtCases.FindAsync(vm.CaseId);
+
+            if(_case is not null)
+            {
+                _case.AssignEmployeeId = vm.AssignEmployeeId;
+               await ctx.SaveChangesAsync();
+                return true;
+            }
+
+            return false;
+        }
     }
 }
