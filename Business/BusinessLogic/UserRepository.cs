@@ -151,7 +151,7 @@ namespace Business.BusinessLogic
                 if (lawyerId > 0)
                 {
                     lawyerHome.TotalCases = await ctx.CourtCases.CountAsync(x => x.LawyerId== lawyerId && x.IsDeleted==false);
-                    lawyerHome.CompltedCase = await ctx.CourtCases.CountAsync(x => x.LawyerId== lawyerId && x.CaseStatusId==(int)CaseStatus.Initiated && x.IsDeleted==false);
+                    lawyerHome.CompltedCase = await ctx.CourtCases.CountAsync(x => x.LawyerId== lawyerId && x.LegalStatusId ==(int)CaseStatus.Initiated && x.IsDeleted==false);
 
 
                     lawyerHome.CourtCases = await (from c in ctx.CourtCases 
@@ -168,7 +168,7 @@ namespace Business.BusinessLogic
                                                   CaseTitle = c.CaseTitle,
                                                   CategoryId = c.CategoryId,
                                                   CategoryName = cat.CategoryName,
-                                                  CaseStatusId=c.CaseStatusId
+                                                  CaseStatusId=c.LegalStatusId
                                               })
                           .ToListAsync();
 

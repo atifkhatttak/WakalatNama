@@ -23,7 +23,7 @@ namespace ProjWakalatnama.DataLayer.Models
         //[Required]
         public long? RedundantLawyerId { get; set; }
         [Required]
-        public int CaseStatusId { get; set; }
+        public int LegalStatusId { get; set; } 
         public string? CaseTitle { get; set; }
 
         [MaxLength(20)]
@@ -41,5 +41,7 @@ namespace ProjWakalatnama.DataLayer.Models
         [Required]
         public int CourtId { get; set; }
         public int? CasePlacingId { get; set; }
+        [Required]
+        public int StatusId { get; set; } = 1;
     }
 }

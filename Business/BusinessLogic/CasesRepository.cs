@@ -121,7 +121,7 @@ namespace Business.BusinessLogic
                                                        CaseDescription=c.CaseDescription,
                                                        CategoryId = c.CategoryId,
                                                        CategoryName = cat.CategoryName,
-                                                       CaseStatusId = c.CaseStatusId,
+                                                       CaseStatusId = c.LegalStatusId,
                                                        CasePlacingId=c.CasePlacingId
                                                    })
                           .FirstOrDefaultAsync();
@@ -392,7 +392,7 @@ namespace Business.BusinessLogic
                     var casse = await ctx.CourtCases.FindAsync(acceptReject.CaseId);
                     if (casse!=null)
                     {
-                        casse.CaseStatusId =(acceptReject.Status==0)? (int)CaseStatus.Initiated: (int)CaseStatus.Draft;                       
+                        casse.LegalStatusId =(acceptReject.Status==0)? (int)CaseStatus.Initiated: (int)CaseStatus.Draft;                       
                         await ctx.SaveChangesAsync();
                     }
                 }
@@ -422,9 +422,9 @@ namespace Business.BusinessLogic
                             DateDescription=detailVM.DateDescription,
                             HearingDate=detailVM.HearingDate
                         };
-                        if (checkCaseExist.CaseStatusId!=detailVM.CaseStatusId)
+                        if (checkCaseExist.LegalStatusId!=detailVM.CaseStatusId)
                         {
-                            checkCaseExist.CaseStatusId = detailVM.CaseStatusId;
+                            checkCaseExist.LegalStatusId = detailVM.CaseStatusId;
                         }
                       await  ctx.AddAsync(casesDetail);
                     await ctx.SaveChangesAsync();
