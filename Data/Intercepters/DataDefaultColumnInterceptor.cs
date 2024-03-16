@@ -56,9 +56,10 @@ namespace Data.Intercepters
             var _currentUtcTime = DateTime.UtcNow;
             var entries =   context?.ChangeTracker
             .Entries()
-            .Where(e => e.Entity is BaseModel && (
+            .Where(e => (e.Entity is BaseModel || e.Entity is AppUser) && (
                     e.State == EntityState.Added
-                    || e.State == EntityState.Modified));
+                    || e.State == EntityState.Modified
+                    || e.State == EntityState.Deleted));
 
             foreach (var entityEntry in entries!)
             {
@@ -74,10 +75,11 @@ namespace Data.Intercepters
                 {
                     ((BaseModel)entityEntry.Entity).UpdatedBy = currentUserId;
                 }
-                //if (entityEntry.State == EntityState.Modified)
-                //{
-                //    ((BaseModel)entityEntry.Entity).IsDeleted = true;
-                //}
+                if (entityEntry.State == EntityState.Deleted)
+                {
+                    ((BaseModel)entityEntry.Entity).IsDeleted = true;
+                    entityEntry.State = EntityState.Modified;
+                }
             }
         }
     }
