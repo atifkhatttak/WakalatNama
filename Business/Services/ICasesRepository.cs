@@ -24,6 +24,8 @@ namespace Business.Services
         Task<List<CourtCaseVM>> GetCasesForLawyerApproval(long lawywerId);
         Task<bool> AssignEmployeeToCase(CourtCaseVM vm);
         Task<CaseRejectionReason> AddCaseRejectionReason(AcceptRejectCaseVM vm);
+        Task<List<CaseRejectionReasonVm>> GetCaseRejectionReason();
+
 
 
     }

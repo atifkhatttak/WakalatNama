@@ -30,8 +30,8 @@ namespace WKLNAMA.Controllers
                     UserId = Convert.ToInt64(string.IsNullOrEmpty(User.FindFirst("UserId").Value) ? 0 : User.FindFirst("UserId").Value),
                     FirstName = User.FindFirstValue("FirstName")!,
                     LastName = User.FindFirstValue("LastName")!,
-                    Role = User.FindFirstValue("Role")!,
-                    Email = User.FindFirstValue("Email")!,
+                    Role = User.FindFirstValue("http://schemas.microsoft.com/ws/2008/06/identity/claims/role")!,
+                    Email = User.FindFirstValue("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")!,
                     UserName = User.FindFirstValue("UserName")!
                 };
         

@@ -141,13 +141,72 @@ namespace WKLNAMA.Controllers
             }
             return Ok(apiResponse);
         }
+
+        [SwaggerOperation(Summary = "List of cases for Admin Approval")]
+        [HttpGet("GetCasesForAdminApproval")]
+        public async Task<ActionResult> GetCasesForAdminApproval()
+        {
+            try
+            {
+                List<CourtCaseVM> _caseList = new List<CourtCaseVM>();
+
+                if (UserModel.Role==Roles.Admin.ToString())
+                 _caseList = await casesRepository.GetCasesForAdminApproval();
+                apiResponse.Message = HttpStatusCode.OK.ToString();
+                apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                apiResponse.Success = true;
+                apiResponse.Data = _caseList;
+            }
+            catch (Exception ex)
+            {
+                apiResponse.Message = ex.Message;
+                apiResponse.HttpStatusCode = HttpStatusCode.InternalServerError;
+                apiResponse.Success = false;
+                apiResponse.Data = null;
+            }
+            return Ok(apiResponse);
+        }
+
+        [SwaggerOperation(Summary = "List of cases for Lawyer Approval")]
+        [HttpGet("GetCasesForLawyerApproval")]
+        public async Task<ActionResult> GetCasesForLawyerApproval()
+        {
+            try
+            {
+                List<CourtCaseVM> _caseList = new List<CourtCaseVM>();
+
+                if (UserModel.Role == Roles.Lawyer.ToString())
+                    _caseList = await casesRepository.GetCasesForLawyerApproval(UserModel.UserId);
+                apiResponse.Message = HttpStatusCode.OK.ToString();
+                apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                apiResponse.Success = true;
+                apiResponse.Data = _caseList;
+            }
+            catch (Exception ex)
+            {
+                apiResponse.Message = ex.Message;
+                apiResponse.HttpStatusCode = HttpStatusCode.InternalServerError;
+                apiResponse.Success = false;
+                apiResponse.Data = null;
+            }
+            return Ok(apiResponse);
+        }
+
         [SwaggerOperation(Summary = "Accept/Reject new case on lawyer end")]
-        [HttpGet("AcceptRejectCaseByLawyer")]
+        [HttpPost("AcceptRejectCaseByLawyer")]
         public async Task<ActionResult> AcceptRejectCaseByLawyer(AcceptRejectCaseVM acceptReject)
         {
             try
             {
-                await casesRepository.AcceptRejectCaseByLawyer(acceptReject);
+                acceptReject.DecisionUserId = UserModel.UserId;
+                bool isValid = false;
+
+                isValid =  await casesRepository.AcceptRejectCase(acceptReject);
+
+                if (isValid &&  acceptReject.Status == (int)CaseStatuses.LawyerRejected)
+                {
+                    await casesRepository.AddCaseRejectionReason(acceptReject);
+                }
                 apiResponse.Message = HttpStatusCode.OK.ToString();
                 apiResponse.HttpStatusCode = HttpStatusCode.OK;
                 apiResponse.Success = true;
@@ -175,6 +234,85 @@ namespace WKLNAMA.Controllers
 
                     return Ok(apiResponse);
                 });
+        }
+
+        [SwaggerOperation(Summary = "Accept/Reject new case on Admin end")] 
+        [HttpPost("AcceptRejectCaseByAdmin")]
+        public async Task<ActionResult> AcceptRejectCaseByAdmin(AcceptRejectCaseVM acceptReject)
+        {
+            try 
+            {
+                acceptReject.DecisionUserId = UserModel.UserId;
+
+               var isValid=  await casesRepository.AcceptRejectCase(acceptReject);
+
+                if (isValid && acceptReject.Status==(int)CaseStatuses.AdminRejected)
+                {
+                  await  casesRepository.AddCaseRejectionReason(acceptReject);
+                 }
+                apiResponse.Message = HttpStatusCode.OK.ToString();
+                apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                apiResponse.Success = isValid;
+                apiResponse.Data = null;
+            }
+            catch (Exception ex)
+            {
+                apiResponse.Message = ex.Message;
+                apiResponse.HttpStatusCode = HttpStatusCode.InternalServerError;
+                apiResponse.Success = false;
+                apiResponse.Data = null;
+            }
+            return Ok(apiResponse);
+        }
+
+        [SwaggerOperation(Summary = "Assign Employee To Case")]
+        [HttpPost("AssignEmployeeToCase")]
+        public async Task<ActionResult> AssignEmployeeToCase(CourtCaseVM model)  
+        {
+            try
+            {
+                bool isValid = false;
+                if(UserModel.Role==Roles.Admin.ToString() || UserModel.Role==Roles.Zonal_Manager.ToString())
+                  isValid = await casesRepository.AssignEmployeeToCase(model);
+
+                apiResponse.Message = HttpStatusCode.OK.ToString();
+                apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                apiResponse.Success = true; 
+                apiResponse.Data = isValid;
+            }
+            catch (Exception ex)
+            {
+                apiResponse.Message = ex.Message;
+                apiResponse.HttpStatusCode = HttpStatusCode.InternalServerError;
+                apiResponse.Success = false;
+                apiResponse.Data = false;
+            }
+            return Ok(apiResponse);
+        }
+
+        [SwaggerOperation(Summary = "List of Rejected Cases wit Reason")]
+        [HttpGet("RejectedCaseswithReason")]
+        public async Task<ActionResult> RejectedCaseswithReason()
+        {
+            try
+            {
+                List<CaseRejectionReasonVm> _caseRejectionReasons = new List<CaseRejectionReasonVm>() ; 
+                if (UserModel.Role == Roles.Admin.ToString() || UserModel.Role == Roles.Zonal_Manager.ToString())
+                    _caseRejectionReasons = await casesRepository.GetCaseRejectionReason();
+
+                apiResponse.Message = HttpStatusCode.OK.ToString();
+                apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                apiResponse.Success = true;
+                apiResponse.Data = _caseRejectionReasons;
+            }
+            catch (Exception ex)
+            {
+                apiResponse.Message = ex.Message;
+                apiResponse.HttpStatusCode = HttpStatusCode.InternalServerError;
+                apiResponse.Success = false;
+                apiResponse.Data = null;
+            }
+            return Ok(apiResponse);
         }
     }
 }

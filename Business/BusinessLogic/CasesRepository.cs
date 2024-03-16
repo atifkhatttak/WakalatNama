@@ -418,7 +418,9 @@ namespace Business.BusinessLogic
                     var casse = await ctx.CourtCases.FindAsync(acceptRejectVm.CaseId);
                     if (casse != null)
                     {
-                        casse.StatusId = acceptRejectVm.Status;
+                        casse.StatusId =  (acceptRejectVm.Status==(int)CaseStatuses.LawyerAccepted) 
+                               ? (int)CaseStatuses.Approved 
+                               : (acceptRejectVm.Status==(int)CaseStatuses.AdminAccepted)? (int)CaseStatuses.ForwardedToLawyer:acceptRejectVm.Status;
                         await ctx.SaveChangesAsync();
                     }
                 }
@@ -496,7 +498,7 @@ namespace Business.BusinessLogic
             var adminCases = await (from c in ctx.CourtCases
                                     join u in ctx.UserProfiles on c.CitizenId equals u.UserId
                                     join cat in ctx.CaseCategories on c.CategoryId equals cat.ID
-                                    where (c.StatusId == (int)CaseStatuses.AdminAccepted) && c.LawyerId== lawywerId && !u.IsDeleted && !c.IsDeleted
+                                    where (c.StatusId == (int)CaseStatuses.ForwardedToLawyer) && c.LawyerId== lawywerId && !u.IsDeleted && !c.IsDeleted
                                     select new CourtCaseVM
                                     {
                                         UserFullName = u.FullName,
@@ -543,6 +545,31 @@ namespace Business.BusinessLogic
              await ctx.SaveChangesAsync();
 
             return crr;
+        }
+
+        public async Task<List<CaseRejectionReasonVm>> GetCaseRejectionReason()
+        {
+           
+           var _caseRejectionReason= await ctx.Database.SqlQuery<CaseRejectionReasonVm>($@"
+                               select 
+                                      cc.CaseId,
+                                      cc.CaseNumber,
+                                      cc.CaseTitle, 
+                                      au.FirstName+' '+au.LastName as CitizenName,
+                                      case_c.CategoryName,
+                                      crr.Id as RejectionId,
+                                      crr.Reason,
+                                      crr.Status as CaseRejectionStatus 
+                                 from CourtCases cc
+                                 inner join AspNetUsers au
+                                 on cc.CitizenId = au.Id
+                                 inner join CaseCategories case_c
+                                 on cc.CategoryId=case_c.ID
+                                 inner join CaseRejectionReasons crr
+                                 on cc.CaseId=crr.CaseId")
+                                .ToListAsync();
+
+            return _caseRejectionReason;
         }
          
 
