@@ -13,7 +13,8 @@ namespace Business.ViewModels
         public int? CityId { get; set; }
         public int? ExperienceMin { get; set;}
         public int? ExperienceMax { get; set; }
-       
+        public string? SearchKeys { get; set; }
+
     }
     public class AcceptRejectCaseVM
     {

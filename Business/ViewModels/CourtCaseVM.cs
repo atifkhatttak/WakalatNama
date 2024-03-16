@@ -19,8 +19,8 @@ namespace Business.ViewModels
         [Required]
         public long CitizenId { get; set; }
         public long LawyerId { get; set; }
-        public long RedundantLawyerId { get; set; }
-        public string CaseNumber { get; set; }
+        public long? RedundantLawyerId { get; set; }
+        public string? CaseNumber { get; set; }
         [Required]
         public int? PartyId { get; set; }
         [Required]
@@ -33,8 +33,9 @@ namespace Business.ViewModels
         public int? CaseJurisdictionId { get; set; }
         [Required]
         public int CourtId { get; set; }
+        [Required]
         public int? CasePlacingId { get; set; }
-        public IFormFileCollection Documents { get; set; } = null;
+        public IFormFileCollection? Documents { get; set; } = null;
         public DateTime? CreatedDate { get; set; }
 
         public long? CreatedUser { get; set; }

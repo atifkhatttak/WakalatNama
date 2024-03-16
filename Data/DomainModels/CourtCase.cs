@@ -20,8 +20,8 @@ namespace ProjWakalatnama.DataLayer.Models
         [Required]
         public long LawyerId { get; set; }
 
-        [Required]
-        public long RedundantLawyerId { get; set; }
+        //[Required]
+        public long? RedundantLawyerId { get; set; }
         [Required]
         public int CaseStatusId { get; set; }
         public string? CaseTitle { get; set; }

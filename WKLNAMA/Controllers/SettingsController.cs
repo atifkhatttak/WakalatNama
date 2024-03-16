@@ -4,10 +4,12 @@ using Business.Services;
 using Business.ViewModels;
 using Data.DomainModels;
 using Google.Apis.Drive.v3.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using ProjWakalatnama.DataLayer.Models;
+using Swashbuckle.AspNetCore.Annotations;
 using System.ComponentModel.DataAnnotations;
 using System.Net;
 using System.Runtime.CompilerServices;
@@ -109,19 +111,6 @@ namespace WKLNAMA.Controllers
         [HttpPost("GetSingleFee")]
         public async Task<ActionResult> SingleFees(GetLawyerFeeVM vM)
         {
-            //if (!ModelState.IsValid)
-            //{
-            //    return await APIResponse(async () => {
-
-            //        apiResponse.Message = ModelState.ValidationState.GetMessage();
-            //        apiResponse.HttpStatusCode = HttpStatusCode.BadRequest;
-            //        apiResponse.Success = false;
-            //        apiResponse.Data = null;
-
-            //        return BadRequest(apiResponse);
-            //    });
-            //}
-
             return await APIResponse(async () => {
 
                 apiResponse.Message = HttpStatusCode.OK.ToString();
@@ -132,7 +121,44 @@ namespace WKLNAMA.Controllers
                 return Ok(apiResponse);
             });
         }
+        [SwaggerOperation(Summary ="Get Citizen/Lawyer downloadable documents")]
+        [HttpGet("GetDownloadableDocuments")]
+        public async Task<ActionResult> GetDownloadableDocuments([Required] int docType)
+        {
+            return await APIResponse(async () => {
+                apiResponse.Message = HttpStatusCode.OK.ToString();
+                apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                apiResponse.Success = true;
+                apiResponse.Data = await settingsRepository.GetDownloadableDocuments(docType);
 
-      
+                return Ok(apiResponse);
+            });
+        }
+        [SwaggerOperation(Summary = "Upload user documents here on admin side")]
+        [HttpPost("UploadUserDocuments")]
+        public async Task<ActionResult> UploadUserDocuments(UserDocumentVM vM)
+        {
+            return await APIResponse(async () => {
+                apiResponse.Message = HttpStatusCode.OK.ToString();
+                apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                apiResponse.Success = true;
+                apiResponse.Data = await settingsRepository.UpLoadUserDocuments(vM);
+
+                return Ok(apiResponse);
+            });
+        }
+        [SwaggerOperation(Summary = "Delete user documents here on admin side")]
+        [HttpDelete("DeleteUserDocuments")]
+        public async Task<ActionResult> DeleteUserDocuments([Required]long docId,int docType)
+        {
+            return await APIResponse(async () => {
+                apiResponse.Message = HttpStatusCode.OK.ToString();
+                apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                apiResponse.Success = true;
+                apiResponse.Data = await settingsRepository.DeleteUserDocument(docId,docType);
+
+                return Ok(apiResponse);
+            });
+        }
     }
 }

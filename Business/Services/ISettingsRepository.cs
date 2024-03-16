@@ -18,5 +18,8 @@ namespace Business.Services
         Task<List<LawyerFeeStructureVM>> GetLawyerFeeStructure();
         Task<List<LawyerFeeStructureVM>> GetLawyerFeeByCatAndJurisdiction(GetLawyerFeeVM feeVM);
         Task<LawyerFeeStructureVM> GetSingleFee(GetLawyerFeeVM feeVM);
+        Task<List<DownloadableDocsVM>> GetDownloadableDocuments(int docType);
+        Task<bool> UpLoadUserDocuments(UserDocumentVM userDoc);
+        Task<bool> DeleteUserDocument(long docId, int docType);
     }
 }

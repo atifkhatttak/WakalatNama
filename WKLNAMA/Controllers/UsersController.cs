@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProjWakalatnama.DataLayer.Models;
+using Swashbuckle.AspNetCore.Annotations;
 using System.Net;
 using WKLNAMA.Models;
 
@@ -22,121 +23,71 @@ namespace WKLNAMA.Controllers
             this.userRepository = userRepository;
 
         }
+        [SwaggerOperation(Summary = "Create/update citizen profile from here- for now this api will only update")]
         [HttpPost("CreateUpdateCitizenProfile")]
         public async Task<ActionResult> CreateUpdateCitizenProfile([FromForm]CitizenVM citizenVM)
-        {
-            try
-            {
-                if (!ModelState.IsValid)
-                {
-                    apiResponse.Message = HttpStatusCode.BadRequest.ToString();
-                    apiResponse.HttpStatusCode = HttpStatusCode.BadRequest;
-                    apiResponse.Success = false;
-                    apiResponse.Data = citizenVM;
-                    return BadRequest(apiResponse);
-                }
-                var result = await userRepository.CreateCitizenProfile(citizenVM);
-                apiResponse.Message = HttpStatusCode.OK.ToString();
-                apiResponse.HttpStatusCode = HttpStatusCode.OK;
-                apiResponse.Success = true;
-                apiResponse.Data = result;
-            }
-            catch (Exception ex)
-            {
-                apiResponse.Message = ex.Message;
-                apiResponse.HttpStatusCode = HttpStatusCode.InternalServerError;
-                apiResponse.Success = false;
-                apiResponse.Data = null;
-            }
-            return Ok(apiResponse);
+        { 
+                return await APIResponse(async () => {
+                    apiResponse.Message = HttpStatusCode.OK.ToString();
+                    apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                    apiResponse.Success = true;
+                    apiResponse.Data = await userRepository.CreateCitizenProfile(citizenVM);
+
+                    return Ok(apiResponse);
+                });
+          
         }
+        [SwaggerOperation(Summary = "Get citizen Home screen lawyer list from here")]
         [HttpPost("GetLawyerList")]
         public async Task<ActionResult> GetLawyerList(FilterVM filterVM)
         {
-            try
-            {
-                var result = await userRepository.GetLawyerList(filterVM);
+            return await APIResponse(async () => {
                 apiResponse.Message = HttpStatusCode.OK.ToString();
                 apiResponse.HttpStatusCode = HttpStatusCode.OK;
                 apiResponse.Success = true;
-                apiResponse.Data = result;
-            }
-            catch (Exception ex)
-            {
-                apiResponse.Message = ex.Message;
-                apiResponse.HttpStatusCode = HttpStatusCode.InternalServerError;
-                apiResponse.Success = false;
-                apiResponse.Data = null;
-            }
+                apiResponse.Data = await userRepository.GetLawyerList(filterVM);
 
-            //return Ok(Task.FromResult(_viewModel));
-            return Ok(apiResponse);
+                return Ok(apiResponse);
+            });            
         }
+        [SwaggerOperation(Summary = "Get lawyer profile details  from here")]
         [HttpGet("GetLawyerDetails")]
         public async Task<ActionResult> GetLawyerDetails(int? lawyerId)
         {
-            try
-            {
-                var result = await userRepository.GetLawyerProfile(lawyerId);
+            return await APIResponse(async () => {
                 apiResponse.Message = HttpStatusCode.OK.ToString();
                 apiResponse.HttpStatusCode = HttpStatusCode.OK;
                 apiResponse.Success = true;
-                apiResponse.Data = result;
-            }
-            catch (Exception ex)
-            {
-                apiResponse.Message = ex.Message;
-                apiResponse.HttpStatusCode = HttpStatusCode.InternalServerError;
-                apiResponse.Success = false;
-                apiResponse.Data = null;
-            }
+                apiResponse.Data = await userRepository.GetLawyerProfile(lawyerId);
 
-            //return Ok(Task.FromResult(_viewModel));
-            return Ok(apiResponse);
+                return Ok(apiResponse);
+            });            
         }
+        [SwaggerOperation(Summary = "Get lawyer home screen data from here")]
         [HttpGet("GetLayerHome")]
         public async Task<ActionResult> GetLayerHome(int? LawyerId)
         {
-            try
-            {
-                var result = await userRepository.GetLawyerHome(LawyerId);
+            return await APIResponse(async () => {
                 apiResponse.Message = HttpStatusCode.OK.ToString();
                 apiResponse.HttpStatusCode = HttpStatusCode.OK;
                 apiResponse.Success = true;
-                apiResponse.Data = result;
-            }
-            catch (Exception ex)
-            {
-                apiResponse.Message = ex.Message;
-                apiResponse.HttpStatusCode = HttpStatusCode.InternalServerError;
-                apiResponse.Success = false;
-                apiResponse.Data = null;
-            }
+                apiResponse.Data = await userRepository.GetLawyerHome(LawyerId);
 
-            //return Ok(Task.FromResult(_viewModel));
-            return Ok(apiResponse);
+                return Ok(apiResponse);
+            });            
         }
+        [SwaggerOperation(Summary = "Get citizen profile details from here")]
         [HttpGet("GetCitizenDetails")]
         public async Task<ActionResult> GetCitizenDetails(int? CitizenId)
         {
-            try
-            {
-                var result = await userRepository.GetCitizenProfile(CitizenId);
+            return await APIResponse(async () => {
                 apiResponse.Message = HttpStatusCode.OK.ToString();
                 apiResponse.HttpStatusCode = HttpStatusCode.OK;
                 apiResponse.Success = true;
-                apiResponse.Data = result;
-            }
-            catch (Exception ex)
-            {
-                apiResponse.Message = ex.Message;
-                apiResponse.HttpStatusCode = HttpStatusCode.InternalServerError;
-                apiResponse.Success = false;
-                apiResponse.Data = null;
-            }
+                apiResponse.Data = await userRepository.GetCitizenProfile(CitizenId);
 
-            //return Ok(Task.FromResult(_viewModel));
-            return Ok(apiResponse);
+                return Ok(apiResponse);
+            });           
         }       
     }
 }

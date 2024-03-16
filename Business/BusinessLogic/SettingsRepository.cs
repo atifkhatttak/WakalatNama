@@ -132,5 +132,113 @@ namespace Business.BusinessLogic
                 })
                 .ToListAsync();
         }
+
+        #region Documents
+
+        public async Task<List<DownloadableDocsVM>> GetDownloadableDocuments(int docType)
+        {
+            List<DownloadableDocsVM> docList = new List<DownloadableDocsVM>();
+            try
+            {
+                EDocumentType type = (EDocumentType)docType;
+
+                switch (type)
+                {
+                    case EDocumentType.CitizenDownloadable:
+                        docList = await ctx.UserDocuments
+                            .Where(x => x.DocTypeId == (int)EDocumentType.CitizenDownloadable && x.IsUploaded == true && !x.IsDeleted)
+                            .Select(x => new DownloadableDocsVM()
+                            {
+                                DocId = x.DocumentId,
+                                DocName = x.DocName,
+                                DocSize = 1,
+                                DocPath = x.DocPath,
+                                DocForUserType = x.DocTypeId
+
+                            })
+                            .ToListAsync();
+                        break;
+                    case EDocumentType.LawyerDownloadable:
+                        docList = await ctx.UserDocuments
+                            .Where(x => x.DocTypeId == (int)EDocumentType.LawyerDownloadable && x.IsUploaded == true && !x.IsDeleted)
+                            .Select(x => new DownloadableDocsVM()
+                            {
+                                DocId = x.DocumentId,
+                                DocName = x.DocName,
+                                DocSize = 1,
+                                DocPath = x.DocPath,
+                                DocForUserType = x.DocTypeId
+
+                            })
+                            .ToListAsync();
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            return docList;
+        }
+
+        public async Task<bool> UpLoadUserDocuments(UserDocumentVM userDoc)
+        {
+            bool response = false;
+            try
+            {
+                if (userDoc!=null)
+                {
+                   UserDocument user= new UserDocument()
+                    {
+                        UserId = userDoc.UserId,
+                        DocName = userDoc.DocName,
+                        DocPath = userDoc.DocPath,
+                        DocExtension = userDoc.DocExtension,
+                        DocTypeId = userDoc.DocTypeId,
+                        IsUploaded = userDoc.IsUploaded ?? false,
+                        IsDeleted = false
+                    };
+                   await ctx.AddAsync(user);
+
+                    await ctx.SaveChangesAsync();
+
+                    response = (user.DocumentId > 0);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return response;
+        }
+        public async Task<bool> DeleteUserDocument(long docId,int docType)
+        {
+            bool response = false;
+            try
+            {
+                if (docId>0)
+                {
+                    var CheckExist=await ctx.UserDocuments.FindAsync(docId);
+
+                    if (CheckExist != null)
+                    {
+                        CheckExist.IsDeleted = true;
+                        await ctx.SaveChangesAsync();
+                        response = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return response;
+        }
+
+        #endregion
     }
 }

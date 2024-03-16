@@ -84,11 +84,11 @@ namespace Business.BusinessLogic
                 {
                     SqlParameter[] param=baseSP.CreateSqlParametersFromModel(filterVM);
 
-                    var d = await baseSP.ExecuteStoredProcedureAsync<sp_GetCitizenLawyers_Result>("sp_GetCitizenLawyers", param);
+                    var lawyers= await baseSP.ExecuteStoredProcedureAsync<sp_GetCitizenLawyers_Result>("sp_GetCitizenLawyers", param);
 
-                    if (d != null)
+                    if (lawyers != null)
                     {
-                        foreach (var item in d)
+                        foreach (var item in lawyers)
                         {
                             lawyerList.Add(new LawyerVM
                             {

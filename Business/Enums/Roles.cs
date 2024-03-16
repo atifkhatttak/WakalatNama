@@ -28,7 +28,16 @@ namespace Business.Enums
         Employee=5
 
     }
-    public enum DocumentType
+    public enum ECasePlacingType
+    {
+        [Description("OnDemand Case, citizen select a lawyer")]
+        OnDemand = 1,
+        [Description("Free legal assistance providing to citizen")]
+        FreeAssistance = 2,
+        [Description("Lets platform decide better lawyer for citizen")]
+        PlatformDecide = 3   
+    }
+    public enum EDocumentType
     {
         None = 0,
         NicFront = 1,
@@ -41,12 +50,15 @@ namespace Business.Enums
         PassportPicFront = 8,
         PassportPicBack = 9,
         BarCouncilCardScanFront = 10,
-        BarCouncilCardScanBack = 11
+        BarCouncilCardScanBack = 11,
+        CitizenDownloadable=12,
+        LawyerDownloadable=13
+
     }
     public enum CaseStatus
     {
         Initiated=1,
             Draft=2,
-            Completed
+            Completed=3
     }
 }

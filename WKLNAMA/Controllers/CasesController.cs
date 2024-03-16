@@ -4,11 +4,13 @@ using Business.Helpers;
 using Business.Services;
 using Business.ViewModels;
 using Data.DomainModels;
+using Google.Apis.Drive.v3.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProjWakalatnama.DataLayer.Models;
 using Swashbuckle.AspNetCore.Annotations;
+using System.ComponentModel.DataAnnotations;
 using System.Net;
 using WKLNAMA.Models;
 
@@ -27,63 +29,37 @@ namespace WKLNAMA.Controllers
             this.casesRepository = casesRepository;
         }
 
-        [SwaggerOperation(Summary ="Create new case from here")]
-        [HttpPost("CreateCase")]
-        public async Task<ActionResult> CreateCase([FromForm]CourtCaseVM courtCase)
+        [SwaggerOperation(Summary ="Create/Update case from here")]
+        [HttpPost("CreateUpdateCase")]
+        public async Task<ActionResult> CreateUpdateCase([FromForm]CourtCaseVM courtCase)
         {
-            try
-            {
-                if (!ModelState.IsValid)
-                {
-                    apiResponse.Message = HttpStatusCode.BadRequest.ToString();
-                    apiResponse.HttpStatusCode = HttpStatusCode.BadRequest;
-                    apiResponse.Success = false;
-                    apiResponse.Data = courtCase;
-                }
-
-               var result =await casesRepository.CreateCase(courtCase);
-                apiResponse.Message = HttpStatusCode.Created.ToString();
-                apiResponse.HttpStatusCode = HttpStatusCode.Created;
+            return await APIResponse(async () => {
+                apiResponse.Message = HttpStatusCode.OK.ToString();
+                apiResponse.HttpStatusCode = HttpStatusCode.OK;
                 apiResponse.Success = true;
-                apiResponse.Data = result;
-            }
-            catch (Exception ex)
-            {
-                apiResponse.Message = ex.Message;
-                apiResponse.HttpStatusCode = HttpStatusCode.InternalServerError;
-                apiResponse.Success = false;
-                apiResponse.Data = null;
-            }
+                apiResponse.Data = await casesRepository.CreateUpdateCase(courtCase);
 
-            //return Ok(Task.FromResult(_viewModel));
-            return Ok(apiResponse);
+                return Ok(apiResponse);
+            });            
         }
         [SwaggerOperation(Summary = "Get list of citizen cases by citizenId")]
         [HttpGet("GetCitizenCases")]
        //[Authorize(Roles = "Citizen")]
-        public async Task<ActionResult> GetCitizenCases(long? userId)
+        public async Task<ActionResult> GetCitizenCases([Required]long? userId)
         {
-            try
-            {
-              var result=  await casesRepository.GetCitizenCases(userId);
+            return await APIResponse(async () => {
                 apiResponse.Message = HttpStatusCode.OK.ToString();
                 apiResponse.HttpStatusCode = HttpStatusCode.OK;
                 apiResponse.Success = true;
-                apiResponse.Data = result;
-            }
-            catch (Exception ex)
-            {
-                apiResponse.Message = ex.Message;
-                apiResponse.HttpStatusCode = HttpStatusCode.InternalServerError;
-                apiResponse.Success = false;
-                apiResponse.Data = null;
-            }
-            return Ok(apiResponse);
+                apiResponse.Data = await casesRepository.GetCitizenCases(userId);
+
+                return Ok(apiResponse);
+            });           
         }
         [SwaggerOperation(Summary = "Get list of Lawyer cases by lawyerid")]
         [HttpGet("GetLawyerCases")]        
         //[Authorize(Roles = "Lawyer")]
-        public async Task<ActionResult> GetLawyerCases(long? userId)
+        public async Task<ActionResult> GetLawyerCases([Required] long? userId)
         {
             try
             {
@@ -104,7 +80,7 @@ namespace WKLNAMA.Controllers
         }
         [SwaggerOperation(Summary = "Get list of citizen cases dates, by citizenId")]
         [HttpGet("GetCitizenDateList")]
-        public async Task<ActionResult> GetCitizenDateList(long? userId)
+        public async Task<ActionResult> GetCitizenDateList([Required] long? userId)
         {
             try
             {
@@ -125,7 +101,7 @@ namespace WKLNAMA.Controllers
         }
         [SwaggerOperation(Summary = "Get list of lawyer cases dates, by lawyerId")]
         [HttpGet("GetLawyerDateList")]
-        public async Task<ActionResult> GetLawyerDateList(long? userId)
+        public async Task<ActionResult> GetLawyerDateList([Required] long? userId)
         {
             try
             {
@@ -146,7 +122,7 @@ namespace WKLNAMA.Controllers
         }
         [SwaggerOperation(Summary ="Get single case for edit by caseid")]
         [HttpGet("GetCaseById")]        
-        public async Task<ActionResult> GetCaseById(long? caseId)
+        public async Task<ActionResult> GetCaseById([Required] long? caseId)
         {
             try
             {

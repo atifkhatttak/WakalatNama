@@ -11,7 +11,7 @@ namespace Business.Services
 {
     public interface ICasesRepository : IBaseRepository<CasesDetail>
     {        
-        Task<CourtCases> CreateCase(CourtCaseVM courtCase);
+        Task<CourtCases> CreateUpdateCase(CourtCaseVM courtCase);
         Task<CaseDateVM> CreateUpdateCaseDate(CaseDateVM detailVM);
         Task<List<CourtCaseVM>> GetCitizenCases(long? userId);
         Task<List<CourtCaseVM>> GetLawyerCases(long? userId);

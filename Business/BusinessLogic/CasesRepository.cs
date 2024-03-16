@@ -39,7 +39,7 @@ namespace Business.BusinessLogic
             this.LoggedInUserId= isAuthenticated ? Convert.ToInt64(_httpContextAccessor.HttpContext.User.FindFirstValue("role")) : -1;
         }
 
-        public async Task<CourtCases> CreateCase(CourtCaseVM caseVM)
+        public async Task<CourtCases> CreateUpdateCase(CourtCaseVM caseVM)
         {
             CourtCases courtCases = new CourtCases();
             try
@@ -48,23 +48,49 @@ namespace Business.BusinessLogic
 
                 if (caseVM != null)
                 {
+                    if (caseVM?.CaseId > 0)
+                    {
+                        var CheckCaseExist = await ctx.CourtCases.Where(x => !x.IsDeleted).FirstOrDefaultAsync();
+                        if (CheckCaseExist != null)
+                        {
+                            CheckCaseExist.LawyerId = caseVM.LawyerId;
+                            CheckCaseExist.RedundantLawyerId = caseVM.RedundantLawyerId;
+                            CheckCaseExist.CaseTitle = caseVM.CaseTitle;
+                            CheckCaseExist.PartyId = caseVM.PartyId;
+                            CheckCaseExist.CategoryId = caseVM.CategoryId;
+                            CheckCaseExist.CaseDescription = caseVM.CaseDescription!;
+                            CheckCaseExist.CaseJurisdictionId = caseVM.CaseJurisdictionId;
+                            CheckCaseExist.CourtId = caseVM.CourtId;
+                            CheckCaseExist.CasePlacingId = caseVM.CasePlacingId;
 
-                    courtCases.CitizenId = caseVM.CitizenId;
-                    courtCases.LawyerId = caseVM.LawyerId;
-                    courtCases.RedundantLawyerId = caseVM.RedundantLawyerId;
-                    courtCases.CaseNumber = caseVM.CaseNumber;
-                    courtCases.CaseTitle = caseVM.CaseTitle;
-                    courtCases.PartyId = caseVM.PartyId;
-                    courtCases.CategoryId = caseVM.CategoryId;
-                    courtCases.CaseDescription = caseVM.CaseDescription!;
-                    courtCases.CaseJurisdictionId = caseVM.CaseJurisdictionId;
-                    courtCases.CourtId = caseVM.CourtId;
+                            ctx.Entry(CheckCaseExist).State=EntityState.Modified;
+                            await ctx.SaveChangesAsync();
 
-                   await ctx.AddAsync(courtCases);
-                   await ctx.SaveChangesAsync();
+                            courtCases = CheckCaseExist;
+                        }
+                    }
+                    else
+                    {
+                        courtCases.CitizenId = caseVM.CitizenId;
+                        courtCases.LawyerId = caseVM.LawyerId;
+                        courtCases.RedundantLawyerId = caseVM.RedundantLawyerId;
+                        courtCases.CaseNumber = caseVM.CaseNumber;
+                        courtCases.CaseTitle = caseVM.CaseTitle;
+                        courtCases.PartyId = caseVM.PartyId;
+                        courtCases.CategoryId = caseVM.CategoryId;
+                        courtCases.CaseDescription = caseVM.CaseDescription!;
+                        courtCases.CaseJurisdictionId = caseVM.CaseJurisdictionId;
+                        courtCases.CourtId = caseVM.CourtId;
+                        courtCases.CasePlacingId = caseVM.CasePlacingId;
+
+                        await ctx.AddAsync(courtCases);
+                        await ctx.SaveChangesAsync();
+                    }
+
+
                 }
             }
-           catch (Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -95,7 +121,8 @@ namespace Business.BusinessLogic
                                                        CaseDescription=c.CaseDescription,
                                                        CategoryId = c.CategoryId,
                                                        CategoryName = cat.CategoryName,
-                                                       CaseStatusId = c.CaseStatusId
+                                                       CaseStatusId = c.CaseStatusId,
+                                                       CasePlacingId=c.CasePlacingId
                                                    })
                           .FirstOrDefaultAsync();
 
@@ -126,7 +153,7 @@ namespace Business.BusinessLogic
                         var caseList = await (from u in ctx.UserProfiles
                                               join c in ctx.CourtCases on u.UserId equals c.CitizenId
                                               join cat in ctx.CaseCategories on c.CategoryId equals cat.ID
-                                              where c.CitizenId == userId && u.RoleId == (int)Roles.Citizen && (u.IsDeleted == false && c.IsDeleted == false)
+                                              where c.CitizenId == userId && u.RoleId == (int)Roles.Citizen && (!u.IsDeleted && !c.IsDeleted)
                                               select new CourtCaseVM
                                               {
                                                   UserId = userId,
@@ -137,7 +164,8 @@ namespace Business.BusinessLogic
                                                   CaseNumber = c.CaseNumber,
                                                   CaseTitle = c.CaseTitle,
                                                   CategoryId = c.CategoryId,
-                                                  CategoryName = cat.CategoryName
+                                                  CategoryName = cat.CategoryName,
+                                                  CasePlacingId = c.CasePlacingId
                                               })
                           .ToListAsync();
 
@@ -156,7 +184,8 @@ namespace Business.BusinessLogic
                                     CaseNumber = item.CaseNumber,
                                     CaseTitle = item.CaseTitle,
                                     CategoryId = item.CategoryId,
-                                    CategoryName = item.CategoryName
+                                    CategoryName = item.CategoryName,
+                                    CasePlacingId= item.CasePlacingId
                                 });
                             }
                         }

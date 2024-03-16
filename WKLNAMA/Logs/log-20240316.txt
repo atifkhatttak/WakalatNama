@@ -1,0 +1,314 @@
+2024-03-16T02:05:29.1378689+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-16T02:05:29.1839950+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-16T02:05:33.6727268+05:00  [INF] Executed DbCommand ("390"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-16T02:05:34.0007873+05:00  [INF] Executed DbCommand ("293"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-16T02:05:34.2575991+05:00  [INF] Executed DbCommand ("247"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-16T02:05:34.5103596+05:00  [INF] Executed DbCommand ("247"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-16T02:05:34.7934318+05:00  [INF] Executed DbCommand ("249"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-03-16T02:05:34.8419411+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-03-16T02:05:35.9014063+05:00  [INF] Executed DbCommand ("374"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-03-16T02:05:37.0589046+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-03-16T02:05:37.0647004+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-03-16T02:05:37.0692392+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-03-16T02:23:36.7172344+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-16T02:23:36.7358930+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-16T02:23:40.6644939+05:00  [INF] Executed DbCommand ("340"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-16T02:23:41.0062107+05:00  [INF] Executed DbCommand ("307"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-16T02:23:41.2655476+05:00  [INF] Executed DbCommand ("250"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-16T02:23:41.5245743+05:00  [INF] Executed DbCommand ("250"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-16T02:23:41.8242317+05:00  [INF] Executed DbCommand ("253"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-03-16T02:23:41.8836026+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-03-16T02:23:43.0156211+05:00  [INF] Executed DbCommand ("393"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-03-16T02:23:43.5733672+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-03-16T02:23:43.5788478+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-03-16T02:23:43.5833733+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-03-16T02:24:42.7450473+05:00 4000001b-0007-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("254"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT @__userId_0 AS [UserId], [u].[FullName] AS [UserFullName], [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c].[CategoryId], [c0].[CategoryName], [c].[CasePlacingId]
+FROM [UserProfiles] AS [u]
+INNER JOIN [CourtCases] AS [c] ON [u].[UserId] = [c].[CitizenId]
+INNER JOIN [CaseCategories] AS [c0] ON [c].[CategoryId] = [c0].[ID]
+WHERE [c].[CitizenId] = @__userId_0 AND [u].[RoleId] = 3 AND [u].[IsDeleted] = CAST(0 AS bit) AND [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-03-16T02:25:40.2509857+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-16T02:25:40.2687886+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-16T02:25:43.1680564+05:00  [INF] Executed DbCommand ("437"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-16T02:25:43.5336021+05:00  [INF] Executed DbCommand ("318"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-16T02:25:43.8012747+05:00  [INF] Executed DbCommand ("259"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-16T02:25:44.0685587+05:00  [INF] Executed DbCommand ("263"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-16T02:25:44.3740751+05:00  [INF] Executed DbCommand ("246"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-03-16T02:25:44.4465724+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-03-16T02:25:45.3875146+05:00  [INF] Executed DbCommand ("288"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-03-16T02:25:45.8914818+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-03-16T02:25:45.8969118+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-03-16T02:25:45.9012052+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-03-16T02:26:03.3802244+05:00 40000012-0002-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("249"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT @__userId_0 AS [UserId], [u].[FullName] AS [UserFullName], [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c].[CategoryId], [c0].[CategoryName], [c].[CasePlacingId]
+FROM [UserProfiles] AS [u]
+INNER JOIN [CourtCases] AS [c] ON [u].[UserId] = [c].[CitizenId]
+INNER JOIN [CaseCategories] AS [c0] ON [c].[CategoryId] = [c0].[ID]
+WHERE [c].[CitizenId] = @__userId_0 AND [u].[RoleId] = 3 AND [u].[IsDeleted] = CAST(0 AS bit) AND [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-03-16T02:30:50.2528622+05:00 4000000d-0000-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("313"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT @__userId_0 AS [UserId], [u].[FullName] AS [UserFullName], [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c].[CategoryId], [c0].[CategoryName], [c].[CasePlacingId]
+FROM [UserProfiles] AS [u]
+INNER JOIN [CourtCases] AS [c] ON [u].[UserId] = [c].[CitizenId]
+INNER JOIN [CaseCategories] AS [c0] ON [c].[CategoryId] = [c0].[ID]
+WHERE [c].[CitizenId] = @__userId_0 AND [u].[RoleId] = 3 AND [u].[IsDeleted] = CAST(0 AS bit) AND [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-03-16T02:32:55.2704909+05:00 40000027-0007-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("298"ms) [Parameters=["@__caseId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[FullName] AS [UserFullName], [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c].[CaseDescription], [c].[CategoryId], [c0].[CategoryName], [c].[CaseStatusId]
+FROM [CourtCases] AS [c]
+INNER JOIN [UserProfiles] AS [u] ON [c].[CitizenId] = [u].[UserId]
+INNER JOIN [CaseCategories] AS [c0] ON [c].[CategoryId] = [c0].[ID]
+WHERE [c].[CaseId] = @__caseId_0 AND [u].[IsDeleted] = CAST(0 AS bit) AND [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-03-16T02:33:39.8811386+05:00 4000003d-0003-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("248"ms) [Parameters=["@__caseId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[FullName] AS [UserFullName], [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c].[CaseDescription], [c].[CategoryId], [c0].[CategoryName], [c].[CaseStatusId], [c].[CasePlacingId]
+FROM [CourtCases] AS [c]
+INNER JOIN [UserProfiles] AS [u] ON [c].[CitizenId] = [u].[UserId]
+INNER JOIN [CaseCategories] AS [c0] ON [c].[CategoryId] = [c0].[ID]
+WHERE [c].[CaseId] = @__caseId_0 AND [u].[IsDeleted] = CAST(0 AS bit) AND [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-03-16T02:43:51.5196954+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-16T02:43:51.5365007+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-16T02:43:56.0116530+05:00  [INF] Executed DbCommand ("323"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-16T02:43:56.4077903+05:00  [INF] Executed DbCommand ("359"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-16T02:43:56.6627042+05:00  [INF] Executed DbCommand ("245"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-16T02:43:56.9160596+05:00  [INF] Executed DbCommand ("246"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-16T02:43:57.1982415+05:00  [INF] Executed DbCommand ("247"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-03-16T02:43:57.2501279+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-03-16T02:43:58.1515302+05:00  [INF] Executed DbCommand ("284"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-03-16T02:43:58.6720839+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-03-16T02:43:58.6776114+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-03-16T02:43:58.6822887+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-03-16T02:46:31.1237167+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-16T02:46:31.1397999+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-16T02:46:35.0945626+05:00  [INF] Executed DbCommand ("325"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-16T02:46:35.4177843+05:00  [INF] Executed DbCommand ("290"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-16T02:46:35.6730617+05:00  [INF] Executed DbCommand ("245"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-16T02:46:35.9246326+05:00  [INF] Executed DbCommand ("246"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-16T02:46:36.2105550+05:00  [INF] Executed DbCommand ("252"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-03-16T02:46:36.2605612+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-03-16T02:46:37.2581784+05:00  [INF] Executed DbCommand ("381"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-03-16T02:46:37.7678978+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-03-16T02:46:37.7733264+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-03-16T02:46:37.7777934+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-03-16T02:50:01.8514340+05:00 40000015-0006-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("292"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [c].[CaseId], [c].[CaseDescription], [c].[CaseJurisdictionId], [c].[CaseNumber], [c].[CasePlacingId], [c].[CaseStatusId], [c].[CaseTitle], [c].[CategoryId], [c].[CitizenId], [c].[CourtId], [c].[CreatedBy], [c].[CreatedDate], [c].[IsDeleted], [c].[LawyerId], [c].[PartyId], [c].[RedundantLawyerId], [c].[UpdateDate], [c].[UpdatedBy]
+FROM [CourtCases] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-03-16T02:50:21.8011953+05:00 40000015-0006-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("256"ms) [Parameters=["@p17='?' (DbType = Int64), @p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (Size = 20), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (DbType = Int32), @p7='?' (DbType = Int64), @p8='?' (DbType = Int32), @p9='?' (DbType = Int64), @p10='?' (DbType = DateTime2), @p11='?' (DbType = Boolean), @p12='?' (DbType = Int64), @p13='?' (DbType = Int32), @p14='?' (DbType = Int64), @p15='?' (DbType = DateTime2), @p16='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [CourtCases] SET [CaseDescription] = @p0, [CaseJurisdictionId] = @p1, [CaseNumber] = @p2, [CasePlacingId] = @p3, [CaseStatusId] = @p4, [CaseTitle] = @p5, [CategoryId] = @p6, [CitizenId] = @p7, [CourtId] = @p8, [CreatedBy] = @p9, [CreatedDate] = @p10, [IsDeleted] = @p11, [LawyerId] = @p12, [PartyId] = @p13, [RedundantLawyerId] = @p14, [UpdateDate] = @p15, [UpdatedBy] = @p16
+OUTPUT 1
+WHERE [CaseId] = @p17;" (0723d8ff)
+2024-03-16T03:02:16.0986576+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-16T03:02:16.1091864+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-16T03:02:18.5850744+05:00  [INF] Executed DbCommand ("311"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-16T03:02:18.8707226+05:00  [INF] Executed DbCommand ("267"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-16T03:02:19.1222730+05:00  [INF] Executed DbCommand ("246"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-16T03:02:19.3716997+05:00  [INF] Executed DbCommand ("246"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-16T03:02:19.6404090+05:00  [INF] Executed DbCommand ("247"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-03-16T03:02:19.6791230+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-03-16T03:02:20.2742344+05:00  [INF] Executed DbCommand ("266"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-03-16T03:02:20.5849615+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-03-16T03:02:20.5882568+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-03-16T03:02:20.5904313+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-03-16T03:03:49.6541029+05:00 40000047-0003-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("254"ms) [Parameters=["@UserId='?' (DbType = Int64), @CaseCategoryId='?' (DbType = Int32), @CityId='?' (DbType = Int32), @ExperienceMin='?' (DbType = Int32), @ExperienceMax='?' (DbType = Int32), @SearchKeys='?' (Size = 6)"], CommandType='Text', CommandTimeout='30']"
+""EXEC sp_GetCitizenLawyers @UserId, @CaseCategoryId, @CityId, @ExperienceMin, @ExperienceMax, @SearchKeys" (0723d8ff)
+2024-03-16T03:04:20.7359719+05:00 40000019-0001-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("249"ms) [Parameters=["@UserId='?' (DbType = Int64), @CaseCategoryId='?' (DbType = Int32), @CityId='?' (DbType = Int32), @ExperienceMin='?' (DbType = Int32), @ExperienceMax='?' (DbType = Int32), @SearchKeys='?' (Size = 7)"], CommandType='Text', CommandTimeout='30']"
+""EXEC sp_GetCitizenLawyers @UserId, @CaseCategoryId, @CityId, @ExperienceMin, @ExperienceMax, @SearchKeys" (0723d8ff)
+2024-03-16T03:05:34.1769951+05:00 4000001b-0001-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("250"ms) [Parameters=["@UserId='?' (DbType = Int64), @CaseCategoryId='?' (DbType = Int32), @CityId='?' (DbType = Int32), @ExperienceMin='?' (DbType = Int32), @ExperienceMax='?' (DbType = Int32), @SearchKeys='?' (Size = 7)"], CommandType='Text', CommandTimeout='30']"
+""EXEC sp_GetCitizenLawyers @UserId, @CaseCategoryId, @CityId, @ExperienceMin, @ExperienceMax, @SearchKeys" (0723d8ff)
+2024-03-16T03:05:43.7787396+05:00 40000017-0002-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("249"ms) [Parameters=["@UserId='?' (DbType = Int64), @CaseCategoryId='?' (DbType = Int32), @CityId='?' (DbType = Int32), @ExperienceMin='?' (DbType = Int32), @ExperienceMax='?' (DbType = Int32), @SearchKeys='?' (Size = 6)"], CommandType='Text', CommandTimeout='30']"
+""EXEC sp_GetCitizenLawyers @UserId, @CaseCategoryId, @CityId, @ExperienceMin, @ExperienceMax, @SearchKeys" (0723d8ff)
+2024-03-16T03:48:10.2402796+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-16T03:48:10.2480667+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-16T03:48:12.9132356+05:00  [INF] Executed DbCommand ("289"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-16T03:48:13.2041368+05:00  [INF] Executed DbCommand ("278"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-16T03:48:13.4656933+05:00  [INF] Executed DbCommand ("256"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-16T03:48:13.7252751+05:00  [INF] Executed DbCommand ("256"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-16T03:48:14.0660905+05:00  [INF] Executed DbCommand ("324"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-03-16T03:48:14.0859861+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-03-16T03:48:14.7862496+05:00  [INF] Executed DbCommand ("458"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-03-16T03:48:15.0122151+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-03-16T03:48:15.0148718+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-03-16T03:48:15.0166930+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-03-16T03:48:42.4729369+05:00 40000002-0005-f800-b63f-84710c7967bb [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.ArgumentNullException: Value cannot be null. (Parameter 'logger')
+   at System.ThrowHelper.Throw(String paramName)
+   at Microsoft.Extensions.Logging.LoggerExtensions.Log(ILogger logger, LogLevel logLevel, EventId eventId, Exception exception, String message, Object[] args)
+   at Microsoft.Extensions.Logging.LoggerExtensions.LogError(ILogger logger, String message, Object[] args)
+   at WKLNAMA.Controllers.BaseController`1.APIResponse(Func`1 callback) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Controllers\BaseController.cs:line 174
+   at WKLNAMA.Controllers.DocumentController.GetDownloadableDocuments(Int32 docType) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Controllers\DocumentController.cs:line 84
+   at lambda_method224(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-03-16T03:49:32.0830110+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-16T03:49:32.0900699+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-16T03:49:34.2690326+05:00  [INF] Executed DbCommand ("276"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-16T03:49:34.5518273+05:00  [INF] Executed DbCommand ("266"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-16T03:49:34.8220170+05:00  [INF] Executed DbCommand ("261"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-16T03:49:35.0833037+05:00  [INF] Executed DbCommand ("252"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-16T03:49:35.3692242+05:00  [INF] Executed DbCommand ("260"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-03-16T03:49:35.4027250+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-03-16T03:49:35.9968357+05:00  [INF] Executed DbCommand ("266"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-03-16T03:49:36.2257125+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-03-16T03:49:36.2289124+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-03-16T03:49:36.2307271+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-03-16T03:49:48.1631404+05:00 4000001f-0002-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("252"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]" (0723d8ff)
+2024-03-16T05:40:46.2470490+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-16T05:40:46.2634706+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-16T05:40:49.2520464+05:00  [INF] Executed DbCommand ("280"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-16T05:40:49.5341097+05:00  [INF] Executed DbCommand ("267"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-16T05:40:49.7883323+05:00  [INF] Executed DbCommand ("249"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-16T05:40:50.0425954+05:00  [INF] Executed DbCommand ("251"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-16T05:40:50.3153623+05:00  [INF] Executed DbCommand ("253"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-03-16T05:40:50.3360730+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-03-16T05:40:50.9178264+05:00  [INF] Executed DbCommand ("301"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-03-16T05:40:51.4519498+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-03-16T05:40:51.4543455+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-03-16T05:40:51.4568464+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-03-16T05:46:59.7813819+05:00 40000004-0006-ff00-b63f-84710c7967bb [INF] Get  Files Method Started
+ (2f82c14d)
+2024-03-16T05:47:01.3560664+05:00 40000004-0006-ff00-b63f-84710c7967bb [INF] Get File > API Service Call done  
+ (f0c0ef03)
+2024-03-16T05:47:41.0398465+05:00 40000002-0000-fe00-b63f-84710c7967bb [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+The service drive has thrown an exception.
+HttpStatusCode is NotFound.
+Google.Apis.Requests.RequestError
+File not found: 14k7P51oCUAqaPMiqAzeiSi0ZsnUVWmuR. [404]
+Errors [
+	Message[File not found: 14k7P51oCUAqaPMiqAzeiSi0ZsnUVWmuR.] Location[fileId - parameter] Reason[notFound] Domain[global]
+]
+
+Google.GoogleApiException: The service drive has thrown an exception. HttpStatusCode is NotFound. File not found: 14k7P51oCUAqaPMiqAzeiSi0ZsnUVWmuR.
+   at Google.Apis.Requests.ClientServiceRequest`1.ParseResponse(HttpResponseMessage response)
+   at Google.Apis.Requests.ClientServiceRequest`1.Execute()
+   at Business.BusinessLogic.GoogleDriveDocument.DeleteFile(String fileId) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\Business\BusinessLogic\GoogleDriveDocument.cs:line 134
+   at WKLNAMA.Controllers.DocumentController.DeleteFile(String folderName) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Controllers\DocumentController.cs:line 72
+   at lambda_method239(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-03-16T05:48:47.3083130+05:00 40000002-0005-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("261"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[DocumentId] AS [DocId], [u].[DocName], 1.0E0 AS [DocSize], [u].[DocPath], [u].[DocTypeId] AS [DocForUserType]
+FROM [UserDocuments] AS [u]
+WHERE [u].[DocTypeId] = 12 AND [u].[IsUploaded] = CAST(1 AS bit) AND [u].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-03-16T05:49:16.0685184+05:00 40000005-0004-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("249"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[DocumentId] AS [DocId], [u].[DocName], 1.0E0 AS [DocSize], [u].[DocPath], [u].[DocTypeId] AS [DocForUserType]
+FROM [UserDocuments] AS [u]
+WHERE [u].[DocTypeId] = 13 AND [u].[IsUploaded] = CAST(1 AS bit) AND [u].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)

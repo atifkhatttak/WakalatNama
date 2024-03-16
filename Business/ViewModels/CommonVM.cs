@@ -3,6 +3,7 @@ using ProjWakalatnama.DataLayer.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,5 +39,30 @@ namespace Business.ViewModels
     {
         public int ID { get; set; }
         public string StatusName { get; set; }
+    }
+
+    //Documents
+    public class DownloadableDocsVM
+    {
+        public long? DocId { get; set; }
+        public string? DocName { get; set; }
+        public double? DocSize { get; set; }
+        public int DocType { get; set; }
+        public int? DocForUserType { get; set; }
+        public string? DocPath { get; internal set; }
+    }
+
+    public class UserDocumentVM
+    {
+        public long DocumentId { get; set; }
+        [Required]
+        public long UserId { get; set; }
+        [StringLength(250)]
+        public string? DocName { get; set; }
+        [StringLength(250)]
+        public string? DocPath { get; set; }
+        public string? DocExtension { get; set; }
+        public int? DocTypeId { get; set; }
+        public bool? IsUploaded { get; set; }
     }
 }
