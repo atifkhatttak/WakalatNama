@@ -62,6 +62,7 @@ namespace Business.BusinessLogic
                             CheckCaseExist.CaseJurisdictionId = caseVM.CaseJurisdictionId;
                             CheckCaseExist.CourtId = caseVM.CourtId;
                             CheckCaseExist.CasePlacingId = caseVM.CasePlacingId;
+                            CheckCaseExist.StatusId = (int)CaseStatuses.New;
 
                             ctx.Entry(CheckCaseExist).State=EntityState.Modified;
                             await ctx.SaveChangesAsync();
@@ -392,7 +393,7 @@ namespace Business.BusinessLogic
                     var casse = await ctx.CourtCases.FindAsync(acceptReject.CaseId);
                     if (casse!=null)
                     {
-                        casse.LegalStatusId =(acceptReject.Status==0)? (int)CaseStatus.Initiated: (int)CaseStatus.Draft;                       
+                        casse.LegalStatusId =(acceptReject.Status==0)? (int)CaseLegalStatus.Initiated: (int)CaseLegalStatus.Draft;                       
                         await ctx.SaveChangesAsync();
                     }
                 }

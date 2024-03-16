@@ -55,9 +55,9 @@ namespace Business.Enums
         LawyerDownloadable=13
 
     }
-    public enum CaseStatus
+    public enum CaseLegalStatus
     {
-        Initiated=1,
+        Initiated=1, 
             Draft=2,
             Completed=3
     }
