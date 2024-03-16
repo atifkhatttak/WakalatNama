@@ -12,7 +12,7 @@ namespace Data.DomainModels
         public long CaseId { get; set; }
         public long RejectById { get; set; }
         public string Reason { get; set; }
-        public int Status { get; set; }  
+        public int Status { get; set; }   
 
     }
 }

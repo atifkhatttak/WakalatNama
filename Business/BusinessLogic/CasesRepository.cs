@@ -528,5 +528,23 @@ namespace Business.BusinessLogic
 
             return false;
         }
+
+        public async Task<CaseRejectionReason> AddCaseRejectionReason(AcceptRejectCaseVM vm) 
+        {
+
+            CaseRejectionReason crr = new CaseRejectionReason { 
+              CaseId=vm.CaseId,
+              Reason=vm.Reason,
+              Status=vm.Status,
+              RejectById=vm.DecisionUserId
+            
+            };
+            ctx.CaseRejectionReasons.Add(crr);
+             await ctx.SaveChangesAsync();
+
+            return crr;
+        }
+         
+
     }
 }

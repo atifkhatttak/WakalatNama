@@ -63,6 +63,7 @@ namespace Data.Context
         public virtual DbSet<Country> Countries{ get; set; } = null!;
         public virtual DbSet<City> Cities{ get; set; } = null!;
         public virtual DbSet<LawyerFeeStructure> LawyerFeeStructures { get; set; } = null!;
+        public virtual DbSet<CaseRejectionReason> CaseRejectionReasons { get; set; } = null!; 
 
     }
 }
