@@ -1,0 +1,41 @@
+2024-03-24T02:04:33.0102905+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-24T02:04:33.0197779+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-24T02:04:37.0301090+05:00  [INF] Executed DbCommand ("355"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-24T02:04:37.4347521+05:00  [INF] Executed DbCommand ("388"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-24T02:04:37.7362367+05:00  [INF] Executed DbCommand ("297"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-24T02:04:38.0511928+05:00  [INF] Executed DbCommand ("311"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-24T02:04:38.3818394+05:00  [INF] Executed DbCommand ("306"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-03-24T02:04:38.4098463+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-03-24T02:04:39.3129446+05:00  [INF] Executed DbCommand ("369"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-03-24T02:04:39.9792258+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-03-24T02:04:39.9829668+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-03-24T02:04:39.9855053+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-03-24T02:05:47.1266563+05:00 4000001a-0000-f200-b63f-84710c7967bb [INF] Executed DbCommand ("298"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[ID], [c].[CategoryName], [c].[CreatedBy], [c].[CreatedDate], [c].[IsDeleted], [c].[UpdateDate], [c].[UpdatedBy]
+FROM [CaseCategories] AS [c]" (0723d8ff)
+2024-03-24T02:06:35.1375942+05:00 40000069-0002-f900-b63f-84710c7967bb [INF] Executed DbCommand ("320"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id] AS [ID], [c].[CityName]
+FROM [Cities] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-03-24T02:06:35.4609241+05:00 40000069-0002-f900-b63f-84710c7967bb [INF] Executed DbCommand ("316"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[CaseJurisdictionId] AS [ID], [c].[JurisdictionName] AS [CaseJurisdiction]
+FROM [CaseJurisdictions] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-03-24T02:06:35.7963322+05:00 40000069-0002-f900-b63f-84710c7967bb [INF] Executed DbCommand ("328"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[ID], [c].[CategoryName]
+FROM [CaseCategories] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-03-24T02:06:36.1076272+05:00 40000069-0002-f900-b63f-84710c7967bb [INF] Executed DbCommand ("301"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[ID], [p].[StatusName]
+FROM [PartyStatuses] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
