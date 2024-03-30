@@ -52,7 +52,9 @@ namespace Business.Enums
         BarCouncilCardScanFront = 10,
         BarCouncilCardScanBack = 11,
         CitizenDownloadable=12,
-        LawyerDownloadable=13
+        LawyerDownloadable=13,
+        CaseDocument=14,
+        CaseDateDocument=15
 
     }
     public enum CaseLegalStatus

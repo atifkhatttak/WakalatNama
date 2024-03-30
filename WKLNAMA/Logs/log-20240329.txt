@@ -1,0 +1,400 @@
+2024-03-29T02:23:17.1031352+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-29T02:23:17.1443619+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-29T02:23:22.5810396+05:00  [INF] Executed DbCommand ("391"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-29T02:23:22.9675142+05:00  [INF] Executed DbCommand ("351"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-29T02:23:23.2711321+05:00  [INF] Executed DbCommand ("292"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-29T02:23:23.5670645+05:00  [INF] Executed DbCommand ("290"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-29T02:23:23.9165577+05:00  [INF] Executed DbCommand ("292"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-03-29T02:23:23.9609634+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-03-29T02:23:25.0709918+05:00  [INF] Executed DbCommand ("416"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-03-29T02:23:26.2503966+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-03-29T02:23:26.2563574+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-03-29T02:23:26.2616378+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-03-29T02:28:43.3369882+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-29T02:28:43.3557838+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-29T02:28:46.5672263+05:00  [INF] Executed DbCommand ("374"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-29T02:28:46.9365628+05:00  [INF] Executed DbCommand ("336"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-29T02:28:47.2506961+05:00  [INF] Executed DbCommand ("302"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-29T02:28:47.5527394+05:00  [INF] Executed DbCommand ("296"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-29T02:28:47.8889733+05:00  [INF] Executed DbCommand ("299"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-03-29T02:28:47.9500008+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-03-29T02:28:48.9099645+05:00  [INF] Executed DbCommand ("333"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-03-29T02:28:49.4647422+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-03-29T02:28:49.4707970+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-03-29T02:28:49.4751473+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-03-29T02:30:05.2986315+05:00 40000002-0002-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("291"ms) [Parameters=["@p0='?' (DbType = Int64), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (Size = 20), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (DbType = Int32), @p7='?' (DbType = Int64), @p8='?' (DbType = Int32), @p9='?' (DbType = Int64), @p10='?' (DbType = DateTime2), @p11='?' (DbType = Boolean), @p12='?' (DbType = Int64), @p13='?' (DbType = Int32), @p14='?' (DbType = Int32), @p15='?' (DbType = Int64), @p16='?' (DbType = Int32), @p17='?' (DbType = DateTime2), @p18='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [CourtCases] ([AssignEmployeeId], [CaseDescription], [CaseJurisdictionId], [CaseNumber], [CasePlacingId], [CaseTitle], [CategoryId], [CitizenId], [CourtId], [CreatedBy], [CreatedDate], [IsDeleted], [LawyerId], [LegalStatusId], [PartyId], [RedundantLawyerId], [StatusId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[CaseId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18);" (0723d8ff)
+2024-03-29T02:30:05.4933992+05:00 40000002-0002-fd00-b63f-84710c7967bb [ERR] An exception occurred in the database while saving changes for context type '"Data.Context.WKNNAMADBCtx"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'CaseNumber', table 'atifm1_wakalatnaama.dbo.CourtCases'; column does not allow nulls. INSERT fails.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:43c98c18-2448-4eb6-b01f-803dc3fdca20
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)" (170f029e)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'CaseNumber', table 'atifm1_wakalatnaama.dbo.CourtCases'; column does not allow nulls. INSERT fails.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:43c98c18-2448-4eb6-b01f-803dc3fdca20
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-03-29T02:30:06.3740683+05:00 40000002-0002-fd00-b63f-84710c7967bb [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.ArgumentNullException: Value cannot be null. (Parameter 'logger')
+   at System.ThrowHelper.Throw(String paramName)
+   at Microsoft.Extensions.Logging.LoggerExtensions.Log(ILogger logger, LogLevel logLevel, EventId eventId, Exception exception, String message, Object[] args)
+   at Microsoft.Extensions.Logging.LoggerExtensions.LogError(ILogger logger, String message, Object[] args)
+   at WKLNAMA.Controllers.BaseController`1.APIResponse(Func`1 callback) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Controllers\BaseController.cs:line 174
+   at WKLNAMA.Controllers.CasesController.CreateUpdateCase(CourtCaseVM courtCase) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Controllers\CasesController.cs:line 36
+   at lambda_method219(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-03-29T02:44:52.6855817+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-29T02:44:52.7030569+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-29T02:44:57.0439229+05:00  [INF] Executed DbCommand ("384"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-29T02:44:57.4231784+05:00  [INF] Executed DbCommand ("344"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-29T02:44:57.7246403+05:00  [INF] Executed DbCommand ("289"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-29T02:44:58.0181308+05:00  [INF] Executed DbCommand ("287"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-29T02:44:58.4254627+05:00  [INF] Executed DbCommand ("367"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-03-29T02:44:58.4896053+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-03-29T02:44:59.5795691+05:00  [INF] Executed DbCommand ("440"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-03-29T02:45:00.1461838+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-03-29T02:45:00.1518243+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-03-29T02:45:00.1560656+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-03-29T02:45:47.2066951+05:00 40000008-0000-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("290"ms) [Parameters=["@p0='?' (DbType = Int64), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (Size = 20), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (DbType = Int32), @p7='?' (DbType = Int64), @p8='?' (DbType = Int32), @p9='?' (DbType = Int64), @p10='?' (DbType = DateTime2), @p11='?' (DbType = Boolean), @p12='?' (DbType = Int64), @p13='?' (DbType = Int32), @p14='?' (DbType = Int32), @p15='?' (DbType = Int64), @p16='?' (DbType = Int32), @p17='?' (DbType = DateTime2), @p18='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [CourtCases] ([AssignEmployeeId], [CaseDescription], [CaseJurisdictionId], [CaseNumber], [CasePlacingId], [CaseTitle], [CategoryId], [CitizenId], [CourtId], [CreatedBy], [CreatedDate], [IsDeleted], [LawyerId], [LegalStatusId], [PartyId], [RedundantLawyerId], [StatusId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[CaseId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18);" (0723d8ff)
+2024-03-29T02:45:47.3192709+05:00 40000008-0000-fc00-b63f-84710c7967bb [ERR] An exception occurred in the database while saving changes for context type '"Data.Context.WKNNAMADBCtx"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'CaseNumber', table 'atifm1_wakalatnaama.dbo.CourtCases'; column does not allow nulls. INSERT fails.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:d00d56a5-33bd-4c93-9741-22438c25c22a
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)" (170f029e)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'CaseNumber', table 'atifm1_wakalatnaama.dbo.CourtCases'; column does not allow nulls. INSERT fails.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:d00d56a5-33bd-4c93-9741-22438c25c22a
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-03-29T02:47:00.4484741+05:00 40000008-0000-fc00-b63f-84710c7967bb [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.ArgumentNullException: Value cannot be null. (Parameter 'logger')
+   at System.ThrowHelper.Throw(String paramName)
+   at Microsoft.Extensions.Logging.LoggerExtensions.Log(ILogger logger, LogLevel logLevel, EventId eventId, Exception exception, String message, Object[] args)
+   at Microsoft.Extensions.Logging.LoggerExtensions.LogError(ILogger logger, String message, Object[] args)
+   at WKLNAMA.Controllers.BaseController`1.APIResponse(Func`1 callback) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Controllers\BaseController.cs:line 174
+   at WKLNAMA.Controllers.CasesController.CreateUpdateCase(CourtCaseVM courtCase) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Controllers\CasesController.cs:line 36
+   at lambda_method219(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-03-29T02:47:34.4343939+05:00 40000002-0001-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("289"ms) [Parameters=["@p0='?' (DbType = Int64), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (Size = 20), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (DbType = Int32), @p7='?' (DbType = Int64), @p8='?' (DbType = Int32), @p9='?' (DbType = Int64), @p10='?' (DbType = DateTime2), @p11='?' (DbType = Boolean), @p12='?' (DbType = Int64), @p13='?' (DbType = Int32), @p14='?' (DbType = Int32), @p15='?' (DbType = Int64), @p16='?' (DbType = Int32), @p17='?' (DbType = DateTime2), @p18='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [CourtCases] ([AssignEmployeeId], [CaseDescription], [CaseJurisdictionId], [CaseNumber], [CasePlacingId], [CaseTitle], [CategoryId], [CitizenId], [CourtId], [CreatedBy], [CreatedDate], [IsDeleted], [LawyerId], [LegalStatusId], [PartyId], [RedundantLawyerId], [StatusId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[CaseId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18);" (0723d8ff)
+2024-03-29T02:49:02.9682115+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-29T02:49:02.9867036+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-29T02:49:06.2075436+05:00  [INF] Executed DbCommand ("395"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-29T02:49:06.5725100+05:00  [INF] Executed DbCommand ("331"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-29T02:49:06.8666761+05:00  [INF] Executed DbCommand ("285"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-29T02:49:07.1599202+05:00  [INF] Executed DbCommand ("288"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-29T02:49:07.4910410+05:00  [INF] Executed DbCommand ("293"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-03-29T02:49:07.5579860+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-03-29T02:49:08.4166618+05:00  [INF] Executed DbCommand ("327"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-03-29T02:49:08.9974124+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-03-29T02:49:09.0027605+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-03-29T02:49:09.0073197+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-03-29T02:51:10.1800417+05:00 4000000e-0000-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("287"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [c].[CaseId], [c].[AssignEmployeeId], [c].[CaseDescription], [c].[CaseJurisdictionId], [c].[CaseNumber], [c].[CasePlacingId], [c].[CaseTitle], [c].[CategoryId], [c].[CitizenId], [c].[CourtId], [c].[CreatedBy], [c].[CreatedDate], [c].[IsDeleted], [c].[LawyerId], [c].[LegalStatusId], [c].[PartyId], [c].[RedundantLawyerId], [c].[StatusId], [c].[UpdateDate], [c].[UpdatedBy]
+FROM [CourtCases] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-03-29T02:51:23.2831518+05:00 4000000e-0000-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("288"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[CaseId], [c].[AssignEmployeeId], [c].[CaseDescription], [c].[CaseJurisdictionId], [c].[CaseNumber], [c].[CasePlacingId], [c].[CaseTitle], [c].[CategoryId], [c].[CitizenId], [c].[CourtId], [c].[CreatedBy], [c].[CreatedDate], [c].[IsDeleted], [c].[LawyerId], [c].[LegalStatusId], [c].[PartyId], [c].[RedundantLawyerId], [c].[StatusId], [c].[UpdateDate], [c].[UpdatedBy]
+FROM [CourtCases] AS [c]" (0723d8ff)
+2024-03-29T02:51:28.8674725+05:00 4000000e-0000-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("289"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[CaseId], [c].[AssignEmployeeId], [c].[CaseDescription], [c].[CaseJurisdictionId], [c].[CaseNumber], [c].[CasePlacingId], [c].[CaseTitle], [c].[CategoryId], [c].[CitizenId], [c].[CourtId], [c].[CreatedBy], [c].[CreatedDate], [c].[IsDeleted], [c].[LawyerId], [c].[LegalStatusId], [c].[PartyId], [c].[RedundantLawyerId], [c].[StatusId], [c].[UpdateDate], [c].[UpdatedBy]
+FROM [CourtCases] AS [c]" (0723d8ff)
+2024-03-29T02:52:11.0708457+05:00 4000000e-0000-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("285"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [c].[CaseId], [c].[AssignEmployeeId], [c].[CaseDescription], [c].[CaseJurisdictionId], [c].[CaseNumber], [c].[CasePlacingId], [c].[CaseTitle], [c].[CategoryId], [c].[CitizenId], [c].[CourtId], [c].[CreatedBy], [c].[CreatedDate], [c].[IsDeleted], [c].[LawyerId], [c].[LegalStatusId], [c].[PartyId], [c].[RedundantLawyerId], [c].[StatusId], [c].[UpdateDate], [c].[UpdatedBy]
+FROM [CourtCases] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-03-29T02:53:37.1581580+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-29T02:53:37.1755446+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-29T02:53:40.4277470+05:00  [INF] Executed DbCommand ("387"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-29T02:53:40.8129236+05:00  [INF] Executed DbCommand ("353"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-29T02:53:41.1117095+05:00  [INF] Executed DbCommand ("287"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-29T02:53:41.4080963+05:00  [INF] Executed DbCommand ("287"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-29T02:53:41.7467015+05:00  [INF] Executed DbCommand ("290"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-03-29T02:53:41.8014039+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-03-29T02:53:42.7957988+05:00  [INF] Executed DbCommand ("325"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-03-29T02:53:43.3106513+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-03-29T02:53:43.3158994+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-03-29T02:53:43.3200620+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-03-29T02:54:51.2070182+05:00 4000000c-0003-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("306"ms) [Parameters=["@__caseVM_CaseId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [c].[CaseId], [c].[AssignEmployeeId], [c].[CaseDescription], [c].[CaseJurisdictionId], [c].[CaseNumber], [c].[CasePlacingId], [c].[CaseTitle], [c].[CategoryId], [c].[CitizenId], [c].[CourtId], [c].[CreatedBy], [c].[CreatedDate], [c].[IsDeleted], [c].[LawyerId], [c].[LegalStatusId], [c].[PartyId], [c].[RedundantLawyerId], [c].[StatusId], [c].[UpdateDate], [c].[UpdatedBy]
+FROM [CourtCases] AS [c]
+WHERE [c].[CaseId] = @__caseVM_CaseId_0 AND [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-03-29T02:55:20.2985482+05:00 4000000c-0003-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("295"ms) [Parameters=["@p19='?' (DbType = Int64), @p0='?' (DbType = Int64), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (Size = 20), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (DbType = Int32), @p7='?' (DbType = Int64), @p8='?' (DbType = Int32), @p9='?' (DbType = Int64), @p10='?' (DbType = DateTime2), @p11='?' (DbType = Boolean), @p12='?' (DbType = Int64), @p13='?' (DbType = Int32), @p14='?' (DbType = Int32), @p15='?' (DbType = Int64), @p16='?' (DbType = Int32), @p17='?' (DbType = DateTime2), @p18='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [CourtCases] SET [AssignEmployeeId] = @p0, [CaseDescription] = @p1, [CaseJurisdictionId] = @p2, [CaseNumber] = @p3, [CasePlacingId] = @p4, [CaseTitle] = @p5, [CategoryId] = @p6, [CitizenId] = @p7, [CourtId] = @p8, [CreatedBy] = @p9, [CreatedDate] = @p10, [IsDeleted] = @p11, [LawyerId] = @p12, [LegalStatusId] = @p13, [PartyId] = @p14, [RedundantLawyerId] = @p15, [StatusId] = @p16, [UpdateDate] = @p17, [UpdatedBy] = @p18
+OUTPUT 1
+WHERE [CaseId] = @p19;" (0723d8ff)
+2024-03-29T02:57:50.1961433+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-29T02:57:50.2071148+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-29T02:57:53.0279962+05:00  [INF] Executed DbCommand ("360"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-29T02:57:53.3772489+05:00  [INF] Executed DbCommand ("326"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-29T02:57:53.6760653+05:00  [INF] Executed DbCommand ("290"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-29T02:57:53.9744461+05:00  [INF] Executed DbCommand ("293"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-29T02:57:54.3053970+05:00  [INF] Executed DbCommand ("300"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-03-29T02:57:54.3377020+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-03-29T02:57:55.1133866+05:00  [INF] Executed DbCommand ("328"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-03-29T02:57:55.5256796+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-03-29T02:57:55.5307386+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-03-29T02:57:55.5349529+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-03-29T03:00:36.4900015+05:00 40000003-0005-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("304"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c0].[CaseDateTitle], [c0].[HearingDate], [c0].[DateDescription], [c0].[CaseStatusId], [c1].[DocName]
+FROM [CourtCases] AS [c]
+INNER JOIN [CasesDetails] AS [c0] ON [c].[CaseId] = [c0].[CaseId]
+INNER JOIN [CasesDocuments] AS [c1] ON [c].[CaseId] = [c1].[CaseId]
+WHERE [c].[CitizenId] = @__userId_0 AND [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-03-29T03:02:47.7604249+05:00 40000003-0005-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("292"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c0].[CaseDateTitle], [c0].[HearingDate], [c0].[DateDescription], [c0].[CaseStatusId], [c1].[DocName]
+FROM [CourtCases] AS [c]
+INNER JOIN [CasesDetails] AS [c0] ON [c].[CaseId] = [c0].[CaseId]
+INNER JOIN [CasesDocuments] AS [c1] ON [c].[CaseId] = [c1].[CaseId]
+WHERE [c].[CitizenId] = @__userId_0 AND [c].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-03-29T03:38:06.1487602+05:00  [WRN] No store type was specified for the decimal property '"CostMax"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-29T03:38:06.1650788+05:00  [WRN] No store type was specified for the decimal property '"CostMin"' on entity type '"ExperienceCost"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'. (fff75eb8)
+2024-03-29T03:38:09.3139753+05:00  [INF] Executed DbCommand ("361"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-29T03:38:09.7284587+05:00  [INF] Executed DbCommand ("383"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-29T03:38:10.0304998+05:00  [INF] Executed DbCommand ("293"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-03-29T03:38:10.3301802+05:00  [INF] Executed DbCommand ("290"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-03-29T03:38:10.6709269+05:00  [INF] Executed DbCommand ("290"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-03-29T03:38:10.7335011+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-03-29T03:38:11.7971993+05:00  [INF] Executed DbCommand ("422"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-03-29T03:38:12.3706457+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-03-29T03:38:12.3766127+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-03-29T03:38:12.3826469+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-03-29T03:38:39.4933495+05:00 4000000d-0004-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("293"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c0].[CaseDateTitle], [c0].[HearingDate], [c0].[DateDescription], [c0].[CaseStatusId], [c1].[DocName]
+FROM [CourtCases] AS [c]
+INNER JOIN [CasesDetails] AS [c0] ON [c].[CaseId] = [c0].[CaseId]
+LEFT JOIN [CasesDocuments] AS [c1] ON [c0].[ID] = [c1].[CaseDetailId]
+WHERE [c].[CitizenId] = @__userId_0 AND [c].[IsDeleted] = CAST(0 AS bit) AND ([c1].[DocumentId] IS NULL OR [c1].[DocTypeId] = 15)" (0723d8ff)
+2024-03-29T03:39:35.2403949+05:00 40000008-0006-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("296"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c0].[CaseDateTitle], [c0].[HearingDate], [c0].[DateDescription], [c0].[CaseStatusId], [c1].[DocName]
+FROM [CourtCases] AS [c]
+INNER JOIN [CasesDetails] AS [c0] ON [c].[CaseId] = [c0].[CaseId]
+LEFT JOIN [CasesDocuments] AS [c1] ON [c0].[ID] = [c1].[CaseDetailId]
+WHERE [c].[CitizenId] = @__userId_0 AND [c].[IsDeleted] = CAST(0 AS bit) AND ([c1].[DocumentId] IS NULL OR [c1].[DocTypeId] = 15)" (0723d8ff)
+2024-03-29T03:39:38.5173729+05:00 4000000f-0004-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("289"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c0].[CaseDateTitle], [c0].[HearingDate], [c0].[DateDescription], [c0].[CaseStatusId], [c1].[DocName]
+FROM [CourtCases] AS [c]
+INNER JOIN [CasesDetails] AS [c0] ON [c].[CaseId] = [c0].[CaseId]
+LEFT JOIN [CasesDocuments] AS [c1] ON [c0].[ID] = [c1].[CaseDetailId]
+WHERE [c].[CitizenId] = @__userId_0 AND [c].[IsDeleted] = CAST(0 AS bit) AND ([c1].[DocumentId] IS NULL OR [c1].[DocTypeId] = 15)" (0723d8ff)
+2024-03-29T03:39:43.6149082+05:00 4000000c-0002-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("289"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c0].[CaseDateTitle], [c0].[HearingDate], [c0].[DateDescription], [c0].[CaseStatusId], [c1].[DocName]
+FROM [CourtCases] AS [c]
+INNER JOIN [CasesDetails] AS [c0] ON [c].[CaseId] = [c0].[CaseId]
+LEFT JOIN [CasesDocuments] AS [c1] ON [c0].[ID] = [c1].[CaseDetailId]
+WHERE [c].[CitizenId] = @__userId_0 AND [c].[IsDeleted] = CAST(0 AS bit) AND ([c1].[DocumentId] IS NULL OR [c1].[DocTypeId] = 15)" (0723d8ff)
+2024-03-29T03:40:24.3084436+05:00 40000002-0003-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("300"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c0].[CaseDateTitle], [c0].[HearingDate], [c0].[DateDescription], [c0].[CaseStatusId], [c1].[DocName]
+FROM [CourtCases] AS [c]
+INNER JOIN [CasesDetails] AS [c0] ON [c].[CaseId] = [c0].[CaseId]
+LEFT JOIN [CasesDocuments] AS [c1] ON [c0].[ID] = [c1].[CaseDetailId]
+WHERE [c].[CitizenId] = @__userId_0 AND [c].[IsDeleted] = CAST(0 AS bit) AND ([c1].[DocumentId] IS NULL OR [c1].[DocTypeId] = 15)" (0723d8ff)
+2024-03-29T03:40:45.8658258+05:00 4000000b-0005-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("289"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[CaseId], [c].[CitizenId], [c].[LawyerId], [c].[CaseNumber], [c].[CaseTitle], [c0].[CaseDateTitle], [c0].[HearingDate], [c0].[DateDescription], [c0].[CaseStatusId], [c1].[DocName]
+FROM [CourtCases] AS [c]
+INNER JOIN [CasesDetails] AS [c0] ON [c].[CaseId] = [c0].[CaseId]
+LEFT JOIN [CasesDocuments] AS [c1] ON [c0].[ID] = [c1].[CaseDetailId]
+WHERE [c].[CitizenId] = @__userId_0 AND [c].[IsDeleted] = CAST(0 AS bit) AND ([c1].[DocumentId] IS NULL OR [c1].[DocTypeId] = 15)" (0723d8ff)

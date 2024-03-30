@@ -53,7 +53,7 @@ namespace Business.BusinessLogic
                 {
                     if (caseVM?.CaseId > 0)
                     {
-                        var CheckCaseExist = await ctx.CourtCases.Where(x => !x.IsDeleted).FirstOrDefaultAsync();
+                        var CheckCaseExist = await ctx.CourtCases.Where(x => x.CaseId==caseVM.CaseId && !x.IsDeleted).FirstOrDefaultAsync();
                         if (CheckCaseExist != null)
                         {
                             CheckCaseExist.LawyerId = caseVM.LawyerId;
@@ -78,7 +78,7 @@ namespace Business.BusinessLogic
                         courtCases.CitizenId = caseVM.CitizenId;
                         courtCases.LawyerId = caseVM.LawyerId;
                         courtCases.RedundantLawyerId = caseVM.RedundantLawyerId;
-                        courtCases.CaseNumber = caseVM.CaseNumber;
+                        courtCases.CaseNumber = caseVM.CaseNumber??"";
                         courtCases.CaseTitle = caseVM.CaseTitle;
                         courtCases.PartyId = caseVM.PartyId;
                         courtCases.CategoryId = caseVM.CategoryId;
@@ -86,6 +86,7 @@ namespace Business.BusinessLogic
                         courtCases.CaseJurisdictionId = caseVM.CaseJurisdictionId;
                         courtCases.CourtId = caseVM.CourtId;
                         courtCases.CasePlacingId = caseVM.CasePlacingId;
+                        courtCases.LegalStatusId = (int)ELeagalStatus.CaseInstitutionDiary;
 
                         await ctx.AddAsync(courtCases);
                         await ctx.SaveChangesAsync();
@@ -279,22 +280,23 @@ namespace Business.BusinessLogic
                 {
                     var caseList =
                        await (from cc in ctx.CourtCases
-                         join cd in ctx.CasesDetails on cc.CaseId equals cd.CaseId
-                         join cdd in ctx.CasesDocuments on cc.CaseId equals cdd.CaseId
-                         where cc.CitizenId == userId && cc.IsDeleted==false
-                         select new
-                         {
-                             cc.CaseId,
-                             cc.CitizenId,
-                             cc.LawyerId,
-                             cc.CaseNumber,
-                             cc.CaseTitle,
-                             cd.CaseDateTitle,
-                             cd.HearingDate,
-                             cd.DateDescription,
-                             cd.CaseStatusId,
-                             cdd.DocName
-                         }).ToListAsync();
+                               join cd in ctx.CasesDetails on cc.CaseId equals cd.CaseId
+                               join cdd in ctx.CasesDocuments on cd.ID equals cdd.CaseDetailId into cddJoined
+                               from cdd in cddJoined.DefaultIfEmpty()
+                               where cc.CitizenId == userId && !cc.IsDeleted && (cdd == null || cdd.DocTypeId == (int)EDocumentType.CaseDateDocument)
+                               select new
+                               {
+                                   cc.CaseId,
+                                   cc.CitizenId,
+                                   cc.LawyerId,
+                                   cc.CaseNumber,
+                                   cc.CaseTitle,
+                                   cd.CaseDateTitle,
+                                   cd.HearingDate,
+                                   cd.DateDescription,
+                                   cd.CaseStatusId,
+                                   DocName = cdd != null ? cdd.DocName : null
+                               }).ToListAsync();
 
                     if (caseList.Any())
                     {

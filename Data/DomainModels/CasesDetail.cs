@@ -23,6 +23,6 @@ namespace ProjWakalatnama.DataLayer.Models
         [MaxLength]
         public string DateDescription { get; set; }
         public DateTime? HearingDate { get; set; }
-       
+
     }
 }

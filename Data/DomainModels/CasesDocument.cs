@@ -17,6 +17,7 @@ namespace Data.DomainModels
 
         [Required]
         public long CaseId { get; set; }
+        public long? CaseDetailId { get; set; }
         [StringLength(250)]
         public string? DocName { get; set; }
         [StringLength(250)]

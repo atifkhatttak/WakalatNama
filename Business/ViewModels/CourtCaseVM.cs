@@ -73,6 +73,7 @@ namespace Business.ViewModels
         public int CaseStatusId { get; set; }
         public string CaseTitle { get; set; }
         public string DocName { get; set; }
+        public long? CaseDetailId { get; set; }
     }
     public class CaseDateVM
     {
