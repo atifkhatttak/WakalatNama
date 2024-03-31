@@ -18,6 +18,7 @@ namespace ProjWakalatnama.DataLayer.Models
 
         [Required]
         public long UserId { get; set; }
+        public string? MrTitle { get; set; }
 
         [MaxLength(100)]
         public string? FullName { get; set; }
@@ -53,8 +54,10 @@ namespace ProjWakalatnama.DataLayer.Models
 
         //[StringLength(255)]
         //public string ProfilePic { get; set; }
-
+        [DefaultValue(false)]
         public bool? IsOverseas { get; set; }
+        [DefaultValue(false)]
+        public bool? IsForeignQualified { get; set; }
 
         [StringLength(50)]
         public string? NICOP { get; set; }
@@ -93,9 +96,9 @@ namespace ProjWakalatnama.DataLayer.Models
 
         [StringLength(255)]
         public string? Institute { get; set; }
-
-        [StringLength(100)]
-        public string? BarCouncil { get; set; }
+        public int? BarCouncilId { get; set; }
+        [StringLength(255)]
+        public string? BarCouncilNo { get; set; }
 
         public DateTime? EnrollmentDate { get; set; }
 
@@ -129,6 +132,8 @@ namespace ProjWakalatnama.DataLayer.Models
 
         public float? Rating { get; set; }
         public bool? IsFavourite { get; set; }
+        [DefaultValue(false)]
+        public bool? IsContestedCopy { get; set; }
         public string? ProfileDescription { get; set; }
         public string? FatherName { get; set; }
     }

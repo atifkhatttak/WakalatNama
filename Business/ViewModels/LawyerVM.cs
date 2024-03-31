@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
@@ -56,5 +57,48 @@ namespace Business.ViewModels
         public int CompltedCase { get; set; } = 0;
         public List<CourtCaseVM> CourtCases { get; set; }=new List<CourtCaseVM>();
 
+    }
+
+    public class LawyerProfileVM
+    {
+        public long ProfileId { get; internal set; }
+        public string? FullName { get; internal set; }
+        public string? MrTitle { get; internal set; }
+        public string Email { get; internal set; }
+        public string? CNICNo { get; internal set; }
+        public string ContactNumber { get; internal set; }
+        public string? CurrAddress { get; internal set; }
+        public string? PermAddress { get; internal set; }
+        public string? OfficeAddres { get; internal set; }
+        public int? CityId { get; internal set; }
+        public int? BarCouncilId { get; internal set; }
+        public string? BarCouncilNo { get; internal set; }
+        public DateTime? EnrollmentDate { get; internal set; }
+        public bool? IsContestedCopy { get; internal set; }
+        public long UserId { get; internal set; }
+    }
+    public class LawyerQualificationVM
+    {
+        public long? QualificationId { get; set; }
+        [StringLength(100)]
+        public string? DegreeName { get; set; }
+        [StringLength(100)]
+        public string? InstituteName { get; set; }
+        [Required]
+        public long UserId { get; set; }
+    }
+    public class LawyerExpertiesVM
+    {
+        public long Id { get; set; }
+        [Required]
+        public long UserId { get; set; }
+        [Required]
+        public long CategoryId { get; set; }
+    }
+    public class LawyerUpdateVM
+    {
+        public LawyerProfileVM LawyerProfile { get; set; } = new LawyerProfileVM();
+        public List<LawyerQualificationVM> LawyerQualifications { get; set; } = new List<LawyerQualificationVM>();
+        public List<LawyerExpertiesVM> LawyerExperties { get; set; } = new List<LawyerExpertiesVM>();
     }
 }

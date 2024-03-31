@@ -66,6 +66,8 @@ namespace Data.Context
         public virtual DbSet<CaseRejectionReason> CaseRejectionReasons { get; set; } = null!; 
         public virtual DbSet<CaseStatus> CaseStatuses{ get; set; } = null!;
         public virtual DbSet<CategoriesStatus> CategoriesStatuses{ get; set; } = null!;
+        public virtual DbSet<LawyerExperties> LawyerExperties{ get; set; } = null!;
+        public virtual DbSet<LawyerQualification> LawyerQualifications{ get; set; } = null!;
 
     }
 }

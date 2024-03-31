@@ -237,5 +237,185 @@ namespace Business.BusinessLogic
 
             return citizenVM;
         }
+        public async Task<LawyerProfileVM> CreateUpdateLawyerProfile(LawyerProfileVM lawyerVM)
+        {
+            try
+            {
+
+                if (lawyerVM != null && lawyerVM.ProfileId > 0)
+                {
+                    var GetLawyer = await ctx.UserProfiles.Where(x => x.ProfileId == lawyerVM.ProfileId && !x.IsDeleted).FirstOrDefaultAsync();
+
+                        if (GetLawyer != null)
+                        {
+                        GetLawyer.MrTitle = lawyerVM.MrTitle;
+                            GetLawyer.FullName = lawyerVM.FullName;
+                            GetLawyer.Email = lawyerVM.Email;
+                            GetLawyer.CNICNo = lawyerVM.CNICNo;                            
+                            GetLawyer.ContactNumber = lawyerVM.ContactNumber;
+                            GetLawyer.CurrAddress = lawyerVM.CurrAddress;
+                            GetLawyer.PermAddress = lawyerVM.PermAddress;
+                            GetLawyer.OfficeAddress = lawyerVM.OfficeAddres;
+                            GetLawyer.CityId = lawyerVM.CityId;
+                            GetLawyer.BarCouncilId = lawyerVM.BarCouncilId;
+                            GetLawyer.BarCouncilNo = lawyerVM.BarCouncilNo;
+                            GetLawyer.EnrollmentDate = lawyerVM.EnrollmentDate;
+                            GetLawyer.IsContestedCopy = lawyerVM.IsContestedCopy;
+                         
+                            ctx.Entry(GetLawyer).State = EntityState.Modified;
+                            await ctx.SaveChangesAsync();
+                        }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return lawyerVM;
+        }
+
+        public async Task<int> CreateUpdateLawyerExperties(List<LawyerExpertiesVM> expertiesVMs)
+        {
+            int result = 0;
+            try
+            {
+                if (expertiesVMs!=null && expertiesVMs.Any())
+                {
+                    List<LawyerExperties> news = new List<LawyerExperties>();
+                    List<LawyerExperties> updates = new List<LawyerExperties>();
+                    foreach (var item in expertiesVMs)
+                    {
+                        if (item.Id==0)
+                        {
+                            news.Add(new LawyerExperties()
+                            {
+                                UserId = item.UserId,
+                                CategoryId = item.CategoryId
+                            });
+                        }
+                        if (item.Id > 0)
+                        {
+                            var exp = await ctx.LawyerExperties.FindAsync(item.Id);
+                            if (exp != null) {
+                                exp.UserId = item.UserId;
+                                exp.CategoryId = item.CategoryId;
+                                updates.Add(exp);
+                        }
+                        }   
+                    }
+
+                    ctx.UpdateRange(updates);
+                    await ctx.AddRangeAsync(news);
+                    result = await ctx.SaveChangesAsync();
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            return result;
+        }
+
+        public async Task<int> CreateUpdateLawyerQaulification(List<LawyerQualificationVM> qualificationVMs)
+        {
+            int result = 0;
+            try
+            {
+                if (qualificationVMs != null && qualificationVMs.Any())
+                {
+                    List<LawyerQualification> news = new List<LawyerQualification>();
+                    List<LawyerQualification> updates = new List<LawyerQualification>();
+                    foreach (var item in qualificationVMs)
+                    {
+                        if (item.QualificationId == 0)
+                        {
+                            news.Add(new LawyerQualification()
+                            {
+                                UserId = item.UserId,
+                                DegreeName = item.DegreeName,
+                                InstituteName = item.InstituteName
+                            });
+                        }
+                        if (item.QualificationId > 0)
+                        {
+                            var exp =await ctx.LawyerQualifications.FindAsync(item.QualificationId);
+                            if (exp != null)
+                            {
+                                exp.DegreeName = item.DegreeName;
+                                exp.InstituteName = item.InstituteName;
+                                updates.Add(exp);
+                            }
+                        }
+                    }
+
+                   ctx.UpdateRange(updates);//bulk update
+                  await  ctx.AddRangeAsync(news);//bulk insert
+                  result=  await ctx.SaveChangesAsync();
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            return result;
+        }
+
+        public async Task<LawyerUpdateVM> GetLawyerProfileInfo(long? LawyerId)
+        {
+            LawyerUpdateVM lawyer = new LawyerUpdateVM();
+            try
+            {
+
+                if (LawyerId > 0)
+                {
+                    var d = await ctx.UserProfiles.Where(x => x.UserId == LawyerId && x.RoleId == (int)Roles.Lawyer && !x.IsDeleted).FirstOrDefaultAsync();
+                   
+                    if (d != null)
+                    {
+                        lawyer.LawyerProfile.UserId = d.UserId;
+                        lawyer.LawyerProfile.ProfileId=d.ProfileId;
+                        lawyer.LawyerProfile.MrTitle = d.MrTitle;
+                        lawyer.LawyerProfile.FullName = d.FullName;
+                        lawyer.LawyerProfile.Email = d.Email;
+                        lawyer.LawyerProfile.CNICNo = d.CNICNo;
+                        lawyer.LawyerProfile.ContactNumber = d.ContactNumber;
+                        lawyer.LawyerProfile.CurrAddress = d.CurrAddress;
+                        lawyer.LawyerProfile.PermAddress = d.PermAddress;
+                        lawyer.LawyerProfile.OfficeAddres = d.OfficeAddress;
+                        lawyer.LawyerProfile.CityId = d.CityId;
+                        lawyer.LawyerProfile.BarCouncilId = d.BarCouncilId;
+                        lawyer.LawyerProfile.BarCouncilNo = d.BarCouncilNo;
+                        lawyer.LawyerProfile.EnrollmentDate = d.EnrollmentDate;
+                        lawyer.LawyerProfile.IsContestedCopy = d.IsContestedCopy;
+                    }
+
+                    lawyer.LawyerExperties = await ctx.LawyerExperties.Where(x => x.UserId == LawyerId).Select(s => new LawyerExpertiesVM()
+                    {
+                        Id=s.Id,
+                        UserId=s.UserId,
+                        CategoryId=s.CategoryId
+                    }).ToListAsync();
+
+                    lawyer.LawyerQualifications = await ctx.LawyerQualifications.Where(x => x.UserId == LawyerId).Select(s => new LawyerQualificationVM()
+                    {
+                        QualificationId = s.Id,
+                        DegreeName=s.DegreeName,
+                        InstituteName = s.InstituteName
+                    }).ToListAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return lawyer;
+        }
     }
 }

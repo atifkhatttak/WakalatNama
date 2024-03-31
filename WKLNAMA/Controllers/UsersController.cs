@@ -88,6 +88,61 @@ namespace WKLNAMA.Controllers
 
                 return Ok(apiResponse);
             });           
-        }       
+        }
+        [SwaggerOperation(Summary = "Create/update lawyer profile from here")]
+        [HttpPost("CreateUpdateLawyerProfile")]
+        public async Task<ActionResult> CreateUpdateLawyerProfile([FromForm]LawyerProfileVM lawyerVM)
+        {
+            return await APIResponse(async () => {
+                apiResponse.Message = HttpStatusCode.OK.ToString();
+                apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                apiResponse.Success = true;
+                apiResponse.Data = await userRepository.CreateUpdateLawyerProfile(lawyerVM);
+
+                return Ok(apiResponse);
+            });
+
+        }
+        [SwaggerOperation(Summary = "Create/update lawyer Experties from here")]
+        [HttpPost("CreateUpdateLawyerExperties")]
+        public async Task<ActionResult> CreateUpdateLawyerExperties(List<LawyerExpertiesVM> expertiesVMs)
+        {
+            return await APIResponse(async () => {
+                apiResponse.Message = HttpStatusCode.OK.ToString();
+                apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                apiResponse.Success = true;
+                apiResponse.Data = await userRepository.CreateUpdateLawyerExperties(expertiesVMs);
+
+                return Ok(apiResponse);
+            });
+
+        }
+        [SwaggerOperation(Summary = "Create/update lawyer Qaulification from here")]
+        [HttpPost("CreateUpdateLawyerQaulification")]
+        public async Task<ActionResult> CreateUpdateLawyerQaulification(List<LawyerQualificationVM> qualificationVMs)
+        {
+            return await APIResponse(async () => {
+                apiResponse.Message = HttpStatusCode.OK.ToString();
+                apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                apiResponse.Success = true;
+                apiResponse.Data = await userRepository.CreateUpdateLawyerQaulification(qualificationVMs);
+
+                return Ok(apiResponse);
+            });
+
+        }
+        [SwaggerOperation(Summary = "Get lawyer profile information  from here")]
+        [HttpGet("GetLawyerProfileInfo")]
+        public async Task<ActionResult> GetLawyerProfileInfo(int? lawyerId)
+        {
+            return await APIResponse(async () => {
+                apiResponse.Message = HttpStatusCode.OK.ToString();
+                apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                apiResponse.Success = true;
+                apiResponse.Data = await userRepository.GetLawyerProfileInfo(lawyerId);
+
+                return Ok(apiResponse);
+            });
+        }
     }
 }
