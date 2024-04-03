@@ -4,6 +4,7 @@ using Business.ViewModels;
 using Data.Context;
 using Data.DomainModels;
 using Google.Apis.Drive.v3.Data;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
@@ -23,13 +24,20 @@ namespace Business.BusinessLogic
         private readonly WKNNAMADBCtx ctx;
         private readonly IConfiguration config;
         private readonly ICasesRepository casesRepository;
-        private readonly BaseSPRepository baseSP; 
+        private readonly BaseSPRepository baseSP;
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly bool isAuthenticated = false;
+        private readonly long LoggedInUserId = -1;
+        private readonly string LoggedInRole = "";
 
-        public UserRepository(WKNNAMADBCtx ctx, IConfiguration config) : base(ctx)
+        public UserRepository(WKNNAMADBCtx ctx, IConfiguration config,IHttpContextAccessor httpContextAccessor) : base(ctx)
         {
             this.ctx = ctx;
             this.config = config;
+            this._httpContextAccessor=httpContextAccessor;
             baseSP = new BaseSPRepository(ctx);
+            this.isAuthenticated = _httpContextAccessor.HttpContext.User.Identity.IsAuthenticated;
+            //this.LoggedInUserId = isAuthenticated ? Convert.ToInt64(_httpContextAccessor.HttpContext.User.FindFirstValue("UserId")) : -1;
         }
 
         public async Task<CitizenVM> CreateCitizenProfile(CitizenVM citizenVM)
@@ -73,34 +81,60 @@ namespace Business.BusinessLogic
 
             return citizenVM;
         }
-        public async Task<List<LawyerVM>> GetLawyerList(FilterVM filterVM)
+        public async Task<CitizenHomeVM> GetCitizenHome(FilterVM filterVM)
         {
-            List<LawyerVM> lawyerList = new List<LawyerVM>();
+            CitizenHomeVM citizenHome = new CitizenHomeVM();
             //List<SqlParameter> sqlParameters= new List<SqlParameter>();
             try
             {
 
                 if (filterVM != null)
                 {
-                    SqlParameter[] param=baseSP.CreateSqlParametersFromModel(filterVM);
 
-                    var lawyers= await baseSP.ExecuteStoredProcedureAsync<sp_GetCitizenLawyers_Result>("sp_GetCitizenLawyers", param);
+                    //if (!isAuthenticated) return CitizenHomeVM;
+                    //if (isAuthenticated)
+                    //{
+                    //    if (LoggedInUserId != filterVM.UserId)
+                    //        return CitizenHomeVM;
+                    //}
+
+
+
+                    SqlParameter[] param = baseSP.CreateSqlParametersFromModel(filterVM);
+
+                    var lawyers = await baseSP.ExecuteStoredProcedureAsync<sp_GetCitizenLawyers_Result>("sp_GetCitizenLawyers", param);
+                    //var popularLawyers = await baseSP.ExecuteStoredProcedureAsync<sp_GetCitizenLawyers_Result>("sp_GetCitizenLawyers_Popular", param);
 
                     if (lawyers != null)
                     {
                         foreach (var item in lawyers)
                         {
-                            lawyerList.Add(new LawyerVM
+                            if (item.Rating > 3)
                             {
-                                LawyerId = item.UserId,
-                                UserName = item.FullName,
-                                TotalExperience = item.TotalExperience,
-                                Rating = item.Rating,
-                                IsFavourite = item.IsFavourite??false
-                            });
+                                citizenHome.PopularLawyers.Add(new LawyerVM
+                                {
+                                    LawyerId = item.UserId,
+                                    UserName = item.FullName,
+                                    TotalExperience = item.TotalExperience,
+                                    Rating = item.Rating,
+                                    IsFavourite = item.IsFavourite ?? false
+                                });
+                            }
+
+                            //popular lawyer should also be added into all list
+                                citizenHome.Lawyers.Add(new LawyerVM
+                                {
+                                    LawyerId = item.UserId,
+                                    UserName = item.FullName,
+                                    TotalExperience = item.TotalExperience,
+                                    Rating = item.Rating,
+                                    IsFavourite = item.IsFavourite ?? false
+                                });
+
                         }
 
                     }
+
                 }
             }
             catch (Exception ex)
@@ -108,7 +142,7 @@ namespace Business.BusinessLogic
                 throw ex;
             }
 
-            return lawyerList;
+            return citizenHome;
         }
         public async Task<LawyerVM> GetLawyerProfile(long? LawyerId)
         {

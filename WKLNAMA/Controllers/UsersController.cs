@@ -38,14 +38,14 @@ namespace WKLNAMA.Controllers
           
         }
         [SwaggerOperation(Summary = "Get citizen Home screen lawyer list from here")]
-        [HttpPost("GetLawyerList")]
-        public async Task<ActionResult> GetLawyerList(FilterVM filterVM)
+        [HttpPost("GetCitizenHome")]
+        public async Task<ActionResult> GetCitizenHome(FilterVM filterVM)
         {
             return await APIResponse(async () => {
                 apiResponse.Message = HttpStatusCode.OK.ToString();
                 apiResponse.HttpStatusCode = HttpStatusCode.OK;
                 apiResponse.Success = true;
-                apiResponse.Data = await userRepository.GetLawyerList(filterVM);
+                apiResponse.Data = await userRepository.GetCitizenHome(filterVM);
 
                 return Ok(apiResponse);
             });            

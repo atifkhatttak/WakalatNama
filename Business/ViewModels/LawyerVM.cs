@@ -51,11 +51,17 @@ namespace Business.ViewModels
         public string? CountryCode { get; set; }
         public int? CityId { get; set; }
     }
+    public class CitizenHomeVM
+    {
+        public List<LawyerVM> Lawyers { get; set; }=new List<LawyerVM>();
+        public List<LawyerVM> PopularLawyers { get; set; }=new List<LawyerVM>();
+
+    }
     public class LawyerHomeVM
     {
-        public int TotalCases { get; set; }=0;
+        public int TotalCases { get; set; } = 0;
         public int CompltedCase { get; set; } = 0;
-        public List<CourtCaseVM> CourtCases { get; set; }=new List<CourtCaseVM>();
+        public List<CourtCaseVM> CourtCases { get; set; } = new List<CourtCaseVM>();
 
     }
 

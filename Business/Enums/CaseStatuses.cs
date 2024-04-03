@@ -23,6 +23,6 @@ namespace Business.Enums
         [Description("Rejected by Lawyer")]
         LawyerRejected = 6,
         [Description("Approved")]
-        Approved
+        Approved=7
     }
 }

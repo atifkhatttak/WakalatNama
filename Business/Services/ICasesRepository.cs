@@ -15,8 +15,8 @@ namespace Business.Services
         Task<CaseDateVM> CreateUpdateCaseDate(CaseDateVM detailVM);
         Task<List<CourtCaseVM>> GetCitizenCases(long? userId);
         Task<List<CourtCaseVM>> GetLawyerCases(long? userId);
-        Task<List<CaseDetailVM>> GetCitizenDateList(long? userId);
-        Task<List<CaseDetailVM>> GetLawyerDateList(long? userId);
+        Task<List<CaseDetailVM>> GetCitizenDateList(long? userId,long caseId);
+        Task<List<CaseDetailVM>> GetLawyerDateList(long? userId,long caseId);
         Task<CourtCaseVM> GetCaseById(long? caseId);
         Task AcceptRejectCaseByLawyer(AcceptRejectCaseVM acceptReject);
         Task<bool> AcceptRejectCase(AcceptRejectCaseVM acceptRejectVm);

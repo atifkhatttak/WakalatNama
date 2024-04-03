@@ -39,7 +39,7 @@ namespace Business.BusinessLogic
             _logger = logger;
             this.isAuthenticated= _httpContextAccessor.HttpContext.User.Identity.IsAuthenticated;
             this.LoggedInUserId= isAuthenticated ? Convert.ToInt64(_httpContextAccessor.HttpContext.User.FindFirstValue("UserId")) : -1;
-            this.LoggedInUserId= isAuthenticated ? Convert.ToInt64(_httpContextAccessor.HttpContext.User.FindFirstValue("role")) : -1;
+            //this.LoggedInRole = isAuthenticated ? _httpContextAccessor.HttpContext.User.FindFirstValue("role").ToString() : "";
         }
 
         public async Task<CourtCases> CreateUpdateCase(CourtCaseVM caseVM)
@@ -263,18 +263,18 @@ namespace Business.BusinessLogic
             return userCases;
         }
 
-        public async Task<List<CaseDetailVM>> GetCitizenDateList(long? userId)
+        public async Task<List<CaseDetailVM>> GetCitizenDateList(long? userId, long caseId)
         {
             
             List<CaseDetailVM> caseDetails = new List<CaseDetailVM>();
             try
             {
-                //if (!isAuthenticated) return caseDetails;
-                //if (isAuthenticated)
-                //{
-                //    if (LoggedInUserId != userId) 
-                //        return caseDetails;
-                //}
+                if (!isAuthenticated) return caseDetails;
+                if (isAuthenticated)
+                {
+                    if (LoggedInUserId != userId)
+                        return caseDetails;
+                }
 
                 if (userId != null && userId > 0)
                 {
@@ -283,7 +283,7 @@ namespace Business.BusinessLogic
                                join cd in ctx.CasesDetails on cc.CaseId equals cd.CaseId
                                join cdd in ctx.CasesDocuments on cd.ID equals cdd.CaseDetailId into cddJoined
                                from cdd in cddJoined.DefaultIfEmpty()
-                               where cc.CitizenId == userId && !cc.IsDeleted && (cdd == null || cdd.DocTypeId == (int)EDocumentType.CaseDateDocument)
+                               where cc.CitizenId == userId && cc.CaseId== caseId && !cc.IsDeleted && (cdd == null || cdd.DocTypeId == (int)EDocumentType.CaseDateDocument)
                                select new
                                {
                                    cc.CaseId,
@@ -325,26 +325,27 @@ namespace Business.BusinessLogic
             }
             return caseDetails;
         }
-        public async Task<List<CaseDetailVM>> GetLawyerDateList(long? userId)
+        public async Task<List<CaseDetailVM>> GetLawyerDateList(long? userId,long caseId)
         {
 
             List<CaseDetailVM> caseDetails = new List<CaseDetailVM>();
             try
             {
-                //if (!isAuthenticated) return caseDetails;
-                //if (isAuthenticated)
-                //{
-                //    if (LoggedInUserId != userId) 
-                //        return caseDetails;
-                //}
+                if (!isAuthenticated) return caseDetails;
+                if (isAuthenticated)
+                {
+                    if (LoggedInUserId != userId)
+                        return caseDetails;
+                }
 
                 if (userId != null && userId > 0)
                 {
                     var caseList =
                        await (from cc in ctx.CourtCases
                               join cd in ctx.CasesDetails on cc.CaseId equals cd.CaseId
-                              //join cdd in ctx.CasesDocuments on cc.CaseId equals cdd.CaseId
-                              where cc.LawyerId == userId && cc.IsDeleted == false
+                              join cdd in ctx.CasesDocuments on cd.ID equals cdd.CaseDetailId into cddJoined
+                              from cdd in cddJoined.DefaultIfEmpty()
+                              where cc.LawyerId == userId && cc.CaseId == caseId && !cc.IsDeleted && (cdd == null || cdd.DocTypeId == (int)EDocumentType.CaseDateDocument)
                               select new
                               {
                                   cc.CaseId,
@@ -356,7 +357,7 @@ namespace Business.BusinessLogic
                                   cd.HearingDate,
                                   cd.DateDescription,
                                   cd.CaseStatusId,
-                                  //cdd.DocName
+                                  DocName = cdd != null ? cdd.DocName : null
                               }).ToListAsync();
 
                     if (caseList.Any())

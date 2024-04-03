@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProjWakalatnama.DataLayer.Models;
 using Swashbuckle.AspNetCore.Annotations;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Net;
 using WKLNAMA.Models;
@@ -80,45 +81,31 @@ namespace WKLNAMA.Controllers
         }
         [SwaggerOperation(Summary = "Get list of citizen cases dates, by citizenId")]
         [HttpGet("GetCitizenDateList")]
-        public async Task<ActionResult> GetCitizenDateList([Required] long? userId)
+        public async Task<ActionResult> GetCitizenDateList([Required]long? userId,[Required]long caseId)
         {
-            try
-            {
-                var result = await casesRepository.GetCitizenDateList(userId);
-                apiResponse.Message = HttpStatusCode.OK.ToString();
-                apiResponse.HttpStatusCode = HttpStatusCode.OK;
-                apiResponse.Success = true;
-                apiResponse.Data = result;
-            }
-            catch (Exception ex)
-            {
-                apiResponse.Message = ex.Message;
-                apiResponse.HttpStatusCode = HttpStatusCode.InternalServerError;
-                apiResponse.Success = false;
-                apiResponse.Data = null;
-            }
-            return Ok(apiResponse);
+                return await APIResponse(async () => {
+
+                    apiResponse.Message = HttpStatusCode.OK.ToString();
+                    apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                    apiResponse.Success = true;
+                    apiResponse.Data = await casesRepository.GetCitizenDateList(userId, caseId);
+
+                    return Ok(apiResponse);
+                });
         }
         [SwaggerOperation(Summary = "Get list of lawyer cases dates, by lawyerId")]
         [HttpGet("GetLawyerDateList")]
-        public async Task<ActionResult> GetLawyerDateList([Required] long? userId)
+        public async Task<ActionResult> GetLawyerDateList([Required]long? userId,[Required]long caseId)
         {
-            try
-            {
-                var result = await casesRepository.GetLawyerDateList(userId);
+            return await APIResponse(async () => {
+
                 apiResponse.Message = HttpStatusCode.OK.ToString();
                 apiResponse.HttpStatusCode = HttpStatusCode.OK;
                 apiResponse.Success = true;
-                apiResponse.Data = result;
-            }
-            catch (Exception ex)
-            {
-                apiResponse.Message = ex.Message;
-                apiResponse.HttpStatusCode = HttpStatusCode.InternalServerError;
-                apiResponse.Success = false;
-                apiResponse.Data = null;
-            }
-            return Ok(apiResponse);
+                apiResponse.Data = await casesRepository.GetLawyerDateList(userId, caseId);
+
+                return Ok(apiResponse);
+            });
         }
         [SwaggerOperation(Summary ="Get single case for edit by caseid")]
         [HttpGet("GetCaseById")]        
@@ -210,7 +197,7 @@ namespace WKLNAMA.Controllers
                 apiResponse.Message = HttpStatusCode.OK.ToString();
                 apiResponse.HttpStatusCode = HttpStatusCode.OK;
                 apiResponse.Success = true;
-                apiResponse.Data = null;
+                apiResponse.Data = isValid;
             }
             catch (Exception ex)
             {
