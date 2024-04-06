@@ -79,7 +79,7 @@ namespace WKLNAMA.Controllers
             }
             return Ok(apiResponse);
         }
-        [SwaggerOperation(Summary = "Get list of citizen cases dates, by citizenId")]
+        [SwaggerOperation(Summary = "Get list of citizen cases dates, by citizenId-Secured")]
         [HttpGet("GetCitizenDateList")]
         public async Task<ActionResult> GetCitizenDateList([Required]long? userId,[Required]long caseId)
         {
@@ -93,7 +93,7 @@ namespace WKLNAMA.Controllers
                     return Ok(apiResponse);
                 });
         }
-        [SwaggerOperation(Summary = "Get list of lawyer cases dates, by lawyerId")]
+        [SwaggerOperation(Summary = "Get list of lawyer cases dates, by lawyerId-Secured")]
         [HttpGet("GetLawyerDateList")]
         public async Task<ActionResult> GetLawyerDateList([Required]long? userId,[Required]long caseId)
         {
@@ -179,7 +179,7 @@ namespace WKLNAMA.Controllers
             return Ok(apiResponse);
         }
 
-        [SwaggerOperation(Summary = "Accept/Reject new case on lawyer end")]
+        [SwaggerOperation(Summary = "Accept/Reject new case on lawyer end-Secured")]
         [HttpPost("AcceptRejectCaseByLawyer")]
         public async Task<ActionResult> AcceptRejectCaseByLawyer(AcceptRejectCaseVM acceptReject)
         {
@@ -223,7 +223,7 @@ namespace WKLNAMA.Controllers
                 });
         }
 
-        [SwaggerOperation(Summary = "Accept/Reject new case on Admin end")] 
+        [SwaggerOperation(Summary = "Accept/Reject new case on Admin end-Secured")] 
         [HttpPost("AcceptRejectCaseByAdmin")]
         public async Task<ActionResult> AcceptRejectCaseByAdmin(AcceptRejectCaseVM acceptReject)
         {
