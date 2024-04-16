@@ -42,7 +42,7 @@ namespace Business.Enums
         None = 0,
         NicFront = 1,
         NicBack = 2,
-        ProfilePice = 3,
+        ProfilePic = 3,
         NICOPFront = 4,
         NICOPFback = 5,
         EducationPic = 6,

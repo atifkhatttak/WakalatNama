@@ -305,6 +305,14 @@ namespace Business.BusinessLogic
                         userClaimVM.Email = _user.Email;
                         userClaimVM.UserId = _user.Id;
                         userClaimVM.UserName = _user.UserName;
+
+                       var userProfile =await ctx.UserProfiles.Where(x => x.UserId == _user.Id && !x.IsDeleted).FirstOrDefaultAsync();
+                        if (userProfile!=null)
+                        {
+                            userClaimVM.CityId=userProfile.CityId;
+                            userClaimVM.ProfilePic = ctx.UserDocuments.Where(x => x.UserId == _user.Id && !x.IsDeleted).FirstOrDefault()?.DocPath ?? "";
+                        }
+
                         if (roles.Count > 0)
                         {
                             userClaimVM.Roles = new List<string>();

@@ -90,24 +90,41 @@ namespace Business.BusinessLogic
             return lawyerList;
         }
 
-        public async Task<List<Review>> GetUserReviews(int? userId)
+        public async Task<List<ReviewVM>> GetUserReviews(int? userId)
         {
-            List<Review> reviews = new List<Review>();
+            List<ReviewVM> reviews = new List<ReviewVM>();
             try
             {
-                //if (!isAuthenticated) return userCases;
-                //if (isAuthenticated)
-                //{
-                //    if (LoggedInUserId != userId) 
-                //        return userCases;
-                //}
+                if (!isAuthenticated) return reviews;
+                if (isAuthenticated)
+                {
+                    if (LoggedInUserId != userId)
+                        return reviews;
+                }
 
                 if (userId != null && userId > 0)
                 {
-                    reviews = await ctx
-                        .Reviews
-                        .Where(x => x.CommitOnId == userId && x.IsDeleted == false)
-                        .ToListAsync();
+                    reviews = await (from r in ctx.Reviews
+                        join u in ctx.UserProfiles on r.CommitById equals u.UserId
+                        join ud in ctx.UserDocuments on u.UserId equals ud.UserId into uds
+                        from ud in uds.DefaultIfEmpty()
+                        where r.CommitOnId == userId && !(r.IsDeleted && u.IsDeleted) && (ud == null || ud.DocTypeId == (int)EDocumentType.ProfilePic)
+                        select new ReviewVM
+                        {
+                            FullName = u.FullName ?? "",
+                            DocPath = ud != null ? ud.DocPath ?? "" : "",
+                            ReviewId = r.ReviewId,
+                            CommitById = r.CommitById,
+                            CommitOnId = r.CommitOnId,
+                            Rating = r.Rating,
+                            ReviewContent = r.ReviewContent,
+                            UpdateDate = r.UpdateDate,
+                            CreatedDate = r.CreatedDate,
+                            CreatedBy = r.CreatedBy,
+                            UpdatedBy = r.UpdatedBy,
+                            IsDeleted = r.IsDeleted
+                        }
+                        ).ToListAsync();
                 }
             }
             catch (Exception ex)

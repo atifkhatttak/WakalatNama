@@ -82,6 +82,7 @@ namespace Business.ViewModels
         public DateTime? EnrollmentDate { get; internal set; }
         public bool? IsContestedCopy { get; internal set; }
         public long UserId { get; internal set; }
+        public string? ProfilePic { get; internal set; }
     }
     public class LawyerQualificationVM
     {

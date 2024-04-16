@@ -12,7 +12,7 @@ namespace Business.Services
 {
     public interface IReviewRepository : IBaseRepository<Review>
     {
-        Task<List<Review>>  GetUserReviews(int? userId);
+        Task<List<ReviewVM>>  GetUserReviews(int? userId);
         Task MarkFaourite(ReviewFavouriteVM favouriteVM);
         Task<List<LawyerVM>> GetFavouriteLawyers(long? userId);
     }

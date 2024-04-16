@@ -76,7 +76,7 @@ namespace WKLNAMA.Controllers
                 return Ok(apiResponse);
             });            
         }
-        [SwaggerOperation(Summary = "Get citizen profile details from here")]
+        [SwaggerOperation(Summary = "Get citizen profile details from here-secured")]
         [HttpGet("GetCitizenDetails")]
         public async Task<ActionResult> GetCitizenDetails(int? CitizenId)
         {
@@ -131,7 +131,7 @@ namespace WKLNAMA.Controllers
             });
 
         }
-        [SwaggerOperation(Summary = "Get lawyer profile information  from here")]
+        [SwaggerOperation(Summary = "Get lawyer profile information  from here-secured")]
         [HttpGet("GetLawyerProfileInfo")]
         public async Task<ActionResult> GetLawyerProfileInfo(int? lawyerId)
         {

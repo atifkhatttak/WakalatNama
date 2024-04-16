@@ -14,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -37,7 +38,7 @@ namespace Business.BusinessLogic
             this._httpContextAccessor=httpContextAccessor;
             baseSP = new BaseSPRepository(ctx);
             this.isAuthenticated = _httpContextAccessor.HttpContext.User.Identity.IsAuthenticated;
-            //this.LoggedInUserId = isAuthenticated ? Convert.ToInt64(_httpContextAccessor.HttpContext.User.FindFirstValue("UserId")) : -1;
+            this.LoggedInUserId = isAuthenticated ? Convert.ToInt64(httpContextAccessor.HttpContext.User.FindFirstValue("UserId")) : -1;
         }
 
         public async Task<CitizenVM> CreateCitizenProfile(CitizenVM citizenVM)
@@ -240,20 +241,28 @@ namespace Business.BusinessLogic
             CitizenVM citizenVM= new CitizenVM();
             try
             {
+                if (!isAuthenticated) return citizenVM;
+                if (isAuthenticated)
+                {
+                    if (LoggedInUserId != CitizenId)
+                        return citizenVM;
+                }
 
                 if (CitizenId > 0)
                 {
                     var d = await ctx
                         .UserProfiles
                         .Where(x => x.UserId == CitizenId
-                    && (x.RoleId == (int)Roles.Citizen && x.IsActive == true && x.IsVerified == true && x.IsDeleted == false))
+                    && (x.RoleId == (int)Roles.Citizen && x.IsActive == true && x.IsVerified == true && !x.IsDeleted))
                         .FirstOrDefaultAsync();
+
+                    string ProfilePic = ctx.UserDocuments.Where(x => x.UserId == CitizenId && !x.IsDeleted).FirstOrDefault()?.DocPath??"";
 
                     if (d != null)
                     {
                         citizenVM.UserId = d.UserId;
                         citizenVM.ProfileId = d.ProfileId;
-                        citizenVM.ProfilePic = "";
+                        citizenVM.ProfilePic = ProfilePic;
                         citizenVM.FullName = d.FullName;
                         citizenVM.FatherName = d.FatherName;
                         citizenVM.Email = d.Email;
@@ -405,6 +414,12 @@ namespace Business.BusinessLogic
             LawyerUpdateVM lawyer = new LawyerUpdateVM();
             try
             {
+                if (!isAuthenticated) return lawyer;
+                if (isAuthenticated)
+                {
+                    if (LoggedInUserId != LawyerId)
+                        return lawyer;
+                }
 
                 if (LawyerId > 0)
                 {
@@ -412,8 +427,11 @@ namespace Business.BusinessLogic
                    
                     if (d != null)
                     {
+                        string ProfilePic = ctx.UserDocuments.Where(x => x.UserId == LawyerId && !x.IsDeleted).FirstOrDefault()?.DocPath ?? "";
+
                         lawyer.LawyerProfile.UserId = d.UserId;
                         lawyer.LawyerProfile.ProfileId=d.ProfileId;
+                        lawyer.LawyerProfile.ProfilePic = ProfilePic;
                         lawyer.LawyerProfile.MrTitle = d.MrTitle;
                         lawyer.LawyerProfile.FullName = d.FullName;
                         lawyer.LawyerProfile.Email = d.Email;

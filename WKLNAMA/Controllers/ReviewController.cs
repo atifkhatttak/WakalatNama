@@ -5,6 +5,7 @@ using Data.DomainModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProjWakalatnama.DataLayer.Models;
+using Swashbuckle.AspNetCore.Annotations;
 using System.Net;
 using WKLNAMA.Models;
 
@@ -23,26 +24,17 @@ namespace WKLNAMA.Controllers
         }
 
         [HttpGet("GetUserReview")]
+        [SwaggerOperation(Summary = "Get Lawyer reviews list from here-secured")]
         public async Task<ActionResult> GetUserReview(int? UserId)
         {
-            try
-            {
-                var result = await reviewRepository.GetUserReviews(UserId);
-                apiResponse.Message = HttpStatusCode.OK.ToString();
-                apiResponse.HttpStatusCode = HttpStatusCode.OK;
-                apiResponse.Success = true;
-                apiResponse.Data = result;
-            }
-            catch (Exception ex)
-            {
-                apiResponse.Message = ex.Message;
-                apiResponse.HttpStatusCode = HttpStatusCode.InternalServerError;
-                apiResponse.Success = false;
-                apiResponse.Data = null;
-            }
+                return await APIResponse(async () => {
+                    apiResponse.Message = HttpStatusCode.OK.ToString();
+                    apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                    apiResponse.Success = true;
+                    apiResponse.Data = await reviewRepository.GetUserReviews(UserId);
 
-            //return Ok(Task.FromResult(_viewModel));
-            return Ok(apiResponse);
+                    return Ok(apiResponse);
+                });
         }
         [HttpPost("MarkFaourite")]
         public async Task<ActionResult> MarkFaourite(ReviewFavouriteVM favourite)

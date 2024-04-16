@@ -2,11 +2,13 @@
 using Business.Services;
 using Business.ViewModels;
 using Data.DomainModels;
+using Google.Apis.Drive.v3.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 using System.ComponentModel.DataAnnotations;
 using System.Net;
 using WKLNAMA.Models;
@@ -90,25 +92,17 @@ namespace WKLNAMA.Controllers
         }
         [AllowAnonymous]
         [HttpPost("GetUserClaims")]
+        [SwaggerOperation(Summary = "Get user claims from here")]
         public async Task<ActionResult> GetClaims(LoginViewModel loginModel)
         {
-            try
-            {
-                var token = await accountRepository.GetClaims(loginModel);
+                return await APIResponse(async () => {
+                    apiResponse.Message = HttpStatusCode.OK.ToString();
+                    apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                    apiResponse.Success = true;
+                    apiResponse.Data = await accountRepository.GetClaims(loginModel);
 
-                apiResponse.Message = HttpStatusCode.OK.ToString();
-                apiResponse.HttpStatusCode = HttpStatusCode.OK;
-                apiResponse.Success = true;
-                apiResponse.Data = token;
-            }
-            catch (Exception ex)
-            {
-                apiResponse.Message = ex.Message;
-                apiResponse.HttpStatusCode = HttpStatusCode.InternalServerError;
-                apiResponse.Success = false;
-                apiResponse.Data = null;
-            }
-            return Ok(apiResponse);
+                    return Ok(apiResponse);
+                });
         }
 
         [HttpPost("ForgotPassword")]
