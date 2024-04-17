@@ -117,12 +117,6 @@ namespace WKLNAMA.Controllers
             });
 
         }
-
-
-
-
-
-
         [HttpPost("Send")]
         public async  Task<ActionResult> Send(MessageVm message)
         {

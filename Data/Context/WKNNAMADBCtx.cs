@@ -29,7 +29,9 @@ namespace Data.Context
 
             this.SeedRoles(builder);
 
-           builder.Entity<LawyerFeeStructure>().Property(x=>x.LawyerFee).HasPrecision(16,3);
+            builder.Entity<ExperienceCost>().Property(x=>x.CostMin).HasPrecision(16,3);
+            builder.Entity<ExperienceCost>().Property(x=>x.CostMax).HasPrecision(16,3);
+            builder.Entity<LawyerFeeStructure>().Property(x=>x.LawyerFee).HasPrecision(16,3);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

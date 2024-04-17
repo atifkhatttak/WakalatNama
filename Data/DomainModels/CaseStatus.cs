@@ -12,7 +12,8 @@ namespace Data.DomainModels
     {
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int StatusId { get; set; }
 
         [Required]

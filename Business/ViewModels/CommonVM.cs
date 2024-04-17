@@ -40,6 +40,11 @@ namespace Business.ViewModels
         public int ID { get; set; }
         public string StatusName { get; set; }
     }
+    public class CaseStatusesVM
+    {
+        public int ID { get; set; }
+        public string Status { get; set; }
+    }
 
     //Documents
     public class DownloadableDocsVM

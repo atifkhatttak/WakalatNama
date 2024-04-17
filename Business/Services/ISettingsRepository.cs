@@ -21,5 +21,7 @@ namespace Business.Services
         Task<List<DownloadableDocsVM>> GetDownloadableDocuments(int docType);
         Task<bool> UpLoadUserDocuments(UserDocumentVM userDoc);
         Task<bool> DeleteUserDocument(long docId, int docType);
+
+        Task<List<CaseStatusesVM>> GetCaseStatusByCaseId(long CaseId);
     }
 }

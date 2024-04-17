@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -114,8 +115,7 @@ namespace Business.BusinessLogic
                      IsForeignQualified = x.IsForeignQualified
                  })
                  .FirstOrDefaultAsync())!;
-        }
-
+        }       
         public async Task<List<LawyerFeeStructureVM>> GetLawyerFeeByCatAndJurisdiction(GetLawyerFeeVM feeVM)
         {
             return await ctx.LawyerFeeStructures
@@ -237,6 +237,34 @@ namespace Business.BusinessLogic
                 throw ex;
             }
             return response;
+        }
+
+        public async Task<List<CaseStatusesVM>> GetCaseStatusByCaseId(long CaseId)
+        {
+            List<CaseStatusesVM> caseStatuses = new List<CaseStatusesVM>();
+            try
+            {
+                var GetCase = await ctx.CourtCases.Where(x => x.CaseId == CaseId && !x.IsDeleted).FirstOrDefaultAsync();
+
+                if (GetCase != null)
+                {
+                    caseStatuses = await (from cs in ctx.CategoriesStatuses
+                                   join s in ctx.CaseStatuses on cs.CaseStatusId equals s.StatusId
+                                   where cs.CategoryId == GetCase.CategoryId && !cs.IsDeleted
+                                   select new CaseStatusesVM
+                                   {
+                                       ID = s.StatusId,
+                                       Status = s.Status
+                                   }).ToListAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            return caseStatuses;
         }
 
         #endregion

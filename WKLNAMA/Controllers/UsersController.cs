@@ -144,5 +144,19 @@ namespace WKLNAMA.Controllers
                 return Ok(apiResponse);
             });
         }
+
+        [SwaggerOperation(Summary = "Get all user from here by Ispending and RoleId")]
+        [HttpGet("GetAllUser")]
+        public async Task<ActionResult> GetAllUser(bool IsPending, int RoleId)
+        {
+            return await APIResponse(async () => {
+                apiResponse.Message = HttpStatusCode.OK.ToString();
+                apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                apiResponse.Success = true;
+                apiResponse.Data = await userRepository.GetAllUser(IsPending, RoleId);
+
+                return Ok(apiResponse);
+            });
+        }
     }
 }

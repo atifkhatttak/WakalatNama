@@ -121,6 +121,19 @@ namespace WKLNAMA.Controllers
                 return Ok(apiResponse);
             });
         }
+        [SwaggerOperation(Summary = "Get Case statuses by case id")]
+        [HttpGet("GetCaseStatusesByCaseId")]
+        public async Task<ActionResult> GetCaseStatusesByCaseId([Required]long CaseId)
+        {
+            return await APIResponse(async () => {
+                apiResponse.Message = HttpStatusCode.OK.ToString();
+                apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                apiResponse.Success = true;
+                apiResponse.Data = await settingsRepository.GetCaseStatusByCaseId(CaseId);
+
+                return Ok(apiResponse);
+            });
+        }
         [SwaggerOperation(Summary ="Get Citizen/Lawyer downloadable documents")]
         [HttpGet("GetDownloadableDocuments")]
         public async Task<ActionResult> GetDownloadableDocuments([Required] int docType)

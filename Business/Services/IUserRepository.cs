@@ -20,5 +20,7 @@ namespace Business.Services
         Task<LawyerProfileVM> CreateUpdateLawyerProfile(LawyerProfileVM lawyerVM);
         Task<int> CreateUpdateLawyerExperties(List<LawyerExpertiesVM> expertiesVMs);
         Task<int> CreateUpdateLawyerQaulification(List<LawyerQualificationVM> qualificationVMs);
+
+        Task<List<UserProfileVM>> GetAllUser(bool IsPending, int RoleId);
     }
 }

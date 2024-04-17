@@ -31,11 +31,11 @@ namespace Business.BusinessLogic
         private readonly long LoggedInUserId = -1;
         private readonly string LoggedInRole = "";
 
-        public UserRepository(WKNNAMADBCtx ctx, IConfiguration config,IHttpContextAccessor httpContextAccessor) : base(ctx)
+        public UserRepository(WKNNAMADBCtx ctx, IConfiguration config, IHttpContextAccessor httpContextAccessor) : base(ctx)
         {
             this.ctx = ctx;
             this.config = config;
-            this._httpContextAccessor=httpContextAccessor;
+            this._httpContextAccessor = httpContextAccessor;
             baseSP = new BaseSPRepository(ctx);
             this.isAuthenticated = _httpContextAccessor.HttpContext.User.Identity.IsAuthenticated;
             this.LoggedInUserId = isAuthenticated ? Convert.ToInt64(httpContextAccessor.HttpContext.User.FindFirstValue("UserId")) : -1;
@@ -123,14 +123,14 @@ namespace Business.BusinessLogic
                             }
 
                             //popular lawyer should also be added into all list
-                                citizenHome.Lawyers.Add(new LawyerVM
-                                {
-                                    LawyerId = item.UserId,
-                                    UserName = item.FullName,
-                                    TotalExperience = item.TotalExperience,
-                                    Rating = item.Rating,
-                                    IsFavourite = item.IsFavourite ?? false
-                                });
+                            citizenHome.Lawyers.Add(new LawyerVM
+                            {
+                                LawyerId = item.UserId,
+                                UserName = item.FullName,
+                                TotalExperience = item.TotalExperience,
+                                Rating = item.Rating,
+                                IsFavourite = item.IsFavourite ?? false
+                            });
 
                         }
 
@@ -153,8 +153,8 @@ namespace Business.BusinessLogic
 
                 if (LawyerId > 0)
                 {
-                    var d = await ctx.UserProfiles.Where(x => x.UserId== LawyerId && x.RoleId==(int)Roles.Lawyer).FirstOrDefaultAsync();
-                    int CasesCount=0;
+                    var d = await ctx.UserProfiles.Where(x => x.UserId == LawyerId && x.RoleId == (int)Roles.Lawyer).FirstOrDefaultAsync();
+                    int CasesCount = 0;
                     int TotalClient = 0;
                     if (d != null)
                     {
@@ -168,7 +168,7 @@ namespace Business.BusinessLogic
                         lawyer.CompletedCase = CasesCount;
                         lawyer.TotalClient = TotalClient;
                     }
-                }              
+                }
             }
             catch (Exception ex)
             {
@@ -185,47 +185,47 @@ namespace Business.BusinessLogic
 
                 if (lawyerId > 0)
                 {
-                    lawyerHome.TotalCases = await ctx.CourtCases.CountAsync(x => x.LawyerId== lawyerId && x.IsDeleted==false);
-                    lawyerHome.CompltedCase = await ctx.CourtCases.CountAsync(x => x.LawyerId== lawyerId && x.LegalStatusId ==(int)CaseLegalStatus.Initiated && x.IsDeleted==false);
+                    lawyerHome.TotalCases = await ctx.CourtCases.CountAsync(x => x.LawyerId == lawyerId && x.IsDeleted == false);
+                    lawyerHome.CompltedCase = await ctx.CourtCases.CountAsync(x => x.LawyerId == lawyerId && x.LegalStatusId == (int)CaseLegalStatus.Initiated && x.IsDeleted == false);
 
 
-                    lawyerHome.CourtCases = await (from c in ctx.CourtCases 
-                                              join u in ctx.UserProfiles on c.CitizenId equals u.UserId
-                                              join cat in ctx.CaseCategories on c.CategoryId equals cat.ID
-                                              where c.LawyerId == lawyerId && u.RoleId ==(int)Roles.Citizen && (u.IsDeleted == false && c.IsDeleted == false)
-                                              select new CourtCaseVM
-                                              {
-                                                  UserFullName = u.FullName,
-                                                  CaseId = c.CaseId,
-                                                  CitizenId = c.CitizenId,
-                                                  LawyerId = c.LawyerId,
-                                                  CaseNumber = c.CaseNumber,
-                                                  CaseTitle = c.CaseTitle,
-                                                  CategoryId = c.CategoryId,
-                                                  CategoryName = cat.CategoryName,
-                                                  CaseStatusId=c.LegalStatusId
-                                              })
+                    lawyerHome.CourtCases = await (from c in ctx.CourtCases
+                                                   join u in ctx.UserProfiles on c.CitizenId equals u.UserId
+                                                   join cat in ctx.CaseCategories on c.CategoryId equals cat.ID
+                                                   where c.LawyerId == lawyerId && u.RoleId == (int)Roles.Citizen && (u.IsDeleted == false && c.IsDeleted == false)
+                                                   select new CourtCaseVM
+                                                   {
+                                                       UserFullName = u.FullName,
+                                                       CaseId = c.CaseId,
+                                                       CitizenId = c.CitizenId,
+                                                       LawyerId = c.LawyerId,
+                                                       CaseNumber = c.CaseNumber,
+                                                       CaseTitle = c.CaseTitle,
+                                                       CategoryId = c.CategoryId,
+                                                       CategoryName = cat.CategoryName,
+                                                       CaseStatusId = c.LegalStatusId
+                                                   })
                           .ToListAsync();
 
-                        //if (caseList.Any())
-                        //{
-                        //    userCases = new List<CourtCaseVM>();
-                        //    foreach (var item in caseList)
-                        //    {
-                        //        userCases.Add(new CourtCaseVM
-                        //        {
-                        //            UserFullName = item.FullName,
+                    //if (caseList.Any())
+                    //{
+                    //    userCases = new List<CourtCaseVM>();
+                    //    foreach (var item in caseList)
+                    //    {
+                    //        userCases.Add(new CourtCaseVM
+                    //        {
+                    //            UserFullName = item.FullName,
 
-                        //            CaseId = item.CaseId,
-                        //            CitizenId = item.CitizenId,
-                        //            LawyerId = item.LawyerId,
-                        //            CaseNumber = item.CaseNumber,
-                        //            CaseTitle = item.CaseTitle,
-                        //            CategoryId = item.CategoryId,
-                        //            CategoryName = item.CategoryName
-                        //        });
-                        //    }
-                        //}
+                    //            CaseId = item.CaseId,
+                    //            CitizenId = item.CitizenId,
+                    //            LawyerId = item.LawyerId,
+                    //            CaseNumber = item.CaseNumber,
+                    //            CaseTitle = item.CaseTitle,
+                    //            CategoryId = item.CategoryId,
+                    //            CategoryName = item.CategoryName
+                    //        });
+                    //    }
+                    //}
 
                 }
             }
@@ -238,7 +238,7 @@ namespace Business.BusinessLogic
         }
         public async Task<CitizenVM> GetCitizenProfile(long? CitizenId)
         {
-            CitizenVM citizenVM= new CitizenVM();
+            CitizenVM citizenVM = new CitizenVM();
             try
             {
                 if (!isAuthenticated) return citizenVM;
@@ -256,7 +256,7 @@ namespace Business.BusinessLogic
                     && (x.RoleId == (int)Roles.Citizen && x.IsActive == true && x.IsVerified == true && !x.IsDeleted))
                         .FirstOrDefaultAsync();
 
-                    string ProfilePic = ctx.UserDocuments.Where(x => x.UserId == CitizenId && !x.IsDeleted).FirstOrDefault()?.DocPath??"";
+                    string ProfilePic = ctx.UserDocuments.Where(x => x.UserId == CitizenId && !x.IsDeleted).FirstOrDefault()?.DocPath ?? "";
 
                     if (d != null)
                     {
@@ -289,25 +289,25 @@ namespace Business.BusinessLogic
                 {
                     var GetLawyer = await ctx.UserProfiles.Where(x => x.ProfileId == lawyerVM.ProfileId && !x.IsDeleted).FirstOrDefaultAsync();
 
-                        if (GetLawyer != null)
-                        {
+                    if (GetLawyer != null)
+                    {
                         GetLawyer.MrTitle = lawyerVM.MrTitle;
-                            GetLawyer.FullName = lawyerVM.FullName;
-                            GetLawyer.Email = lawyerVM.Email;
-                            GetLawyer.CNICNo = lawyerVM.CNICNo;                            
-                            GetLawyer.ContactNumber = lawyerVM.ContactNumber;
-                            GetLawyer.CurrAddress = lawyerVM.CurrAddress;
-                            GetLawyer.PermAddress = lawyerVM.PermAddress;
-                            GetLawyer.OfficeAddress = lawyerVM.OfficeAddres;
-                            GetLawyer.CityId = lawyerVM.CityId;
-                            GetLawyer.BarCouncilId = lawyerVM.BarCouncilId;
-                            GetLawyer.BarCouncilNo = lawyerVM.BarCouncilNo;
-                            GetLawyer.EnrollmentDate = lawyerVM.EnrollmentDate;
-                            GetLawyer.IsContestedCopy = lawyerVM.IsContestedCopy;
-                         
-                            ctx.Entry(GetLawyer).State = EntityState.Modified;
-                            await ctx.SaveChangesAsync();
-                        }
+                        GetLawyer.FullName = lawyerVM.FullName;
+                        GetLawyer.Email = lawyerVM.Email;
+                        GetLawyer.CNICNo = lawyerVM.CNICNo;
+                        GetLawyer.ContactNumber = lawyerVM.ContactNumber;
+                        GetLawyer.CurrAddress = lawyerVM.CurrAddress;
+                        GetLawyer.PermAddress = lawyerVM.PermAddress;
+                        GetLawyer.OfficeAddress = lawyerVM.OfficeAddres;
+                        GetLawyer.CityId = lawyerVM.CityId;
+                        GetLawyer.BarCouncilId = lawyerVM.BarCouncilId;
+                        GetLawyer.BarCouncilNo = lawyerVM.BarCouncilNo;
+                        GetLawyer.EnrollmentDate = lawyerVM.EnrollmentDate;
+                        GetLawyer.IsContestedCopy = lawyerVM.IsContestedCopy;
+
+                        ctx.Entry(GetLawyer).State = EntityState.Modified;
+                        await ctx.SaveChangesAsync();
+                    }
                 }
             }
             catch (Exception ex)
@@ -323,13 +323,13 @@ namespace Business.BusinessLogic
             int result = 0;
             try
             {
-                if (expertiesVMs!=null && expertiesVMs.Any())
+                if (expertiesVMs != null && expertiesVMs.Any())
                 {
                     List<LawyerExperties> news = new List<LawyerExperties>();
                     List<LawyerExperties> updates = new List<LawyerExperties>();
                     foreach (var item in expertiesVMs)
                     {
-                        if (item.Id==0)
+                        if (item.Id == 0)
                         {
                             news.Add(new LawyerExperties()
                             {
@@ -340,12 +340,13 @@ namespace Business.BusinessLogic
                         if (item.Id > 0)
                         {
                             var exp = await ctx.LawyerExperties.FindAsync(item.Id);
-                            if (exp != null) {
+                            if (exp != null)
+                            {
                                 exp.UserId = item.UserId;
                                 exp.CategoryId = item.CategoryId;
                                 updates.Add(exp);
+                            }
                         }
-                        }   
                     }
 
                     ctx.UpdateRange(updates);
@@ -385,7 +386,7 @@ namespace Business.BusinessLogic
                         }
                         if (item.QualificationId > 0)
                         {
-                            var exp =await ctx.LawyerQualifications.FindAsync(item.QualificationId);
+                            var exp = await ctx.LawyerQualifications.FindAsync(item.QualificationId);
                             if (exp != null)
                             {
                                 exp.DegreeName = item.DegreeName;
@@ -395,9 +396,9 @@ namespace Business.BusinessLogic
                         }
                     }
 
-                   ctx.UpdateRange(updates);//bulk update
-                  await  ctx.AddRangeAsync(news);//bulk insert
-                  result=  await ctx.SaveChangesAsync();
+                    ctx.UpdateRange(updates);//bulk update
+                    await ctx.AddRangeAsync(news);//bulk insert
+                    result = await ctx.SaveChangesAsync();
                 }
 
             }
@@ -424,13 +425,13 @@ namespace Business.BusinessLogic
                 if (LawyerId > 0)
                 {
                     var d = await ctx.UserProfiles.Where(x => x.UserId == LawyerId && x.RoleId == (int)Roles.Lawyer && !x.IsDeleted).FirstOrDefaultAsync();
-                   
+
                     if (d != null)
                     {
                         string ProfilePic = ctx.UserDocuments.Where(x => x.UserId == LawyerId && !x.IsDeleted).FirstOrDefault()?.DocPath ?? "";
 
                         lawyer.LawyerProfile.UserId = d.UserId;
-                        lawyer.LawyerProfile.ProfileId=d.ProfileId;
+                        lawyer.LawyerProfile.ProfileId = d.ProfileId;
                         lawyer.LawyerProfile.ProfilePic = ProfilePic;
                         lawyer.LawyerProfile.MrTitle = d.MrTitle;
                         lawyer.LawyerProfile.FullName = d.FullName;
@@ -449,15 +450,15 @@ namespace Business.BusinessLogic
 
                     lawyer.LawyerExperties = await ctx.LawyerExperties.Where(x => x.UserId == LawyerId).Select(s => new LawyerExpertiesVM()
                     {
-                        Id=s.Id,
-                        UserId=s.UserId,
-                        CategoryId=s.CategoryId
+                        Id = s.Id,
+                        UserId = s.UserId,
+                        CategoryId = s.CategoryId
                     }).ToListAsync();
 
                     lawyer.LawyerQualifications = await ctx.LawyerQualifications.Where(x => x.UserId == LawyerId).Select(s => new LawyerQualificationVM()
                     {
                         QualificationId = s.Id,
-                        DegreeName=s.DegreeName,
+                        DegreeName = s.DegreeName,
                         InstituteName = s.InstituteName
                     }).ToListAsync();
                 }
@@ -468,6 +469,79 @@ namespace Business.BusinessLogic
             }
 
             return lawyer;
+        }
+
+        public async Task<List<UserProfileVM>> GetAllUser(bool IsPending, int RoleId)
+        {
+            List<UserProfileVM> AllUsers = new List<UserProfileVM>();
+            try
+            {
+                //if (!isAuthenticated) return lawyer;
+                //if (isAuthenticated)
+                //{
+                //    if (LoggedInUserId != LawyerId)
+                //        return lawyer;
+                //}
+
+                AllUsers = await ctx.UserProfiles
+     .Where(x => !x.IsDeleted && (!IsPending || x.IsVerified == false) && (RoleId == 0 || x.RoleId == RoleId))
+    .Select(x => new UserProfileVM
+    {
+        ProfileId = x.ProfileId,
+        RoleId = x.RoleId,
+        UserId = x.UserId,
+        MrTitle = x.MrTitle,
+        FullName = x.FullName,
+        CNICNo = x.CNICNo,
+        Gender = x.Gender,
+        Email = x.Email,
+        ContactNumber = x.ContactNumber,
+        CurrAddress = x.CurrAddress,
+        PermAddress = x.PermAddress,
+        CityId = x.CityId,
+        CountryId = x.CountryId,
+        IsOverseas = x.IsOverseas,
+        IsForeignQualified = x.IsForeignQualified,
+        NICOP = x.NICOP,
+        PassportID = x.PassportID,
+        ResideCountryId = x.ResideCountryId,
+        OverseasContactNo = x.OverseasContactNo,
+        OfficeAddress = x.OfficeAddress,
+        LCourtName = x.LCourtName,
+        LCourtLocation = x.LCourtLocation,
+        LHighCourtName = x.LHighCourtName,
+        LHighCourtLocation = x.LHighCourtLocation,
+        Qualification = x.Qualification,
+        Institute = x.Institute,
+        BarCouncilId = x.BarCouncilId,
+        BarCouncilNo = x.BarCouncilNo,
+        EnrollmentDate = x.EnrollmentDate,
+        TotalExperience = x.TotalExperience,
+        AreasOfExpertise = x.AreasOfExpertise,
+        IsAlert = x.IsAlert,
+        IsSMS = x.IsSMS,
+        IsEmail = x.IsEmail,
+        IsPushAlert = x.IsPushAlert,
+        IsCreateMeeting = x.IsCreateMeeting,
+        IsAgreed = x.IsAgreed,
+        IsActive = x.IsActive,
+        IsVerified = x.IsVerified,
+        Rating = x.Rating,
+        IsFavourite = x.IsFavourite,
+        IsContestedCopy = x.IsContestedCopy,
+        ProfileDescription = x.ProfileDescription,
+        FatherName = x.FatherName
+
+    })
+    .ToListAsync();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return AllUsers;
         }
     }
 }
