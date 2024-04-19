@@ -1,0 +1,218 @@
+2024-04-19T22:02:59.0942711+05:00  [INF] Executed DbCommand ("337"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-19T22:02:59.4372821+05:00  [INF] Executed DbCommand ("312"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-19T22:02:59.7296666+05:00  [INF] Executed DbCommand ("288"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-19T22:03:00.0299008+05:00  [INF] Executed DbCommand ("295"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-19T22:03:00.3496754+05:00  [INF] Executed DbCommand ("297"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-04-19T22:03:00.3958811+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-04-19T22:03:01.2425419+05:00  [INF] Executed DbCommand ("407"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-04-19T22:03:01.9378836+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-19T22:03:01.9419842+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-19T22:03:01.9459518+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-04-19T22:03:41.0024612+05:00 40000048-0004-fa00-b63f-84710c7967bb [ERR] Object reference not set to an instance of an object. (f59a5554)
+2024-04-19T22:04:59.0690685+05:00 40000017-0002-f600-b63f-84710c7967bb [INF] Executed DbCommand ("297"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-19T22:04:59.2946596+05:00 40000017-0002-f600-b63f-84710c7967bb [ERR] Object reference not set to an instance of an object. (f59a5554)
+2024-04-19T22:05:42.0754584+05:00 40000019-0002-f600-b63f-84710c7967bb [INF] Executed DbCommand ("310"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-19T22:05:49.5750181+05:00 40000019-0002-f600-b63f-84710c7967bb [ERR] Object reference not set to an instance of an object. (f59a5554)
+2024-04-19T22:06:17.0413730+05:00 4000001b-0002-f600-b63f-84710c7967bb [INF] Executed DbCommand ("295"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-19T22:06:37.4848063+05:00 4000001b-0002-f600-b63f-84710c7967bb [ERR] Object reference not set to an instance of an object. (f59a5554)
+2024-04-19T22:09:11.2179297+05:00 400000af-0004-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("382"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-19T22:09:15.3027945+05:00 400000af-0004-fe00-b63f-84710c7967bb [ERR] Object reference not set to an instance of an object. (f59a5554)
+2024-04-19T22:09:57.3217508+05:00 40000092-0001-fc00-b63f-84710c7967bb [ERR] Object reference not set to an instance of an object. (f59a5554)
+2024-04-19T22:10:07.3724219+05:00 400000b1-0004-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("375"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-19T22:10:57.6012033+05:00 400000b1-0004-fe00-b63f-84710c7967bb [ERR] Object reference not set to an instance of an object. (f59a5554)
+2024-04-19T22:11:05.8925506+05:00 400000b3-0004-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("317"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-19T22:11:11.5349429+05:00 400000b3-0004-fe00-b63f-84710c7967bb [ERR] Object reference not set to an instance of an object. (f59a5554)
+2024-04-19T22:11:36.2259226+05:00 400000b5-0004-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("292"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-19T22:12:17.9431261+05:00 400000b5-0004-fe00-b63f-84710c7967bb [ERR] Object reference not set to an instance of an object. (f59a5554)
+2024-04-19T22:12:47.1778664+05:00 400000b5-0004-fe00-b63f-84710c7967bb [ERR] The instance of entity type 'Message' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values. (00c29418)
+2024-04-19T22:12:58.8912489+05:00 4000001b-0006-f500-b63f-84710c7967bb [INF] Executed DbCommand ("301"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-19T22:14:02.0120212+05:00 4000001b-0006-f500-b63f-84710c7967bb [ERR] Object reference not set to an instance of an object. (f59a5554)
+2024-04-19T22:14:15.4830142+05:00 40000043-0000-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("296"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-19T22:19:43.0262604+05:00 40000043-0000-fb00-b63f-84710c7967bb [ERR] Object reference not set to an instance of an object. (f59a5554)
+2024-04-19T22:19:52.4319936+05:00 40000012-0006-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("305"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-19T22:20:03.5549019+05:00 40000012-0006-fe00-b63f-84710c7967bb [ERR] Object reference not set to an instance of an object. (f59a5554)
+2024-04-19T22:20:10.7212901+05:00 40000026-0005-f200-b63f-84710c7967bb [INF] Executed DbCommand ("288"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-19T22:25:28.8442319+05:00  [INF] Executed DbCommand ("330"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-19T22:25:29.2386943+05:00  [INF] Executed DbCommand ("332"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-19T22:25:29.5401627+05:00  [INF] Executed DbCommand ("297"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-19T22:25:29.8327763+05:00  [INF] Executed DbCommand ("290"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-19T22:25:30.1468530+05:00  [INF] Executed DbCommand ("290"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-04-19T22:25:30.1803721+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-04-19T22:25:30.8016252+05:00  [INF] Executed DbCommand ("319"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-04-19T22:25:31.0804155+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-19T22:25:31.0837252+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-19T22:25:31.0863741+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-04-19T22:26:04.0513033+05:00 40000024-0002-f500-b63f-84710c7967bb [INF] Executed DbCommand ("295"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-19T22:26:30.4978762+05:00 40000024-0002-f500-b63f-84710c7967bb [ERR] Object reference not set to an instance of an object. (f59a5554)
+2024-04-19T22:26:59.5917000+05:00 400000b9-0004-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("306"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-19T22:28:05.4975260+05:00 400000b9-0004-fe00-b63f-84710c7967bb [ERR] Object reference not set to an instance of an object. (f59a5554)
+2024-04-19T22:28:12.8524868+05:00 40000035-0007-f400-b63f-84710c7967bb [INF] Executed DbCommand ("339"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-19T22:28:52.3510619+05:00  [INF] Executed DbCommand ("370"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-19T22:28:52.7708376+05:00  [INF] Executed DbCommand ("377"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-19T22:28:53.1158084+05:00  [INF] Executed DbCommand ("333"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-19T22:28:53.4424985+05:00  [INF] Executed DbCommand ("322"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-19T22:28:53.7954705+05:00  [INF] Executed DbCommand ("326"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-04-19T22:28:53.8198568+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-04-19T22:28:54.5107511+05:00  [INF] Executed DbCommand ("348"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-04-19T22:28:54.7531566+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-19T22:28:54.7558543+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-19T22:28:54.7578523+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-04-19T22:30:37.4225593+05:00 4000001c-0004-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("295"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2024-04-19T22:30:37.8986367+05:00 4000001c-0004-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("295"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0" (0723d8ff)
+2024-04-19T22:31:11.6075248+05:00 40000017-0000-e900-b63f-84710c7967bb [INF] Executed DbCommand ("305"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-19T22:34:31.4665669+05:00 40000051-0004-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("317"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-19T23:09:09.1453508+05:00  [INF] Executed DbCommand ("423"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-19T23:09:09.6395736+05:00  [INF] Executed DbCommand ("380"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-19T23:09:09.9442931+05:00  [INF] Executed DbCommand ("292"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-19T23:09:10.2565146+05:00  [INF] Executed DbCommand ("298"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-19T23:09:10.6048233+05:00  [INF] Executed DbCommand ("297"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-04-19T23:09:10.6677464+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-04-19T23:09:11.7035833+05:00  [INF] Executed DbCommand ("425"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-04-19T23:09:12.3273925+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-19T23:09:12.3338900+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-19T23:09:12.3388635+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-04-19T23:10:35.0012847+05:00 40000096-0001-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("297"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2024-04-19T23:10:35.6485373+05:00 40000096-0001-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("320"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0" (0723d8ff)
+2024-04-19T23:10:59.4269744+05:00 4000004b-0003-f100-b63f-84710c7967bb [INF] Executed DbCommand ("310"ms) [Parameters=["@__citizenId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[UserName], [a].[FirstName] + N' ' + [a].[LastName] AS [FullName], CAST([a].[Id] AS bigint) AS [Id], [a].[Email]
+FROM [AspNetUsers] AS [a]
+INNER JOIN [CourtCases] AS [c] ON CAST([a].[Id] AS bigint) = [c].[CitizenId]
+WHERE [a].[IsDeleted] = CAST(1 AS bit) AND [c].[IsDeleted] = CAST(0 AS bit) AND CAST([a].[Id] AS bigint) = @__citizenId_0
+UNION
+SELECT [a0].[UserName], [a0].[FirstName] + N' ' + [a0].[LastName] AS [FullName], CAST([a0].[Id] AS bigint) AS [Id], [a0].[Email]
+FROM [AspNetUsers] AS [a0]
+WHERE [a0].[IsDeleted] = CAST(0 AS bit) AND [a0].[UserName] = N'cservice'" (0723d8ff)

@@ -12,6 +12,7 @@ namespace Business.Services
     {
         public Task<MessageVm> Create(MessageVm message);
         public Task<List<MessageVm>> GetPrivateChat(MessageVm userDetails);
+        public Task<List<ChatHistoryVM>> GetChatHistory(long FromId, long ToId);
 
         public Task<List<MessageVm>> GetUnReadMessages(long userId);
         public Task MarkRead(List<MessageVm> messages);

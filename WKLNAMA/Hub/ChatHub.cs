@@ -65,7 +65,20 @@ namespace WKLNAMA.AppHub
         }
         public async Task DirectMessage(MessageVm message)
         {
-            await Clients.User(message.ToUserId.ToString()).DirectMessage(message);
+            try
+            {
+                if (Clients != null && message != null && message.ToUserId != null)
+                {
+                    await Clients?.User(message.ToUserId.ToString()).DirectMessage(message)!;
+                  
+                }
+            }
+            catch (Exception ex)
+            {
+
+                //throw ex;
+            }
+            
         }
         public async Task UnReadMessage(List<MessageVm> messages, int count, string toWhom)
         {
