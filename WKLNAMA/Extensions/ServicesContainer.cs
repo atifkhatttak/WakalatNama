@@ -72,6 +72,7 @@ namespace WKLNAMA.Extensions
             services.AddScoped<IMessageRepository, MessageRepository>();
             services.AddScoped<ITokenService, TokenService.TokenService>();
             services.AddScoped<IEmailService, EmailService>();
+            services.AddScoped<IDocumentServiceV2, DocumentService>();
 
             services.AddSingleton<IDBInitializer, DBInitializer>();
             builder.Services.AddSingleton< IHttpContextAccessor,HttpContextAccessor>();

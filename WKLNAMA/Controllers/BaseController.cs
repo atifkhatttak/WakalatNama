@@ -27,7 +27,7 @@ namespace WKLNAMA.Controllers
 
         public UserIdentityModelVm UserModel => new UserIdentityModelVm()
                 {
-                    UserId = Convert.ToInt64(string.IsNullOrEmpty(User.FindFirst("UserId").Value) ? 0 : User.FindFirst("UserId").Value),
+                    UserId = User.Identity.IsAuthenticated ? Convert.ToInt64(User.FindFirst("UserId")!.Value) : 0,
                     FirstName = User.FindFirstValue("FirstName")!,
                     LastName = User.FindFirstValue("LastName")!,
                     Role = User.FindFirstValue("http://schemas.microsoft.com/ws/2008/06/identity/claims/role")!,

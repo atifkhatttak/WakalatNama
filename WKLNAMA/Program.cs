@@ -1,16 +1,5 @@
 using Business.Helpers;
-using Business.Services;
-using Data.Context;
-using Data.DomainModels;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.SignalR;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerUI;
-using System;
-using System.Text;
 using WKLNAMA.AppHub;
 using WKLNAMA.Extensions;
 using WKLNAMA.HostedServices;

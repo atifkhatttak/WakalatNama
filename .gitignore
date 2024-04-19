@@ -87,3 +87,4 @@
 /WKLNAMA/.config/dotnet-tools.json
 /WKLNAMA/WKLNAMA.csproj.user
 /Business/BusinessLogic/DocumentServiceRepository.cs
+/WKLNAMA/bin/Debug/net8.0
