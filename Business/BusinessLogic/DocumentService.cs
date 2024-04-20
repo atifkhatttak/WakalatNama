@@ -1,4 +1,5 @@
-﻿using Business.Enums;
+﻿using Azure.Core;
+using Business.Enums;
 using Business.Services;
 using Microsoft.AspNetCore.Http;
 using System;
@@ -12,13 +13,19 @@ namespace Business.BusinessLogic
 {
     public class DocumentService : IDocumentServiceV2
     {
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        public DocumentService(IHttpContextAccessor httpContextAccessor)
+        {
+            _httpContextAccessor = httpContextAccessor;
+        }
         public async Task<byte[]> Download(string filePath)
         {
             return  await System.IO.File.ReadAllBytesAsync(filePath);
         }
         public async Task <string> UploadDocument(IFormFile file,string eDocumentType)
         {
-
+            //var request = _httpContextAccessor.HttpContext.Request;
+            //string baseUrl = $"{request.Scheme}://{request.Host}";
             var appRoot = Directory.GetCurrentDirectory();
             appRoot = $@"{appRoot}\Uploads\{eDocumentType}";
 
@@ -37,7 +44,10 @@ namespace Business.BusinessLogic
               await  file.CopyToAsync(stream);
             }
 
-            return fileNameWithPath; 
+            string fileUrl = "https://wakalatnaama.somee.com/Uploads/" + eDocumentType + "/" + fileName;
+
+            return fileUrl; 
+            //return fileNameWithPath;
         }
         public List<string> GetAllFiles(string folderName)
         {

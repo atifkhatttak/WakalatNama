@@ -4,6 +4,7 @@ using Google.Apis.Drive.v3.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.SignalR;
 using SignalRSwaggerGen.Attributes;
+using System;
 using WKLNAMA.Controllers;
 
 namespace WKLNAMA.AppHub
@@ -16,11 +17,13 @@ namespace WKLNAMA.AppHub
         private   IMessageRepository _messageService;
         private  readonly IServiceProvider _serviceProvider;
         private readonly ILogger<Hub<IChatHub>> _logger;
+        private readonly IHubContext<ChatHub, IChatHub> _context;
 
-        public ChatHub(IServiceProvider serviceProvider, ILogger<Hub<IChatHub>> logger)
+        public ChatHub(IServiceProvider serviceProvider, ILogger<Hub<IChatHub>> logger, IHubContext<ChatHub, IChatHub> context)
         {
             _serviceProvider = serviceProvider;
             _logger = logger;
+            _context = context;
         }
         public override async Task  OnConnectedAsync()
         {
@@ -29,9 +32,22 @@ namespace WKLNAMA.AppHub
                 var C = Context.ConnectionId;
                 _logger.LogError("Connection Created connection id:" + C);
 
-                await PushDataOnConnectionEstablished();
+                //await PushDataOnConnectionEstablished();
 
                 await base.OnConnectedAsync();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Exception in OnConnectedAsync:" + ex.Message);
+
+                throw ex;
+            }
+        }
+        public async Task SendMessage(string id,string m)
+        {
+            try
+            {
+                await _context.Clients?.User(id).DirectMessage(m)!;
             }
             catch (Exception ex)
             {
@@ -83,13 +99,13 @@ namespace WKLNAMA.AppHub
             {
                 if (Clients != null && message != null && message.ToUserId != null)
                 {
-                    await Clients?.User(message.ToUserId.ToString()).DirectMessage(message)!;
+                    await _context.Clients?.User(message.ToUserId.ToString()).DirectMessage(message)!;
                   
                 }
             }
             catch (Exception ex)
             {
-
+                _logger.LogError("DirectMessage Exception :" + ex.Message);
                 //throw ex;
             }
             

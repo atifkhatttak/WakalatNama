@@ -8,7 +8,7 @@ namespace Business.ViewModels
 {
     public class UserIdentityModelVm
     {
-        public long UserId { get; set; }
+        public long UserId { get; set; } = -1;
         public string UserName { get; set; } = null!;
         public string Email { get; set; } = null!;
         public string FirstName { get; set; } = null!;

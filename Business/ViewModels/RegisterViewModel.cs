@@ -12,7 +12,7 @@ namespace Business.ViewModels
 {
     public class RegisterViewModel
     {
-        public int UserId { get; set; }
+        public long UserId { get; set; }
         [Required(ErrorMessage = "First Name is required")]
         [StringLength(100, MinimumLength = 1, ErrorMessage = "FirstName must be between 1 and 100 characters")]
         public string FirstName { get; set; }        
@@ -46,7 +46,7 @@ namespace Business.ViewModels
         [RegularExpression(@"^\+?(\d[\d-. ]+)?(\([\d-. ]+\))?[\d-. ]+\d$", ErrorMessage = "Invalid phone number")]
         public string PhoneNumber { get; set; }
         //public string Address { get; set; }
-        //public string City { get; set; }
+        public int CityId { get; set; } = -1;
         //public string State { get; set; }
         //public string PostalCode { get; set; }
         //public string Country { get; set; }

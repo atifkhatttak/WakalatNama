@@ -83,6 +83,7 @@ namespace Business.BusinessLogic
                             Email=insertedUser.Email??"",
                             ContactNumber=insertedUser.PhoneNumber??"",
                             IsOverseas=registerViewModel.IsOverseas,
+                            CityId=registerViewModel.CityId,
 
                             IsActive=true,
                             IsAgreed=true,

@@ -270,6 +270,7 @@ namespace Business.BusinessLogic
                         citizenVM.ContactNumber = d.ContactNumber;
                         citizenVM.CurrAddress = d.CurrAddress;
                         citizenVM.PermAddress = d.PermAddress;
+                        citizenVM.CityId=d.CityId;
                     }
                 }
             }

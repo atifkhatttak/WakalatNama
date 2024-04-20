@@ -1,0 +1,862 @@
+2024-04-21T00:00:12.1134451+05:00  [INF] Executed DbCommand ("401"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T00:00:12.5571986+05:00  [INF] Executed DbCommand ("350"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T00:00:12.8572593+05:00  [INF] Executed DbCommand ("290"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T00:00:13.1530498+05:00  [INF] Executed DbCommand ("290"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T00:00:13.4996315+05:00  [INF] Executed DbCommand ("297"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-04-21T00:00:13.5658056+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-04-21T00:00:14.6414643+05:00  [INF] Executed DbCommand ("454"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-04-21T00:00:15.1982194+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-21T00:00:15.2032768+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-21T00:00:15.2074811+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-04-21T00:27:32.1382628+05:00  [INF] Executed DbCommand ("370"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T00:27:32.6942170+05:00  [INF] Executed DbCommand ("465"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T00:27:33.0765594+05:00  [INF] Executed DbCommand ("371"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T00:27:33.3685805+05:00  [INF] Executed DbCommand ("287"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T00:27:33.6890191+05:00  [INF] Executed DbCommand ("288"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-04-21T00:27:33.7367637+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-04-21T00:27:34.6130963+05:00  [INF] Executed DbCommand ("341"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-04-21T00:27:35.0284577+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-21T00:27:35.0328003+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-21T00:27:35.0354028+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-04-21T00:48:06.4062582+05:00  [INF] Executed DbCommand ("376"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T00:48:06.8359677+05:00  [INF] Executed DbCommand ("349"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T00:48:07.1389605+05:00  [INF] Executed DbCommand ("288"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T00:48:07.4384437+05:00  [INF] Executed DbCommand ("290"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T00:48:07.8998457+05:00  [INF] Executed DbCommand ("362"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-04-21T00:48:07.9607490+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-04-21T00:48:09.0618422+05:00  [INF] Executed DbCommand ("411"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-04-21T00:48:09.3728198+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-21T00:48:09.3757098+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-21T00:48:09.3783024+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-04-21T01:05:05.0968752+05:00  [INF] Executed DbCommand ("359"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T01:05:05.5238746+05:00  [INF] Executed DbCommand ("334"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T01:05:05.9088382+05:00  [INF] Executed DbCommand ("370"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T01:05:06.1996135+05:00  [INF] Executed DbCommand ("285"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T01:05:06.5362920+05:00  [INF] Executed DbCommand ("290"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-04-21T01:05:06.5828644+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-04-21T01:05:07.5311449+05:00  [INF] Executed DbCommand ("324"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-04-21T01:05:08.0627564+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-21T01:05:08.0689635+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-21T01:05:08.0737240+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-04-21T01:14:54.9039755+05:00  [INF] Executed DbCommand ("418"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T01:14:55.3529658+05:00  [INF] Executed DbCommand ("359"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T01:14:55.6515750+05:00  [INF] Executed DbCommand ("289"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T01:14:55.9499818+05:00  [INF] Executed DbCommand ("290"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T01:14:56.3003229+05:00  [INF] Executed DbCommand ("293"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-04-21T01:14:56.3664653+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-04-21T01:14:57.3860739+05:00  [INF] Executed DbCommand ("414"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-04-21T01:14:57.8923318+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-21T01:14:57.8982730+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-21T01:14:57.9028361+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-04-21T02:07:57.6288442+05:00  [INF] Executed DbCommand ("319"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T02:07:57.9801426+05:00  [INF] Executed DbCommand ("309"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T02:07:58.2729493+05:00  [INF] Executed DbCommand ("287"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T02:07:58.5654405+05:00  [INF] Executed DbCommand ("289"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T02:07:58.8781040+05:00  [INF] Executed DbCommand ("295"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-04-21T02:07:58.9030085+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-04-21T02:07:59.6112741+05:00  [INF] Executed DbCommand ("364"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-04-21T02:08:00.1766856+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-21T02:08:00.1798880+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-21T02:08:00.1825148+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-04-21T02:08:51.9187930+05:00 4000001d-0004-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("288"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-21T02:10:48.5636477+05:00 40000008-0000-fb00-b63f-84710c7967bb [ERR] Connection Created connection id:QB3nXG7u5mu7ixHD06uoFQ (f72270aa)
+2024-04-21T02:11:19.7460706+05:00 40000008-0000-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("286"ms) [Parameters=["@__UserId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Content], [n].[Id], [n].[IsRead], [n].[FromUserId], [n].[ToUserId], [n].[NotificationType], [n].[CreatedDate]
+FROM [Notifications] AS [n]
+WHERE [n].[ToUserId] = @__UserId_0" (0723d8ff)
+2024-04-21T02:11:20.8006302+05:00 40000008-0000-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("292"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [m].[Id], [m].[FromUserId], [m].[ToUserId], [m].[Content], [m].[ParentId], [m].[IsRead]
+FROM [Messages] AS [m]
+WHERE [m].[ToUserId] = @__userId_0 AND [m].[IsRead] = CAST(0 AS bit)" (0723d8ff)
+2024-04-21T02:11:21.6811574+05:00 40000008-0000-fb00-b63f-84710c7967bb [ERR] Exception in OnConnectedAsync:Object reference not set to an instance of an object. (7dce379e)
+2024-04-21T02:11:21.8286601+05:00 40000008-0000-fb00-b63f-84710c7967bb [ERR] Error when dispatching '"OnConnectedAsync"' on hub. (9ac2dd74)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnConnectedAsync() in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 40
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnConnectedAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnConnectedAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+2024-04-21T02:13:15.3121573+05:00 40000002-0000-f700-b63f-84710c7967bb [INF] Executed DbCommand ("287"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2024-04-21T02:13:15.8056854+05:00 40000002-0000-f700-b63f-84710c7967bb [INF] Executed DbCommand ("307"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0" (0723d8ff)
+2024-04-21T02:13:52.6014853+05:00 40000019-0004-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("288"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-21T02:18:00.9861677+05:00  [INF] Executed DbCommand ("323"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T02:18:01.3305988+05:00  [INF] Executed DbCommand ("309"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T02:18:01.6338245+05:00  [INF] Executed DbCommand ("299"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T02:18:01.9368382+05:00  [INF] Executed DbCommand ("299"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T02:18:02.2465084+05:00  [INF] Executed DbCommand ("295"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-04-21T02:18:02.2710272+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-04-21T02:18:02.8244176+05:00  [INF] Executed DbCommand ("311"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-04-21T02:18:03.0863835+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-21T02:18:03.0895452+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-21T02:18:03.0921189+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-04-21T02:18:54.8635249+05:00 4000000e-0002-fd00-b63f-84710c7967bb [ERR] Connection Created connection id:34lXrqV6Mp4jKbIeANowxQ (e9fb1c8e)
+2024-04-21T02:19:04.7170663+05:00 4000001d-0004-fc00-b63f-84710c7967bb [ERR] Connection Created connection id:TZgYLhlcGm3gvc71wCZ-dg (d1a08448)
+2024-04-21T02:19:04.7406071+05:00 4000000e-0002-fd00-b63f-84710c7967bb [ERR] Error when dispatching '"OnDisconnectedAsync"' on hub. (9ac2dd74)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 66
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+2024-04-21T02:19:04.7509170+05:00 4000000e-0002-fd00-b63f-84710c7967bb [ERR] Failed disposing connection "34lXrqV6Mp4jKbIeANowxQ". (98b86553)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 66
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.ExecuteApplication(ConnectionDelegate connectionDelegate)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.WaitOnTasks(Task applicationTask, Task transportTask, Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.DisposeAsync(Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionManager.DisposeAndRemoveAsync(HttpConnectionContext connection, Boolean closeGracefully, HttpConnectionStopStatus status)
+2024-04-21T02:21:07.4621227+05:00 4000001d-0004-fc00-b63f-84710c7967bb [ERR] Error when dispatching '"OnDisconnectedAsync"' on hub. (9ac2dd74)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 66
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+2024-04-21T02:21:07.4714990+05:00 4000001d-0004-fc00-b63f-84710c7967bb [ERR] Failed disposing connection "TZgYLhlcGm3gvc71wCZ-dg". (98b86553)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 66
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.ExecuteApplication(ConnectionDelegate connectionDelegate)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.WaitOnTasks(Task applicationTask, Task transportTask, Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.DisposeAsync(Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionManager.DisposeAndRemoveAsync(HttpConnectionContext connection, Boolean closeGracefully, HttpConnectionStopStatus status)
+2024-04-21T02:50:57.3278482+05:00  [INF] Executed DbCommand ("319"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T02:50:57.6767072+05:00  [INF] Executed DbCommand ("309"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T02:50:57.9723623+05:00  [INF] Executed DbCommand ("291"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T02:50:58.2631822+05:00  [INF] Executed DbCommand ("288"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T02:50:58.5692957+05:00  [INF] Executed DbCommand ("289"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-04-21T02:50:58.5916617+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-04-21T02:50:59.1461546+05:00  [INF] Executed DbCommand ("313"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-04-21T02:50:59.3873709+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-21T02:50:59.3900768+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-21T02:50:59.3919081+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-04-21T02:54:15.9459946+05:00 40000010-0003-fe00-b63f-84710c7967bb [ERR] Connection Created connection id:e-i7-jCM4f-RMEV96S4tAA (9b2a311b)
+2024-04-21T02:54:20.6602209+05:00 40000010-0003-fe00-b63f-84710c7967bb [ERR] Error when dispatching '"OnDisconnectedAsync"' on hub. (9ac2dd74)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 79
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+2024-04-21T02:54:20.6688235+05:00 40000010-0003-fe00-b63f-84710c7967bb [ERR] Failed disposing connection "e-i7-jCM4f-RMEV96S4tAA". (98b86553)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 79
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.ExecuteApplication(ConnectionDelegate connectionDelegate)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.WaitOnTasks(Task applicationTask, Task transportTask, Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.DisposeAsync(Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionManager.DisposeAndRemoveAsync(HttpConnectionContext connection, Boolean closeGracefully, HttpConnectionStopStatus status)
+2024-04-21T02:54:20.8670906+05:00 40000008-0000-f700-b63f-84710c7967bb [ERR] Connection Created connection id:DGgJUm1_CJcEr_yxbWGcNA (f7118da7)
+2024-04-21T02:54:37.7560466+05:00 40000008-0000-f700-b63f-84710c7967bb [ERR] Error when dispatching '"OnDisconnectedAsync"' on hub. (9ac2dd74)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 79
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+2024-04-21T02:54:37.7629718+05:00 40000008-0000-f700-b63f-84710c7967bb [ERR] Failed disposing connection "DGgJUm1_CJcEr_yxbWGcNA". (98b86553)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 79
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.ExecuteApplication(ConnectionDelegate connectionDelegate)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.WaitOnTasks(Task applicationTask, Task transportTask, Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.DisposeAsync(Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionManager.DisposeAndRemoveAsync(HttpConnectionContext connection, Boolean closeGracefully, HttpConnectionStopStatus status)
+2024-04-21T02:54:49.0632971+05:00 4000000a-0000-f700-b63f-84710c7967bb [ERR] Connection Created connection id:UH8-8gi8B1qRnvjn-Y87UA (204adf85)
+2024-04-21T02:55:50.1454803+05:00 4000000a-0000-f700-b63f-84710c7967bb [ERR] Error when dispatching '"OnDisconnectedAsync"' on hub. (9ac2dd74)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 79
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+2024-04-21T02:55:50.1545109+05:00 4000000a-0000-f700-b63f-84710c7967bb [ERR] Failed disposing connection "UH8-8gi8B1qRnvjn-Y87UA". (98b86553)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 79
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.ExecuteApplication(ConnectionDelegate connectionDelegate)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.WaitOnTasks(Task applicationTask, Task transportTask, Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.DisposeAsync(Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionManager.DisposeAndRemoveAsync(HttpConnectionContext connection, Boolean closeGracefully, HttpConnectionStopStatus status)
+2024-04-21T02:56:00.3918786+05:00 40000017-0001-fc00-b63f-84710c7967bb [ERR] Connection Created connection id:UWXsJ9_h-O_lakA80qP9Eg (78e8e07a)
+2024-04-21T02:57:45.6863892+05:00 40000017-0001-fc00-b63f-84710c7967bb [ERR] Error when dispatching '"OnDisconnectedAsync"' on hub. (9ac2dd74)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 79
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+2024-04-21T02:57:45.6931702+05:00 40000017-0001-fc00-b63f-84710c7967bb [ERR] Failed disposing connection "UWXsJ9_h-O_lakA80qP9Eg". (98b86553)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 79
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.ExecuteApplication(ConnectionDelegate connectionDelegate)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.WaitOnTasks(Task applicationTask, Task transportTask, Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.DisposeAsync(Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionManager.DisposeAndRemoveAsync(HttpConnectionContext connection, Boolean closeGracefully, HttpConnectionStopStatus status)
+2024-04-21T02:59:00.5204768+05:00 4000000e-0005-ff00-b63f-84710c7967bb [ERR] Connection Created connection id:tFFE0M_W-a4Q_jUAPMEJTA (e8eac88f)
+2024-04-21T02:59:00.5674776+05:00 4000000e-0005-ff00-b63f-84710c7967bb [ERR] Error when dispatching '"OnDisconnectedAsync"' on hub. (9ac2dd74)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 79
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+2024-04-21T02:59:00.5769056+05:00 40000019-0001-fc00-b63f-84710c7967bb [ERR] Connection Created connection id:FjeaaVQ7E8CjNitj-Jpu4Q (9b868352)
+2024-04-21T02:59:00.5850608+05:00 4000000e-0005-ff00-b63f-84710c7967bb [ERR] Failed disposing connection "tFFE0M_W-a4Q_jUAPMEJTA". (98b86553)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 79
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.ExecuteApplication(ConnectionDelegate connectionDelegate)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.WaitOnTasks(Task applicationTask, Task transportTask, Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.DisposeAsync(Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionManager.DisposeAndRemoveAsync(HttpConnectionContext connection, Boolean closeGracefully, HttpConnectionStopStatus status)
+2024-04-21T03:00:59.3527543+05:00 4000001e-0002-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("290"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-21T03:01:33.6887669+05:00  [INF] Executed DbCommand ("319"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T03:01:34.0361080+05:00  [INF] Executed DbCommand ("310"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T03:01:34.3306768+05:00  [INF] Executed DbCommand ("290"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T03:01:34.6198423+05:00  [INF] Executed DbCommand ("286"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T03:01:36.8460610+05:00  [INF] Executed DbCommand ("2,210"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-04-21T03:01:36.8674746+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-04-21T03:01:37.4388511+05:00  [INF] Executed DbCommand ("333"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-04-21T03:01:37.6760965+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-21T03:01:37.6786077+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-21T03:01:37.6806122+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-04-21T03:06:22.0665064+05:00 40000004-0001-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("830"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-21T03:06:45.7530097+05:00 40000004-0001-fb00-b63f-84710c7967bb [ERR] DirectMessage Exception :Object reference not set to an instance of an object. (e835d31e)
+2024-04-21T03:07:00.8712457+05:00 40000002-0007-fc00-b63f-84710c7967bb [ERR] Connection Created connection id:QrH-2s3pLB7OKQmUw02Row (a0eae3f5)
+2024-04-21T03:07:12.3886648+05:00 40000002-0007-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("293"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-21T03:07:19.4025504+05:00 40000002-0007-fb00-b63f-84710c7967bb [ERR] DirectMessage Exception :Object reference not set to an instance of an object. (e835d31e)
+2024-04-21T03:07:33.4942712+05:00 40000002-0007-fc00-b63f-84710c7967bb [ERR] Error when dispatching '"OnDisconnectedAsync"' on hub. (9ac2dd74)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 79
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+2024-04-21T03:07:33.5098186+05:00 40000002-0007-fc00-b63f-84710c7967bb [ERR] Failed disposing connection "QrH-2s3pLB7OKQmUw02Row". (98b86553)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 79
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.ExecuteApplication(ConnectionDelegate connectionDelegate)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.WaitOnTasks(Task applicationTask, Task transportTask, Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.DisposeAsync(Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionManager.DisposeAndRemoveAsync(HttpConnectionContext connection, Boolean closeGracefully, HttpConnectionStopStatus status)
+2024-04-21T03:07:35.7187150+05:00 4000001d-0001-fc00-b63f-84710c7967bb [ERR] Connection Created connection id:44FaBrROVO2IIa4M6uXfkA (75f6256d)
+2024-04-21T03:08:20.2650738+05:00 4000001d-0001-fc00-b63f-84710c7967bb [ERR] Exception in OnConnectedAsync:Object reference not set to an instance of an object. (7dce379e)
+2024-04-21T03:08:20.2924362+05:00 4000001d-0001-fc00-b63f-84710c7967bb [ERR] Failed to invoke hub method '"SendMessage"'. (4d9c50da)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.SendMessage(String id, String m) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 54
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.ExecuteMethod(ObjectMethodExecutor methodExecutor, Hub hub, Object[] arguments)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.<Invoke>g__ExecuteInvocation|18_0(DefaultHubDispatcher`1 dispatcher, ObjectMethodExecutor methodExecutor, THub hub, Object[] arguments, AsyncServiceScope scope, IHubActivator`1 hubActivator, HubConnectionContext connection, HubMethodInvocationMessage hubMethodInvocationMessage, Boolean isStreamCall)
+2024-04-21T03:08:32.4833169+05:00 4000001d-0001-fc00-b63f-84710c7967bb [ERR] Exception in OnConnectedAsync:Object reference not set to an instance of an object. (7dce379e)
+2024-04-21T03:08:32.5088644+05:00 4000001d-0001-fc00-b63f-84710c7967bb [ERR] Failed to invoke hub method '"SendMessage"'. (4d9c50da)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.SendMessage(String id, String m) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 54
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.ExecuteMethod(ObjectMethodExecutor methodExecutor, Hub hub, Object[] arguments)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.<Invoke>g__ExecuteInvocation|18_0(DefaultHubDispatcher`1 dispatcher, ObjectMethodExecutor methodExecutor, THub hub, Object[] arguments, AsyncServiceScope scope, IHubActivator`1 hubActivator, HubConnectionContext connection, HubMethodInvocationMessage hubMethodInvocationMessage, Boolean isStreamCall)
+2024-04-21T03:08:39.1404533+05:00 4000001d-0001-fc00-b63f-84710c7967bb [ERR] Error when dispatching '"OnDisconnectedAsync"' on hub. (9ac2dd74)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 79
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+2024-04-21T03:08:39.1482290+05:00 4000001d-0001-fc00-b63f-84710c7967bb [ERR] Failed disposing connection "44FaBrROVO2IIa4M6uXfkA". (98b86553)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 79
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.ExecuteApplication(ConnectionDelegate connectionDelegate)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.WaitOnTasks(Task applicationTask, Task transportTask, Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.DisposeAsync(Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionManager.DisposeAndRemoveAsync(HttpConnectionContext connection, Boolean closeGracefully, HttpConnectionStopStatus status)
+2024-04-21T03:08:49.3115668+05:00 40000008-0007-fc00-b63f-84710c7967bb [ERR] Connection Created connection id:Ytlk8_rRTK84KhUz4EDM0g (568ee63e)
+2024-04-21T03:09:30.6389684+05:00 40000008-0007-fc00-b63f-84710c7967bb [ERR] Exception in OnConnectedAsync:Object reference not set to an instance of an object. (7dce379e)
+2024-04-21T03:09:30.6788875+05:00 40000008-0007-fc00-b63f-84710c7967bb [ERR] Failed to invoke hub method '"SendMessage"'. (4d9c50da)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.SendMessage(String id, String m)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.ExecuteMethod(ObjectMethodExecutor methodExecutor, Hub hub, Object[] arguments)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.<Invoke>g__ExecuteInvocation|18_0(DefaultHubDispatcher`1 dispatcher, ObjectMethodExecutor methodExecutor, THub hub, Object[] arguments, AsyncServiceScope scope, IHubActivator`1 hubActivator, HubConnectionContext connection, HubMethodInvocationMessage hubMethodInvocationMessage, Boolean isStreamCall)
+2024-04-21T03:09:30.7167332+05:00 40000008-0007-fc00-b63f-84710c7967bb [ERR] Error when dispatching '"OnDisconnectedAsync"' on hub. (9ac2dd74)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+2024-04-21T03:09:30.7234711+05:00 40000008-0007-fc00-b63f-84710c7967bb [ERR] Failed disposing connection "Ytlk8_rRTK84KhUz4EDM0g". (98b86553)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.ExecuteApplication(ConnectionDelegate connectionDelegate)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.WaitOnTasks(Task applicationTask, Task transportTask, Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.DisposeAsync(Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionManager.DisposeAndRemoveAsync(HttpConnectionContext connection, Boolean closeGracefully, HttpConnectionStopStatus status)
+2024-04-21T03:10:10.9454914+05:00 4000001f-0006-ff00-b63f-84710c7967bb [ERR] Connection Created connection id:0UQvSe8fNEROOvCw74f0cw (568f90c3)
+2024-04-21T03:10:29.1858823+05:00 4000001f-0006-ff00-b63f-84710c7967bb [ERR] Exception in OnConnectedAsync:Object reference not set to an instance of an object. (7dce379e)
+2024-04-21T03:10:29.2111803+05:00 4000001f-0006-ff00-b63f-84710c7967bb [ERR] Failed to invoke hub method '"SendMessage"'. (4d9c50da)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.SendMessage(String id, String m)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.ExecuteMethod(ObjectMethodExecutor methodExecutor, Hub hub, Object[] arguments)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.<Invoke>g__ExecuteInvocation|18_0(DefaultHubDispatcher`1 dispatcher, ObjectMethodExecutor methodExecutor, THub hub, Object[] arguments, AsyncServiceScope scope, IHubActivator`1 hubActivator, HubConnectionContext connection, HubMethodInvocationMessage hubMethodInvocationMessage, Boolean isStreamCall)
+2024-04-21T03:10:44.9925329+05:00 4000001f-0006-ff00-b63f-84710c7967bb [ERR] Error when dispatching '"OnDisconnectedAsync"' on hub. (9ac2dd74)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+2024-04-21T03:10:45.0015890+05:00 4000001f-0006-ff00-b63f-84710c7967bb [ERR] Failed disposing connection "0UQvSe8fNEROOvCw74f0cw". (98b86553)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.ExecuteApplication(ConnectionDelegate connectionDelegate)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.WaitOnTasks(Task applicationTask, Task transportTask, Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.DisposeAsync(Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionManager.DisposeAndRemoveAsync(HttpConnectionContext connection, Boolean closeGracefully, HttpConnectionStopStatus status)
+2024-04-21T03:10:55.8829128+05:00 40000005-0005-fd00-b63f-84710c7967bb [ERR] Connection Created connection id:Kos5Q37l6ovgYEZ__FXjkg (b4d82c9b)
+2024-04-21T03:11:27.2051040+05:00 40000005-0005-fd00-b63f-84710c7967bb [ERR] Exception in OnConnectedAsync:Object reference not set to an instance of an object. (7dce379e)
+2024-04-21T03:11:27.2295600+05:00 40000005-0005-fd00-b63f-84710c7967bb [ERR] Failed to invoke hub method '"SendMessage"'. (4d9c50da)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.SendMessage(String id, String m)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.ExecuteMethod(ObjectMethodExecutor methodExecutor, Hub hub, Object[] arguments)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.<Invoke>g__ExecuteInvocation|18_0(DefaultHubDispatcher`1 dispatcher, ObjectMethodExecutor methodExecutor, THub hub, Object[] arguments, AsyncServiceScope scope, IHubActivator`1 hubActivator, HubConnectionContext connection, HubMethodInvocationMessage hubMethodInvocationMessage, Boolean isStreamCall)
+2024-04-21T03:11:46.7979358+05:00 40000005-0005-fd00-b63f-84710c7967bb [ERR] Error when dispatching '"OnDisconnectedAsync"' on hub. (9ac2dd74)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+2024-04-21T03:11:46.8069432+05:00 40000005-0005-fd00-b63f-84710c7967bb [ERR] Failed disposing connection "Kos5Q37l6ovgYEZ__FXjkg". (98b86553)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.ExecuteApplication(ConnectionDelegate connectionDelegate)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.WaitOnTasks(Task applicationTask, Task transportTask, Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.DisposeAsync(Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionManager.DisposeAndRemoveAsync(HttpConnectionContext connection, Boolean closeGracefully, HttpConnectionStopStatus status)
+2024-04-21T03:11:49.3198411+05:00 40000028-0002-fc00-b63f-84710c7967bb [ERR] Connection Created connection id:_wsCqCAHhk0BIGtuINo9bg (568f198f)
+2024-04-21T03:18:05.9798884+05:00  [INF] Executed DbCommand ("319"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T03:18:06.5862236+05:00  [INF] Executed DbCommand ("571"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T03:18:06.8781750+05:00  [INF] Executed DbCommand ("288"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T03:18:07.1686185+05:00  [INF] Executed DbCommand ("287"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T03:18:07.4749057+05:00  [INF] Executed DbCommand ("290"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-04-21T03:18:07.4983589+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-04-21T03:18:08.2071403+05:00  [INF] Executed DbCommand ("383"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-04-21T03:18:08.8891018+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-21T03:18:08.8920196+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-21T03:18:08.8938235+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-04-21T03:18:45.7497874+05:00 40000013-0002-fd00-b63f-84710c7967bb [ERR] Connection Created connection id:erocJdTsQ1df4Uq7t0zJiw (1aa4d3c3)
+2024-04-21T03:19:46.5979325+05:00 4000002c-0000-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("289"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-21T03:20:22.2978931+05:00 40000013-0002-fd00-b63f-84710c7967bb [ERR] Error when dispatching '"OnDisconnectedAsync"' on hub. (9ac2dd74)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 79
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+2024-04-21T03:20:22.3081794+05:00 40000013-0002-fd00-b63f-84710c7967bb [ERR] Failed disposing connection "erocJdTsQ1df4Uq7t0zJiw". (98b86553)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 79
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.ExecuteApplication(ConnectionDelegate connectionDelegate)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.WaitOnTasks(Task applicationTask, Task transportTask, Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.DisposeAsync(Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionManager.DisposeAndRemoveAsync(HttpConnectionContext connection, Boolean closeGracefully, HttpConnectionStopStatus status)
+2024-04-21T03:20:38.9098008+05:00 4000002a-0002-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("287"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-21T03:21:12.4829455+05:00  [INF] Executed DbCommand ("323"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T03:21:12.8419392+05:00  [INF] Executed DbCommand ("312"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T03:21:13.1371320+05:00  [INF] Executed DbCommand ("291"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T03:21:13.4436041+05:00  [INF] Executed DbCommand ("303"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T03:21:13.7570636+05:00  [INF] Executed DbCommand ("297"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-04-21T03:21:13.7793589+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-04-21T03:21:14.3797927+05:00  [INF] Executed DbCommand ("315"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-04-21T03:21:14.6288815+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-21T03:21:14.6325255+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-21T03:21:14.6348443+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-04-21T03:21:34.5901633+05:00 4000002d-0006-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("290"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-21T03:21:49.2148312+05:00 4000002d-0006-ff00-b63f-84710c7967bb [ERR] DirectMessage Exception :Object reference not set to an instance of an object. (e835d31e)
+2024-04-21T03:22:23.7801393+05:00 4000001c-0004-fb00-b63f-84710c7967bb [ERR] Connection Created connection id:-mXDfJ0ilzlkgKDLwTO6yw (032095af)
+2024-04-21T03:22:43.4155902+05:00 4000001c-0004-fb00-b63f-84710c7967bb [ERR] Exception in OnConnectedAsync:Object reference not set to an instance of an object. (7dce379e)
+2024-04-21T03:22:43.4655005+05:00 4000001c-0004-fb00-b63f-84710c7967bb [ERR] Failed to invoke hub method '"SendMessage"'. (4d9c50da)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.SendMessage(String id, String m) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 54
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.ExecuteMethod(ObjectMethodExecutor methodExecutor, Hub hub, Object[] arguments)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.<Invoke>g__ExecuteInvocation|18_0(DefaultHubDispatcher`1 dispatcher, ObjectMethodExecutor methodExecutor, THub hub, Object[] arguments, AsyncServiceScope scope, IHubActivator`1 hubActivator, HubConnectionContext connection, HubMethodInvocationMessage hubMethodInvocationMessage, Boolean isStreamCall)
+2024-04-21T03:24:18.7827545+05:00  [INF] Executed DbCommand ("318"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T03:24:19.1371215+05:00  [INF] Executed DbCommand ("313"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T03:24:19.4311330+05:00  [INF] Executed DbCommand ("289"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T03:24:19.7307815+05:00  [INF] Executed DbCommand ("296"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T03:24:20.0367978+05:00  [INF] Executed DbCommand ("291"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-04-21T03:24:20.0608896+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-04-21T03:24:20.6632251+05:00  [INF] Executed DbCommand ("361"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-04-21T03:24:20.9042583+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-21T03:24:20.9084443+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-21T03:24:20.9108795+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-04-21T03:25:10.4396019+05:00 4000002f-0005-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("290"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-21T03:25:18.7235745+05:00 4000002f-0005-fe00-b63f-84710c7967bb [ERR] DirectMessage Exception :Object reference not set to an instance of an object. (e835d31e)
+2024-04-21T03:25:31.1248234+05:00 40000033-0006-ff00-b63f-84710c7967bb [ERR] Connection Created connection id:oW34X2rtpTnhjQyY4dYa1w (439214c5)
+2024-04-21T03:46:52.4368316+05:00  [INF] Executed DbCommand ("341"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T03:46:52.8295568+05:00  [INF] Executed DbCommand ("341"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T03:46:53.1281496+05:00  [INF] Executed DbCommand ("291"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T03:46:53.4218786+05:00  [INF] Executed DbCommand ("289"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T03:46:53.7553822+05:00  [INF] Executed DbCommand ("292"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-04-21T03:46:53.8469600+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-04-21T03:46:54.6670296+05:00  [INF] Executed DbCommand ("313"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-04-21T03:46:55.0099157+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-21T03:46:55.0134571+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-21T03:46:55.0161185+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-04-21T03:54:52.4421926+05:00  [INF] Executed DbCommand ("365"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T03:54:52.8623470+05:00  [INF] Executed DbCommand ("334"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T03:54:53.3305274+05:00  [INF] Executed DbCommand ("459"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T03:54:53.6228253+05:00  [INF] Executed DbCommand ("287"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T03:54:53.9507681+05:00  [INF] Executed DbCommand ("292"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-04-21T03:54:54.0022188+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-04-21T03:54:54.9780129+05:00  [INF] Executed DbCommand ("333"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-04-21T03:54:55.5442634+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-21T03:54:55.5503936+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-21T03:54:55.5546009+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-04-21T03:55:07.1010424+05:00 40000028-0004-fb00-b63f-84710c7967bb [ERR] Connection Created connection id:FD6yMnKHZvBH-3SOSdO6lQ (63fc1a40)
+2024-04-21T03:56:10.0000782+05:00 4000002e-0001-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("289"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-21T03:56:46.2439245+05:00  [INF] Executed DbCommand ("417"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T03:56:46.8374944+05:00  [INF] Executed DbCommand ("499"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T03:56:47.1433503+05:00  [INF] Executed DbCommand ("291"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T03:56:47.4370770+05:00  [INF] Executed DbCommand ("288"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T03:56:47.7623993+05:00  [INF] Executed DbCommand ("291"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-04-21T03:56:47.8136737+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-04-21T03:56:48.7475791+05:00  [INF] Executed DbCommand ("321"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-04-21T03:56:49.2380433+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-21T03:56:49.2440300+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-21T03:56:49.2482585+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-04-21T03:57:05.7457638+05:00 4000001a-0001-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("290"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-21T03:57:16.9849505+05:00 4000001a-0001-fb00-b63f-84710c7967bb [ERR] DirectMessage Exception :Object reference not set to an instance of an object. (e835d31e)
+2024-04-21T03:57:24.1300715+05:00 40000009-0007-fb00-b63f-84710c7967bb [ERR] Connection Created connection id:s7DErvBz5AHia6Dq-GNmPA (78246b70)
+2024-04-21T04:04:10.4103761+05:00  [INF] Executed DbCommand ("405"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T04:04:10.8892014+05:00  [INF] Executed DbCommand ("392"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T04:04:11.1957222+05:00  [INF] Executed DbCommand ("292"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T04:04:11.4925602+05:00  [INF] Executed DbCommand ("292"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T04:04:11.8358081+05:00  [INF] Executed DbCommand ("306"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-04-21T04:04:11.9070304+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-04-21T04:04:13.0299146+05:00  [INF] Executed DbCommand ("342"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-04-21T04:04:13.6376777+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-21T04:04:13.6441835+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-21T04:04:13.6496142+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-04-21T04:04:33.2692336+05:00 40000030-0004-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("288"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-21T04:04:45.4270080+05:00 40000030-0004-fc00-b63f-84710c7967bb [ERR] DirectMessage Exception :Object reference not set to an instance of an object. (e835d31e)
+2024-04-21T04:06:39.7830348+05:00 40000017-0006-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("300"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-21T04:15:40.3153541+05:00  [INF] Executed DbCommand ("324"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T04:15:40.6549451+05:00  [INF] Executed DbCommand ("306"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T04:15:40.9507571+05:00  [INF] Executed DbCommand ("291"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T04:15:41.2413382+05:00  [INF] Executed DbCommand ("287"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T04:15:41.5472664+05:00  [INF] Executed DbCommand ("288"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-04-21T04:15:41.5700441+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-04-21T04:15:42.2045211+05:00  [INF] Executed DbCommand ("354"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-04-21T04:15:42.7473120+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-21T04:15:42.7502376+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-21T04:15:42.7528129+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-04-21T04:16:00.1735816+05:00 4000001d-0006-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("307"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-21T04:16:48.3744177+05:00 40000039-0002-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("358"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-21T04:17:17.8214571+05:00 40000025-0001-fc00-b63f-84710c7967bb [ERR] Connection Created connection id:5W-Ufgc-gbiSz908R7N1xA (80506b39)
+2024-04-21T04:17:40.3790692+05:00 40000025-0001-fc00-b63f-84710c7967bb [ERR] Error when dispatching '"OnDisconnectedAsync"' on hub. (9ac2dd74)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 81
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+2024-04-21T04:17:40.3877521+05:00 40000025-0001-fc00-b63f-84710c7967bb [ERR] Failed disposing connection "5W-Ufgc-gbiSz908R7N1xA". (98b86553)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 81
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.ExecuteApplication(ConnectionDelegate connectionDelegate)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.WaitOnTasks(Task applicationTask, Task transportTask, Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.DisposeAsync(Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionManager.DisposeAndRemoveAsync(HttpConnectionContext connection, Boolean closeGracefully, HttpConnectionStopStatus status)
+2024-04-21T04:18:27.1874407+05:00 4000003b-0000-fa00-b63f-84710c7967bb [ERR] Connection Created connection id:Yu4zmdIEJxUw8Ni1dMn2IQ (f8395b8c)
+2024-04-21T04:18:56.8538465+05:00 4000003b-0000-fa00-b63f-84710c7967bb [ERR] Error when dispatching '"OnDisconnectedAsync"' on hub. (9ac2dd74)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 81
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+2024-04-21T04:18:56.8642653+05:00 4000003b-0000-fa00-b63f-84710c7967bb [ERR] Failed disposing connection "Yu4zmdIEJxUw8Ni1dMn2IQ". (98b86553)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 81
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.ExecuteApplication(ConnectionDelegate connectionDelegate)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.WaitOnTasks(Task applicationTask, Task transportTask, Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.DisposeAsync(Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionManager.DisposeAndRemoveAsync(HttpConnectionContext connection, Boolean closeGracefully, HttpConnectionStopStatus status)
+2024-04-21T04:18:59.8588766+05:00 4000001b-0003-ff00-b63f-84710c7967bb [ERR] Connection Created connection id:Kc38lRNGvuStNQ7JLnOkyA (fc6d8702)
+2024-04-21T04:19:45.6965051+05:00  [INF] Executed DbCommand ("336"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T04:19:46.0474533+05:00  [INF] Executed DbCommand ("317"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T04:19:46.3549932+05:00  [INF] Executed DbCommand ("301"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-21T04:19:46.6485442+05:00  [INF] Executed DbCommand ("289"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-21T04:19:46.9511841+05:00  [INF] Executed DbCommand ("289"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-04-21T04:19:46.9751008+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-04-21T04:19:47.5750210+05:00  [INF] Executed DbCommand ("308"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-04-21T04:19:47.8136590+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-21T04:19:47.8164445+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-21T04:19:47.8187888+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-04-21T04:20:07.2955172+05:00 40000027-0007-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("292"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-21T04:20:19.3381157+05:00 4000003c-0004-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("289"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-21T04:20:53.8539765+05:00 40000029-0007-ff00-b63f-84710c7967bb [ERR] Connection Created connection id:zj4YHyWz9GQUb1e_85-mmA (6876e3e4)
+2024-04-21T04:21:05.0903427+05:00 40000034-0004-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("296"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-21T04:21:43.5950761+05:00 40000029-0007-ff00-b63f-84710c7967bb [ERR] Error when dispatching '"OnDisconnectedAsync"' on hub. (9ac2dd74)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 81
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+2024-04-21T04:21:43.6034997+05:00 40000029-0007-ff00-b63f-84710c7967bb [ERR] Failed disposing connection "zj4YHyWz9GQUb1e_85-mmA". (98b86553)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 81
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.ExecuteApplication(ConnectionDelegate connectionDelegate)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.WaitOnTasks(Task applicationTask, Task transportTask, Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.DisposeAsync(Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionManager.DisposeAndRemoveAsync(HttpConnectionContext connection, Boolean closeGracefully, HttpConnectionStopStatus status)

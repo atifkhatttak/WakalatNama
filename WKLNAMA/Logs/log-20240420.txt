@@ -985,3 +985,23 @@ SET NOCOUNT ON;
 INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
 OUTPUT INSERTED.[Id]
 VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-20T23:51:57.1895389+05:00  [INF] Executed DbCommand ("401"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-20T23:51:57.6271934+05:00  [INF] Executed DbCommand ("331"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-20T23:51:57.9233248+05:00  [INF] Executed DbCommand ("287"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-20T23:51:58.2145114+05:00  [INF] Executed DbCommand ("286"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-20T23:51:58.5421988+05:00  [INF] Executed DbCommand ("290"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-04-20T23:51:58.6229207+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-04-20T23:51:59.7591628+05:00  [INF] Executed DbCommand ("416"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-04-20T23:52:00.9315851+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-20T23:52:00.9356419+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-20T23:52:00.9390662+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)

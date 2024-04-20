@@ -9,7 +9,7 @@ namespace Business.Services
 {
     public interface IChatHub
     {
-       // public Task DirectMessage(string message);
+        public Task DirectMessage(string message);
         public Task DirectMessage(MessageVm model);
         public Task DeleteMessage(string message, string toWhom);
         public Task UnReadMessage(List<MessageVm> messages, int count); 
