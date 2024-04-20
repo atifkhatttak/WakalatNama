@@ -1,4 +1,5 @@
-﻿using Business.Helpers.Attributes;
+﻿using Business.Enums;
+using Business.Helpers.Attributes;
 using Business.Services;
 using Business.ViewModels;
 using Data.DomainModels;
@@ -6,8 +7,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Swashbuckle.AspNetCore.Annotations;
 using System.CodeDom;
+using System.ComponentModel.DataAnnotations;
 using System.Net;
 using WKLNAMA.AppHub;
 using WKLNAMA.Models;
@@ -190,6 +194,26 @@ namespace WKLNAMA.Controllers
                 return Ok(apiResponse);
             });
         }
+
+        [HttpGet("GetChatHistory")]
+        [SwaggerOperation(Summary = "Get user chat history for admin -secured")]
+        public async Task<ActionResult> GetChatHistory([Required]long FromId, [Required] long ToId)
+        {
+            return await APIResponse(async () =>
+            {
+                List<ChatHistoryVM> messages = new List<ChatHistoryVM>();
+                //if (UserModel.Role == Roles.Admin.ToString())
+                     messages = await _message.GetChatHistory(FromId,ToId);
+                    apiResponse.Message = HttpStatusCode.OK.ToString();
+                    apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                    apiResponse.Success = true;
+                    apiResponse.Data = messages;
+
+                return Ok(apiResponse);
+
+            });
+        }
+
 
         #region Hide Override Methods
 

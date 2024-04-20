@@ -15,4 +15,15 @@ namespace Business.ViewModels
         public bool IsRead { get; set; }
         public long? ParentId { get; set; }
     }
+    public class ChatHistoryVM:BaseModelVM
+    {
+        public long Id { get; set; }
+        public string? Content { get; set; }
+        public string? FromUserName { get; set; }
+        public string? ToUserName { get; set; }
+        public long? FromUserId { get; set; }
+        public long? ToUserId { get; set; }
+        public bool? IsRead { get; set; }
+        public long? ParentId { get; set; }
+    }
 }
