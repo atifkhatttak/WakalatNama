@@ -36,12 +36,13 @@ namespace WKLNAMA.AppHub
                 _messageService = scope.ServiceProvider.GetRequiredService<IMessageRepository>();
                 _notificationService = scope.ServiceProvider.GetRequiredService<INotificationRepository>();
 
-                var unReadNotification = await _notificationService.GetAllUnReadNotification(_userId);
-                var unReadMessages = await _messageService.GetUnReadMessages(_userId);
+                var unReadNotification = _notificationService.GetAllUnReadNotification(_userId);
+                var unReadMessages = _messageService.GetUnReadMessages(_userId);
 
+                Task.WaitAll(unReadMessages, unReadNotification);
 
-                await UnReadMessage(unReadMessages, unReadMessages.Count(), _userId.ToString());
-                await UnReadNotification(unReadNotification, unReadNotification.Count(), _userId.ToString());
+                await UnReadMessage(unReadMessages.Result, unReadMessages.Result.Count(), _userId.ToString());
+                await UnReadNotification(unReadNotification.Result, unReadNotification.Result.Count(), _userId.ToString());
 
             }
         }
