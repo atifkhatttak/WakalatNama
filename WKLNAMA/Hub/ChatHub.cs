@@ -4,6 +4,7 @@ using Google.Apis.Drive.v3.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.SignalR;
 using SignalRSwaggerGen.Attributes;
+using WKLNAMA.Controllers;
 
 namespace WKLNAMA.AppHub
 {
@@ -14,17 +15,30 @@ namespace WKLNAMA.AppHub
         private  INotificationRepository _notificationService;
         private   IMessageRepository _messageService;
         private  readonly IServiceProvider _serviceProvider;
+        private readonly ILogger<Hub<IChatHub>> _logger;
 
-        public ChatHub(IServiceProvider serviceProvider)
+        public ChatHub(IServiceProvider serviceProvider, ILogger<Hub<IChatHub>> logger)
         {
             _serviceProvider = serviceProvider;
+            _logger = logger;
         }
         public override async Task  OnConnectedAsync()
         {
+            try
+            {
+                var C = Context.ConnectionId;
+                _logger.LogError("Connection Created connection id:" + C);
 
-            await PushDataOnConnectionEstablished();
-           
-            await base.OnConnectedAsync();
+                await PushDataOnConnectionEstablished();
+
+                await base.OnConnectedAsync();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Exception in OnConnectedAsync:" + ex.Message);
+
+                throw ex;
+            }
         }
 
         private async Task PushDataOnConnectionEstablished()
@@ -36,19 +50,20 @@ namespace WKLNAMA.AppHub
                 _messageService = scope.ServiceProvider.GetRequiredService<IMessageRepository>();
                 _notificationService = scope.ServiceProvider.GetRequiredService<INotificationRepository>();
 
-                var unReadNotification = _notificationService.GetAllUnReadNotification(_userId);
-                var unReadMessages = _messageService.GetUnReadMessages(_userId);
+                var unReadNotification =await _notificationService.GetAllUnReadNotification(_userId);
+                var unReadMessages =await  _messageService.GetUnReadMessages(_userId);
 
-                Task.WaitAll(unReadMessages, unReadNotification);
+                //Task.WaitAll(unReadMessages, unReadNotification);
 
-                await UnReadMessage(unReadMessages.Result, unReadMessages.Result.Count(), _userId.ToString());
-                await UnReadNotification(unReadNotification.Result, unReadNotification.Result.Count(), _userId.ToString());
+                await UnReadMessage(unReadMessages, unReadMessages.Count(), _userId.ToString());
+                await UnReadNotification(unReadNotification, unReadNotification.Count(), _userId.ToString());
 
             }
         }
 
         public override Task OnDisconnectedAsync(Exception? exception)
         {
+            _logger.LogError("OnDisConnected :" + exception.Message);
             return base.OnDisconnectedAsync(exception);
         }
 

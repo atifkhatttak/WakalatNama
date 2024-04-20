@@ -307,3 +307,681 @@ WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
 2024-04-20T03:12:16.0221939+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
 2024-04-20T03:12:16.0247583+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
 2024-04-20T03:12:16.0276286+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-04-20T15:26:14.0682384+05:00  [INF] Executed DbCommand ("431"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-20T15:26:14.5121346+05:00  [INF] Executed DbCommand ("350"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-20T15:26:15.0302725+05:00  [INF] Executed DbCommand ("505"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-20T15:26:15.3630895+05:00  [INF] Executed DbCommand ("327"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-20T15:26:15.7038104+05:00  [INF] Executed DbCommand ("301"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-04-20T15:26:15.7652011+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-04-20T15:26:16.7839439+05:00  [INF] Executed DbCommand ("356"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-04-20T15:26:17.4058159+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-20T15:26:17.4116876+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-20T15:26:17.4156280+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-04-20T16:10:55.2903796+05:00 400000ce-0001-fc00-b63f-84710c7967bb [ERR] Connection Created connection id:5tU0b0SbOpu2a4p05u_01g (d2f46173)
+2024-04-20T16:10:56.9566349+05:00 400000ce-0001-fc00-b63f-84710c7967bb [ERR] An exception occurred while iterating over the results of a query for context type '"Data.Context.WKNNAMADBCtx"'."
+""System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()" (f5c7ac34)
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2024-04-20T16:10:58.3675087+05:00 400000ce-0001-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("317"ms) [Parameters=["@__UserId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Content], [n].[Id], [n].[IsRead], [n].[FromUserId], [n].[ToUserId], [n].[NotificationType], [n].[CreatedDate]
+FROM [Notifications] AS [n]
+WHERE [n].[ToUserId] = @__UserId_0" (0723d8ff)
+2024-04-20T16:10:58.5192077+05:00 400000ce-0001-fc00-b63f-84710c7967bb [ERR] Error when dispatching '"OnConnectedAsync"' on hub. (9ac2dd74)
+System.AggregateException: One or more errors occurred. (A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.)
+ ---> System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Business.BusinessLogic.MessageRepository.GetUnReadMessages(Int64 userId) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\Business\BusinessLogic\MessageRepository.cs:line 75
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.WaitAllCore(Task[] tasks, Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.WaitAll(Task[] tasks)
+   at WKLNAMA.AppHub.ChatHub.PushDataOnConnectionEstablished() in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 47
+   at WKLNAMA.AppHub.ChatHub.OnConnectedAsync() in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 30
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnConnectedAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnConnectedAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+2024-04-20T16:20:05.5765470+05:00 40000053-0006-ff00-b63f-84710c7967bb [ERR] Connection Created connection id:tQIxG5T4WSZwQ58DlPZG3A (00fd0697)
+2024-04-20T16:20:06.5538499+05:00 40000053-0006-ff00-b63f-84710c7967bb [ERR] An exception occurred while iterating over the results of a query for context type '"Data.Context.WKNNAMADBCtx"'."
+""System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()" (f5c7ac34)
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2024-04-20T16:20:08.1068788+05:00 40000053-0006-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("331"ms) [Parameters=["@__UserId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Content], [n].[Id], [n].[IsRead], [n].[FromUserId], [n].[ToUserId], [n].[NotificationType], [n].[CreatedDate]
+FROM [Notifications] AS [n]
+WHERE [n].[ToUserId] = @__UserId_0" (0723d8ff)
+2024-04-20T16:20:08.1969411+05:00 40000053-0006-ff00-b63f-84710c7967bb [ERR] Error when dispatching '"OnConnectedAsync"' on hub. (9ac2dd74)
+System.AggregateException: One or more errors occurred. (A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.)
+ ---> System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Business.BusinessLogic.MessageRepository.GetUnReadMessages(Int64 userId) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\Business\BusinessLogic\MessageRepository.cs:line 75
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.WaitAllCore(Task[] tasks, Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.WaitAll(Task[] tasks)
+   at WKLNAMA.AppHub.ChatHub.PushDataOnConnectionEstablished() in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 47
+   at WKLNAMA.AppHub.ChatHub.OnConnectedAsync() in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 30
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnConnectedAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnConnectedAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+2024-04-20T16:20:56.4412692+05:00 40000020-0001-f800-b63f-84710c7967bb [ERR] Connection Created connection id:3s3X7NWdGVRQZG7cWs79zg (ad67cf49)
+2024-04-20T16:20:57.1239476+05:00 40000020-0001-f800-b63f-84710c7967bb [ERR] An exception occurred while iterating over the results of a query for context type '"Data.Context.WKNNAMADBCtx"'."
+""System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()" (f5c7ac34)
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2024-04-20T16:20:57.4248430+05:00 40000020-0001-f800-b63f-84710c7967bb [INF] Executed DbCommand ("302"ms) [Parameters=["@__UserId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Content], [n].[Id], [n].[IsRead], [n].[FromUserId], [n].[ToUserId], [n].[NotificationType], [n].[CreatedDate]
+FROM [Notifications] AS [n]
+WHERE [n].[ToUserId] = @__UserId_0" (0723d8ff)
+2024-04-20T16:20:57.5069931+05:00 40000020-0001-f800-b63f-84710c7967bb [ERR] Error when dispatching '"OnConnectedAsync"' on hub. (9ac2dd74)
+System.AggregateException: One or more errors occurred. (A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.)
+ ---> System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Business.BusinessLogic.MessageRepository.GetUnReadMessages(Int64 userId) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\Business\BusinessLogic\MessageRepository.cs:line 75
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.WaitAllCore(Task[] tasks, Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.WaitAll(Task[] tasks)
+   at WKLNAMA.AppHub.ChatHub.PushDataOnConnectionEstablished() in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 47
+   at WKLNAMA.AppHub.ChatHub.OnConnectedAsync() in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 30
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnConnectedAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnConnectedAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+2024-04-20T16:44:29.8789605+05:00  [INF] Executed DbCommand ("434"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-20T16:44:30.4580983+05:00  [INF] Executed DbCommand ("415"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-20T16:44:30.7710900+05:00  [INF] Executed DbCommand ("290"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-20T16:44:31.0912498+05:00  [INF] Executed DbCommand ("310"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-20T16:44:31.4675895+05:00  [INF] Executed DbCommand ("298"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-04-20T16:44:31.5036301+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-04-20T16:44:32.3107229+05:00  [INF] Executed DbCommand ("323"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-04-20T16:44:32.6987441+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-20T16:44:32.7021005+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-20T16:44:32.7046082+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-04-20T16:44:48.8493349+05:00 4000010f-0004-fe00-b63f-84710c7967bb [ERR] Connection Created connection id:PK_qqksWglGEkbpMaJ2uPQ (55d3cf7b)
+2024-04-20T16:46:02.4960460+05:00 4000010f-0004-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("4,851"ms) [Parameters=["@__UserId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Content], [n].[Id], [n].[IsRead], [n].[FromUserId], [n].[ToUserId], [n].[NotificationType], [n].[CreatedDate]
+FROM [Notifications] AS [n]
+WHERE [n].[ToUserId] = @__UserId_0" (0723d8ff)
+2024-04-20T16:46:03.1959181+05:00 4000010f-0004-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("651"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [m].[Id], [m].[FromUserId], [m].[ToUserId], [m].[Content], [m].[ParentId], [m].[IsRead]
+FROM [Messages] AS [m]
+WHERE [m].[ToUserId] = @__userId_0 AND [m].[IsRead] = CAST(0 AS bit)" (0723d8ff)
+2024-04-20T16:47:19.8973992+05:00 4000003d-0002-f600-b63f-84710c7967bb [ERR] Connection Created connection id:IgW2hEsWH9kTRgE7-pCemw (10c14ed5)
+2024-04-20T16:47:19.9687760+05:00 4000003d-0002-f600-b63f-84710c7967bb [ERR] An exception occurred while iterating over the results of a query for context type '"Data.Context.WKNNAMADBCtx"'."
+""System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()" (f5c7ac34)
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2024-04-20T16:47:20.2073044+05:00 4000003d-0002-f600-b63f-84710c7967bb [INF] Executed DbCommand ("289"ms) [Parameters=["@__UserId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Content], [n].[Id], [n].[IsRead], [n].[FromUserId], [n].[ToUserId], [n].[NotificationType], [n].[CreatedDate]
+FROM [Notifications] AS [n]
+WHERE [n].[ToUserId] = @__UserId_0" (0723d8ff)
+2024-04-20T16:47:20.3798567+05:00 4000003d-0002-f600-b63f-84710c7967bb [ERR] Error when dispatching '"OnConnectedAsync"' on hub. (9ac2dd74)
+System.AggregateException: One or more errors occurred. (A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.)
+ ---> System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Business.BusinessLogic.MessageRepository.GetUnReadMessages(Int64 userId) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\Business\BusinessLogic\MessageRepository.cs:line 75
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.WaitAllCore(Task[] tasks, Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.WaitAll(Task[] tasks)
+   at WKLNAMA.AppHub.ChatHub.PushDataOnConnectionEstablished() in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 47
+   at WKLNAMA.AppHub.ChatHub.OnConnectedAsync() in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 30
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnConnectedAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnConnectedAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+2024-04-20T16:47:59.2148277+05:00 40000066-0003-f100-b63f-84710c7967bb [ERR] Connection Created connection id:JjUPZC1wGq4uSlGLWDP7-A (d07a7367)
+2024-04-20T16:47:59.2253592+05:00 40000066-0003-f100-b63f-84710c7967bb [ERR] An exception occurred while iterating over the results of a query for context type '"Data.Context.WKNNAMADBCtx"'."
+""System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()" (f5c7ac34)
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2024-04-20T16:47:59.5272935+05:00 40000066-0003-f100-b63f-84710c7967bb [INF] Executed DbCommand ("300"ms) [Parameters=["@__UserId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Content], [n].[Id], [n].[IsRead], [n].[FromUserId], [n].[ToUserId], [n].[NotificationType], [n].[CreatedDate]
+FROM [Notifications] AS [n]
+WHERE [n].[ToUserId] = @__UserId_0" (0723d8ff)
+2024-04-20T16:47:59.7209897+05:00 40000066-0003-f100-b63f-84710c7967bb [ERR] Error when dispatching '"OnConnectedAsync"' on hub. (9ac2dd74)
+System.AggregateException: One or more errors occurred. (A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.)
+ ---> System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Business.BusinessLogic.MessageRepository.GetUnReadMessages(Int64 userId) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\Business\BusinessLogic\MessageRepository.cs:line 75
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.WaitAllCore(Task[] tasks, Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.WaitAll(Task[] tasks)
+   at WKLNAMA.AppHub.ChatHub.PushDataOnConnectionEstablished() in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 47
+   at WKLNAMA.AppHub.ChatHub.OnConnectedAsync() in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 30
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnConnectedAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnConnectedAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+2024-04-20T16:48:17.6954107+05:00 40000113-0004-fe00-b63f-84710c7967bb [ERR] Connection Created connection id:Pkb8bZ1t9cK1p_Eugqi3-Q (a8269ad1)
+2024-04-20T16:48:17.7119264+05:00 40000113-0004-fe00-b63f-84710c7967bb [ERR] An exception occurred while iterating over the results of a query for context type '"Data.Context.WKNNAMADBCtx"'."
+""System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()" (f5c7ac34)
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2024-04-20T16:48:18.0051014+05:00 40000113-0004-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("295"ms) [Parameters=["@__UserId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Content], [n].[Id], [n].[IsRead], [n].[FromUserId], [n].[ToUserId], [n].[NotificationType], [n].[CreatedDate]
+FROM [Notifications] AS [n]
+WHERE [n].[ToUserId] = @__UserId_0" (0723d8ff)
+2024-04-20T16:48:18.1590132+05:00 40000113-0004-fe00-b63f-84710c7967bb [ERR] Error when dispatching '"OnConnectedAsync"' on hub. (9ac2dd74)
+System.AggregateException: One or more errors occurred. (A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.)
+ ---> System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Business.BusinessLogic.MessageRepository.GetUnReadMessages(Int64 userId) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\Business\BusinessLogic\MessageRepository.cs:line 75
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.WaitAllCore(Task[] tasks, Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.WaitAll(Task[] tasks)
+   at WKLNAMA.AppHub.ChatHub.PushDataOnConnectionEstablished() in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 47
+   at WKLNAMA.AppHub.ChatHub.OnConnectedAsync() in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 30
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnConnectedAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnConnectedAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+2024-04-20T16:48:33.1799811+05:00 4000003f-0002-f600-b63f-84710c7967bb [ERR] Connection Created connection id:B6OMdFEqJLZPWga7hAl1aQ (14f73bc2)
+2024-04-20T16:48:42.3082052+05:00 4000003f-0002-f600-b63f-84710c7967bb [ERR] An exception occurred while iterating over the results of a query for context type '"Data.Context.WKNNAMADBCtx"'."
+""System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()" (f5c7ac34)
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2024-04-20T16:48:42.6020542+05:00 4000003f-0002-f600-b63f-84710c7967bb [INF] Executed DbCommand ("316"ms) [Parameters=["@__UserId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Content], [n].[Id], [n].[IsRead], [n].[FromUserId], [n].[ToUserId], [n].[NotificationType], [n].[CreatedDate]
+FROM [Notifications] AS [n]
+WHERE [n].[ToUserId] = @__UserId_0" (0723d8ff)
+2024-04-20T16:48:42.6759406+05:00 4000003f-0002-f600-b63f-84710c7967bb [ERR] Error when dispatching '"OnConnectedAsync"' on hub. (9ac2dd74)
+System.AggregateException: One or more errors occurred. (A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.)
+ ---> System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Business.BusinessLogic.MessageRepository.GetUnReadMessages(Int64 userId) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\Business\BusinessLogic\MessageRepository.cs:line 75
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.WaitAllCore(Task[] tasks, Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.WaitAll(Task[] tasks)
+   at WKLNAMA.AppHub.ChatHub.PushDataOnConnectionEstablished() in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 47
+   at WKLNAMA.AppHub.ChatHub.OnConnectedAsync() in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 30
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnConnectedAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnConnectedAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+2024-04-20T16:49:44.3171251+05:00 4000003b-0007-f800-b63f-84710c7967bb [ERR] Connection Created connection id:DfCUIF4TIHWkH19lvqxm4Q (7613f91b)
+2024-04-20T16:49:45.5099142+05:00 4000003b-0007-f800-b63f-84710c7967bb [ERR] An exception occurred while iterating over the results of a query for context type '"Data.Context.WKNNAMADBCtx"'."
+""System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()" (f5c7ac34)
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2024-04-20T16:49:45.8144114+05:00 4000003b-0007-f800-b63f-84710c7967bb [INF] Executed DbCommand ("304"ms) [Parameters=["@__UserId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Content], [n].[Id], [n].[IsRead], [n].[FromUserId], [n].[ToUserId], [n].[NotificationType], [n].[CreatedDate]
+FROM [Notifications] AS [n]
+WHERE [n].[ToUserId] = @__UserId_0" (0723d8ff)
+2024-04-20T16:49:46.0354132+05:00 4000003b-0007-f800-b63f-84710c7967bb [ERR] Error when dispatching '"OnConnectedAsync"' on hub. (9ac2dd74)
+System.AggregateException: One or more errors occurred. (A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.)
+ ---> System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Business.BusinessLogic.MessageRepository.GetUnReadMessages(Int64 userId) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\Business\BusinessLogic\MessageRepository.cs:line 75
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.WaitAllCore(Task[] tasks, Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.WaitAll(Task[] tasks)
+   at WKLNAMA.AppHub.ChatHub.PushDataOnConnectionEstablished()
+   at WKLNAMA.AppHub.ChatHub.OnConnectedAsync()
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnConnectedAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnConnectedAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+2024-04-20T16:50:44.9473391+05:00 4000003d-0007-f800-b63f-84710c7967bb [ERR] Connection Created connection id:uvNdBmDuevfJWeVaLktt_Q (738e13f5)
+2024-04-20T16:50:45.9691938+05:00 4000003d-0007-f800-b63f-84710c7967bb [ERR] An exception occurred while iterating over the results of a query for context type '"Data.Context.WKNNAMADBCtx"'."
+""System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()" (f5c7ac34)
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2024-04-20T16:50:46.3978994+05:00 4000003d-0007-f800-b63f-84710c7967bb [INF] Executed DbCommand ("429"ms) [Parameters=["@__UserId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Content], [n].[Id], [n].[IsRead], [n].[FromUserId], [n].[ToUserId], [n].[NotificationType], [n].[CreatedDate]
+FROM [Notifications] AS [n]
+WHERE [n].[ToUserId] = @__UserId_0" (0723d8ff)
+2024-04-20T16:50:46.6110253+05:00 4000003d-0007-f800-b63f-84710c7967bb [ERR] Error when dispatching '"OnConnectedAsync"' on hub. (9ac2dd74)
+System.AggregateException: One or more errors occurred. (A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.)
+ ---> System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Business.BusinessLogic.MessageRepository.GetUnReadMessages(Int64 userId) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\Business\BusinessLogic\MessageRepository.cs:line 75
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.WaitAllCore(Task[] tasks, Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.WaitAll(Task[] tasks)
+   at WKLNAMA.AppHub.ChatHub.PushDataOnConnectionEstablished()
+   at WKLNAMA.AppHub.ChatHub.OnConnectedAsync()
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnConnectedAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnConnectedAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+2024-04-20T16:51:36.1432786+05:00 40000071-0003-f600-b63f-84710c7967bb [ERR] Connection Created connection id:VOX2PmGAZWsI2-2Gfp1tEA (dc8889be)
+2024-04-20T16:51:49.6279651+05:00 40000071-0003-f600-b63f-84710c7967bb [INF] Executed DbCommand ("562"ms) [Parameters=["@__UserId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Content], [n].[Id], [n].[IsRead], [n].[FromUserId], [n].[ToUserId], [n].[NotificationType], [n].[CreatedDate]
+FROM [Notifications] AS [n]
+WHERE [n].[ToUserId] = @__UserId_0" (0723d8ff)
+2024-04-20T16:51:49.6321911+05:00 40000071-0003-f600-b63f-84710c7967bb [ERR] An exception occurred while iterating over the results of a query for context type '"Data.Context.WKNNAMADBCtx"'."
+""System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()" (f5c7ac34)
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2024-04-20T16:51:52.1645357+05:00 40000071-0003-f600-b63f-84710c7967bb [ERR] Error when dispatching '"OnConnectedAsync"' on hub. (9ac2dd74)
+System.AggregateException: One or more errors occurred. (A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.)
+ ---> System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Business.BusinessLogic.MessageRepository.GetUnReadMessages(Int64 userId) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\Business\BusinessLogic\MessageRepository.cs:line 75
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.WaitAllCore(Task[] tasks, Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.WaitAll(Task[] tasks)
+   at WKLNAMA.AppHub.ChatHub.PushDataOnConnectionEstablished()
+   at WKLNAMA.AppHub.ChatHub.OnConnectedAsync()
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnConnectedAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnConnectedAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+2024-04-20T16:53:02.3392558+05:00  [INF] Executed DbCommand ("428"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-20T16:53:02.7945909+05:00  [INF] Executed DbCommand ("357"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-20T16:53:03.0956823+05:00  [INF] Executed DbCommand ("292"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-20T16:53:03.4066050+05:00  [INF] Executed DbCommand ("302"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-20T16:53:03.8005226+05:00  [INF] Executed DbCommand ("309"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-04-20T16:53:03.8664938+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-04-20T16:53:04.9239495+05:00  [INF] Executed DbCommand ("356"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-04-20T16:53:05.4433352+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-20T16:53:05.4477218+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-20T16:53:05.4507285+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-04-20T16:53:16.9062345+05:00 40000041-0007-f800-b63f-84710c7967bb [ERR] Connection Created connection id:xlBUh-BFm4ZHLKtmAaTP0Q (28f47f5a)
+2024-04-20T16:53:18.6417623+05:00 40000041-0007-f800-b63f-84710c7967bb [ERR] An exception occurred while iterating over the results of a query for context type '"Data.Context.WKNNAMADBCtx"'."
+""System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()" (f5c7ac34)
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2024-04-20T16:53:18.8913857+05:00 40000041-0007-f800-b63f-84710c7967bb [INF] Executed DbCommand ("313"ms) [Parameters=["@__UserId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Content], [n].[Id], [n].[IsRead], [n].[FromUserId], [n].[ToUserId], [n].[NotificationType], [n].[CreatedDate]
+FROM [Notifications] AS [n]
+WHERE [n].[ToUserId] = @__UserId_0" (0723d8ff)
+2024-04-20T16:54:51.0791168+05:00 40000041-0007-f800-b63f-84710c7967bb [ERR] Error when dispatching '"OnConnectedAsync"' on hub. (9ac2dd74)
+System.AggregateException: One or more errors occurred. (A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.)
+ ---> System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Business.BusinessLogic.MessageRepository.GetUnReadMessages(Int64 userId) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\Business\BusinessLogic\MessageRepository.cs:line 75
+   --- End of inner exception stack trace ---
+   at WKLNAMA.AppHub.ChatHub.OnConnectedAsync()
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnConnectedAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnConnectedAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+2024-04-20T16:55:00.9650640+05:00 4000011d-0004-fe00-b63f-84710c7967bb [ERR] Connection Created connection id:2X-jpPJ9DfCHEYHDfK_tyA (dfa97d73)
+2024-04-20T16:55:02.5056114+05:00 4000011d-0004-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("347"ms) [Parameters=["@__UserId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Content], [n].[Id], [n].[IsRead], [n].[FromUserId], [n].[ToUserId], [n].[NotificationType], [n].[CreatedDate]
+FROM [Notifications] AS [n]
+WHERE [n].[ToUserId] = @__UserId_0" (0723d8ff)
+2024-04-20T16:55:02.8346739+05:00 4000011d-0004-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("297"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [m].[Id], [m].[FromUserId], [m].[ToUserId], [m].[Content], [m].[ParentId], [m].[IsRead]
+FROM [Messages] AS [m]
+WHERE [m].[ToUserId] = @__userId_0 AND [m].[IsRead] = CAST(0 AS bit)" (0723d8ff)
+2024-04-20T16:57:12.8845225+05:00 4000011d-0004-fe00-b63f-84710c7967bb [ERR] Error when dispatching '"OnDisconnectedAsync"' on hub. (9ac2dd74)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+2024-04-20T16:57:13.0118050+05:00 4000011d-0004-fe00-b63f-84710c7967bb [ERR] Failed disposing connection "2X-jpPJ9DfCHEYHDfK_tyA". (98b86553)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.ExecuteApplication(ConnectionDelegate connectionDelegate)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.WaitOnTasks(Task applicationTask, Task transportTask, Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.DisposeAsync(Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionManager.DisposeAndRemoveAsync(HttpConnectionContext connection, Boolean closeGracefully, HttpConnectionStopStatus status)
+2024-04-20T16:57:31.6303823+05:00  [INF] Executed DbCommand ("476"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-20T16:57:32.0740664+05:00  [INF] Executed DbCommand ("350"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-20T16:57:32.3750783+05:00  [INF] Executed DbCommand ("291"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-20T16:57:32.6784802+05:00  [INF] Executed DbCommand ("298"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-20T16:57:33.0243182+05:00  [INF] Executed DbCommand ("292"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-04-20T16:57:33.0983798+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-04-20T16:57:34.3523521+05:00  [INF] Executed DbCommand ("327"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-04-20T16:57:35.2536103+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-20T16:57:35.2585371+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-20T16:57:35.2626434+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-04-20T16:57:43.3078171+05:00 4000001a-0006-fc00-b63f-84710c7967bb [ERR] Connection Created connection id:da_H_r4W3Husliov8LnuWg (c69c0c79)
+2024-04-20T16:57:43.8592993+05:00 4000001a-0006-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("374"ms) [Parameters=["@__UserId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Content], [n].[Id], [n].[IsRead], [n].[FromUserId], [n].[ToUserId], [n].[NotificationType], [n].[CreatedDate]
+FROM [Notifications] AS [n]
+WHERE [n].[ToUserId] = @__UserId_0" (0723d8ff)
+2024-04-20T16:57:44.1799176+05:00 4000001a-0006-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("300"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [m].[Id], [m].[FromUserId], [m].[ToUserId], [m].[Content], [m].[ParentId], [m].[IsRead]
+FROM [Messages] AS [m]
+WHERE [m].[ToUserId] = @__userId_0 AND [m].[IsRead] = CAST(0 AS bit)" (0723d8ff)
+2024-04-20T16:58:25.8149189+05:00 4000002b-0001-f800-b63f-84710c7967bb [ERR] Connection Created connection id:Bi2X9jxomohj6i2fRTuwSw (7a41ce8a)
+2024-04-20T16:58:25.9206797+05:00 4000001a-0006-fc00-b63f-84710c7967bb [ERR] Error when dispatching '"OnDisconnectedAsync"' on hub. (9ac2dd74)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 66
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+2024-04-20T16:58:25.9504934+05:00 4000001a-0006-fc00-b63f-84710c7967bb [ERR] Failed disposing connection "da_H_r4W3Husliov8LnuWg". (98b86553)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 66
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.ExecuteApplication(ConnectionDelegate connectionDelegate)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.WaitOnTasks(Task applicationTask, Task transportTask, Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.DisposeAsync(Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionManager.DisposeAndRemoveAsync(HttpConnectionContext connection, Boolean closeGracefully, HttpConnectionStopStatus status)
+2024-04-20T16:58:26.6550318+05:00 4000002b-0001-f800-b63f-84710c7967bb [INF] Executed DbCommand ("802"ms) [Parameters=["@__UserId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Content], [n].[Id], [n].[IsRead], [n].[FromUserId], [n].[ToUserId], [n].[NotificationType], [n].[CreatedDate]
+FROM [Notifications] AS [n]
+WHERE [n].[ToUserId] = @__UserId_0" (0723d8ff)
+2024-04-20T16:58:26.9620046+05:00 4000002b-0001-f800-b63f-84710c7967bb [INF] Executed DbCommand ("296"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [m].[Id], [m].[FromUserId], [m].[ToUserId], [m].[Content], [m].[ParentId], [m].[IsRead]
+FROM [Messages] AS [m]
+WHERE [m].[ToUserId] = @__userId_0 AND [m].[IsRead] = CAST(0 AS bit)" (0723d8ff)
+2024-04-20T16:58:42.0203598+05:00 4000002b-0001-f800-b63f-84710c7967bb [ERR] Error when dispatching '"OnDisconnectedAsync"' on hub. (9ac2dd74)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 66
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+2024-04-20T16:58:42.0429265+05:00 4000002b-0001-f800-b63f-84710c7967bb [ERR] Failed disposing connection "Bi2X9jxomohj6i2fRTuwSw". (98b86553)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 66
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.ExecuteApplication(ConnectionDelegate connectionDelegate)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.WaitOnTasks(Task applicationTask, Task transportTask, Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.DisposeAsync(Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionManager.DisposeAndRemoveAsync(HttpConnectionContext connection, Boolean closeGracefully, HttpConnectionStopStatus status)
+2024-04-20T16:58:42.0498643+05:00 40000039-0000-fa00-b63f-84710c7967bb [ERR] Connection Created connection id:HI6Pp1Ie3kNV0BalshkJVg (be983189)
+2024-04-20T16:58:42.3703796+05:00 40000039-0000-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("305"ms) [Parameters=["@__UserId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Content], [n].[Id], [n].[IsRead], [n].[FromUserId], [n].[ToUserId], [n].[NotificationType], [n].[CreatedDate]
+FROM [Notifications] AS [n]
+WHERE [n].[ToUserId] = @__UserId_0" (0723d8ff)
+2024-04-20T16:58:42.6676744+05:00 40000039-0000-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("291"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [m].[Id], [m].[FromUserId], [m].[ToUserId], [m].[Content], [m].[ParentId], [m].[IsRead]
+FROM [Messages] AS [m]
+WHERE [m].[ToUserId] = @__userId_0 AND [m].[IsRead] = CAST(0 AS bit)" (0723d8ff)
+2024-04-20T17:01:06.1985857+05:00 40000039-0000-fa00-b63f-84710c7967bb [ERR] Error when dispatching '"OnDisconnectedAsync"' on hub. (9ac2dd74)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 66
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+2024-04-20T17:01:06.2234530+05:00 40000039-0000-fa00-b63f-84710c7967bb [ERR] Failed disposing connection "HI6Pp1Ie3kNV0BalshkJVg". (98b86553)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 66
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.ExecuteApplication(ConnectionDelegate connectionDelegate)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.WaitOnTasks(Task applicationTask, Task transportTask, Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.DisposeAsync(Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionManager.DisposeAndRemoveAsync(HttpConnectionContext connection, Boolean closeGracefully, HttpConnectionStopStatus status)
+2024-04-20T17:01:06.2349323+05:00 40000049-0002-f600-b63f-84710c7967bb [ERR] Connection Created connection id:PqHukRX7Hg104rO7ILtaCA (571ea9aa)
+2024-04-20T17:01:06.5794168+05:00 40000049-0002-f600-b63f-84710c7967bb [INF] Executed DbCommand ("332"ms) [Parameters=["@__UserId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Content], [n].[Id], [n].[IsRead], [n].[FromUserId], [n].[ToUserId], [n].[NotificationType], [n].[CreatedDate]
+FROM [Notifications] AS [n]
+WHERE [n].[ToUserId] = @__UserId_0" (0723d8ff)
+2024-04-20T17:01:06.8827434+05:00 40000049-0002-f600-b63f-84710c7967bb [INF] Executed DbCommand ("291"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [m].[Id], [m].[FromUserId], [m].[ToUserId], [m].[Content], [m].[ParentId], [m].[IsRead]
+FROM [Messages] AS [m]
+WHERE [m].[ToUserId] = @__userId_0 AND [m].[IsRead] = CAST(0 AS bit)" (0723d8ff)
+2024-04-20T17:01:09.5435230+05:00 40000049-0002-f600-b63f-84710c7967bb [ERR] Error when dispatching '"OnDisconnectedAsync"' on hub. (9ac2dd74)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 66
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+2024-04-20T17:01:09.5629220+05:00 40000049-0002-f600-b63f-84710c7967bb [ERR] Failed disposing connection "PqHukRX7Hg104rO7ILtaCA". (98b86553)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 66
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.ExecuteApplication(ConnectionDelegate connectionDelegate)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.WaitOnTasks(Task applicationTask, Task transportTask, Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.DisposeAsync(Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionManager.DisposeAndRemoveAsync(HttpConnectionContext connection, Boolean closeGracefully, HttpConnectionStopStatus status)
+2024-04-20T17:01:09.6100581+05:00 4000003b-0000-fa00-b63f-84710c7967bb [ERR] Connection Created connection id:6zcywqfeDAH3uRUgJKki0w (201b4008)
+2024-04-20T17:01:09.9259901+05:00 4000003b-0000-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("309"ms) [Parameters=["@__UserId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Content], [n].[Id], [n].[IsRead], [n].[FromUserId], [n].[ToUserId], [n].[NotificationType], [n].[CreatedDate]
+FROM [Notifications] AS [n]
+WHERE [n].[ToUserId] = @__UserId_0" (0723d8ff)
+2024-04-20T17:01:10.2341462+05:00 4000003b-0000-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("297"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [m].[Id], [m].[FromUserId], [m].[ToUserId], [m].[Content], [m].[ParentId], [m].[IsRead]
+FROM [Messages] AS [m]
+WHERE [m].[ToUserId] = @__userId_0 AND [m].[IsRead] = CAST(0 AS bit)" (0723d8ff)
+2024-04-20T17:01:56.0821008+05:00 4000003b-0000-fa00-b63f-84710c7967bb [ERR] Error when dispatching '"OnDisconnectedAsync"' on hub. (9ac2dd74)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 66
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+2024-04-20T17:01:56.1478016+05:00 4000003b-0000-fa00-b63f-84710c7967bb [ERR] Failed disposing connection "6zcywqfeDAH3uRUgJKki0w". (98b86553)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 66
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.ExecuteApplication(ConnectionDelegate connectionDelegate)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.WaitOnTasks(Task applicationTask, Task transportTask, Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.DisposeAsync(Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionManager.DisposeAndRemoveAsync(HttpConnectionContext connection, Boolean closeGracefully, HttpConnectionStopStatus status)
+2024-04-20T17:01:56.2350361+05:00 4000006c-0003-f100-b63f-84710c7967bb [ERR] Connection Created connection id:-QP1yeMinbfFCVVCPZt_gw (c0155c10)
+2024-04-20T17:01:56.5437297+05:00 4000006c-0003-f100-b63f-84710c7967bb [INF] Executed DbCommand ("298"ms) [Parameters=["@__UserId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Content], [n].[Id], [n].[IsRead], [n].[FromUserId], [n].[ToUserId], [n].[NotificationType], [n].[CreatedDate]
+FROM [Notifications] AS [n]
+WHERE [n].[ToUserId] = @__UserId_0" (0723d8ff)
+2024-04-20T17:01:56.8760915+05:00 4000006c-0003-f100-b63f-84710c7967bb [INF] Executed DbCommand ("320"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [m].[Id], [m].[FromUserId], [m].[ToUserId], [m].[Content], [m].[ParentId], [m].[IsRead]
+FROM [Messages] AS [m]
+WHERE [m].[ToUserId] = @__userId_0 AND [m].[IsRead] = CAST(0 AS bit)" (0723d8ff)
+2024-04-20T17:01:58.2461721+05:00 4000006c-0003-f100-b63f-84710c7967bb [ERR] Error when dispatching '"OnDisconnectedAsync"' on hub. (9ac2dd74)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 66
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+2024-04-20T17:01:58.2662978+05:00 4000006c-0003-f100-b63f-84710c7967bb [ERR] Failed disposing connection "-QP1yeMinbfFCVVCPZt_gw". (98b86553)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WKLNAMA.AppHub.ChatHub.OnDisconnectedAsync(Exception exception) in D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA\Hub\ChatHub.cs:line 66
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.ExecuteApplication(ConnectionDelegate connectionDelegate)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.WaitOnTasks(Task applicationTask, Task transportTask, Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.DisposeAsync(Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionManager.DisposeAndRemoveAsync(HttpConnectionContext connection, Boolean closeGracefully, HttpConnectionStopStatus status)
+2024-04-20T17:01:58.2691586+05:00 40000062-0005-fc00-b63f-84710c7967bb [ERR] Connection Created connection id:Z2PNAFyHMlwX4HHVTFF-ng (333a6b41)
+2024-04-20T17:01:58.5979370+05:00 40000062-0005-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("322"ms) [Parameters=["@__UserId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Content], [n].[Id], [n].[IsRead], [n].[FromUserId], [n].[ToUserId], [n].[NotificationType], [n].[CreatedDate]
+FROM [Notifications] AS [n]
+WHERE [n].[ToUserId] = @__UserId_0" (0723d8ff)
+2024-04-20T17:01:58.9131426+05:00 40000062-0005-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("303"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [m].[Id], [m].[FromUserId], [m].[ToUserId], [m].[Content], [m].[ParentId], [m].[IsRead]
+FROM [Messages] AS [m]
+WHERE [m].[ToUserId] = @__userId_0 AND [m].[IsRead] = CAST(0 AS bit)" (0723d8ff)
+2024-04-20T17:02:48.3187234+05:00  [INF] Executed DbCommand ("435"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-20T17:02:48.8699946+05:00  [INF] Executed DbCommand ("411"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-20T17:02:49.1837994+05:00  [INF] Executed DbCommand ("297"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-20T17:02:49.4833080+05:00  [INF] Executed DbCommand ("289"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-20T17:02:49.8560467+05:00  [INF] Executed DbCommand ("299"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-04-20T17:02:49.9095976+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-04-20T17:02:50.9942406+05:00  [INF] Executed DbCommand ("368"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-04-20T17:02:51.6630842+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-20T17:02:51.6698760+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-20T17:02:51.6752891+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-04-20T17:03:35.1921304+05:00 4000003d-0000-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("302"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2024-04-20T17:03:35.9704475+05:00 4000003d-0000-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("293"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0" (0723d8ff)
+2024-04-20T17:04:29.1419546+05:00 40000030-0006-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("299"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2024-04-20T17:05:06.4997820+05:00 4000003f-0000-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("291"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2024-04-20T17:05:07.0319273+05:00 4000003f-0000-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("302"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0" (0723d8ff)
+2024-04-20T17:06:50.2171450+05:00  [INF] Executed DbCommand ("435"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-20T17:06:50.7074066+05:00  [INF] Executed DbCommand ("346"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-20T17:06:51.0303014+05:00  [INF] Executed DbCommand ("309"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-20T17:06:51.3439639+05:00  [INF] Executed DbCommand ("304"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-20T17:06:51.8263395+05:00  [INF] Executed DbCommand ("419"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-04-20T17:06:51.8883562+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-04-20T17:06:52.8786624+05:00  [INF] Executed DbCommand ("331"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-04-20T17:06:53.5352392+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-20T17:06:53.5439714+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-20T17:06:53.5511974+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-04-20T17:07:20.3639087+05:00 40000045-0000-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("305"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2024-04-20T17:07:21.0847177+05:00 40000045-0000-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("299"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0" (0723d8ff)
+2024-04-20T17:08:37.8365632+05:00 40000047-0000-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("313"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int64), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Content], [CreatedBy], [CreatedDate], [FromUserId], [IsDeleted], [IsRead], [ParentId], [ToUserId], [UpdateDate], [UpdatedBy])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
