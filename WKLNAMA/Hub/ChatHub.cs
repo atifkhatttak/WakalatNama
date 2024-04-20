@@ -7,7 +7,7 @@ using SignalRSwaggerGen.Attributes;
 
 namespace WKLNAMA.AppHub
 {
-    [SignalRHub]
+   // [SignalRHub]
    // [Authorize]
     public sealed class ChatHub: Hub<IChatHub>
     {
