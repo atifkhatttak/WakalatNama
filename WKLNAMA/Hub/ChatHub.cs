@@ -8,7 +8,7 @@ using WKLNAMA.Controllers;
 
 namespace WKLNAMA.AppHub
 {
-    [SignalRHub]
+   // [SignalRHub]
    // [Authorize]
     public sealed class ChatHub: Hub<IChatHub>
     {
@@ -50,10 +50,9 @@ namespace WKLNAMA.AppHub
                 _messageService = scope.ServiceProvider.GetRequiredService<IMessageRepository>();
                 _notificationService = scope.ServiceProvider.GetRequiredService<INotificationRepository>();
 
-                var unReadNotification =await _notificationService.GetAllUnReadNotification(_userId);
-                var unReadMessages =await  _messageService.GetUnReadMessages(_userId);
+                var unReadNotification = await _notificationService.GetAllUnReadNotification(_userId);
+                var unReadMessages = await _messageService.GetUnReadMessages(_userId);
 
-                //Task.WaitAll(unReadMessages, unReadNotification);
 
                 await UnReadMessage(unReadMessages, unReadMessages.Count(), _userId.ToString());
                 await UnReadNotification(unReadNotification, unReadNotification.Count(), _userId.ToString());

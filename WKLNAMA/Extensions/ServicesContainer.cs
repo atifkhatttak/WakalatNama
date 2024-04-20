@@ -155,7 +155,7 @@ namespace WKLNAMA.Extensions
                 }
                     }
                 );
-                option.AddSignalRSwaggerGen();
+               // option.AddSignalRSwaggerGen();
 
             });
 
