@@ -47,10 +47,11 @@ namespace Business.BusinessLogic
                 {
                     var d = await (from u in ctx.UserProfiles
                                    join f in ctx.Favourites on u.UserId equals f.UserId
-                                   where f.IsDeleted == false
-                                   && u.IsActive == true && u.IsVerified == true && u.IsDeleted == false
+                                   where f.UserId==userId && !f.IsDeleted && f.IsFavourite
+                                   && u.IsActive == true && u.IsVerified == true && !u.IsDeleted
                                    select new
                                    {
+                                       f.FavouriteId,
                                        u.UserId,
                                        f.LawyerId,
                                        u.FullName,
@@ -70,6 +71,7 @@ namespace Business.BusinessLogic
                         {
                             lawyerList.Add(new LawyerVM
                             {
+                                Id=item.FavouriteId,
                                 CitizenId = item.UserId,
                                 LawyerId=item.LawyerId,
                                 UserName = item.FullName,
@@ -95,12 +97,12 @@ namespace Business.BusinessLogic
             List<ReviewVM> reviews = new List<ReviewVM>();
             try
             {
-                if (!isAuthenticated) return reviews;
-                if (isAuthenticated)
-                {
-                    if (LoggedInUserId != userId)
-                        return reviews;
-                }
+                //if (!isAuthenticated) return reviews;
+                //if (isAuthenticated)
+                //{
+                //    if (LoggedInUserId != userId)
+                //        return reviews;
+                //}
 
                 if (userId != null && userId > 0)
                 {
@@ -144,8 +146,24 @@ namespace Business.BusinessLogic
                 //    if (LoggedInUserId != favouriteVM.UserId)
                 //        return;
                 //}
+                if (favouriteVM != null && favouriteVM.UserId > 0 && !favouriteVM.IsFavourite)
+                {
+                    var p = await ctx.Favourites.Where(x => x.UserId == favouriteVM.UserId && x.LawyerId == favouriteVM.LawyerId && !x.IsDeleted).FirstOrDefaultAsync();
+                    if (p!=null)
+                    {
+                        p.IsDeleted = true;
 
-                if (favouriteVM!=null && favouriteVM.UserId>0)
+                        ctx.Entry(p).State=EntityState.Modified;
+                        await ctx.SaveChangesAsync();
+
+                        return;
+                    }
+
+                   
+                }
+
+
+                if (favouriteVM!=null && favouriteVM.UserId>0 && favouriteVM.IsFavourite)
                 {
                    await ctx.AddAsync(new Favourite()
                     {

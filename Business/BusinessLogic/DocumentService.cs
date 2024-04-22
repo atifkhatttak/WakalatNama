@@ -46,8 +46,8 @@ namespace Business.BusinessLogic
 
             string fileUrl = "https://wakalatnaama.somee.com/Uploads/" + eDocumentType + "/" + fileName;
 
-            return fileUrl; 
-            //return fileNameWithPath;
+            //return fileUrl; 
+            return fileNameWithPath;
         }
         public List<string> GetAllFiles(string folderName)
         {

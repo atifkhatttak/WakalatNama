@@ -1,0 +1,29 @@
+2024-04-22T03:05:22.3084132+05:00  [INF] Executed DbCommand ("377"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-22T03:05:22.6946658+05:00  [INF] Executed DbCommand ("328"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-22T03:05:22.9891623+05:00  [INF] Executed DbCommand ("287"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-22T03:05:23.2817908+05:00  [INF] Executed DbCommand ("287"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-22T03:05:23.6242112+05:00  [INF] Executed DbCommand ("306"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-04-22T03:05:23.6818391+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-04-22T03:05:24.7827039+05:00  [INF] Executed DbCommand ("402"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-04-22T03:05:25.9956333+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-22T03:05:26.0013467+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-22T03:05:26.0058016+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-04-22T03:07:14.5278638+05:00 40000016-0006-ef00-b63f-84710c7967bb [INF] Executed DbCommand ("294"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COALESCE([u].[FullName], N'') AS [FullName], CASE
+    WHEN [u0].[DocumentId] IS NOT NULL THEN COALESCE([u0].[DocPath], N'')
+    ELSE N''
+END AS [DocPath], [r].[ReviewId], [r].[CommitById], [r].[CommitOnId], [r].[Rating], [r].[ReviewContent], [r].[UpdateDate], [r].[CreatedDate], [r].[CreatedBy], [r].[UpdatedBy], [r].[IsDeleted]
+FROM [Reviews] AS [r]
+INNER JOIN [UserProfiles] AS [u] ON CAST([r].[CommitById] AS bigint) = [u].[UserId]
+LEFT JOIN [UserDocuments] AS [u0] ON [u].[UserId] = [u0].[UserId]
+WHERE [r].[CommitOnId] = @__userId_0 AND ([r].[IsDeleted] = CAST(0 AS bit) OR [u].[IsDeleted] = CAST(0 AS bit)) AND ([u0].[DocumentId] IS NULL OR [u0].[DocTypeId] = 3)" (0723d8ff)

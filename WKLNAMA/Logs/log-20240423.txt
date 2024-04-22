@@ -1,0 +1,114 @@
+2024-04-23T01:55:59.1994894+05:00  [INF] Executed DbCommand ("335"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-23T01:55:59.5493735+05:00  [INF] Executed DbCommand ("309"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-23T01:55:59.8428099+05:00  [INF] Executed DbCommand ("288"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-23T01:56:00.1349123+05:00  [INF] Executed DbCommand ("289"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-23T01:56:00.4500254+05:00  [INF] Executed DbCommand ("295"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-04-23T01:56:00.4767217+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-04-23T01:56:01.1437406+05:00  [INF] Executed DbCommand ("347"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-04-23T01:56:01.8417227+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-23T01:56:01.8473795+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-23T01:56:01.8499000+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-04-23T01:57:10.8167773+05:00 40000037-0001-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("291"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[UserId], [f].[LawyerId], [u].[FullName], [u].[TotalExperience], [u].[Rating], [f].[IsFavourite]
+FROM [UserProfiles] AS [u]
+INNER JOIN [Favourites] AS [f] ON [u].[UserId] = [f].[UserId]
+WHERE [f].[IsDeleted] = CAST(0 AS bit) AND [f].[IsFavourite] = CAST(1 AS bit) AND [u].[IsActive] = CAST(1 AS bit) AND [u].[IsVerified] = CAST(1 AS bit) AND [u].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-04-23T02:03:05.2057258+05:00  [INF] Executed DbCommand ("329"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-23T02:03:05.5478239+05:00  [INF] Executed DbCommand ("303"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-23T02:03:05.8407177+05:00  [INF] Executed DbCommand ("287"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-23T02:03:06.1323713+05:00  [INF] Executed DbCommand ("288"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-23T02:03:06.4356756+05:00  [INF] Executed DbCommand ("288"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-04-23T02:03:06.4622282+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-04-23T02:03:07.0443586+05:00  [INF] Executed DbCommand ("322"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-04-23T02:03:07.2888720+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-23T02:03:07.2931149+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-23T02:03:07.2956193+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-04-23T02:06:22.5344291+05:00 40000045-0006-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("306"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[UserId], [f].[LawyerId], [u].[FullName], [u].[TotalExperience], [u].[Rating], [f].[IsFavourite]
+FROM [UserProfiles] AS [u]
+INNER JOIN [Favourites] AS [f] ON [u].[UserId] = [f].[UserId]
+WHERE [f].[IsDeleted] = CAST(0 AS bit) AND [f].[IsFavourite] = CAST(1 AS bit) AND [u].[IsActive] = CAST(1 AS bit) AND [u].[IsVerified] = CAST(1 AS bit) AND [u].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-04-23T02:06:30.5598790+05:00 4000000e-0000-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("287"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[UserId], [f].[LawyerId], [u].[FullName], [u].[TotalExperience], [u].[Rating], [f].[IsFavourite]
+FROM [UserProfiles] AS [u]
+INNER JOIN [Favourites] AS [f] ON [u].[UserId] = [f].[UserId]
+WHERE [f].[IsDeleted] = CAST(0 AS bit) AND [f].[IsFavourite] = CAST(1 AS bit) AND [u].[IsActive] = CAST(1 AS bit) AND [u].[IsVerified] = CAST(1 AS bit) AND [u].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-04-23T02:07:37.2790323+05:00  [INF] Executed DbCommand ("318"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-23T02:07:37.6271416+05:00  [INF] Executed DbCommand ("311"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-23T02:07:37.9226152+05:00  [INF] Executed DbCommand ("290"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-23T02:07:38.2141180+05:00  [INF] Executed DbCommand ("289"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-23T02:07:38.5233655+05:00  [INF] Executed DbCommand ("290"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-04-23T02:07:38.5446661+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-04-23T02:07:39.1013011+05:00  [INF] Executed DbCommand ("306"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-04-23T02:07:39.3356361+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-23T02:07:39.3389726+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-23T02:07:39.3413807+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-04-23T02:07:59.4787504+05:00 4000005d-0004-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("294"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [f].[FavouriteId], [u].[UserId], [f].[LawyerId], [u].[FullName], [u].[TotalExperience], [u].[Rating], [f].[IsFavourite]
+FROM [UserProfiles] AS [u]
+INNER JOIN [Favourites] AS [f] ON [u].[UserId] = [f].[UserId]
+WHERE [f].[IsDeleted] = CAST(0 AS bit) AND [f].[IsFavourite] = CAST(1 AS bit) AND [u].[IsActive] = CAST(1 AS bit) AND [u].[IsVerified] = CAST(1 AS bit) AND [u].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-04-23T02:09:38.5726512+05:00 40000009-0002-f100-b63f-84710c7967bb [INF] Executed DbCommand ("300"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [f].[FavouriteId], [u].[UserId], [f].[LawyerId], [u].[FullName], [u].[TotalExperience], [u].[Rating], [f].[IsFavourite]
+FROM [UserProfiles] AS [u]
+INNER JOIN [Favourites] AS [f] ON [u].[UserId] = [f].[UserId]
+WHERE [f].[IsDeleted] = CAST(0 AS bit) AND [f].[IsFavourite] = CAST(1 AS bit) AND [u].[IsActive] = CAST(1 AS bit) AND [u].[IsVerified] = CAST(1 AS bit) AND [u].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-04-23T02:11:32.4547124+05:00  [INF] Executed DbCommand ("333"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-23T02:11:32.8179908+05:00  [INF] Executed DbCommand ("329"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-23T02:11:33.1843392+05:00  [INF] Executed DbCommand ("363"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-04-23T02:11:33.5629301+05:00  [INF] Executed DbCommand ("375"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-04-23T02:11:33.9718762+05:00  [INF] Executed DbCommand ("395"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-04-23T02:11:34.0035820+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-04-23T02:11:34.7616194+05:00  [INF] Executed DbCommand ("515"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-04-23T02:11:35.0001488+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-23T02:11:35.0031674+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-23T02:11:35.0057015+05:00  [INF] Content root path: "D:\Freelancing\wakalatnama\repo\XpertKhan\WakalatNama\WKLNAMA" (cc26f24e)
+2024-04-23T02:12:04.0077713+05:00 4000000f-0007-f900-b63f-84710c7967bb [INF] Executed DbCommand ("308"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [f].[FavouriteId], [u].[UserId], [f].[LawyerId], [u].[FullName], [u].[TotalExperience], [u].[Rating], [f].[IsFavourite]
+FROM [UserProfiles] AS [u]
+INNER JOIN [Favourites] AS [f] ON [u].[UserId] = [f].[UserId]
+WHERE [f].[UserId] = @__userId_0 AND [f].[IsDeleted] = CAST(0 AS bit) AND [f].[IsFavourite] = CAST(1 AS bit) AND [u].[IsActive] = CAST(1 AS bit) AND [u].[IsVerified] = CAST(1 AS bit) AND [u].[IsDeleted] = CAST(0 AS bit)" (0723d8ff)
+2024-04-23T02:14:16.3783731+05:00 40000011-0007-f900-b63f-84710c7967bb [INF] Executed DbCommand ("295"ms) [Parameters=["@UserId='?' (DbType = Int64), @CaseCategoryId='?' (DbType = Int32), @CityId='?' (DbType = Int32), @ExperienceMin='?' (DbType = Int32), @ExperienceMax='?' (DbType = Int32), @SearchKeys='?' (Size = 6)"], CommandType='Text', CommandTimeout='30']"
+""EXEC sp_GetCitizenLawyers @UserId, @CaseCategoryId, @CityId, @ExperienceMin, @ExperienceMax, @SearchKeys" (0723d8ff)
+2024-04-23T02:16:17.5204184+05:00 40000013-0007-f900-b63f-84710c7967bb [INF] Executed DbCommand ("298"ms) [Parameters=["@UserId='?' (DbType = Int64), @CaseCategoryId='?' (DbType = Int32), @CityId='?' (DbType = Int32), @ExperienceMin='?' (DbType = Int32), @ExperienceMax='?' (DbType = Int32), @SearchKeys='?'"], CommandType='Text', CommandTimeout='30']"
+""EXEC sp_GetCitizenLawyers @UserId, @CaseCategoryId, @CityId, @ExperienceMin, @ExperienceMax, @SearchKeys" (0723d8ff)
