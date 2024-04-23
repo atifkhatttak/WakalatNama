@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProjWakalatnama.DataLayer.Models;
+using Swashbuckle.AspNetCore.Annotations;
 using System.Net;
 using WKLNAMA.Models;
 
@@ -21,94 +22,141 @@ namespace WKLNAMA.Controllers
         {
             this.userRepository = userRepository;
 
-        }       
-        [HttpPost("GetLawyerList")]
-        public async Task<ActionResult> GetLawyerList(FilterVM filterVM)
+        }
+        [SwaggerOperation(Summary = "Create/update citizen profile from here- for now this api will only update")]
+        [HttpPost("CreateUpdateCitizenProfile")]
+        public async Task<ActionResult> CreateUpdateCitizenProfile([FromForm]CitizenVM citizenVM)
+        { 
+                return await APIResponse(async () => {
+                    apiResponse.Message = HttpStatusCode.OK.ToString();
+                    apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                    apiResponse.Success = true;
+                    apiResponse.Data = await userRepository.CreateCitizenProfile(citizenVM);
+
+                    return Ok(apiResponse);
+                });
+          
+        }
+        [SwaggerOperation(Summary = "Get citizen Home screen lawyer list from here")]
+        [HttpPost("GetCitizenHome")]
+        public async Task<ActionResult> GetCitizenHome(FilterVM filterVM)
         {
-            try
-            {
-                var result = await userRepository.GetLawyerList(filterVM);
+            return await APIResponse(async () => {
                 apiResponse.Message = HttpStatusCode.OK.ToString();
                 apiResponse.HttpStatusCode = HttpStatusCode.OK;
                 apiResponse.Success = true;
-                apiResponse.Data = result;
-            }
-            catch (Exception ex)
-            {
-                apiResponse.Message = ex.Message;
-                apiResponse.HttpStatusCode = HttpStatusCode.InternalServerError;
-                apiResponse.Success = false;
-                apiResponse.Data = null;
-            }
+                apiResponse.Data = await userRepository.GetCitizenHome(filterVM);
 
-            //return Ok(Task.FromResult(_viewModel));
-            return Ok(apiResponse);
+                return Ok(apiResponse);
+            });            
         }
+        [SwaggerOperation(Summary = "Get lawyer profile details  from here")]
         [HttpGet("GetLawyerDetails")]
         public async Task<ActionResult> GetLawyerDetails(int? lawyerId)
         {
-            try
-            {
-                var result = await userRepository.GetLawyerProfile(lawyerId);
+            return await APIResponse(async () => {
                 apiResponse.Message = HttpStatusCode.OK.ToString();
                 apiResponse.HttpStatusCode = HttpStatusCode.OK;
                 apiResponse.Success = true;
-                apiResponse.Data = result;
-            }
-            catch (Exception ex)
-            {
-                apiResponse.Message = ex.Message;
-                apiResponse.HttpStatusCode = HttpStatusCode.InternalServerError;
-                apiResponse.Success = false;
-                apiResponse.Data = null;
-            }
+                apiResponse.Data = await userRepository.GetLawyerProfile(lawyerId);
 
-            //return Ok(Task.FromResult(_viewModel));
-            return Ok(apiResponse);
+                return Ok(apiResponse);
+            });            
         }
+        [SwaggerOperation(Summary = "Get lawyer home screen data from here")]
         [HttpGet("GetLayerHome")]
         public async Task<ActionResult> GetLayerHome(int? LawyerId)
         {
-            try
-            {
-                var result = await userRepository.GetLawyerHome(LawyerId);
+            return await APIResponse(async () => {
                 apiResponse.Message = HttpStatusCode.OK.ToString();
                 apiResponse.HttpStatusCode = HttpStatusCode.OK;
                 apiResponse.Success = true;
-                apiResponse.Data = result;
-            }
-            catch (Exception ex)
-            {
-                apiResponse.Message = ex.Message;
-                apiResponse.HttpStatusCode = HttpStatusCode.InternalServerError;
-                apiResponse.Success = false;
-                apiResponse.Data = null;
-            }
+                apiResponse.Data = await userRepository.GetLawyerHome(LawyerId);
 
-            //return Ok(Task.FromResult(_viewModel));
-            return Ok(apiResponse);
+                return Ok(apiResponse);
+            });            
         }
+        [SwaggerOperation(Summary = "Get citizen profile details from here-secured")]
         [HttpGet("GetCitizenDetails")]
         public async Task<ActionResult> GetCitizenDetails(int? CitizenId)
         {
-            try
-            {
-                var result = await userRepository.GetCitizenProfile(CitizenId);
+            return await APIResponse(async () => {
                 apiResponse.Message = HttpStatusCode.OK.ToString();
                 apiResponse.HttpStatusCode = HttpStatusCode.OK;
                 apiResponse.Success = true;
-                apiResponse.Data = result;
-            }
-            catch (Exception ex)
-            {
-                apiResponse.Message = ex.Message;
-                apiResponse.HttpStatusCode = HttpStatusCode.InternalServerError;
-                apiResponse.Success = false;
-                apiResponse.Data = null;
-            }
+                apiResponse.Data = await userRepository.GetCitizenProfile(CitizenId);
 
-            //return Ok(Task.FromResult(_viewModel));
-            return Ok(apiResponse);
+                return Ok(apiResponse);
+            });           
+        }
+        [SwaggerOperation(Summary = "Create/update lawyer profile from here")]
+        [HttpPost("CreateUpdateLawyerProfile")]
+        public async Task<ActionResult> CreateUpdateLawyerProfile([FromForm]LawyerProfileVM lawyerVM)
+        {
+            return await APIResponse(async () => {
+                apiResponse.Message = HttpStatusCode.OK.ToString();
+                apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                apiResponse.Success = true;
+                apiResponse.Data = await userRepository.CreateUpdateLawyerProfile(lawyerVM);
+
+                return Ok(apiResponse);
+            });
+
+        }
+        [SwaggerOperation(Summary = "Create/update lawyer Experties from here")]
+        [HttpPost("CreateUpdateLawyerExperties")]
+        public async Task<ActionResult> CreateUpdateLawyerExperties(List<LawyerExpertiesVM> expertiesVMs)
+        {
+            return await APIResponse(async () => {
+                apiResponse.Message = HttpStatusCode.OK.ToString();
+                apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                apiResponse.Success = true;
+                apiResponse.Data = await userRepository.CreateUpdateLawyerExperties(expertiesVMs);
+
+                return Ok(apiResponse);
+            });
+
+        }
+        [SwaggerOperation(Summary = "Create/update lawyer Qaulification from here")]
+        [HttpPost("CreateUpdateLawyerQaulification")]
+        public async Task<ActionResult> CreateUpdateLawyerQaulification(List<LawyerQualificationVM> qualificationVMs)
+        {
+            return await APIResponse(async () => {
+                apiResponse.Message = HttpStatusCode.OK.ToString();
+                apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                apiResponse.Success = true;
+                apiResponse.Data = await userRepository.CreateUpdateLawyerQaulification(qualificationVMs);
+
+                return Ok(apiResponse);
+            });
+
+        }
+        [SwaggerOperation(Summary = "Get lawyer profile information  from here-secured")]
+        [HttpGet("GetLawyerProfileInfo")]
+        public async Task<ActionResult> GetLawyerProfileInfo(int? lawyerId)
+        {
+            return await APIResponse(async () => {
+                apiResponse.Message = HttpStatusCode.OK.ToString();
+                apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                apiResponse.Success = true;
+                apiResponse.Data = await userRepository.GetLawyerProfileInfo(lawyerId);
+
+                return Ok(apiResponse);
+            });
+        }
+
+        [SwaggerOperation(Summary = "Get all user from here by Ispending and RoleId")]
+        [HttpGet("GetAllUser")]
+        public async Task<ActionResult> GetAllUser(bool IsPending, int RoleId)
+        {
+            return await APIResponse(async () => {
+                apiResponse.Message = HttpStatusCode.OK.ToString();
+                apiResponse.HttpStatusCode = HttpStatusCode.OK;
+                apiResponse.Success = true;
+                apiResponse.Data = await userRepository.GetAllUser(IsPending, RoleId);
+
+                return Ok(apiResponse);
+            });
         }
     }
 }

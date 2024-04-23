@@ -10,9 +10,23 @@ using System.Threading.Tasks;
 namespace Business.Services
 {
     public interface ICasesRepository : IBaseRepository<CasesDetail>
-    {
-        Task CreateCase(CourtCaseVM courtCase);
-        Task<List<CourtCaseVM>> GetUserCases(long? userId);
-        Task<List<CaseDetailVM>> GetUserDateList(long? userId);
+    {        
+        Task<CourtCases> CreateUpdateCase(CourtCaseVM courtCase);
+        Task<CaseDateVM> CreateUpdateCaseDate(CaseDateVM detailVM);
+        Task<List<CourtCaseVM>> GetCitizenCases(long? userId);
+        Task<List<CourtCaseVM>> GetLawyerCases(long? userId);
+        Task<List<CaseDetailVM>> GetCitizenDateList(long? userId,long caseId);
+        Task<List<CaseDetailVM>> GetLawyerDateList(long? userId,long caseId);
+        Task<CourtCaseVM> GetCaseById(long? caseId);
+        Task AcceptRejectCaseByLawyer(AcceptRejectCaseVM acceptReject);
+        Task<bool> AcceptRejectCase(AcceptRejectCaseVM acceptRejectVm);
+        Task<List<CourtCaseVM>> GetCasesForAdminApproval();
+        Task<List<CourtCaseVM>> GetCasesForLawyerApproval(long lawywerId);
+        Task<bool> AssignEmployeeToCase(CourtCaseVM vm);
+        Task<CaseRejectionReason> AddCaseRejectionReason(AcceptRejectCaseVM vm);
+        Task<List<CaseRejectionReasonVm>> GetCaseRejectionReason();
+
+
+
     }
 }

@@ -1,10 +1,12 @@
 ﻿using Business.BusinessLogic;
+using Business.Helpers.Attributes;
 using Business.Services;
 using Business.ViewModels;
 using Data.DomainModels;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using System.Security.Claims;
@@ -13,29 +15,31 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace WKLNAMA.Controllers
 {
-    //[Authorize]
+   // [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class BaseController<TEntity> : ControllerBase where TEntity : class
     {
         protected IBaseRepository<TEntity> _baseRepository;
         private readonly IHttpContextAccessor httpContextAccessor;
-        private ApiResponse apiResponse = new ApiResponse();
+        private readonly ILogger<BaseController<TEntity>> _logger;
+        protected ApiResponse apiResponse = new ApiResponse();
 
         public UserIdentityModelVm UserModel => new UserIdentityModelVm()
                 {
-                    UserId = Convert.ToInt64(string.IsNullOrEmpty(User.FindFirst("UserId").Value) ? 0 : User.FindFirst("UserId").Value),
+                    UserId = User.Identity.IsAuthenticated ? Convert.ToInt64(User.FindFirst("UserId")!.Value) : -1,
                     FirstName = User.FindFirstValue("FirstName")!,
                     LastName = User.FindFirstValue("LastName")!,
-                    Role = User.FindFirstValue("Role")!,
-                    Email = User.FindFirstValue("Email")!,
+                    Role = User.FindFirstValue("http://schemas.microsoft.com/ws/2008/06/identity/claims/role")!,
+                    Email = User.FindFirstValue("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")!,
                     UserName = User.FindFirstValue("UserName")!
                 };
         
-        public BaseController(IBaseRepository<TEntity> baseRepository, IHttpContextAccessor httpContextAccessor)
+        public BaseController(IBaseRepository<TEntity> baseRepository, IHttpContextAccessor httpContextAccessor, ILogger<BaseController<TEntity>> logger=null)
         {
             _baseRepository = baseRepository;
             this.httpContextAccessor = httpContextAccessor;
+            _logger = logger;
         }
 
         [HttpGet]
@@ -152,6 +156,24 @@ namespace WKLNAMA.Controllers
                 apiResponse.Data = null;
             }
             return Ok(apiResponse);
+        }
+
+        [NonAction]
+        public async Task<ActionResult> APIResponse(Func<Task<ActionResult>> callback)
+        {
+            try 
+            { 
+                return await callback();
+            }
+            catch (Exception ex)
+            {
+                apiResponse.Message = "Internal server error occured,Please contact you adminnistrator!";
+                apiResponse.HttpStatusCode = HttpStatusCode.InternalServerError;
+                apiResponse.Success = false;
+                apiResponse.Data = null;
+                _logger.LogError(ex.Message);
+                return Ok(apiResponse);
+            }
         }
 
     }

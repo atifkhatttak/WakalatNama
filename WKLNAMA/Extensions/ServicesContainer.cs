@@ -16,9 +16,26 @@ using System.Text;
 using WKLNAMA.AppHub;
 using WKLNAMA.Extensions.Override;
 using WKLNAMA.Filters;
+using WKLNAMA.TokenService;
 
 namespace WKLNAMA.Extensions
 {
+    public class ServiceActivator
+    {
+        internal static IServiceProvider _serviceProvider = null;
+
+        public static void Configure(IServiceProvider serviceProvider)
+        {
+            _serviceProvider = serviceProvider;
+        }
+
+        public static IServiceScope GetScope(IServiceProvider serviceProvider = null)
+        {
+            var provider = serviceProvider ?? _serviceProvider;
+            return provider?
+                .CreateScope();
+        }
+    }
     public static class ExtensionServicesContainer
     { 
         /// <summary>
@@ -47,11 +64,19 @@ namespace WKLNAMA.Extensions
             services.AddScoped<ICasesRepository,CasesRepository>();
             services.AddScoped<IDocumentService, GoogleDriveDocument>();
             services.AddScoped<IReviewRepository, ReviewRepository>();
+            services.AddScoped<ISettingsRepository,SettingsRepository>();
             services.AddSingleton<IUserIdProvider, IdBasedUserIdProvider>();
+            services.AddScoped<INotificationRepository, NotificationRepository>();
 
             services.AddSingleton<ChatHub>();
             services.AddScoped<IMessageRepository, MessageRepository>();
+            services.AddScoped<ITokenService, TokenService.TokenService>();
+            services.AddScoped<IEmailService, EmailService>();
+            services.AddScoped<IDocumentServiceV2, DocumentService>();
+
             services.AddSingleton<IDBInitializer, DBInitializer>();
+            builder.Services.AddSingleton< IHttpContextAccessor,HttpContextAccessor>();
+
 
         }
 
@@ -64,6 +89,7 @@ namespace WKLNAMA.Extensions
         {
             //Jwt configuration starts here
             var jwtIssuer = builder.Configuration.GetSection("Jwt:Issuer").Get<string>();
+            var jwtAudience = builder.Configuration.GetSection("Jwt:Audience").Get<string>(); 
             var jwtKey = builder.Configuration.GetSection("Jwt:Key").Get<string>();
 
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -76,7 +102,9 @@ namespace WKLNAMA.Extensions
                      ValidateLifetime = true,
                      ValidateIssuerSigningKey = true,
                      ValidIssuer = jwtIssuer,
-                     ValidAudience = jwtIssuer,
+                     ValidAudience = jwtAudience,
+                     ClockSkew = TimeSpan.Zero,
+                     LifetimeValidator = TokenLifetimeValidator.Validate,
                      IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey))
                  };
              });
@@ -91,6 +119,7 @@ namespace WKLNAMA.Extensions
         {
             builder.Services.AddSwaggerGen(option =>
             {
+                option.EnableAnnotations();
                 option.SwaggerDoc("v1", new OpenApiInfo { Title = "WakalatNama API", Version = "V1" });
 
                 option.AddSecurityDefinition(
@@ -126,7 +155,7 @@ namespace WKLNAMA.Extensions
                 }
                     }
                 );
-              //  option.AddSignalRSwaggerGen();
+               // option.AddSignalRSwaggerGen();
 
             });
 

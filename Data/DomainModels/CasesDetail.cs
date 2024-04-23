@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using Data.DomainModels;
 
 namespace ProjWakalatnama.DataLayer.Models
 {
-    public class CasesDetail
+    public class CasesDetail : BaseModel
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -22,17 +23,6 @@ namespace ProjWakalatnama.DataLayer.Models
         [MaxLength]
         public string DateDescription { get; set; }
         public DateTime? HearingDate { get; set; }
-        [Required]
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        public DateTime? CreatedDate { get; set; }
 
-        public long? CreatedUser { get; set; }
-
-        public DateTime? ModifiedDate { get; set; }
-
-        public long? ModifiedUser { get; set; }
-
-        [DefaultValue(false)]
-        public bool? IsDeleted { get; set; }
     }
 }

@@ -9,5 +9,10 @@ namespace Data.DomainModels
 {
     public class AppRole: IdentityRole<int>
     {
+        public DateTime UpdateDate { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public long CreatedBy { get; set; }
+        public long UpdatedBy { get; set; }
+        public bool IsDeleted { get; set; } = false;
     }
 }

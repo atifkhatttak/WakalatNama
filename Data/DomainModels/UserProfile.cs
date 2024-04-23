@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using Data.DomainModels;
 
 namespace ProjWakalatnama.DataLayer.Models
 {
-    public class UserProfile
+    public class UserProfile : BaseModel
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -17,6 +18,7 @@ namespace ProjWakalatnama.DataLayer.Models
 
         [Required]
         public long UserId { get; set; }
+        public string? MrTitle { get; set; }
 
         [MaxLength(100)]
         public string? FullName { get; set; }
@@ -38,6 +40,7 @@ namespace ProjWakalatnama.DataLayer.Models
 
         [StringLength(20)]
         public string ContactNumber { get; set; }
+        //public string? CountryCode { get; set; }
 
         [MaxLength]
         public string? CurrAddress { get; set; }
@@ -51,8 +54,10 @@ namespace ProjWakalatnama.DataLayer.Models
 
         //[StringLength(255)]
         //public string ProfilePic { get; set; }
-
+        [DefaultValue(false)]
         public bool? IsOverseas { get; set; }
+        [DefaultValue(false)]
+        public bool? IsForeignQualified { get; set; }
 
         [StringLength(50)]
         public string? NICOP { get; set; }
@@ -91,9 +96,9 @@ namespace ProjWakalatnama.DataLayer.Models
 
         [StringLength(255)]
         public string? Institute { get; set; }
-
-        [StringLength(100)]
-        public string? BarCouncil { get; set; }
+        public int? BarCouncilId { get; set; }
+        [StringLength(255)]
+        public string? BarCouncilNo { get; set; }
 
         public DateTime? EnrollmentDate { get; set; }
 
@@ -120,22 +125,15 @@ namespace ProjWakalatnama.DataLayer.Models
         public bool? IsCreateMeeting { get; set; }
 
         public bool? IsAgreed { get; set; }
-        public DateTime? CreatedDate { get; set; }
-
-        public long? CreatedUser { get; set; }
-
-        public DateTime? ModifiedDate { get; set; }
-
-        public long? ModifiedUser { get; set; }
 
         public bool? IsActive { get; set; }
 
         public bool? IsVerified { get; set; }
 
-        [DefaultValue(false)]
-        public bool? IsDeleted { get; set; }
         public float? Rating { get; set; }
         public bool? IsFavourite { get; set; }
+        [DefaultValue(false)]
+        public bool? IsContestedCopy { get; set; }
         public string? ProfileDescription { get; set; }
         public string? FatherName { get; set; }
     }

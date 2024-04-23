@@ -1,8 +1,11 @@
-﻿using Business.Services;
+﻿using Business.Enums;
+using Business.Services;
 using Business.ViewModels;
 using Data.Context;
 using Data.DomainModels;
+using Google.Apis.Drive.v3.Data;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Identity.Client;
 using Microsoft.IdentityModel.Tokens;
@@ -43,8 +46,7 @@ namespace Business.BusinessLogic
                     LastName = registerViewModel.LastName,
                     Email = registerViewModel.Email,
                     UserName = registerViewModel.UserName,
-                    PhoneNumber = registerViewModel.PhoneNumber
-
+                    PhoneNumber = registerViewModel.PhoneNumber     
                 };
 
               var isUserExist= ctx.Users.Any(x => x.UserName == _user.UserName || x.Email == _user.Email);
@@ -80,7 +82,12 @@ namespace Business.BusinessLogic
                             FullName = insertedUser.FirstName + " " + insertedUser.LastName,
                             Email=insertedUser.Email??"",
                             ContactNumber=insertedUser.PhoneNumber??"",
-                            IsOverseas=registerViewModel.IsOverseas
+                            IsOverseas=registerViewModel.IsOverseas,
+                            CityId=registerViewModel.CityId,
+
+                            IsActive=true,
+                            IsAgreed=true,
+                            IsVerified=true
                         };
 
                         await ctx.AddAsync(userProfile);
@@ -89,7 +96,10 @@ namespace Business.BusinessLogic
 
                     registerViewModel.UserId= insertedUser?.Id??0;
                 }
-               
+                else
+                {
+                    registerViewModel = null;
+                }
             }
             catch (Exception ex) {
                 throw ex;
@@ -160,6 +170,14 @@ namespace Business.BusinessLogic
                     }
                   return  GenerateToken(claims);
                 }
+                else
+                {
+                    return "Password is incorrect";
+                }
+            }
+            else
+            {
+                return "User not found on this email";
             }
            return string.Empty;
         }
@@ -170,13 +188,250 @@ namespace Business.BusinessLogic
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
             var Sectoken = new JwtSecurityToken(config["Jwt:Issuer"],
-              config["Jwt:Issuer"],
+              config["Jwt:Audience"],
               claims,
               expires: DateTime.Now.AddMinutes(120),
               signingCredentials: credentials);
 
             var token = new JwtSecurityTokenHandler().WriteToken(Sectoken);
             return token;
+        }
+
+        public async Task<AppUserVm> ForgotPassword(string email)
+        {
+            AppUserVm _appUser = null;
+
+            var _dbUser =await userManager.FindByEmailAsync(email);
+            
+            if (_dbUser != null) 
+            {
+                 _appUser = new AppUserVm
+                {
+                    Id = _dbUser.Id,
+                    FullName = _dbUser.FirstName + " " + _dbUser.LastName,
+                    Email = _dbUser.Email!,
+                    UserName = _dbUser.UserName!,
+                };
+
+             var _passwordToken = await  userManager.GeneratePasswordResetTokenAsync(_dbUser);
+
+                
+                _dbUser!.OTPCode = Convert.ToInt32(GenerateOTP(4));
+                _appUser.OTPCode =(int)_dbUser!.OTPCode;
+              await SaveAsync();
+                    
+            }
+            return _appUser!;
+
+        }
+        private string GenerateOTP(int noOfDigits)
+        {
+            Random rnd = new Random();
+            string otpDigit = string.Empty;
+
+            for(int i = 0; i < noOfDigits; i++)
+            {
+                int digit = rnd.Next(0, 9); // creates a number between 0 and 9
+                otpDigit += digit;
+            }
+            return otpDigit;          
+        }
+
+        public async Task PersistOTP(AppUserVm userVm,int otpCode)
+        {
+            var _user = await ctx.Users.Where(x => x.Email == userVm.Email && x.UserName == userVm.UserName).FirstOrDefaultAsync();
+
+            if(_user != null )
+            {
+                _user.OTPCode = otpCode;
+                await ctx.SaveChangesAsync();
+            }
+        }
+
+        public async Task RemoveOTP(AppUserVm userVm) 
+        {
+            var _user = await ctx.Users.Where(x => x.Email == userVm.Email && x.UserName == userVm.UserName).FirstOrDefaultAsync();
+
+            if (_user != null)
+            {
+                _user.OTPCode = null;
+                await ctx.SaveChangesAsync();
+            }
+        }
+
+        public async Task<AppUserVm> VerifyOTP(string email, int otpCode)
+        {
+           var _user = await ctx.Users.Where(x => x.Email == email && x.OTPCode == otpCode).Select(x=> new AppUserVm {
+                          Id= x.Id,
+                          FullName =x.FirstName + " " + x.LastName,
+                          Email=x.Email!,
+                          UserName=x.UserName!,
+           }).FirstOrDefaultAsync();
+           
+            return _user;
+        }
+
+        public async Task<bool> ResetPassword(AppUserVm userVm)
+        {
+              var _user = await    userManager.FindByEmailAsync(userVm.Email);
+
+            if(_user != null)
+            {
+               await userManager.RemovePasswordAsync(_user);
+                await userManager.AddPasswordAsync(_user,userVm.Password);
+
+              await  ctx.SaveChangesAsync();
+
+                return true;
+            }
+
+            return false;
+        }
+
+        public async Task<UserClaimVM> GetClaims(LoginViewModel loginModel)
+        {
+            UserClaimVM userClaimVM = new UserClaimVM();
+            try
+            {
+            var _user = await userManager.FindByEmailAsync(loginModel.UserName);
+
+            if (_user != null)
+            {
+                var _passwordVerified = await userManager.CheckPasswordAsync(_user, loginModel.Password);
+
+                    if (_passwordVerified)
+                    {
+                        var roles = await userManager.GetRolesAsync(_user);
+
+                        userClaimVM.Email = _user.Email;
+                        userClaimVM.UserId = _user.Id;
+                        userClaimVM.UserName = _user.UserName;
+
+                       var userProfile =await ctx.UserProfiles.Where(x => x.UserId == _user.Id && !x.IsDeleted).FirstOrDefaultAsync();
+                        if (userProfile!=null)
+                        {
+                            userClaimVM.CityId=userProfile.CityId;
+                            userClaimVM.ProfilePic = ctx.UserDocuments.Where(x => x.UserId == _user.Id && !x.IsDeleted).FirstOrDefault()?.DocPath ?? "";
+                        }
+
+                        if (roles.Count > 0)
+                        {
+                            userClaimVM.Roles = new List<string>();
+                            foreach (var role in roles)
+                            {
+                                userClaimVM.Roles.Add(role);
+                            }
+                        }
+                   
+                }
+            }
+
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return userClaimVM;
+        }
+
+        public async Task<List<AppUserVm>> GetCitizenLaywer(long citizenId)
+        {
+            var _user = await (from u in ctx.Users
+                                join c in ctx.CourtCases
+                                on u.Id equals c.CitizenId
+                                where u.IsDeleted != false && c.IsDeleted != true && u.Id == citizenId
+                               select new AppUserVm
+                                {
+                                    UserName = u.UserName,
+                                    FullName = u.FirstName + " " + u.LastName,
+                                    Id = u.Id,
+                                    Email = u.Email,
+                                })
+                               .Union(
+                               from u1 in ctx.Users
+                               where u1.IsDeleted != true && u1.UserName == "cservice"
+                               select new AppUserVm
+                               {
+                                   UserName = u1.UserName,
+                                   FullName = u1.FirstName + " " + u1.LastName,
+                                   Id = u1.Id,
+                                   Email = u1.Email,
+                               }
+                              ).ToListAsync();
+
+            return _user;
+        }
+
+        public async Task<List<AppUserVm>> GetLaywerCitizen(long lawyerId)
+        {
+            var _user = await (from u in ctx.Users
+                               join c in ctx.CourtCases
+                               on u.Id equals c.LawyerId
+                               where u.IsDeleted != false && c.IsDeleted != true && u.Id== lawyerId
+                               select new AppUserVm
+                               {
+                                   UserName = u.UserName,
+                                   FullName = u.FirstName + " " + u.LastName,
+                                   Id = u.Id,
+                                   Email = u.Email,
+                               })
+                               .Union(
+                               from u1 in ctx.Users
+                               where u1.IsDeleted != true && u1.UserName == "cservice"
+                               select new AppUserVm
+                               {
+                                   UserName = u1.UserName,
+                                   FullName = u1.FirstName + " " + u1.LastName,
+                                   Id = u1.Id,
+                                   Email = u1.Email,
+                               }
+                              ).ToListAsync();
+
+            return _user;
+        }
+        public async Task<List<AppUserVm>> GetAdminUsers(long adminId)
+        {
+            var _user = await (from u in ctx.Users
+                               where u.IsDeleted != false && u.Id!=adminId
+                               select new AppUserVm
+                               {
+                                   UserName = u.UserName,
+                                   FullName = u.FirstName + " " + u.LastName,
+                                   Id = u.Id,
+                                   Email = u.Email,
+                               }).ToListAsync();
+
+            return _user;
+        }
+
+        public async Task<List<AppUserVm>> GetCustomerSerice()
+        {
+
+            var _user = await (from u in ctx.Users
+                               where u.IsDeleted != false && u.UserName== "cservice"
+                               select new AppUserVm
+                               {
+                                   UserName = u.UserName,
+                                   FullName = u.FirstName + " " + u.LastName,
+                                   Id = u.Id,
+                                   Email = u.Email,
+                               }).ToListAsync();
+            return _user;
+        }
+
+        public async Task<List<AppUserVm>> GetChatUser(long userId, string roleName)
+        {
+            List<AppUserVm> _users = new List<AppUserVm>();
+
+            if (roleName == Roles.Citizen.ToString())
+                _users.AddRange(await GetCitizenLaywer(userId));
+            else if (roleName == Roles.Lawyer.ToString())
+                _users.AddRange(await GetLaywerCitizen(userId));
+            else
+                _users.AddRange(await GetAdminUsers(userId));
+
+            return _users;
         }
     }
 }

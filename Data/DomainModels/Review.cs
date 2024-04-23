@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Data.DomainModels
 {
-    public class Review
+    public class Review : BaseModel
     {
         [Key]
         [Required]
@@ -23,9 +23,5 @@ namespace Data.DomainModels
         public int CommitOnId { get; set; }
         public float? Rating { get; set; }
         public string? ReviewContent { get; set; }
-        public DateTime? CreatedDate { get; set; }
-
-        [DefaultValue(false)]
-        public bool? IsDeleted { get; set; }
     }
 }

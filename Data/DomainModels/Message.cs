@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Data.DomainModels
 {
-    public class Message
+    public class Message : BaseModel
     {
         public long Id { get; set; }
         public string Content { get; set; }

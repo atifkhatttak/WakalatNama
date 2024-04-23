@@ -3,13 +3,18 @@ using Business.Services;
 using Business.ViewModels;
 using Data.Context;
 using Data.DomainModels;
+using Google.Apis.Drive.v3.Data;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using ProjWakalatnama.DataLayer.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,41 +24,54 @@ namespace Business.BusinessLogic
     {
         private readonly WKNNAMADBCtx ctx;
         private readonly IConfiguration config;
+        private readonly ICasesRepository casesRepository;
+        private readonly BaseSPRepository baseSP;
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly bool isAuthenticated = false;
+        private readonly long LoggedInUserId = -1;
+        private readonly string LoggedInRole = "";
 
-        public UserRepository(WKNNAMADBCtx ctx, IConfiguration config) : base(ctx)
+        public UserRepository(WKNNAMADBCtx ctx, IConfiguration config, IHttpContextAccessor httpContextAccessor) : base(ctx)
         {
             this.ctx = ctx;
             this.config = config;
+            this._httpContextAccessor = httpContextAccessor;
+            baseSP = new BaseSPRepository(ctx);
+            this.isAuthenticated = _httpContextAccessor.HttpContext.User.Identity.IsAuthenticated;
+            this.LoggedInUserId = isAuthenticated ? Convert.ToInt64(httpContextAccessor.HttpContext.User.FindFirstValue("UserId")) : -1;
         }
 
-        public async Task<List<LawyerVM>> GetLawyerList(FilterVM filterVM)
+        public async Task<CitizenVM> CreateCitizenProfile(CitizenVM citizenVM)
         {
-            List<LawyerVM> lawyerList = new List<LawyerVM>();
             try
             {
 
-                if (filterVM != null)
+                if (citizenVM != null)
                 {
-                    var d = await ctx
-                        .UserProfiles
-                        .Where(x => x.CityId == filterVM.CityId || (x.TotalExperience >= filterVM.ExperienceMin && x.TotalExperience <= filterVM.ExperienceMax)
-                         && (x.RoleId == (int)Roles.Laywer && x.IsActive == true && x.IsVerified == true && x.IsDeleted == false))
-                        .ToListAsync();
-
-                    if (d != null)
+                    if (citizenVM.ProfileId > 0)
                     {
-                        foreach (var item in d)
-                        {
-                            lawyerList.Add(new LawyerVM
-                            {
-                                Id = item.UserId,
-                                UserName = item.FullName,
-                                TotalExperience = item.TotalExperience,
-                                Rating = item.Rating,
-                                IsFavourite = item.IsFavourite
-                            });
-                        }
+                        var CitizenGet = await ctx.UserProfiles.Where(x => x.ProfileId == citizenVM.ProfileId && x.IsDeleted == false).FirstOrDefaultAsync();
 
+                        if (CitizenGet != null)
+                        {
+                            CitizenGet.FullName = citizenVM.FullName;
+                            CitizenGet.FatherName = citizenVM.FatherName;
+                            CitizenGet.CNICNo = citizenVM.CNICNo;
+                            CitizenGet.CityId = citizenVM.CityId;
+                            //CitizenGet.CountryCode = citizenVM.CountryCode;
+                            CitizenGet.ContactNumber = citizenVM.ContactNumber;
+                            CitizenGet.CurrAddress = citizenVM.CurrAddress;
+                            CitizenGet.PermAddress = citizenVM.PermAddress;
+                            CitizenGet.IsDeleted = false;
+                            //if (citizenVM.ProfilePhoto!=null)
+                            //{
+                            //    UserDocument document = new UserDocument();
+                            //    document.UserId = citizenVM.UserId;
+                            //   document.DocName=citizenVM.ProfilePhoto.Name;
+                            //}
+                            ctx.Entry(CitizenGet).State = EntityState.Modified;
+                            await ctx.SaveChangesAsync();
+                        }
                     }
                 }
             }
@@ -62,7 +80,70 @@ namespace Business.BusinessLogic
                 throw ex;
             }
 
-            return lawyerList;
+            return citizenVM;
+        }
+        public async Task<CitizenHomeVM> GetCitizenHome(FilterVM filterVM)
+        {
+            CitizenHomeVM citizenHome = new CitizenHomeVM();
+            //List<SqlParameter> sqlParameters= new List<SqlParameter>();
+            try
+            {
+
+                if (filterVM != null)
+                {
+
+                    //if (!isAuthenticated) return CitizenHomeVM;
+                    //if (isAuthenticated)
+                    //{
+                    //    if (LoggedInUserId != filterVM.UserId)
+                    //        return CitizenHomeVM;
+                    //}
+
+
+
+                    SqlParameter[] param = baseSP.CreateSqlParametersFromModel(filterVM);
+
+                    var lawyers = await baseSP.ExecuteStoredProcedureAsync<sp_GetCitizenLawyers_Result>("sp_GetCitizenLawyers", param);
+                    //var popularLawyers = await baseSP.ExecuteStoredProcedureAsync<sp_GetCitizenLawyers_Result>("sp_GetCitizenLawyers_Popular", param);
+
+                    if (lawyers != null)
+                    {
+                        foreach (var item in lawyers)
+                        {
+                            if (item.Rating > 3)
+                            {
+                                citizenHome.PopularLawyers.Add(new LawyerVM
+                                {
+                                    LawyerId = item.UserId,
+                                    UserName = item.FullName,
+                                    TotalExperience = item.TotalExperience,
+                                    Rating = item.Rating,
+                                    IsFavourite = item.IsFavourite ?? false
+                                });
+                            }
+
+                            //popular lawyer should also be added into all list
+                            citizenHome.Lawyers.Add(new LawyerVM
+                            {
+                                LawyerId = item.UserId,
+                                UserName = item.FullName,
+                                TotalExperience = item.TotalExperience,
+                                Rating = item.Rating,
+                                IsFavourite = item.IsFavourite ?? false
+                            });
+
+                        }
+
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return citizenHome;
         }
         public async Task<LawyerVM> GetLawyerProfile(long? LawyerId)
         {
@@ -72,8 +153,8 @@ namespace Business.BusinessLogic
 
                 if (LawyerId > 0)
                 {
-                    var d = await ctx.UserProfiles.Where(x => x.UserId== LawyerId && x.RoleId==(int)Roles.Laywer).FirstOrDefaultAsync();
-                    int CasesCount=0;
+                    var d = await ctx.UserProfiles.Where(x => x.UserId == LawyerId && x.RoleId == (int)Roles.Lawyer).FirstOrDefaultAsync();
+                    int CasesCount = 0;
                     int TotalClient = 0;
                     if (d != null)
                     {
@@ -87,7 +168,7 @@ namespace Business.BusinessLogic
                         lawyer.CompletedCase = CasesCount;
                         lawyer.TotalClient = TotalClient;
                     }
-                }              
+                }
             }
             catch (Exception ex)
             {
@@ -98,15 +179,54 @@ namespace Business.BusinessLogic
         }
         public async Task<LawyerHomeVM> GetLawyerHome(int? lawyerId)
         {
-            LawyerHomeVM lawyer = new LawyerHomeVM();
+            LawyerHomeVM lawyerHome = new LawyerHomeVM();
             try
             {
 
                 if (lawyerId > 0)
                 {
-                    lawyer.TotalCases = await ctx.CourtCases.CountAsync(x => x.LawyerId== lawyerId && x.IsDeleted==false);
-                    lawyer.CompltedCase = await ctx.CourtCases.CountAsync(x => x.LawyerId== lawyerId && x.CaseStatusId==(int)CaseStatus.Initiated && x.IsDeleted==false);
-                   
+                    lawyerHome.TotalCases = await ctx.CourtCases.CountAsync(x => x.LawyerId == lawyerId && x.IsDeleted == false);
+                    lawyerHome.CompltedCase = await ctx.CourtCases.CountAsync(x => x.LawyerId == lawyerId && x.LegalStatusId == (int)CaseLegalStatus.Initiated && x.IsDeleted == false);
+
+
+                    lawyerHome.CourtCases = await (from c in ctx.CourtCases
+                                                   join u in ctx.UserProfiles on c.CitizenId equals u.UserId
+                                                   join cat in ctx.CaseCategories on c.CategoryId equals cat.ID
+                                                   where c.LawyerId == lawyerId && u.RoleId == (int)Roles.Citizen && (u.IsDeleted == false && c.IsDeleted == false)
+                                                   select new CourtCaseVM
+                                                   {
+                                                       UserFullName = u.FullName,
+                                                       CaseId = c.CaseId,
+                                                       CitizenId = c.CitizenId,
+                                                       LawyerId = c.LawyerId,
+                                                       CaseNumber = c.CaseNumber,
+                                                       CaseTitle = c.CaseTitle,
+                                                       CategoryId = c.CategoryId,
+                                                       CategoryName = cat.CategoryName,
+                                                       CaseStatusId = c.LegalStatusId
+                                                   })
+                          .ToListAsync();
+
+                    //if (caseList.Any())
+                    //{
+                    //    userCases = new List<CourtCaseVM>();
+                    //    foreach (var item in caseList)
+                    //    {
+                    //        userCases.Add(new CourtCaseVM
+                    //        {
+                    //            UserFullName = item.FullName,
+
+                    //            CaseId = item.CaseId,
+                    //            CitizenId = item.CitizenId,
+                    //            LawyerId = item.LawyerId,
+                    //            CaseNumber = item.CaseNumber,
+                    //            CaseTitle = item.CaseTitle,
+                    //            CategoryId = item.CategoryId,
+                    //            CategoryName = item.CategoryName
+                    //        });
+                    //    }
+                    //}
+
                 }
             }
             catch (Exception ex)
@@ -114,27 +234,35 @@ namespace Business.BusinessLogic
                 throw ex;
             }
 
-            return lawyer;
+            return lawyerHome;
         }
         public async Task<CitizenVM> GetCitizenProfile(long? CitizenId)
         {
-            CitizenVM citizenVM= new CitizenVM();
+            CitizenVM citizenVM = new CitizenVM();
             try
             {
+                if (!isAuthenticated) return citizenVM;
+                if (isAuthenticated)
+                {
+                    if (LoggedInUserId != CitizenId)
+                        return citizenVM;
+                }
 
                 if (CitizenId > 0)
                 {
                     var d = await ctx
                         .UserProfiles
                         .Where(x => x.UserId == CitizenId
-                    && (x.RoleId == (int)Roles.Laywer && x.IsActive == true && x.IsVerified == true && x.IsDeleted == false))
+                    && (x.RoleId == (int)Roles.Citizen && x.IsActive == true && x.IsVerified == true && !x.IsDeleted))
                         .FirstOrDefaultAsync();
+
+                    string ProfilePic = ctx.UserDocuments.Where(x => x.UserId == CitizenId && !x.IsDeleted).FirstOrDefault()?.DocPath ?? "";
 
                     if (d != null)
                     {
                         citizenVM.UserId = d.UserId;
                         citizenVM.ProfileId = d.ProfileId;
-                        citizenVM.ProfilePic = "";
+                        citizenVM.ProfilePic = ProfilePic;
                         citizenVM.FullName = d.FullName;
                         citizenVM.FatherName = d.FatherName;
                         citizenVM.Email = d.Email;
@@ -142,6 +270,7 @@ namespace Business.BusinessLogic
                         citizenVM.ContactNumber = d.ContactNumber;
                         citizenVM.CurrAddress = d.CurrAddress;
                         citizenVM.PermAddress = d.PermAddress;
+                        citizenVM.CityId=d.CityId;
                     }
                 }
             }
@@ -151,6 +280,269 @@ namespace Business.BusinessLogic
             }
 
             return citizenVM;
+        }
+        public async Task<LawyerProfileVM> CreateUpdateLawyerProfile(LawyerProfileVM lawyerVM)
+        {
+            try
+            {
+
+                if (lawyerVM != null && lawyerVM.ProfileId > 0)
+                {
+                    var GetLawyer = await ctx.UserProfiles.Where(x => x.ProfileId == lawyerVM.ProfileId && !x.IsDeleted).FirstOrDefaultAsync();
+
+                    if (GetLawyer != null)
+                    {
+                        GetLawyer.MrTitle = lawyerVM.MrTitle;
+                        GetLawyer.FullName = lawyerVM.FullName;
+                        GetLawyer.Email = lawyerVM.Email;
+                        GetLawyer.CNICNo = lawyerVM.CNICNo;
+                        GetLawyer.ContactNumber = lawyerVM.ContactNumber;
+                        GetLawyer.CurrAddress = lawyerVM.CurrAddress;
+                        GetLawyer.PermAddress = lawyerVM.PermAddress;
+                        GetLawyer.OfficeAddress = lawyerVM.OfficeAddres;
+                        GetLawyer.CityId = lawyerVM.CityId;
+                        GetLawyer.BarCouncilId = lawyerVM.BarCouncilId;
+                        GetLawyer.BarCouncilNo = lawyerVM.BarCouncilNo;
+                        GetLawyer.EnrollmentDate = lawyerVM.EnrollmentDate;
+                        GetLawyer.IsContestedCopy = lawyerVM.IsContestedCopy;
+
+                        ctx.Entry(GetLawyer).State = EntityState.Modified;
+                        await ctx.SaveChangesAsync();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return lawyerVM;
+        }
+
+        public async Task<int> CreateUpdateLawyerExperties(List<LawyerExpertiesVM> expertiesVMs)
+        {
+            int result = 0;
+            try
+            {
+                if (expertiesVMs != null && expertiesVMs.Any())
+                {
+                    List<LawyerExperties> news = new List<LawyerExperties>();
+                    List<LawyerExperties> updates = new List<LawyerExperties>();
+                    foreach (var item in expertiesVMs)
+                    {
+                        if (item.Id == 0)
+                        {
+                            news.Add(new LawyerExperties()
+                            {
+                                UserId = item.UserId,
+                                CategoryId = item.CategoryId
+                            });
+                        }
+                        if (item.Id > 0)
+                        {
+                            var exp = await ctx.LawyerExperties.FindAsync(item.Id);
+                            if (exp != null)
+                            {
+                                exp.UserId = item.UserId;
+                                exp.CategoryId = item.CategoryId;
+                                updates.Add(exp);
+                            }
+                        }
+                    }
+
+                    ctx.UpdateRange(updates);
+                    await ctx.AddRangeAsync(news);
+                    result = await ctx.SaveChangesAsync();
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            return result;
+        }
+
+        public async Task<int> CreateUpdateLawyerQaulification(List<LawyerQualificationVM> qualificationVMs)
+        {
+            int result = 0;
+            try
+            {
+                if (qualificationVMs != null && qualificationVMs.Any())
+                {
+                    List<LawyerQualification> news = new List<LawyerQualification>();
+                    List<LawyerQualification> updates = new List<LawyerQualification>();
+                    foreach (var item in qualificationVMs)
+                    {
+                        if (item.QualificationId == 0)
+                        {
+                            news.Add(new LawyerQualification()
+                            {
+                                UserId = item.UserId,
+                                DegreeName = item.DegreeName,
+                                InstituteName = item.InstituteName
+                            });
+                        }
+                        if (item.QualificationId > 0)
+                        {
+                            var exp = await ctx.LawyerQualifications.FindAsync(item.QualificationId);
+                            if (exp != null)
+                            {
+                                exp.DegreeName = item.DegreeName;
+                                exp.InstituteName = item.InstituteName;
+                                updates.Add(exp);
+                            }
+                        }
+                    }
+
+                    ctx.UpdateRange(updates);//bulk update
+                    await ctx.AddRangeAsync(news);//bulk insert
+                    result = await ctx.SaveChangesAsync();
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            return result;
+        }
+
+        public async Task<LawyerUpdateVM> GetLawyerProfileInfo(long? LawyerId)
+        {
+            LawyerUpdateVM lawyer = new LawyerUpdateVM();
+            try
+            {
+                if (!isAuthenticated) return lawyer;
+                if (isAuthenticated)
+                {
+                    if (LoggedInUserId != LawyerId)
+                        return lawyer;
+                }
+
+                if (LawyerId > 0)
+                {
+                    var d = await ctx.UserProfiles.Where(x => x.UserId == LawyerId && x.RoleId == (int)Roles.Lawyer && !x.IsDeleted).FirstOrDefaultAsync();
+
+                    if (d != null)
+                    {
+                        string ProfilePic = ctx.UserDocuments.Where(x => x.UserId == LawyerId && !x.IsDeleted).FirstOrDefault()?.DocPath ?? "";
+
+                        lawyer.LawyerProfile.UserId = d.UserId;
+                        lawyer.LawyerProfile.ProfileId = d.ProfileId;
+                        lawyer.LawyerProfile.ProfilePic = ProfilePic;
+                        lawyer.LawyerProfile.MrTitle = d.MrTitle;
+                        lawyer.LawyerProfile.FullName = d.FullName;
+                        lawyer.LawyerProfile.Email = d.Email;
+                        lawyer.LawyerProfile.CNICNo = d.CNICNo;
+                        lawyer.LawyerProfile.ContactNumber = d.ContactNumber;
+                        lawyer.LawyerProfile.CurrAddress = d.CurrAddress;
+                        lawyer.LawyerProfile.PermAddress = d.PermAddress;
+                        lawyer.LawyerProfile.OfficeAddres = d.OfficeAddress;
+                        lawyer.LawyerProfile.CityId = d.CityId;
+                        lawyer.LawyerProfile.BarCouncilId = d.BarCouncilId;
+                        lawyer.LawyerProfile.BarCouncilNo = d.BarCouncilNo;
+                        lawyer.LawyerProfile.EnrollmentDate = d.EnrollmentDate;
+                        lawyer.LawyerProfile.IsContestedCopy = d.IsContestedCopy;
+                    }
+
+                    lawyer.LawyerExperties = await ctx.LawyerExperties.Where(x => x.UserId == LawyerId).Select(s => new LawyerExpertiesVM()
+                    {
+                        Id = s.Id,
+                        UserId = s.UserId,
+                        CategoryId = s.CategoryId
+                    }).ToListAsync();
+
+                    lawyer.LawyerQualifications = await ctx.LawyerQualifications.Where(x => x.UserId == LawyerId).Select(s => new LawyerQualificationVM()
+                    {
+                        QualificationId = s.Id,
+                        DegreeName = s.DegreeName,
+                        InstituteName = s.InstituteName
+                    }).ToListAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return lawyer;
+        }
+
+        public async Task<List<UserProfileVM>> GetAllUser(bool IsPending, int RoleId)
+        {
+            List<UserProfileVM> AllUsers = new List<UserProfileVM>();
+            try
+            {
+                //if (!isAuthenticated) return lawyer;
+                //if (isAuthenticated)
+                //{
+                //    if (LoggedInUserId != LawyerId)
+                //        return lawyer;
+                //}
+
+                AllUsers = await ctx.UserProfiles
+     .Where(x => !x.IsDeleted && (!IsPending || x.IsVerified == false) && (RoleId == 0 || x.RoleId == RoleId))
+    .Select(x => new UserProfileVM
+    {
+        ProfileId = x.ProfileId,
+        RoleId = x.RoleId,
+        UserId = x.UserId,
+        MrTitle = x.MrTitle,
+        FullName = x.FullName,
+        CNICNo = x.CNICNo,
+        Gender = x.Gender,
+        Email = x.Email,
+        ContactNumber = x.ContactNumber,
+        CurrAddress = x.CurrAddress,
+        PermAddress = x.PermAddress,
+        CityId = x.CityId,
+        CountryId = x.CountryId,
+        IsOverseas = x.IsOverseas,
+        IsForeignQualified = x.IsForeignQualified,
+        NICOP = x.NICOP,
+        PassportID = x.PassportID,
+        ResideCountryId = x.ResideCountryId,
+        OverseasContactNo = x.OverseasContactNo,
+        OfficeAddress = x.OfficeAddress,
+        LCourtName = x.LCourtName,
+        LCourtLocation = x.LCourtLocation,
+        LHighCourtName = x.LHighCourtName,
+        LHighCourtLocation = x.LHighCourtLocation,
+        Qualification = x.Qualification,
+        Institute = x.Institute,
+        BarCouncilId = x.BarCouncilId,
+        BarCouncilNo = x.BarCouncilNo,
+        EnrollmentDate = x.EnrollmentDate,
+        TotalExperience = x.TotalExperience,
+        AreasOfExpertise = x.AreasOfExpertise,
+        IsAlert = x.IsAlert,
+        IsSMS = x.IsSMS,
+        IsEmail = x.IsEmail,
+        IsPushAlert = x.IsPushAlert,
+        IsCreateMeeting = x.IsCreateMeeting,
+        IsAgreed = x.IsAgreed,
+        IsActive = x.IsActive,
+        IsVerified = x.IsVerified,
+        Rating = x.Rating,
+        IsFavourite = x.IsFavourite,
+        IsContestedCopy = x.IsContestedCopy,
+        ProfileDescription = x.ProfileDescription,
+        FatherName = x.FatherName
+
+    })
+    .ToListAsync();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return AllUsers;
         }
     }
 }
