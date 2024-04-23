@@ -86,6 +86,11 @@
 /Business/bin/Release/net8.0
 /WKLNAMA/.config/dotnet-tools.json
 /WKLNAMA/WKLNAMA.csproj.user
+<<<<<<< HEAD
 /WKLNAMA
 /.gitignore
 /.gitignore
+=======
+/Business/BusinessLogic/DocumentServiceRepository.cs
+/WKLNAMA/bin/Debug/net8.0
+>>>>>>> 5937d5f97684f7c880472d10f05b98c7b32971bf
