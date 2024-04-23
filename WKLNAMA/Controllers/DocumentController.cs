@@ -26,8 +26,9 @@ namespace WKLNAMA.Controllers
         public async Task<ActionResult> UploadFile(IFormFile file, string docType) 
         {
            var path=  await  _documentUploadService.UploadDocument(file, docType);
-           //  var file = await documentService.UploadFile(_file.OpenReadStream(), _file.FileName, _file.ContentType, folderName, "This is testing file");
-            return Ok(Task.FromResult(path));
+           var filePath= $"{this.Request.Scheme}://{this.Request.Host}/resources{path}";
+           
+            return Ok(Task.FromResult(filePath)); 
         }
 
         [HttpGet("GetFiles")]
@@ -36,10 +37,10 @@ namespace WKLNAMA.Controllers
             try
             {
               var filesPaths=   _documentUploadService.GetAllFiles(folderName);
-                _logger.LogInformation($"Get  Files Method Started{Environment.NewLine}");
-              //  var files =await documentService.GetFiles(_folderId);
-                _logger.LogInformation($"Get File > API Service Call done  {Environment.NewLine}");
-                return Ok(Task.FromResult(filesPaths));
+
+               var urls=filesPaths?.Select(x => x= $"{this.Request.Scheme}://{this.Request.Host}/resources{ ( x.Split("Uploads")[1]).Replace(@"\","/")}");
+
+                return Ok(Task.FromResult(urls));
             }
             catch (Exception ex)
             {
@@ -61,8 +62,23 @@ namespace WKLNAMA.Controllers
         [HttpGet("Download")]
         public IActionResult DownloadFile(string filePath)
         {
-            var file = _documentUploadService.Download(filePath);
-            return PhysicalFile(filePath, MimeTypes.GetMimeType(filePath), Path.GetFileName(filePath));
+            var baseDirectory = $@"{Directory.GetCurrentDirectory()}\Uploads";
+
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                string[] contents = filePath.Split("resources");
+
+                if (contents.Length > 1)
+                {
+                    contents[1]= contents[1].Replace(@"/",@"\");
+                    baseDirectory += contents[1];
+                }
+
+                var file = _documentUploadService.Download(filePath);
+            }
+             
+           
+            return PhysicalFile(baseDirectory, MimeTypes.GetMimeType(baseDirectory), Path.GetFileName(baseDirectory));
         }
 
         [NonAction]
@@ -77,7 +93,19 @@ namespace WKLNAMA.Controllers
         [HttpPost("DeleteFile")]
         public async Task<ActionResult> DeleteFile(string filePath)
         {
-           await _documentUploadService.DeleteFile(filePath);
+            var baseDirectory = $@"{Directory.GetCurrentDirectory()}\Uploads";
+
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                string[] contents = filePath.Split("resources");
+
+                if (contents.Length > 1)
+                {
+                    contents[1] = contents[1].Replace(@"/", @"\");
+                    baseDirectory += contents[1];
+                }
+            } 
+                await _documentUploadService.DeleteFile(baseDirectory);
             //documentService.DeleteFile(folderName);
             return Ok(Task.FromResult("File deleted Successfully"));
         }
