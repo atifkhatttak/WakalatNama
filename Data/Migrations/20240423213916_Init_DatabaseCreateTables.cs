@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Data.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class Init_DatabaseCreateTables : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -21,7 +21,12 @@ namespace Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
-                    ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    UpdatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)                   
                 },
                 constraints: table =>
                 {
@@ -36,6 +41,12 @@ namespace Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    UpdatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    OTPCode = table.Column<int>(type: "int", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -62,7 +73,12 @@ namespace Data.Migrations
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CategoryName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
+                    CategoryName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    UpdatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -76,11 +92,36 @@ namespace Data.Migrations
                     CaseJurisdictionId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     JurisdictionName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: true)
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: true),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    UpdatedBy = table.Column<long>(type: "bigint", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_CaseJurisdictions", x => x.CaseJurisdictionId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CaseRejectionReasons",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CaseId = table.Column<long>(type: "bigint", nullable: false),
+                    RejectById = table.Column<long>(type: "bigint", nullable: false),
+                    Reason = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Status = table.Column<int>(type: "int", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    UpdatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CaseRejectionReasons", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -94,11 +135,11 @@ namespace Data.Migrations
                     CaseDateTitle = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DateDescription = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     HearingDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedUser = table.Column<long>(type: "bigint", nullable: true),
-                    ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    ModifiedUser = table.Column<long>(type: "bigint", nullable: true),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: true)
+                    CreatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    UpdatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -112,20 +153,76 @@ namespace Data.Migrations
                     DocumentId = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CaseId = table.Column<long>(type: "bigint", nullable: false),
+                    CaseDetailId = table.Column<long>(type: "bigint", nullable: true),
                     DocName = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
                     DocPath = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
                     DocExtension = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DocTypeId = table.Column<int>(type: "int", nullable: true),
                     IsUploaded = table.Column<bool>(type: "bit", nullable: true),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    CreatedBy = table.Column<long>(type: "bigint", nullable: true),
-                    ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    ModifiedUser = table.Column<long>(type: "bigint", nullable: true),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: true)
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    UpdatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_CasesDocuments", x => x.DocumentId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CaseStatuses",
+                columns: table => new
+                {
+                    StatusId = table.Column<int>(type: "int", nullable: false),
+                    Status = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    UpdatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CaseStatuses", x => x.StatusId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CategoriesStatuses",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CaseStatusId = table.Column<int>(type: "int", nullable: false),
+                    CategoryId = table.Column<int>(type: "int", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    UpdatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CategoriesStatuses", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Cities",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CityName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CountryId = table.Column<int>(type: "int", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    UpdatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Cities", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -134,11 +231,34 @@ namespace Data.Migrations
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ConsultationType = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
+                    ConsultationType = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    UpdatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ConsultationOptions", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Countries",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CountryName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    UpdatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Countries", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -149,7 +269,8 @@ namespace Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CitizenId = table.Column<long>(type: "bigint", nullable: false),
                     LawyerId = table.Column<long>(type: "bigint", nullable: false),
-                    RedundantLawyerId = table.Column<long>(type: "bigint", nullable: false),
+                    RedundantLawyerId = table.Column<long>(type: "bigint", nullable: true),
+                    LegalStatusId = table.Column<int>(type: "int", nullable: false),
                     CaseTitle = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CaseNumber = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     PartyId = table.Column<int>(type: "int", nullable: true),
@@ -158,11 +279,13 @@ namespace Data.Migrations
                     CaseJurisdictionId = table.Column<int>(type: "int", nullable: true),
                     CourtId = table.Column<int>(type: "int", nullable: false),
                     CasePlacingId = table.Column<int>(type: "int", nullable: true),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    CreatedUser = table.Column<long>(type: "bigint", nullable: true),
-                    ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    ModifiedUser = table.Column<long>(type: "bigint", nullable: true),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: true)
+                    StatusId = table.Column<int>(type: "int", nullable: false),
+                    AssignEmployeeId = table.Column<long>(type: "bigint", nullable: true),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    UpdatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -177,13 +300,90 @@ namespace Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ExperienceMin = table.Column<int>(type: "int", nullable: true),
                     ExperienceMax = table.Column<int>(type: "int", nullable: true),
-                    CostMin = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
-                    CostMax = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    CostMin = table.Column<decimal>(type: "decimal(16,3)", precision: 16, scale: 3, nullable: true),
+                    CostMax = table.Column<decimal>(type: "decimal(16,3)", precision: 16, scale: 3, nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    UpdatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ExperienceCosts", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Favourites",
+                columns: table => new
+                {
+                    FavouriteId = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<long>(type: "bigint", nullable: false),
+                    LawyerId = table.Column<long>(type: "bigint", nullable: false),
+                    IsFavourite = table.Column<bool>(type: "bit", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    UpdatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Favourites", x => x.FavouriteId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "LawyerExperties",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<long>(type: "bigint", nullable: false),
+                    CategoryId = table.Column<long>(type: "bigint", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_LawyerExperties", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "LawyerFeeStructures",
+                columns: table => new
+                {
+                    FeeId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    LawyerFee = table.Column<decimal>(type: "decimal(16,3)", precision: 16, scale: 3, nullable: false),
+                    ExpMin = table.Column<int>(type: "int", nullable: false),
+                    ExpMax = table.Column<int>(type: "int", nullable: false),
+                    CaseNatureId = table.Column<int>(type: "int", nullable: false),
+                    JurisdictionId = table.Column<int>(type: "int", nullable: false),
+                    IsForeignQualified = table.Column<bool>(type: "bit", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    UpdatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_LawyerFeeStructures", x => x.FeeId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "LawyerQualifications",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    DegreeName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    InstituteName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    UserId = table.Column<long>(type: "bigint", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_LawyerQualifications", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -196,11 +396,38 @@ namespace Data.Migrations
                     FromUserId = table.Column<long>(type: "bigint", nullable: false),
                     ToUserId = table.Column<long>(type: "bigint", nullable: false),
                     IsRead = table.Column<bool>(type: "bit", nullable: false),
-                    ParentId = table.Column<long>(type: "bigint", nullable: true)
+                    ParentId = table.Column<long>(type: "bigint", nullable: true),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    UpdatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Messages", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Notifications",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FromUserId = table.Column<long>(type: "bigint", nullable: false),
+                    ToUserId = table.Column<long>(type: "bigint", nullable: false),
+                    NotificationType = table.Column<int>(type: "int", nullable: false),
+                    IsRead = table.Column<bool>(type: "bit", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    UpdatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Notifications", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -209,11 +436,37 @@ namespace Data.Migrations
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    StatusName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
+                    StatusName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    UpdatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_PartyStatuses", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Reviews",
+                columns: table => new
+                {
+                    ReviewId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CommitById = table.Column<int>(type: "int", nullable: false),
+                    CommitOnId = table.Column<int>(type: "int", nullable: false),
+                    Rating = table.Column<float>(type: "real", nullable: true),
+                    ReviewContent = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    UpdatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Reviews", x => x.ReviewId);
                 });
 
             migrationBuilder.CreateTable(
@@ -228,11 +481,11 @@ namespace Data.Migrations
                     DocExtension = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DocTypeId = table.Column<int>(type: "int", nullable: true),
                     IsUploaded = table.Column<bool>(type: "bit", nullable: true),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    CreatedBy = table.Column<long>(type: "bigint", nullable: true),
-                    ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    ModifiedUser = table.Column<long>(type: "bigint", nullable: true),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: true)
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    UpdatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -247,6 +500,7 @@ namespace Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     RoleId = table.Column<int>(type: "int", nullable: false),
                     UserId = table.Column<long>(type: "bigint", nullable: false),
+                    MrTitle = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     FullName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
                     CNICNo = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: true),
                     Gender = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: true),
@@ -257,6 +511,7 @@ namespace Data.Migrations
                     CityId = table.Column<int>(type: "int", nullable: true),
                     CountryId = table.Column<int>(type: "int", nullable: true),
                     IsOverseas = table.Column<bool>(type: "bit", nullable: true),
+                    IsForeignQualified = table.Column<bool>(type: "bit", nullable: true),
                     NICOP = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     PassportID = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: true),
                     ResideCountryId = table.Column<int>(type: "int", nullable: true),
@@ -268,7 +523,8 @@ namespace Data.Migrations
                     LHighCourtLocation = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Qualification = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
                     Institute = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
-                    BarCouncil = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    BarCouncilId = table.Column<int>(type: "int", nullable: true),
+                    BarCouncilNo = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
                     EnrollmentDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     TotalExperience = table.Column<float>(type: "real", nullable: true),
                     AreasOfExpertise = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
@@ -279,17 +535,18 @@ namespace Data.Migrations
                     IsPushAlert = table.Column<bool>(type: "bit", nullable: true),
                     IsCreateMeeting = table.Column<bool>(type: "bit", nullable: true),
                     IsAgreed = table.Column<bool>(type: "bit", nullable: true),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    CreatedUser = table.Column<long>(type: "bigint", nullable: true),
-                    ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    ModifiedUser = table.Column<long>(type: "bigint", nullable: true),
                     IsActive = table.Column<bool>(type: "bit", nullable: true),
                     IsVerified = table.Column<bool>(type: "bit", nullable: true),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: true),
                     Rating = table.Column<float>(type: "real", nullable: true),
                     IsFavourite = table.Column<bool>(type: "bit", nullable: true),
+                    IsContestedCopy = table.Column<bool>(type: "bit", nullable: true),
                     ProfileDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    FatherName = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    FatherName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    UpdatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -404,14 +661,14 @@ namespace Data.Migrations
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
-                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                columns: new[] { "Id", "ConcurrencyStamp", "CreatedBy", "CreatedDate", "IsDeleted", "Name", "NormalizedName", "UpdateDate", "UpdatedBy" },
                 values: new object[,]
                 {
-                    { 1, "1", "Admin", "Admin" },
-                    { 2, "2", "Zonal Manager", "Zonal Manager" },
-                    { 3, "3", "Citizen", "Citizen" },
-                    { 4, "4", "Laywer", "Laywer" },
-                    { 5, "5", "Employee ", "Employee " }
+                    { 1, "1", 0L, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Admin", "Admin", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0L },
+                    { 2, "2", 0L, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Zonal Manager", "Zonal Manager", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0L },
+                    { 3, "3", 0L, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Citizen", "Citizen", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0L },
+                    { 4, "4", 0L, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Lawyer", "Lawyer", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0L },
+                    { 5, "5", 0L, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Employee ", "Employee ", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0L }
                 });
 
             migrationBuilder.CreateIndex(
@@ -479,13 +736,28 @@ namespace Data.Migrations
                 name: "CaseJurisdictions");
 
             migrationBuilder.DropTable(
+                name: "CaseRejectionReasons");
+
+            migrationBuilder.DropTable(
                 name: "CasesDetails");
 
             migrationBuilder.DropTable(
                 name: "CasesDocuments");
 
             migrationBuilder.DropTable(
+                name: "CaseStatuses");
+
+            migrationBuilder.DropTable(
+                name: "CategoriesStatuses");
+
+            migrationBuilder.DropTable(
+                name: "Cities");
+
+            migrationBuilder.DropTable(
                 name: "ConsultationOptions");
+
+            migrationBuilder.DropTable(
+                name: "Countries");
 
             migrationBuilder.DropTable(
                 name: "CourtCases");
@@ -494,10 +766,28 @@ namespace Data.Migrations
                 name: "ExperienceCosts");
 
             migrationBuilder.DropTable(
+                name: "Favourites");
+
+            migrationBuilder.DropTable(
+                name: "LawyerExperties");
+
+            migrationBuilder.DropTable(
+                name: "LawyerFeeStructures");
+
+            migrationBuilder.DropTable(
+                name: "LawyerQualifications");
+
+            migrationBuilder.DropTable(
                 name: "Messages");
 
             migrationBuilder.DropTable(
+                name: "Notifications");
+
+            migrationBuilder.DropTable(
                 name: "PartyStatuses");
+
+            migrationBuilder.DropTable(
+                name: "Reviews");
 
             migrationBuilder.DropTable(
                 name: "UserDocuments");

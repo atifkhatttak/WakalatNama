@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(WKNNAMADBCtx))]
-    [Migration("20240324131008_AddCategoriesStatus")]
-    partial class AddCategoriesStatus
+    [Migration("20240423213916_Init_DatabaseCreateTables")]
+    partial class Init_DatabaseCreateTables
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -270,10 +270,7 @@ namespace Data.Migrations
             modelBuilder.Entity("Data.DomainModels.CaseStatus", b =>
                 {
                     b.Property<int>("StatusId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StatusId"));
 
                     b.Property<long>("CreatedBy")
                         .HasColumnType("bigint");
@@ -307,6 +304,9 @@ namespace Data.Migrations
                         .HasColumnType("bigint");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("DocumentId"));
+
+                    b.Property<long?>("CaseDetailId")
+                        .HasColumnType("bigint");
 
                     b.Property<long>("CaseId")
                         .HasColumnType("bigint");
@@ -346,6 +346,40 @@ namespace Data.Migrations
                     b.HasKey("DocumentId");
 
                     b.ToTable("CasesDocuments");
+                });
+
+            modelBuilder.Entity("Data.DomainModels.CategoriesStatus", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CaseStatusId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<long>("CreatedBy")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("UpdatedBy")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CategoriesStatuses");
                 });
 
             modelBuilder.Entity("Data.DomainModels.City", b =>
@@ -415,6 +449,25 @@ namespace Data.Migrations
                     b.ToTable("Countries");
                 });
 
+            modelBuilder.Entity("Data.DomainModels.LawyerExperties", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<long>("CategoryId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("UserId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("LawyerExperties");
+                });
+
             modelBuilder.Entity("Data.DomainModels.LawyerFeeStructure", b =>
                 {
                     b.Property<int>("FeeId")
@@ -460,6 +513,30 @@ namespace Data.Migrations
                     b.HasKey("FeeId");
 
                     b.ToTable("LawyerFeeStructures");
+                });
+
+            modelBuilder.Entity("Data.DomainModels.LawyerQualification", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("DegreeName")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("InstituteName")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<long>("UserId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("LawyerQualifications");
                 });
 
             modelBuilder.Entity("Data.DomainModels.Message", b =>
@@ -966,10 +1043,12 @@ namespace Data.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
                     b.Property<decimal?>("CostMax")
-                        .HasColumnType("decimal(18,2)");
+                        .HasPrecision(16, 3)
+                        .HasColumnType("decimal(16,3)");
 
                     b.Property<decimal?>("CostMin")
-                        .HasColumnType("decimal(18,2)");
+                        .HasPrecision(16, 3)
+                        .HasColumnType("decimal(16,3)");
 
                     b.Property<long>("CreatedBy")
                         .HasColumnType("bigint");
@@ -1086,9 +1165,12 @@ namespace Data.Migrations
                     b.Property<string>("AreasOfExpertiseOrther")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("BarCouncil")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                    b.Property<int?>("BarCouncilId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("BarCouncilNo")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("CNICNo")
                         .HasMaxLength(15)
@@ -1146,6 +1228,9 @@ namespace Data.Migrations
                     b.Property<bool?>("IsAlert")
                         .HasColumnType("bit");
 
+                    b.Property<bool?>("IsContestedCopy")
+                        .HasColumnType("bit");
+
                     b.Property<bool?>("IsCreateMeeting")
                         .HasColumnType("bit");
 
@@ -1156,6 +1241,9 @@ namespace Data.Migrations
                         .HasColumnType("bit");
 
                     b.Property<bool?>("IsFavourite")
+                        .HasColumnType("bit");
+
+                    b.Property<bool?>("IsForeignQualified")
                         .HasColumnType("bit");
 
                     b.Property<bool?>("IsOverseas")
@@ -1183,6 +1271,9 @@ namespace Data.Migrations
                     b.Property<string>("LHighCourtName")
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("MrTitle")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NICOP")
                         .HasMaxLength(50)
