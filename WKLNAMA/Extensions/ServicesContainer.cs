@@ -16,7 +16,7 @@ using System.Text;
 using WKLNAMA.AppHub;
 using WKLNAMA.Extensions.Override;
 using WKLNAMA.Filters;
-using WKLNAMA.TokenService;
+//using WKLNAMA.TokenService;
 
 namespace WKLNAMA.Extensions
 {
@@ -70,7 +70,7 @@ namespace WKLNAMA.Extensions
 
             services.AddSingleton<ChatHub>();
             services.AddScoped<IMessageRepository, MessageRepository>();
-            services.AddScoped<ITokenService, TokenService.TokenService>();
+            //services.AddScoped<ITokenService, TokenService.TokenService>();
             services.AddScoped<IEmailService, EmailService>();
             services.AddScoped<IDocumentServiceV2, DocumentService>();
 
@@ -104,7 +104,7 @@ namespace WKLNAMA.Extensions
                      ValidIssuer = jwtIssuer,
                      ValidAudience = jwtAudience,
                      ClockSkew = TimeSpan.Zero,
-                     LifetimeValidator = TokenLifetimeValidator.Validate,
+                     //LifetimeValidator = TokenLifetimeValidator.Validate,
                      IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey))
                  };
              });

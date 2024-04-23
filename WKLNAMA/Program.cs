@@ -3,7 +3,7 @@ using Microsoft.Extensions.FileProviders;
 using Swashbuckle.AspNetCore.SwaggerUI;
 using WKLNAMA.AppHub;
 using WKLNAMA.Extensions;
-using WKLNAMA.HostedServices;
+//using WKLNAMA.HostedServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,7 +18,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerConfig(builder);
 builder.Services.AddJwtConfig(builder);
 builder.Services.AddSignalR();
-builder.Services.AddHostedService<ServerNotificationService>();
+//builder.Services.AddHostedService<ServerNotificationService>();
 var app = builder.Build();
 
 Utils._config = new ConfigurationBuilder().SetBasePath(app.Environment.ContentRootPath).AddJsonFile("appSettings.json").Build();
