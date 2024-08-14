@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "wakalatnaama-f6493",
+  "private_key_id": "a296af21e77d7e037e2da0bd2b6d1032c6aa8926",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCvcquNZBO4pWfH\n4N20M+JJKK57kWZOhMPyN4Ixj9Za441vCVf9E6G7mr4HKBNHGvuHAWdrx5PpO1gX\nP9sPGx4bJwpkCGY/z27ZGDHgSDQmdnUMdgHKhoO5ybhPhrigFyHuch2uBMjuXg4w\nBXQKoQFXUsJlNbLgWkSBJ6MdQVfpbLVpz7r4P81RYrrWt7goPlM07+b9EoocEGfL\nCl1PwACuJOA/yKwJqvU7F7zfOBkNppvUFYPplJBoixkbwePjTUjmtKbVXBNKey+P\nXhuRtqaw69Ve00N1fMQXw5EID0Pn8eof8scF5WB24+V6CLrRE2h1xlcu4QTMladj\nl+PLUFHBAgMBAAECggEAM+8eL/7RRaWUqFp8VhTLpXtI1uQN5C0xsXfT7qbUvVfB\nbH5YEN5oUBe4q3al6jTnAqocOo+7zVzXMR6iUgDlcwUl8sF3vujAt7uNPAYzhbUn\n5bXixtf1kx/Okp/e8+iVDzexaGsbLVAjI/zhQioxsu8ZAwuXtQiTYaXhh03p33rj\n+lZZVTiKn4xXOjffNxQKUx8lOtWkZ4xKdO8DlB2g6o9gkEZFyOP44gJP9aidNWNK\nxOm6pUd25xaWVSrHqVCD1UHlU+LtRa2eMXBLomps6gvk1NxPRV4sSV/36pvykioN\nytiAeAPOaUONhzUEUErEp1wUGb4H9MNcWGvDQ8MKPwKBgQDmZspjQTVd4dZ4cP0Q\n5BA/jLThQzI/+pwkrIxauKSLc68Dhk3/S3VDKm8vP3BB+orilrf3qURFqTjW3QT0\nzxRPpznTxnFUzUC5LDiMnrv/V4TEKGskltXJcKSBPT7EoaPGVipA+TTUXxED/nTI\nhevxxPQW65d6c2jFRT4Aj8c/5wKBgQDC8NvKx0smzyX6e9ucn832ovPUq15bQcGD\nRQF6LeQegcaFvwsnG/+bdc+6Ao9XoCSR0DTS1MGlJAdEBfClQhO7YWksYuajUsjA\nmiD/hfUxVflgE4wLqQlqDEzKEaquWBQyHuG+efNftOfHnV3BhCrWAws56UYt6wx4\n0M1YcOdMFwKBgDe44HXEzY1ZEy+p0+qD3dIgy5Y3VC3ZBG5yNLe0NEdtwQQPNUnr\nC/8kgiNhKlsqpvBKF1AUZeibFp4QciRq+LSS8w9ezQX/ZgniwgJwWXNVzUxLoi4F\nNMs1LPP8xfN0TFGpgSqZmsdJ/qmCnufoS7n7MjVg4Q/CXbJoHqiwHTY9AoGAcVBu\ngoWsEogQ7HQ4qOdfYsE/+NwQQf2MDdD71dh9JJqNGkt9oSMuRmCJ+fbo+ad1+mhL\nfE39rg+uRYUqZ/Vr4NzztMBcjo1dck9lZQKqDx6JkaZrHpAIj+NMc50nWKaMPsIi\nuITMylIu9KJt0EISYEpuqSAHEkPyAPxmkMU4PcsCgYEAvUN0y5eL3tL6va4Gjt4B\n4ozX4fuB0DS8qhuqk61w7kNfnOi1wVeUoYNlZZstBV4LjJ61JCYiK3WxyZWGwpj1\nbTUWJrqr117HdjWj42jDxVzU80hZF+tBFBL+pdHkBYxRDIZxenxXSAT+JTqC+LYT\nnp6+d4NEBY6oN1SNOC4VycI=\n-----END PRIVATE KEY-----\n",
+  "client_email": "wakalatnaama-service-account@wakalatnaama-f6493.iam.gserviceaccount.com",
+  "client_id": "104069044449177407036",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/wakalatnaama-service-account%40wakalatnaama-f6493.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

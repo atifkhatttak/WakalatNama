@@ -1,0 +1,30 @@
+E:\Projects\WakalatNaam\wakalatnaama\Data\bin\Debug\net8.0\Data.deps.json
+E:\Projects\WakalatNaam\wakalatnaama\Data\bin\Debug\net8.0\Data.runtimeconfig.json
+E:\Projects\WakalatNaam\wakalatnaama\Data\bin\Debug\net8.0\Data.dll
+E:\Projects\WakalatNaam\wakalatnaama\Data\bin\Debug\net8.0\Data.pdb
+E:\Projects\WakalatNaam\wakalatnaama\Data\obj\Debug\net8.0\Data.csproj.AssemblyReference.cache
+E:\Projects\WakalatNaam\wakalatnaama\Data\obj\Debug\net8.0\Data.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects\WakalatNaam\wakalatnaama\Data\obj\Debug\net8.0\Data.AssemblyInfoInputs.cache
+E:\Projects\WakalatNaam\wakalatnaama\Data\obj\Debug\net8.0\Data.AssemblyInfo.cs
+E:\Projects\WakalatNaam\wakalatnaama\Data\obj\Debug\net8.0\Data.csproj.CoreCompileInputs.cache
+E:\Projects\WakalatNaam\wakalatnaama\Data\obj\Debug\net8.0\Data.sourcelink.json
+E:\Projects\WakalatNaam\wakalatnaama\Data\obj\Debug\net8.0\Data.dll
+E:\Projects\WakalatNaam\wakalatnaama\Data\obj\Debug\net8.0\refint\Data.dll
+E:\Projects\WakalatNaam\wakalatnaama\Data\obj\Debug\net8.0\Data.pdb
+E:\Projects\WakalatNaam\wakalatnaama\Data\obj\Debug\net8.0\Data.genruntimeconfig.cache
+E:\Projects\WakalatNaam\wakalatnaama\Data\obj\Debug\net8.0\ref\Data.dll
+E:\Professional Projeccts\WakalatNaamaProject\WakalatNama\Data\bin\Debug\net8.0\Data.deps.json
+E:\Professional Projeccts\WakalatNaamaProject\WakalatNama\Data\bin\Debug\net8.0\Data.runtimeconfig.json
+E:\Professional Projeccts\WakalatNaamaProject\WakalatNama\Data\bin\Debug\net8.0\Data.dll
+E:\Professional Projeccts\WakalatNaamaProject\WakalatNama\Data\bin\Debug\net8.0\Data.pdb
+E:\Professional Projeccts\WakalatNaamaProject\WakalatNama\Data\obj\Debug\net8.0\Data.csproj.AssemblyReference.cache
+E:\Professional Projeccts\WakalatNaamaProject\WakalatNama\Data\obj\Debug\net8.0\Data.GeneratedMSBuildEditorConfig.editorconfig
+E:\Professional Projeccts\WakalatNaamaProject\WakalatNama\Data\obj\Debug\net8.0\Data.AssemblyInfoInputs.cache
+E:\Professional Projeccts\WakalatNaamaProject\WakalatNama\Data\obj\Debug\net8.0\Data.AssemblyInfo.cs
+E:\Professional Projeccts\WakalatNaamaProject\WakalatNama\Data\obj\Debug\net8.0\Data.csproj.CoreCompileInputs.cache
+E:\Professional Projeccts\WakalatNaamaProject\WakalatNama\Data\obj\Debug\net8.0\Data.sourcelink.json
+E:\Professional Projeccts\WakalatNaamaProject\WakalatNama\Data\obj\Debug\net8.0\Data.dll
+E:\Professional Projeccts\WakalatNaamaProject\WakalatNama\Data\obj\Debug\net8.0\refint\Data.dll
+E:\Professional Projeccts\WakalatNaamaProject\WakalatNama\Data\obj\Debug\net8.0\Data.pdb
+E:\Professional Projeccts\WakalatNaamaProject\WakalatNama\Data\obj\Debug\net8.0\Data.genruntimeconfig.cache
+E:\Professional Projeccts\WakalatNaamaProject\WakalatNama\Data\obj\Debug\net8.0\ref\Data.dll

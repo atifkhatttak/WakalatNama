@@ -1,0 +1,131 @@
+2024-08-10T12:02:45.4024476+05:00  [INF] Executed DbCommand ("373"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-08-10T12:02:45.8668186+05:00  [INF] Executed DbCommand ("382"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-08-10T12:02:46.1156430+05:00  [INF] Executed DbCommand ("241"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-08-10T12:02:46.4504654+05:00  [INF] Executed DbCommand ("331"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-08-10T12:02:46.7600659+05:00  [INF] Executed DbCommand ("282"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-08-10T12:02:46.8128247+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-08-10T12:02:50.0469651+05:00  [INF] Executed DbCommand ("2,499"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-08-10T12:03:40.3071929+05:00  [INF] Executed DbCommand ("373"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-08-10T12:03:40.7634355+05:00  [INF] Executed DbCommand ("334"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-08-10T12:03:41.0072277+05:00  [INF] Executed DbCommand ("236"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-08-10T12:03:41.2501430+05:00  [INF] Executed DbCommand ("239"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-08-10T12:03:41.6819609+05:00  [INF] Executed DbCommand ("369"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-08-10T12:03:41.7446071+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-08-10T12:03:42.9798181+05:00  [INF] Executed DbCommand ("331"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-08-10T12:03:43.7849406+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-08-10T12:03:43.7907180+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-08-10T12:03:43.8044473+05:00  [INF] Content root path: "E:\Projects\WakalatNaam\wakalatnaama\WKLNAMA" (cc26f24e)
+2024-08-10T16:27:41.0354757+05:00  [INF] Executed DbCommand ("350"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-08-10T16:27:41.4924461+05:00  [INF] Executed DbCommand ("405"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-08-10T16:27:42.3426285+05:00  [INF] Executed DbCommand ("842"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-08-10T16:27:42.5886993+05:00  [INF] Executed DbCommand ("242"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-08-10T16:27:42.8996601+05:00  [INF] Executed DbCommand ("286"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-08-10T16:27:42.9607360+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-08-10T16:27:43.9298006+05:00  [INF] Executed DbCommand ("344"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-08-10T16:27:44.4722079+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-08-10T16:27:44.4774661+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-08-10T16:27:44.4825250+05:00  [INF] Content root path: "E:\Projects\WakalatNaam\wakalatnaama\WKLNAMA" (cc26f24e)
+2024-08-10T16:29:27.6620076+05:00 80000036-0002-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("325"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2024-08-10T16:29:28.3743612+05:00 80000036-0002-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("364"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0" (0723d8ff)
+2024-08-10T16:29:59.9153640+05:00 80000045-0000-f500-b63f-84710c7967bb [INF] Executed DbCommand ("298"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[ID], [c].[CategoryName], [c].[CreatedBy], [c].[CreatedDate], [c].[IsDeleted], [c].[UpdateDate], [c].[UpdatedBy]
+FROM [CaseCategories] AS [c]" (0723d8ff)
+2024-08-10T16:50:05.6374158+05:00  [INF] Executed DbCommand ("837"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-08-10T16:50:06.0204363+05:00  [INF] Executed DbCommand ("295"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-08-10T16:50:06.7092005+05:00  [INF] Executed DbCommand ("679"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-08-10T16:50:06.9535186+05:00  [INF] Executed DbCommand ("239"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-08-10T16:50:07.6638699+05:00  [INF] Executed DbCommand ("664"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-08-10T16:50:07.7223681+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-08-10T16:50:08.7902280+05:00  [INF] Executed DbCommand ("300"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-08-10T16:50:09.3313169+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-08-10T16:50:09.3389843+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-08-10T16:50:09.3470947+05:00  [INF] Content root path: "E:\Projects\WakalatNaam\wakalatnaama\WKLNAMA" (cc26f24e)
+2024-08-10T18:50:14.2659799+05:00  [INF] Executed DbCommand ("793"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""
+                                      SELECT citizen.FullName AS CitizeName,
+                                               citizen.Email AS CitizenEmail,
+                                               citizen.ContactNumber AS CitizenContactNumber,
+                                               lawyer.FullName AS LawerName,
+                                               lawyer.Email AS LawyerEmail,
+                                               lawyer.ContactNumber AS LawyerContactNumber,
+                                               CourtCasesDetails.CaseTitle,
+                                               CourtCasesDetails.CaseDateTitle,
+                                               CourtCasesDetails.CaseDescription,
+                                               CourtCasesDetails.HearingDate,
+                                               citizen.UserId AS CitizenId,
+                                               CourtCasesDetails.LawyerId AS LawyerId,
+                                               CourtCasesDetails.DateId AS CaseDateId,
+                                               CourtCasesDetails.CaseId
+                                        FROM
+                                        (
+                                            SELECT CourtCases.CaseId,
+                                                   ID AS DateId,
+                                                   CaseStatusId,
+                                                   CitizenId,
+                                                   LawyerId,
+                                                   CaseDateTitle,
+                                                   CaseTitle,
+                                                   CaseNumber,
+                                                   CaseDescription,
+                                                   HearingDate
+                                            FROM dbo.CasesDetails
+                                                INNER JOIN dbo.CourtCases
+                                                    ON CasesDetails.CaseId = CourtCases.CaseId
+                                            WHERE HearingDate > GETDATE()
+                                                  AND FORMAT(HearingDate, 'yyyy/MM/dd') <= FORMAT(DATEADD(DAY, 2, GETDATE()), 'yyyy/MM/dd')
+                                                  AND ID NOT IN
+                                                      (
+                                                          SELECT CaseDateId FROM EmailLogs WHERE issent = 1 AND IsDeleted = 0
+                                                      )
+                                        ) AS CourtCasesDetails
+                                            INNER JOIN dbo.UserProfiles citizen
+                                                ON citizen.UserId = CourtCasesDetails.CitizenId
+                                            INNER JOIN dbo.UserProfiles lawyer
+                                                ON lawyer.UserId = CourtCasesDetails.LawyerId" (0723d8ff)

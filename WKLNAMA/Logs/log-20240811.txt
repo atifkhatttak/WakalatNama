@@ -1,0 +1,50 @@
+2024-08-11T08:53:31.7033797+05:00  [INF] Executed DbCommand ("391"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-08-11T08:53:32.1312353+05:00  [INF] Executed DbCommand ("294"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-08-11T08:53:32.4890235+05:00  [INF] Executed DbCommand ("351"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-08-11T08:53:32.8011868+05:00  [INF] Executed DbCommand ("305"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-08-11T08:53:33.2179198+05:00  [INF] Executed DbCommand ("354"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-08-11T08:53:33.2907052+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-08-11T08:53:34.5036919+05:00  [INF] Executed DbCommand ("427"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-08-11T08:53:35.7395620+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-08-11T08:53:35.7675979+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-08-11T08:53:35.7714960+05:00  [INF] Content root path: "E:\Projects\WakalatNaam\wakalatnaama\WKLNAMA" (cc26f24e)
+2024-08-11T08:54:04.7917266+05:00 8000009a-0002-f800-b63f-84710c7967bb [INF] Executed DbCommand ("272"ms) [Parameters=["@__userId_0='?' (DbType = Int64)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ProfileId], [u].[AreasOfExpertise], [u].[AreasOfExpertiseOrther], [u].[BarCouncilBackUrl], [u].[BarCouncilFrontUrl], [u].[BarCouncilId], [u].[BarCouncilNo], [u].[CNICBackUrl], [u].[CNICFrontUrl], [u].[CNICNo], [u].[CityId], [u].[ContactNumber], [u].[CountryCode], [u].[CountryId], [u].[CreatedBy], [u].[CreatedDate], [u].[CurrAddress], [u].[DeviceToken], [u].[Email], [u].[EnrollmentDate], [u].[FatherName], [u].[FullName], [u].[Gender], [u].[Institute], [u].[IsActive], [u].[IsAgreed], [u].[IsAlert], [u].[IsContestedCopy], [u].[IsCreateMeeting], [u].[IsDeleted], [u].[IsEmail], [u].[IsFavourite], [u].[IsForeignQualified], [u].[IsOverseas], [u].[IsPushAlert], [u].[IsSMS], [u].[IsVerified], [u].[LCourtLocation], [u].[LCourtName], [u].[LHighCourtLocation], [u].[LHighCourtName], [u].[LawyerCode], [u].[MrTitle], [u].[NICOP], [u].[OfficeAddress], [u].[OverseasContactNo], [u].[PassportID], [u].[PermAddress], [u].[ProfileDescription], [u].[ProfilePicUrl], [u].[Qualification], [u].[Rating], [u].[ResideCountryId], [u].[RoleId], [u].[TotalExperience], [u].[UpdateDate], [u].[UpdatedBy], [u].[UserId], [u].[UserName]
+FROM [UserProfiles] AS [u]
+WHERE [u].[UserId] = @__userId_0 AND [u].[IsActive] = CAST(1 AS bit) AND [u].[IsPushAlert] = CAST(1 AS bit) AND [u].[IsDeleted] = CAST(0 AS bit) AND [u].[DeviceToken] IS NOT NULL AND [u].[DeviceToken] NOT LIKE N''" (0723d8ff)
+2024-08-11T08:54:05.3261486+05:00 8000009a-0002-f800-b63f-84710c7967bb [INF] Accessing Google auth token (4ffd7d4c)
+2024-08-11T08:59:35.7573857+05:00 8000009a-0002-f800-b63f-84710c7967bb [INF] Google auth token: ya29.c.c0ASRK0GbnVfDtxULWo1FLYAjFH2vIWMbK-JP2ut5w0BScfPNImS94tjw5xJHnfwyd3UHCLP0VUWFf1ZXDSIMBQDh1kfHLPbUW7DcOJyf0AkClLzZJbpyWQyu9C_7sCgcLod_hpZpy2mcGurPKdcEFBGWwB-w1IsNnMPigTrZuL2vGlwv8I3Lz2b0yowMBUkK9TgVRkWz89y_iYaiNQwN9b5PcRH9deOsdyABv5tdxX055K0NBAY_qTl3K5ruFK6Op8fHYMwGG4sP4BX_nEpduanw8PQmGMzbfrbJXzqd_DXw8-RMN1xdnTtTDSiiEdhoNE9IM-O1or-dDO2FqPkcFde0EreYg1qiHpW9tvroQkjFgXnDpKrXGenQRQgT387PnzsRY7OiXpBq83UsFbfQURhRxxcng2U17I_VedJaj8ZSShd-70mJoOe1JiI3dIiZ49sY55OwaZlx7ae2X23t09dlj-7uMx3-w2xFSMUdMmwRh6c6kjclf1B_y26UB0tF0ixfknmiWonou1r3JS1yh8zz3-WSZoShbtj3vpz9U22qd6YZrR7b3zbI9z22pnbu3SZU_jRamMZv3i6-emYhQ6sRRReobXOzlJ3Yfau7sJIftaeoQ2O4B270RVyai7bhrcUmIznrWIfiR3ahdbFcipZa-0r6uU-XrhVXkwfSskoVrcRs3YmnhZ7ZQdrJBMQWYrtl4JRtMrWlXfgSugjUZ_7_7XIp6tXqJfQnweyoV_9tBqksozaq4nfd-rYlzOBFXjVoFngysxI3tSUYtIyhp-7V-J-ougpqaFvUM7dWS05_4VieX70FbYO-RS_bfwUSM2wU6h6uY2Um0Y7a_J9BlzZmvh9MlyYovJvQM3xf34cvgWfxhusf_VUdq4rXe0absvzuF8s8qoWXMgZUz_XOjgIqqMF8diUUZnwrnJt9sw-OMnw6eidhhiMga03Z4O4lxvVIWYlOSYxwm-yzFckU8VsUdIliyXagcS39UdBXXlwhv-oZ2YJS4Wtb (a323034c)
+2024-08-11T08:59:37.0656695+05:00 8000009a-0002-f800-b63f-84710c7967bb [INF] Firebase: {
+  "name": "projects/wakalatnaama-f6493/messages/8db5675d-0133-452c-aa2a-e7a292a8036f"
+}
+ (8cfdfe71)
+2024-08-11T09:53:24.3014758+05:00  [INF] Executed DbCommand ("393"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-08-11T09:53:24.6835311+05:00  [INF] Executed DbCommand ("314"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-08-11T09:53:24.9382498+05:00  [INF] Executed DbCommand ("249"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2024-08-11T09:53:25.1994106+05:00  [INF] Executed DbCommand ("257"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2024-08-11T09:53:25.4858297+05:00  [INF] Executed DbCommand ("244"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2024-08-11T09:53:25.5371090+05:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2024-08-11T09:53:26.3864798+05:00  [INF] Executed DbCommand ("282"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OTPCode], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdateDate], [a].[UpdatedBy], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2024-08-11T09:53:26.7982980+05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-08-11T09:53:26.8025083+05:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-08-11T09:53:26.8051439+05:00  [INF] Content root path: "E:\Projects\WakalatNaam\wakalatnaama\WKLNAMA" (cc26f24e)

@@ -1,0 +1,32 @@
+E:\Projects\WakalatNaam\wakalatnaama\Business\bin\Debug\net8.0\Business.deps.json
+E:\Projects\WakalatNaam\wakalatnaama\Business\bin\Debug\net8.0\Business.dll
+E:\Projects\WakalatNaam\wakalatnaama\Business\bin\Debug\net8.0\Business.pdb
+E:\Projects\WakalatNaam\wakalatnaama\Business\bin\Debug\net8.0\Data.dll
+E:\Projects\WakalatNaam\wakalatnaama\Business\bin\Debug\net8.0\Data.pdb
+E:\Projects\WakalatNaam\wakalatnaama\Business\obj\Debug\net8.0\Business.csproj.AssemblyReference.cache
+E:\Projects\WakalatNaam\wakalatnaama\Business\obj\Debug\net8.0\Business.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects\WakalatNaam\wakalatnaama\Business\obj\Debug\net8.0\Business.AssemblyInfoInputs.cache
+E:\Projects\WakalatNaam\wakalatnaama\Business\obj\Debug\net8.0\Business.AssemblyInfo.cs
+E:\Projects\WakalatNaam\wakalatnaama\Business\obj\Debug\net8.0\Business.csproj.CoreCompileInputs.cache
+E:\Projects\WakalatNaam\wakalatnaama\Business\obj\Debug\net8.0\Business.sourcelink.json
+E:\Projects\WakalatNaam\wakalatnaama\Business\obj\Debug\net8.0\Business.csproj.CopyComplete
+E:\Projects\WakalatNaam\wakalatnaama\Business\obj\Debug\net8.0\Business.dll
+E:\Projects\WakalatNaam\wakalatnaama\Business\obj\Debug\net8.0\refint\Business.dll
+E:\Projects\WakalatNaam\wakalatnaama\Business\obj\Debug\net8.0\Business.pdb
+E:\Projects\WakalatNaam\wakalatnaama\Business\obj\Debug\net8.0\ref\Business.dll
+E:\Professional Projeccts\WakalatNaamaProject\WakalatNama\Business\bin\Debug\net8.0\Business.deps.json
+E:\Professional Projeccts\WakalatNaamaProject\WakalatNama\Business\bin\Debug\net8.0\Business.dll
+E:\Professional Projeccts\WakalatNaamaProject\WakalatNama\Business\bin\Debug\net8.0\Business.pdb
+E:\Professional Projeccts\WakalatNaamaProject\WakalatNama\Business\bin\Debug\net8.0\Data.dll
+E:\Professional Projeccts\WakalatNaamaProject\WakalatNama\Business\bin\Debug\net8.0\Data.pdb
+E:\Professional Projeccts\WakalatNaamaProject\WakalatNama\Business\obj\Debug\net8.0\Business.csproj.AssemblyReference.cache
+E:\Professional Projeccts\WakalatNaamaProject\WakalatNama\Business\obj\Debug\net8.0\Business.GeneratedMSBuildEditorConfig.editorconfig
+E:\Professional Projeccts\WakalatNaamaProject\WakalatNama\Business\obj\Debug\net8.0\Business.AssemblyInfoInputs.cache
+E:\Professional Projeccts\WakalatNaamaProject\WakalatNama\Business\obj\Debug\net8.0\Business.AssemblyInfo.cs
+E:\Professional Projeccts\WakalatNaamaProject\WakalatNama\Business\obj\Debug\net8.0\Business.csproj.CoreCompileInputs.cache
+E:\Professional Projeccts\WakalatNaamaProject\WakalatNama\Business\obj\Debug\net8.0\Business.sourcelink.json
+E:\Professional Projeccts\WakalatNaamaProject\WakalatNama\Business\obj\Debug\net8.0\Business.csproj.CopyComplete
+E:\Professional Projeccts\WakalatNaamaProject\WakalatNama\Business\obj\Debug\net8.0\Business.dll
+E:\Professional Projeccts\WakalatNaamaProject\WakalatNama\Business\obj\Debug\net8.0\refint\Business.dll
+E:\Professional Projeccts\WakalatNaamaProject\WakalatNama\Business\obj\Debug\net8.0\Business.pdb
+E:\Professional Projeccts\WakalatNaamaProject\WakalatNama\Business\obj\Debug\net8.0\ref\Business.dll
